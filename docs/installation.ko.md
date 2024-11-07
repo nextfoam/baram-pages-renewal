@@ -1,14 +1,6 @@
-# 설치
+# 다운로드
 
-## Supported Platforms
-* Windows 10 or newer
-* macOS 10.14 or newer (Apple Silicon only)
-* Ubuntu 20.04 or newer
-* CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )
-* OpenSUSE Leap 15.4
-* Linux Mint 21 "Vanessa"
-
-## Windows와 macOS에 설치
+## Windows와 macOS에 다운로드
 64 비트 윈도우용 설치 파일은 아래의 링크에서 다운받으세요.
 
 [**Download BARAM v24.4.0 Installer for 64-bit Windows ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0-setup.exe){: .md-button .md-button--primary}
@@ -21,6 +13,13 @@
 [**Download BARAM v24.4.0 Disk Image(.dmg) for macOS with Apple Silicon ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0.dmg){: .md-button .md-button--primary}
 <!---{: .btn .btn-blue .text-center .fs-5onclick="trackDownload('BARAM-24.4.0.dmg')"}-->
 
+## 지원되는 OS 
+* Windows 10 or newer
+* macOS 10.14 or newer (Apple Silicon only)
+* Ubuntu 20.04 or newer
+* CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )
+* OpenSUSE Leap 15.4
+* Linux Mint 21 "Vanessa"
 
 ### BARAM 설치를 위해 다음의 소프트웨어가 설치되어 있어야 합니다:
 * Python *3.9.x*
@@ -34,7 +33,8 @@
 
 [**Installation with Python Virtual Environment ›**](https://baramcfd.org/installation/2024/04/15/installationPythonEnv-post/)
 
-## Paraview [Optional]
+## Paraview
 
-*BaramFlow* has a menu that can launch [*ParaView*](https://www.paraview.org/) for convenience.
-If *ParaView* is installed in the system, this menu launches *ParaView* in the case foler.
+*BaramFlow* 후처리를 위해 [*ParaView*](https://www.paraview.org/)를 실행하는 메뉴가 있습니다.
+사용자들은 후처리를 위해 Paraview를 다운로드 및 설치해야 합니다. 다운로드는 [*ParaView Download Site*](https://www.paraview.org/download/)에서 할 수 있습니다.
+만약 Paraview가 이미 설치되어 있다면, 이 메뉴로 Paraview에서 case folder를 실행할 수 있습니다.
