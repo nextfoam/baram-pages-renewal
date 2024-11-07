@@ -72,7 +72,7 @@ Set the number of grids to 65, 55, and 30. Click the [Generate] button to genera
 Click the [Next] button to move on to the next step.
 
 <!-------------------------------------------------------------------------------------------------->
-## Castellation(Castellation)
+## Castellation
 
 Set the levels for the fan, desk surfaces, and cylinder volumes.
 
@@ -92,8 +92,6 @@ Click the (+) icon under [Surface/Feature Refinement] and set the following sett
 </p>
 
 Click the (+) icon under [Surface/Feature Refinement] and set the following settings for desk
-
-desk 면 설정을 위해 (+) 아이콘을 누르고 다음과 같이 설정한다.
 
 + Surface Refinement
     + Minimum Level : 1

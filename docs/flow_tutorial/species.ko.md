@@ -14,7 +14,7 @@
 
 계산 조건은 다음과 같다. 
 
-+ 솔버 : buoyantSimpleNFoam 
++ 솔버 : buoyantPimpleNFoam 
 + 난류 모델 : $Standard$ $k-\epsilon$
 + 입구 유동 속도 : 0.5 $m/s$
 

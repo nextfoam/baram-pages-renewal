@@ -454,7 +454,7 @@ NASA ARN2(Acoustic Research Nozzle 2)의 실험 결과이며 형상과 조건은
     + 온도(Temperature) : 300
 
 <p style="text-align: center">
-    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-inletbc.png">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-inletBC.png">
 </p>
 
 + outlet, top : 출구 압력(Pressure Outlet)

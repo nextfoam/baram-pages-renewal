@@ -19,8 +19,8 @@ On Linux, use the terminal to run the file. In the terminal, navigate to the fol
 BARAM is installed and run the file to start the program. The executable file is a bash script
 and the command is as follows.
 
-* BaramFlow : baramFlow.sh 혹은 python -m baramFlow.main
-* BaramMesh : baramMesh.sh 혹은 python -m baramMesh.main
+* BaramFlow : baramFlow.sh or python -m baramFlow.main
+* BaramMesh : baramMesh.sh or python -m baramMesh.main
 
 When you run BaramMesh, a window appears where you can choose whether to run a new project or open an existing project.
 
@@ -33,7 +33,7 @@ To start a new project, click the New Case button and enter the name in the desi
 
 ### Main Window
 
-When you run the program, you'll see a window of figure~\ref{fig:mesh_mainWindow}.
+When you run the program, you'll see a window of figure.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_mainWindow.png" width="800" height="800"><br>Main Window</center>
 
@@ -92,7 +92,7 @@ Set models and values for each step.
 
 ### Display Control
 
-You will see a list of geometries and mesh. There are three types: Geomerty, Boundary, and Mesh. In the [1.Geometry] and [2.Region] steps, only Geometry is displayed, and when you create a background grid in [3.Base Grid], Boundary and Mesh appear from then on. You can sort the list by clicking Name and Type.\\
+You will see a list of geometries and mesh. There are three types: Geomerty, Boundary, and Mesh. In the [1.Geometry] and [2.Region] steps, only Geometry is displayed, and when you create a background grid in [3.Base Grid], Boundary and Mesh appear from then on. You can sort the list by clicking Name and Type.
 
 If you right-click on the list, you will see Hide, Opacity, Color, Display Mode, and No Cut. This is how you can set the display appearance. You can set each item individually, or you can set several at once by dragging the mouse.
 

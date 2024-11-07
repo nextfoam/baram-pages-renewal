@@ -19,7 +19,7 @@ With a mesh of about 2 millions, the convergence was achieved in about 300 itera
 The computational conditions are as follows 
 
 + solver : buoyantSimpleNFoam 
-+ turbulence model : $SST$ $k-\omega$ 모델
++ turbulence model : $SST$ $k-\omega$ model
 + density : Perfect Gas
 + viscosity : 1.79e-5 $kg/ms$
 + flow condition : 400 $km/h$(111.11 $m/s$) at inlet
@@ -38,7 +38,7 @@ Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOA
 
 For this example, we'll use default conditions.
 
-### 모델(Models)
+### Models
 
 For this example, we'll use $SST$ $k-\omega$  model for turbulence.
 
@@ -459,7 +459,7 @@ Set the boundary type and values as shown below.
     + Temperature : 300
 
 <p style="text-align: center">
-    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-inletbc.png">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-inletBC.png">
 </p>
 
 + outlet, top : Pressure Outlet

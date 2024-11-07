@@ -14,7 +14,7 @@ This is an example of an transient chemical species mixing. A two-dimensional du
 
 The simulation conditions are as follows 
 
-+ solver : buoyantSimpleNFoam 
++ solver : buoyantPimpleNFoam 
 + turbulence model : $Standard$ $k-\epsilon$ model
 + flow condition : 0.5 $m/s$ at inlet
 

@@ -20,7 +20,7 @@ $S_{gas} = 5 \cdot 10^{-6} \cdot t^2$
 
 The simulation conditions are as follows 
 
-+ solver : buoyantSimpleNFoam
++ solver : buoyantPimpleNFoam
 + turbulence model : $standard$ $k-\epsilon$
 + density : Perfect Gas
 + viscosity : 1.79e-5 $kg/ms$

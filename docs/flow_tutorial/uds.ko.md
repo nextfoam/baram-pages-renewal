@@ -20,7 +20,7 @@ $S_{gas} = 5 \cdot 10^{-6} \cdot t^2$
 
 계산 조건은 다음과 같다. 
 
-+ 솔버 : buoyantSimpleNFoam 
++ 솔버 : buoyantPimpleNFoam 
 + 난류 모델 : $standard$ $k-\epsilon$
 + 밀도 : 완전기체
 + 점성 계수 : 1.79e-5 $kg/ms$

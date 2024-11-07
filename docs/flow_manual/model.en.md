@@ -97,7 +97,7 @@ The diffusion flux of a chemical species is calculated by the following equation
 <!--------------------------------------------------------------------------------------------------------->
 ## Energy
 
-Double-click Energy to bring up the settings window of figure~\ref{fig:energy}. Select whether to include or not.
+Double-click Energy to bring up the settings window of figure. Select whether to include or not.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/energy.png" width="200" height="200"><br>Energy setup</center>
 

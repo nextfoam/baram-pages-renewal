@@ -180,7 +180,7 @@ This example is an MRF simulation of a mixer with a simple geometry. The MRF mod
 
 The simulation conditions are as follows 
 
-+ solver : buoyantPimpleNFoam 
++ solver : buoyantSimpleNFoam 
 + turbulence model : $Standard$ $k-\epsilon$ model
 + density : 1000 $kg/m^3$
 + viscosity : 0.001 $kg/ms$

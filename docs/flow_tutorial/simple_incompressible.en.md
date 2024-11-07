@@ -191,7 +191,7 @@ Plot the pressure distribution on the wall. The initial settings are as follows.
 + Mesh Regions: internalMesh - enabled
 + Rest : Default
 
-$p_rgh$ is the pressure minus the term due to gravity ($\rho gh$), which is the same as the pressure when gravity is not considered, such as in this problem. $p_rgh$ is the relative pressure relative to the operating pressure and $p$ is the absolute pressure.
+$p_{rgh}$ is the pressure minus the term due to gravity ($\rho gh$), which is the same as the pressure when gravity is not considered, such as in this problem. $p_{rgh}$ is the relative pressure relative to the operating pressure and $p$ is the absolute pressure.
 
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/1.12.png"><br>

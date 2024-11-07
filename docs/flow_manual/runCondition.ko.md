@@ -10,7 +10,7 @@
 
 Courant Number(CFL)와 Diffusion Number($D_i$)는 다음과 같이 정의된다.
 
-<center>$CFL = U \frac{\Delta t}{\Delta x}$</center>
+<center>$CFL = \frac{U \Delta t}{\Delta x}$</center>
 
 <center>$D_i = \alpha \frac{\Delta t}{\Delta x^2}$</center>
 

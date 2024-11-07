@@ -10,7 +10,7 @@ Set the number of interation for various operations.
 
 ### Smoothing for Surface
 
-Specifies the number of smoothing iterations for the surface mesh.\\
+Specifies the number of smoothing iterations for the surface mesh.
 
 Smoothing is a post-processing step to improve the quality of a mesh, making irregular cells or surfaces smoother. Smoothing can improve the quality of the grid, but too many iterations can cause distortion or deformation of the geometry. The figure below shows the mesh at 0 and 3 values of surface smoothing. You can see that at 0, the grid is still fine-grained, but at 3 days, it has changed. This mesh is not computationally problematic, but it does have an impact when create boundary layer mesh. 
 

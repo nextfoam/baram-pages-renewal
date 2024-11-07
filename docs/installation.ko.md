@@ -11,14 +11,14 @@
 ## Windows와 macOS에 설치
 64 비트 윈도우용 설치 파일은 아래의 링크에서 다운받으세요.
 
-[**Download BARAM v24.4.0 Installer for 64-bit Windows ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0-setup.exe)
+[**Download BARAM v24.4.0 Installer for 64-bit Windows ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0-setup.exe){: .md-button .md-button--primary}
 <!---{: .btn .btn-purple .text-center .fs-5 onclick="trackDownload('BARAM-24.4.0-setup.exe')"}-->
 
 애플 실리콘의 macOS용 디스크 이미지는 아래의 링크에서 다운 받으세요.
 
 **주의: macOS의 [*open-mpi*](https://formulae.brew.sh/formula/open-mpi) Homebrew Formula 가 사전에 설치되어 있어야 합니다.**
 
-[**Download BARAM v24.4.0 Disk Image(.dmg) for macOS with Apple Silicon ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0.dmg)
+[**Download BARAM v24.4.0 Disk Image(.dmg) for macOS with Apple Silicon ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0.dmg){: .md-button .md-button--primary}
 <!---{: .btn .btn-blue .text-center .fs-5onclick="trackDownload('BARAM-24.4.0.dmg')"}-->
 
 

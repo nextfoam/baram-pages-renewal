@@ -114,8 +114,6 @@ Click the (+) icon under [Surface/Feature Refinement] and set the following sett
 
 Click the (+) icon under [Volume Refinement] and set the following settings for Hex\_1
 
-[공간 세분화(Volume Refinement)]의 (+) 아이콘을 누르고 Hex\_1에 대해 다음과 같이 설정한다. 
-
 + Volume Refinement Level : 4
 + Volume : Hex\_1
 

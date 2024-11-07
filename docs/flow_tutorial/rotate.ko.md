@@ -178,7 +178,7 @@ Z-normal 버튼을 클릭 후, Origin의 z 값에 0.01을 입력한다.
 
 계산 조건은 다음과 같다. 
 
-+ solver : buoyantPimpleNFoam (넥스트폼이 개발한 비압축성 유동 해석 솔버)
++ solver : buoyantSimpleNFoam (넥스트폼이 개발한 비압축성 유동 해석 솔버)
 + 난류 모델 : $Standard$ $k-\epsilon$ model
 + 밀도 : 1000 $kg/m^3$
 + 점성 계수 : 0.001 $kg/ms$

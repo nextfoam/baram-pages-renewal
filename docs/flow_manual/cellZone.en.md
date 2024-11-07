@@ -12,7 +12,7 @@ Double-click on a Region to bring up the window of figure below.
 
 Select one of the materials in [Setup-Materials] as the material for the region. If you are calculating a mixture of chemical species, select the appropriate mixture. If you want to give the entire region a source term or a constant value, set the appropriate item.
 
-In the case of multiphase flow, set one as primary and the other as secondary, and set the surface tension and cavitation between the two substances. Click the Select button in the figure~\ref{fig:regionVOF} to open the window shown in the figure on the right to select the substances.
+In the case of multiphase flow, set one as primary and the other as secondary, and set the surface tension and cavitation between the two substances. Click the Select button in the figure to open the window shown in the figure on the right to select the substances.
 
 **If you are using a cavitation model, you should set primary to gas and secondary to liquid**.
 

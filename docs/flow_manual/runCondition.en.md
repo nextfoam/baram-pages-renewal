@@ -10,7 +10,7 @@ The time advancement method for transient conditions can be fixed or adaptive. I
 
 The Courant Number (CFL) and Diffusion Number ($D_i$) are defined as follows
 
-<center>$CFL = U \frac{\Delta t}{\Delta x}$</center>
+<center>$CFL = \frac{U \Delta t}{\Delta x}$</center>
 
 <center>$D_i = \alpha \frac{\Delta t}{\Delta x^2}$</center>
 

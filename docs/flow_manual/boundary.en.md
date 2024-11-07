@@ -330,7 +330,7 @@ Use _externalHextFluxTemperature_ condition.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/convectionWallLayer.png" width="300" height="300"><br>Convection</center>
 
-This condition uses a constant reference temperature and heat transfer coefficient. The heat flux through the wall is given by equation~\ref{eq:convection}. Use the _externalHextFluxTemperature_ condition. 
+This condition uses a constant reference temperature and heat transfer coefficient. The heat flux through the wall is given by equation. Use the _externalHextFluxTemperature_ condition. 
 
 <center>$q_{external} = h(T_{wall}-T_a)$</center>
 
@@ -347,7 +347,7 @@ In this case, the thermal resistance is calculated by the equation
 
 The turbulence condition at the wall uses the wall function as the turbulence model, with the following conditions.
 
-#### standard $k-\epsilon$, realizable $k-\epsilon$, RNG $k-\epsilon$ 모델
+#### standard $k-\epsilon$, realizable $k-\epsilon$, RNG $k-\epsilon$ model
 
 * $k$ : _kqRWallFunction_
 * $\epsilon$ : _epsilonWallFunction_ for standard, _epsilonBlendedWallFunction_ for two layer

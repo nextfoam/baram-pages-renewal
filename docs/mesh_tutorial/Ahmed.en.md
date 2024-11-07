@@ -165,7 +165,7 @@ Click the (+) icon under [Configuration] to add a [Setting], and set it as follo
 
 + Number of Layers : 5
 + Thickness Model Specification : First and Expansion
-+ 높이 지정 방법(Size Specification : relative
++ Size Specification : relative
 + First Layer Thickness : 0.1
 + Expansion Ratio : 1.2
 + Min. Total Thickness : 0.3
