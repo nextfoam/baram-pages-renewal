@@ -1,0 +1,229 @@
+site_name: BARAM Page
+
+#repo_url: https://gitlab.com/mkdocs-i18n/mkdocs-i18n
+#edit_uri: ''
+
+theme:
+  logo: favicon.ico
+  favicon: favicon.ico
+  name: material
+  language: en
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+  features:
+    - navigation.tabs # 상단 tab 추가
+    - navigation.tabs.sticky # 상단 tab 고정
+    - navigation.expand # navigation 확장
+    - navigation.prune
+    - toc.integrate # 목차, navigation 결합
+    - navigation.top
+    - i18n
+    - search.share
+  analytics:
+    gtag: G-7XR6MJZF8R
+    ga_tracking_anonymize_ip: true
+
+plugins:
+  - search:
+  - awesome-pages:
+  - i18n:
+      default_language: en
+      languages:
+        en: "English"
+        ko: "Korean"
+      default_language: 'en'
+      no_translation:
+        en: "This page isn't translated to English."
+        ko: "이 페이지는 영어로 번역되지 않음."
+      translate_nav:
+        en:
+          title1: "Tutorial Guide"
+          subsection1: "BaramFlow"
+          subsection2: "BaramMesh"
+          title2: "Users' Guide"
+        ko:
+          title1: "예제 가이드"
+          subsection1: "BaramFlow"
+          subsection2: "BaramMesh"
+          title2: "사용자 가이드"
+
+nav:
+- Home: index.md
+- 홈: index.ko.md
+- Screenshots: screenshots.md
+- 스크린샷: screenshots.ko.md
+- Features: feature_overview.md
+- 주요기능: feature_overview.ko.md
+- Installation: installation.md
+- 설치: installation.ko.md
+- Internationalization: internationalization.md
+- 다국어 지원: internationalization.ko.md
+- Release notes: release_notes.md
+- 업데이트: release_notes.ko.md
+
+- title1:
+  - subsection1:
+    - Simple incompressible flow: flow_tutorial/simple_incompressible.en.md
+    - 간단한 비압축성 유동 예제: flow_tutorial/simple_incompressible.ko.md
+    - Car external flow: flow_tutorial/car_external.en.md
+    - 자동차 외부 유동 예제: flow_tutorial/car_external.ko.md
+    - Transient flow: flow_tutorial/transient.en.md
+    - 비정상 상태 유동 예제: flow_tutorial/transient.ko.md
+    - Rotating machinery: flow_tutorial/rotate.en.md
+    - 회전체 유동 예제: flow_tutorial/rotate.ko.md
+    - Atmospheric boundary layer: flow_tutorial/ABL.en.md
+    - 대기경계측 해석 예제: flow_tutorial/ABL.ko.md
+    - Porous media: flow_tutorial/porous.en.md
+    - 다공성 해석 예제: flow_tutorial/porous.ko.md
+    - Heat transfer: flow_tutorial/heatTransfer.en.md
+    - 열전달 해석 예제: flow_tutorial/heatTransfer.ko.md
+    - Species transport: flow_tutorial/species.en.md
+    - 화학종 해석 예제: flow_tutorial/species.ko.md
+    - User defined scalar: flow_tutorial/uds.en.md
+    - 사용자 정의 스칼라 해석 예제: flow_tutorial/uds.ko.md
+    - Multi-phase flow: flow_tutorial/multiphase.en.md
+    - 다상유동 해석 예제: flow_tutorial/multiphase.ko.md
+    - Non-Newtonian fluid: flow_tutorial/nonNewtonian.en.md
+    - 비뉴턴유체 해석 예제: flow_tutorial/nonNewtonian.ko.md
+    - Compressible subsonic flow: flow_tutorial/subsonic.en.md
+    - 비뉴턴유체 해석 예제: flow_tutorial/subsonic.ko.md
+    - Density based compressible flow: flow_tutorial/densityBased.en.md
+    - 밀도 기반 압축성 유동 해석 예제: flow_tutorial/densityBased.ko.md
+    - Batch run: flow_tutorial/batchRun.en.md
+    - 일괄 계산 유동 해석 예제: flow_tutorial/batchRun.ko.md
+  - subsection2:
+    - Mixing Pipe: mesh_tutorial/mixingPipe.en.md
+    - 파이프 유동: mesh_tutorial/mixingPipe.ko.md
+    - Ahmed Body: mesh_tutorial/Ahmed.en.md
+    - Ahmed Body: mesh_tutorial/Ahmed.ko.md
+    - DrivAer: mesh_tutorial/drivAer.en.md
+    - DrivAer: mesh_tutorial/drivAer.ko.md
+    - High speed train: mesh_tutorial/train.en.md
+    - 고속열차: mesh_tutorial/train.ko.md
+    - Fan: mesh_tutorial/fan.en.md
+    - 팬: mesh_tutorial/fan.ko.md
+    - propeller: mesh_tutorial/propeller.en.md
+    - 프로펠러: mesh_tutorial/propeller.ko.md
+    - Fan in room: mesh_tutorial/fanInRoom.en.md
+    - 팬이 있는 실내 공간: mesh_tutorial/fanInRoom.ko.md
+    - Mixer: mesh_tutorial/mixer.en.md
+    - 혼합기: mesh_tutorial/mixer.ko.md
+    - Gap refinement: mesh_tutorial/gap.en.md
+    - Gap refinement: mesh_tutorial/gap.ko.md
+    - Porous media: mesh_tutorial/porous_mesh.en.md
+    - 다공성 매질: mesh_tutorial/porous_mesh.ko.md
+    - Axi-symmetric nozzle: mesh_tutorial/nozzle.en.md
+    - 축대칭 노즐: mesh_tutorial/nozzle.ko.md
+    - Cantilever Beam: mesh_tutorial/cantilever.en.md
+    - 외팔보: mesh_tutorial/cantilever.ko.md
+    - Weir: mesh_tutorial/weir.en.md
+    - 위어: mesh_tutorial/weir.ko.md
+    - Cavity: mesh_tutorial/cavity.en.md
+    - 공동(Cavity): mesh_tutorial/cavity.ko.md
+
+- title2:
+  - subsection1:
+    - Introduction: flow_manual/intro.en.md
+    - 개요: flow_manual/intro.ko.md
+    - Installation and Start : flow_manual/install.en.md
+    - 설치와 실행: flow_manual/install.ko.md
+    - General : flow_manual/general.en.md
+    - 일반 (General) : flow_manual/general.ko.md
+    - Models : flow_manual/model.en.md
+    - 모델  (Models) : flow_manual/model.ko.md
+    - Materials : flow_manual/material.en.md
+    - 물질 (Materials) : flow_manual/material.ko.md
+    - Cell Zone Conditions : flow_manual/cellZone.en.md
+    - 셀존 조건 (Cell Zone Conditions) : flow_manual/cellZone.ko.md
+    - Boundary Conditions : flow_manual/boundary.en.md
+    - 경계 조건 (Boundary Conditions) : flow_manual/boundary.ko.md
+    - Reference Values : flow_manual/reference.en.md
+    - 기준 값 (Reference Values) : flow_manual/reference.ko.md
+    - Numerical Conditions : flow_manual/numerical.en.md
+    - 수치해석 기법 (Numerical Conditions) : flow_manual/numerical.ko.md
+    - Monitor : flow_manual/monitor.en.md
+    - 모니터 (Monitor) : flow_manual/monitor.ko.md
+    - Initialization : flow_manual/initial.en.md
+    - 초기조건 (Initialization) : flow_manual/initial.ko.md
+    - Run Conditions : flow_manual/runCondition.en.md
+    - 계산 조건 (Run Conditions) : flow_manual/runCondition.ko.md
+    - Run : flow_manual/run.en.md
+    - 실행 (Run) : flow_manual/run.ko.md
+    - Report : flow_manual/report.en.md
+    - 데이터 추출 (Report) : flow_manual/report.ko.md
+    - NextFOAM in BaramFlow : flow_manual/nextfoam.en.md
+    - NextFOAM 파일 설정 (NextFOAM in BaramFlow) : flow_manual/nextfoam.ko.md
+    - 용어해설 (Nomenclature) : flow_manual/nomenclature.ko.md
+  - subsection2:
+    - Introduction : mesh_manual/intro.en.md
+    - 개요 : mesh_manual/intro.ko.md
+    - Installation and Run : mesh_manual/install.en.md
+    - 설치와 실행 : mesh_manual/install.ko.md
+    - Geometry : mesh_manual/geometry.en.md
+    - 형상 (Geometry) : mesh_manual/geometry.ko.md
+    - Region : mesh_manual/region.en.md
+    - 영역 (Region) : mesh_manual/region.ko.md
+    - Base Grid : mesh_manual/baseGrid.en.md
+    - 배경격자 (Base Grid) : mesh_manual/baseGrid.ko.md
+    - Castellation : mesh_manual/castellation.en.md
+    - 격자 세분화 (Castellation) : mesh_manual/castellation.ko.md
+    - Snap : mesh_manual/snap.en.md
+    - 형상 구현 (Snap) : mesh_manual/snap.ko.md
+    - Boundary Layer : mesh_manual/boundaryLayer.en.md
+    - 경계층 (Boundary Layer) : mesh_manual/boundaryLayer.ko.md
+    - Export : mesh_manual/export.en.md
+    - 내보내기 (Export) : mesh_manual/export.ko.md
+    - 용어해설 (Nomenclature) : mesh_manual/nomenclature.ko.md
+
+- Q&A: QA.md
+- 문의: QA.ko.md
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+
+markdown_extensions:
+  - toc:
+      toc_depth: 2
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  alternate:
+    - name: "English (Home)"
+      link: ""
+      lang: en
+
+    - name: "Korean (홈)"
+      link: ""
+      lang: ko
