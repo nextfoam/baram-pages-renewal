@@ -196,12 +196,13 @@ nav:
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
   - toc:
       toc_depth: 2
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
@@ -219,6 +220,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
+  arithmatex:
+    generic: true
   alternate:
     - name: "English (Home)"
       link: ""
@@ -227,3 +230,6 @@ extra:
     - name: "Korean (홈)"
       link: ""
       lang: ko
+
+extra_css:
+  - css/extra.css
