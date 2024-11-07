@@ -26,7 +26,7 @@ There are no settings for this.
 
 The Reynolds number($Re$), the ratio of inertial and viscous forces, is used to determine whether a flow is laminar or turbulent. The criteria for laminar or turbulent flow using Reynolds number depends on the type of flow. In general, for pipe flows, Re less than 2000 is laminar and greater than 4000 is turbulent. For open channel flows, 500 and for flat plate flows, $10^5$ $\sim$ $10^6$ is the threshold.
 
-<center>$Re = \frac {\rho U L} {\mu^2}$</center>
+<center>$Re = \frac {\rho U L} {\mu}$</center>
 
 * $L$ : characteristic length
 * $\mu$ : viscosity
