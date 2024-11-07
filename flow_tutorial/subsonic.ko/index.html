@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1172,10 +1174,10 @@
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : buoyantSimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> </li>
+<li>난류 모델 : <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> </li>
 <li>밀도 : Perfect Gas</li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>유동 조건 : 400 <span class="arithmatex"><span class="MathJax_Preview">km/h</span><script type="math/tex">km/h</script></span>(111.11 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span>)</li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>유동 조건 : 400 <span class="arithmatex">\(km/h\)</span>(111.11 <span class="arithmatex">\(m/s\)</span>)</li>
 </ul>
 <h3 id="_4">프로그램의 구동 및 격자</h3>
 <p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [None]을 선택한다.</p>
@@ -1187,7 +1189,7 @@
 <h3 id="general">기본조건(General)</h3>
 <p>본 예제에서는 디폴트 조건을 사용한다.</p>
 <h3 id="models">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델을 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> 모델을 사용한다.</p>
 <p>[에너지(Energy)]를 [포함(include)]한다.</p>
 <p style="text-align: center">
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/tur.png"><br>
@@ -1325,20 +1327,20 @@
 <h3 id="_8">개요</h3>
 <p>|<a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzle3d.png" target="_blank"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzle3d.png" /></a>|</p>
 <p>|<a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/y0.png" target="_blank"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/y0.png" /></a>|</p>
-<p>노즐 입구의 온도는 260<span class="arithmatex"><span class="MathJax_Preview">^o C</span><script type="math/tex">^o C</script></span>, 노즐 목에서의 마하수는 0.376 정도인 고온 아음속 노즐 유동해석 예제이다.</p>
+<p>노즐 입구의 온도는 260<span class="arithmatex">\(^o C\)</span>, 노즐 목에서의 마하수는 0.376 정도인 고온 아음속 노즐 유동해석 예제이다.</p>
 <p>NASA Langley Research Center에서 제공하는 형상 및 실험조건을 사용한다.</p>
 <p><a href="https://turbmodels.larc.nasa.gov/jetsubsonichot_val.html">https://turbmodels.larc.nasa.gov/jetsubsonichot_val.html</a></p>
 <p>NASA ARN2(Acoustic Research Nozzle 2)의 실험 결과이며 형상과 조건은 다음과 같다.</p>
 <ul>
 <li>노즐목의 반지름 : 1 inch</li>
-<li>압력비, <span class="arithmatex"><span class="MathJax_Preview">p/p{ref}</span><script type="math/tex">p/p{ref}</script></span> = 1.10203, <span class="arithmatex"><span class="MathJax_Preview">p{ref}</span><script type="math/tex">p{ref}</script></span> = 14.3 psi</li>
-<li>온도비, <span class="arithmatex"><span class="MathJax_Preview">T/T{ref}</span><script type="math/tex">T/T{ref}</script></span> = 1.81388, <span class="arithmatex"><span class="MathJax_Preview">T{ref}</span><script type="math/tex">T{ref}</script></span> = 530 R</li>
+<li>압력비, <span class="arithmatex">\(p/p{ref}\)</span> = 1.10203, <span class="arithmatex">\(p{ref}\)</span> = 14.3 psi</li>
+<li>온도비, <span class="arithmatex">\(T/T{ref}\)</span> = 1.81388, <span class="arithmatex">\(T{ref}\)</span> = 530 R</li>
 <li>노즐 출구 마하수 : 0.376</li>
 </ul>
-<p>실험결과와 함께 NASA WIND 코드의 <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> k-<span class="arithmatex"><span class="MathJax_Preview">omega</span><script type="math/tex">omega</script></span> 모델과 Spalart-Allmaras 모델 계산 결과를 제공하고 있다.</p>
+<p>실험결과와 함께 NASA WIND 코드의 <span class="arithmatex">\(SST\)</span> k-<span class="arithmatex">\(omega\)</span> 모델과 Spalart-Allmaras 모델 계산 결과를 제공하고 있다.</p>
 <ul>
 <li>솔버 : buoyantSimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> </li>
+<li>난류 모델 : <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> </li>
 <li>밀도 : Perfect Gas</li>
 <li>점성 계수와 열전도도 : Sutherland law </li>
 <li>노즐 입구 조건 : 10059.65 Pa, 534.086 K</li>
@@ -1358,7 +1360,7 @@
 </p>
 
 <h3 id="models_1">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용한다.</p>
 <p>[에너지(Energy)]를 [포함(include)]한다.</p>
 <h3 id="materials_1">물질(Materials)</h3>
 <p>물성치는 다음과 같이 설정한다.</p>
@@ -1525,7 +1527,7 @@
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : buoyantPimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델</li>
+<li>난류 모델 : <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> 모델</li>
 <li>밀도 : Perfect Gas</li>
 <li>입구 온도 : 300 K</li>
 <li>입구 압력 : 101325 Pa</li>
@@ -1545,7 +1547,7 @@
 </p>
 
 <h3 id="models_2">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델을 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> 모델을 사용한다.</p>
 <p>[에너지(Energy)]를 [포함(include)]한다.</p>
 <h3 id="materials_2">물질(Materials)</h3>
 <p>물성치는 다음과 같이 설정한다.</p>
@@ -1728,7 +1730,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

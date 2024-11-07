@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1383,8 +1385,8 @@
 <li>압력 : <em>zeroGradient</em></li>
 <li>온도 : <em>fixedValue</em></li>
 <li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>fixedValue</em></li>
+<li>난류소산율(<span class="arithmatex">\(\epsilon\)</span>), 특성소산율(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>fixedValue</em></li>
 <li>화학종 : <em>fixedValue</em></li>
 </ul>
 <h3 id="boundary-profile">속도 분포(boundary profile) 조건 설정</h3>
@@ -1393,7 +1395,7 @@
 <p>입구 속도 조건에서 속도 분포(Profile Type)을 '시간에 따른 변화'로 선택하면 다음 그림의 창에서 조각별 선형 함수(Piecewise linear)를 사용하여 지정할 수 있다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/profile.png" width="300" height="300"><br>시간에 따른 변화 조건 설정 - 조각별 선형 함수</center></p>
 <p>입구 속도 조건에서 속도 분포(Profile Type)을 '시간에 따른 변화'로 선택하면 다음 그림의 창에서 조각별 선형 함수(Piecewise linear)를 사용하여 지정할 수 있다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n</span><script type="math/tex">S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n</script></span></center></p>
+<p><center><span class="arithmatex">\(S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>시간에 따른 변화 조건 설정 - 다항식</center></p>
 <p><a href="https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/">시간에 따라 변하는 경계조건 예제</a></p>
 <h4 id="spatial-distribution">공간 분포(Spatial Distribution)</h4>
@@ -1422,31 +1424,31 @@
 <ul>
 <li>바람 방향(Flow Direction)</li>
 <li>지면에 수직한 방향(Ground-Normal Direction)</li>
-<li>기준 고도(Reference Height, <span class="arithmatex"><span class="MathJax_Preview">z_{ref}</span><script type="math/tex">z_{ref}</script></span>)</li>
-<li>기준 풍속(Reference Flow Speed, <span class="arithmatex"><span class="MathJax_Preview">U_{ref}</span><script type="math/tex">U_{ref}</script></span>) : 기준 고도에서의 속도</li>
-<li>지표면 조도(Surface Roughness Length, <span class="arithmatex"><span class="MathJax_Preview">z_0</span><script type="math/tex">z_0</script></span>)</li>
+<li>기준 고도(Reference Height, <span class="arithmatex">\(z_{ref}\)</span>)</li>
+<li>기준 풍속(Reference Flow Speed, <span class="arithmatex">\(U_{ref}\)</span>) : 기준 고도에서의 속도</li>
+<li>지표면 조도(Surface Roughness Length, <span class="arithmatex">\(z_0\)</span>)</li>
 <li>지표면 최소 z 좌표(Minimum z-coordinate, d) : 지표면의 높이 방향 좌표 중 최소값(지표면에서 높이가 z-d 로 계산됨)</li>
 </ul>
 <p>속도와 난류 분포는 다음의 식을 사용한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)</span><script type="math/tex">u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</span><script type="math/tex">k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</span><script type="math/tex">\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}</span><script type="math/tex">\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}</span><script type="math/tex">u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}</script></span></center></p>
+<p><center><span class="arithmatex">\(u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)\)</span></center></p>
+<p><center><span class="arithmatex">\(k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}\)</span></center></p>
+<p><center><span class="arithmatex">\(\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}\)</span></center></p>
+<p><center><span class="arithmatex">\(\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}\)</span></center></p>
+<p><center><span class="arithmatex">\(u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> : 수직 방향 좌표</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> : 지표면의 최소 z 좌표</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\kappa</span><script type="math/tex">\kappa</script></span> : Von Karman's constant, 0.41</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_\mu</span><script type="math/tex">C_\mu</script></span> : constant, 0.09</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span> : constant, 0</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_2</span><script type="math/tex">C_2</script></span> : constant, 1</li>
+<li><span class="arithmatex">\(z\)</span> : 수직 방향 좌표</li>
+<li><span class="arithmatex">\(d\)</span> : 지표면의 최소 z 좌표</li>
+<li><span class="arithmatex">\(\kappa\)</span> : Von Karman's constant, 0.41</li>
+<li><span class="arithmatex">\(C_\mu\)</span> : constant, 0.09</li>
+<li><span class="arithmatex">\(C_1\)</span> : constant, 0</li>
+<li><span class="arithmatex">\(C_2\)</span> : constant, 1</li>
 </ul>
 <p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
 <ul>
 <li>속도 : _atmBoundaryLayerInletVelocity</li>
 <li>압력 : _zeroGradient</li>
 <li>난류운동에너지 : _atmBoundaryLayerInletK</li>
-<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>atmBoundaryLayerInletEpsilon</em>, <em>atmBoundaryLayerInletOmega</em></li>
+<li>난류소산율(<span class="arithmatex">\(\epsilon\)</span>), 특성소산율(<span class="arithmatex">\(\omega\)</span>) : <em>atmBoundaryLayerInletEpsilon</em>, <em>atmBoundaryLayerInletOmega</em></li>
 <li>화학종 : <em>fixedValue</em></li>
 </ul>
 <h2 id="free-stream">비압축성 자유류(Free Stream)</h2>
@@ -1471,8 +1473,8 @@
 <li>압력 : <em>zeroGradient</em></li>
 <li>체적분율 : <em>variableHeightFlowRate</em></li>
 <li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>fixedValue</em></li>
+<li>난류소산율(<span class="arithmatex">\(\epsilon\)</span>), 특성소산율(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>fixedValue</em></li>
 </ul>
 <h2 id="far-field-riemann">압축성 리만(Far-field Riemann)</h2>
 <p>압축성 유동의 원방경계에 사용하는 Riemann 경계조건이다.</p>
@@ -1508,8 +1510,8 @@
 <ul>
 <li>온도 : <em>inletOutletTotalTemperature</em></li>
 <li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>inletOutlet</em></li>
+<li>난류소산율(<span class="arithmatex">\(\epsilon\)</span>), 특성소산율(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>inletOutlet</em></li>
 <li>화학종 : <em>inletOutlet</em></li>
 </ul>
 <h4 id="non-reflecting-boundary">Non-Reflecting Boundary 옵션</h4>
@@ -1527,8 +1529,8 @@
 <li>압력 : <em>zeroGradient</em></li>
 <li>체적분율 : <em>variableHeightFlowRate</em></li>
 <li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>inletOutlet</em> </li>
+<li>난류소산율(<span class="arithmatex">\(\epsilon\)</span>), 특성소산율(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>inletOutlet</em> </li>
 </ul>
 <h2 id="outflow">유출(Outflow)</h2>
 <p>유출 조건은 출구의 모든 필드에 대해 구배(gradient)가 0인 조건을 사용한다.</p>
@@ -1560,41 +1562,41 @@
 <h4 id="convection">외부로 대류열전달(Convection)</h4>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/convectionWallLayer.png" width="300" height="300"><br>외부로 대류열전달 설정</center></p>
 <p>일정한 외부 온도와 열전달계수를 사용하는 조건으로, 벽에서의 열유속은 다음 식을 사용한다. <em>externalHextFluxTemperature</em> 조건을 사용한다. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">q_{external} = h(T_{wall}-T_a)</span><script type="math/tex">q_{external} = h(T_{wall}-T_a)</script></span></center></p>
+<p><center><span class="arithmatex">\(q_{external} = h(T_{wall}-T_a)\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span> : 열전달계수(Heat Transfer Coefficient)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">T_a</span><script type="math/tex">T_a</script></span> : 외부온도(Free Stream Temperature) </li>
+<li><span class="arithmatex">\(h\)</span> : 열전달계수(Heat Transfer Coefficient)</li>
+<li><span class="arithmatex">\(T_a\)</span> : 외부온도(Free Stream Temperature) </li>
 </ul>
 <p>벽의 두께와 열전도도를 이용하여 고체의 열저항을 설정할 수 있으며, 여러 층의 고체에 대해 각각의 두께와 열전도도를 설정할 수 있다. 고체를 벽으로 모델링하여 복합영역 문제로 계산하지 않고도 고체의 열전도를 고려할 수 있는 방법이다. 그러나 벽에 수직방향의 열전도만 고려할 뿐 옆으로의 열전도를 고려할 수는 없으며, 비정상상태 계산에서 시간에 따른 고체의 온도 변화를 고려할 수는 없다.</p>
 <p>이 때 열저항은 다음 식으로 계산된다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}</span><script type="math/tex">h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}</script></span></center></p>
+<p><center><span class="arithmatex">\(h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}\)</span></center></p>
 <h3 id="_3">난류 경계조건</h3>
 <p>난류 벽함수(wall function)은 난류 모델에 따라 다음과 같은 조건을 사용한다.</p>
-<h4 id="standard-k-epsilonk-epsilon-realizable-k-epsilonk-epsilon-rng-k-epsilonk-epsilon">standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span>, realizable <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span>, RNG <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델</h4>
+<h4 id="standard-k-epsilon-realizable-k-epsilon-rng-k-epsilon">standard <span class="arithmatex">\(k-\epsilon\)</span>, realizable <span class="arithmatex">\(k-\epsilon\)</span>, RNG <span class="arithmatex">\(k-\epsilon\)</span> 모델</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> : standard일 때는 <em>epsilonWallFunction</em>, two layer일 때는 <em>epsilonBlendedWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : standard일 때는 <em>nutkWallFunction</em>, two layer일 때는 <em>nutSpaldingWallFunction</em></li>
+<li><span class="arithmatex">\(k\)</span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex">\(\epsilon\)</span> : standard일 때는 <em>epsilonWallFunction</em>, two layer일 때는 <em>epsilonBlendedWallFunction</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : standard일 때는 <em>nutkWallFunction</em>, two layer일 때는 <em>nutSpaldingWallFunction</em></li>
 </ul>
-<h4 id="sst-k-omegak-omega">SST <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델</h4>
+<h4 id="sst-k-omega">SST <span class="arithmatex">\(k-\omega\)</span> 모델</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span> : <em>omegaBlendedWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutSpaldingWallFunction</em></li>
+<li><span class="arithmatex">\(k\)</span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex">\(\omega\)</span> : <em>omegaBlendedWallFunction</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>nutSpaldingWallFunction</em></li>
 </ul>
 <h4 id="spalart-allmaras">Spalart-Allmaras 모델</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span> : <em>zeroGradient</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutSpaldingWallFunction</em></li>
+<li><span class="arithmatex">\(\tilde{\nu}\)</span> : <em>zeroGradient</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>nutSpaldingWallFunction</em></li>
 </ul>
 <h4 id="_4">대기경계층 지표면일 때</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> : <em>atmEpsilonWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>atmNutkWallFunction</em></li>
+<li><span class="arithmatex">\(k\)</span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex">\(\epsilon\)</span> : <em>atmEpsilonWallFunction</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>atmNutkWallFunction</em></li>
 </ul>
-<h4 id="alpha_talpha_t"><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span></h4>
-<p><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> 조건은 열전달 경계조건에 따라 달라진다.</p>
+<h4 id="alpha_t"><span class="arithmatex">\(\alpha_t\)</span></h4>
+<p><span class="arithmatex">\(\alpha_t\)</span> 조건은 열전달 경계조건에 따라 달라진다.</p>
 <ul>
 <li>단열(Adiabatic)일 때 : <em>compressible::alphatWallFunction</em></li>
 <li>나머지 조건일 때 : <em>compressible::alphatJayatillekeWallFunction</em></li>
@@ -1627,18 +1629,18 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>다공성 압력 점프 설정</center></p>
 <p>입력항목은 다음과 같다.</p>
 <ul>
-<li>Darcy Coefficient, <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span></li>
-<li>Inertia Coefficient, <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span></li>
-<li>다공성 매질 두께(Porous media thickness, <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>)</li>
+<li>Darcy Coefficient, <span class="arithmatex">\(D\)</span></li>
+<li>Inertia Coefficient, <span class="arithmatex">\(I\)</span></li>
+<li>다공성 매질 두께(Porous media thickness, <span class="arithmatex">\(L\)</span>)</li>
 <li>연결된 경계면(Coupled boundary)</li>
 </ul>
 <p><strong>Darcy Coefficient와 Inertial Coefficient 값이 양(+)의 값일 때는 유동이 지나가면서 압력이 낮아지고, 음(-)의 값일 때 압력이 높아진다</strong>.</p>
 <p>압력 변화는 다음 식으로 계산된다. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L</span><script type="math/tex">\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L</script></span></center> </p>
+<p><center><span class="arithmatex">\(\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L\)</span></center> </p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> : 점성계수</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> : 밀도</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> : 속도</li>
+<li><span class="arithmatex">\(\mu\)</span> : 점성계수</li>
+<li><span class="arithmatex">\(\rho\)</span> : 밀도</li>
+<li><span class="arithmatex">\(U\)</span> : 속도</li>
 </ul>
 <p>openfoam에서 사용하는 경계조건은 압력은 <em>porousBafflePressure</em> 이고, 나머지는 모두 <em>cyclic</em> 이다.</p>
 <h3 id="fan">팬(Fan)</h3>
@@ -1705,7 +1707,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

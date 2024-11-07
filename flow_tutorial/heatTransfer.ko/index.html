@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1153,18 +1155,18 @@
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : chtMultiRegionSimpleNFoam</li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>난류 모델 : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>유체의 물성값<ul>
 <li>밀도 : Perfect Gas</li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>열전도도 : 0.024 <span class="arithmatex"><span class="MathJax_Preview">5W/mK</span><script type="math/tex">5W/mK</script></span></li>
-<li>비열(Cp) : 1,006 <span class="arithmatex"><span class="MathJax_Preview">J/kg</span><script type="math/tex">J/kg</script></span></li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>열전도도 : 0.024 <span class="arithmatex">\(5W/mK\)</span></li>
+<li>비열(Cp) : 1,006 <span class="arithmatex">\(J/kg\)</span></li>
 </ul>
 </li>
 <li>고체의 물성값<ul>
-<li>밀도 : 1,900 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>열전도도 : 0.016 <span class="arithmatex"><span class="MathJax_Preview">W/mK</span><script type="math/tex">W/mK</script></span></li>
-<li>비열(Cp) : 1,004 <span class="arithmatex"><span class="MathJax_Preview">J/kg</span><script type="math/tex">J/kg</script></span></li>
+<li>밀도 : 1,900 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>열전도도 : 0.016 <span class="arithmatex">\(W/mK\)</span></li>
+<li>비열(Cp) : 1,004 <span class="arithmatex">\(J/kg\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1178,7 +1180,7 @@
 <h3 id="general">기본조건(General)</h3>
 <p>중력 방향은 -y 방향이므로 [중력(Gravity)]는 y축에 -9.81을 입력한다.</p>
 <h3 id="models">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용한다. 다중영력 격자를 읽으면 에너지(Energy)는 자동으로 포함된다.</p>
+<p>난류 모델은 <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용한다. 다중영력 격자를 읽으면 에너지(Energy)는 자동으로 포함된다.</p>
 <h3 id="materials">물질(Materials)</h3>
 <p>본 예제에서는 Air와 Solid라는 물질을 사용한다. </p>
 <p>물질(Materials)에 디폴트로 Air가 있고, (+) 버튼을 클릭하여 임의의 고체를 선택하여 추가한다. </p>
@@ -1190,7 +1192,7 @@
 <h4 id="air">Air</h4>
 <ul>
 <li>밀도 : 완전기체(Perfect Gas)</li>
-<li>정압비열(<span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span>) : 1,006</li>
+<li>정압비열(<span class="arithmatex">\(C_p\)</span>) : 1,006</li>
 <li>점성계수 : 1.79e-05</li>
 <li>열전도도 : 0.0245</li>
 <li>분자량 : 28.966</li>
@@ -1207,7 +1209,7 @@
 <h4 id="solid">Solid</h4>
 <ul>
 <li>밀도 : 1,900</li>
-<li>정압비열(<span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span>) : 1004</li>
+<li>정압비열(<span class="arithmatex">\(C_p\)</span>) : 1004</li>
 <li>열전도도 : 0.016</li>
 <li>방사율(Emissivity) : 0.039</li>
 </ul>
@@ -1256,7 +1258,7 @@
 <li>external-wall : 벽면(wall)<ul>
 <li>속도 조건(Velocity Condition) : 정지(No Slip)</li>
 <li>온도 : 외부로 대류열전달(Convection)</li>
-<li>열전달계수(Heat Transfer Coefficient) : 4 (<span class="arithmatex"><span class="MathJax_Preview">W/m^2 K</span><script type="math/tex">W/m^2 K</script></span>)</li>
+<li>열전달계수(Heat Transfer Coefficient) : 4 (<span class="arithmatex">\(W/m^2 K\)</span>)</li>
 <li>외부 온도(Free Stream Temperature) : 280 (K)</li>
 </ul>
 </li>
@@ -1429,7 +1431,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

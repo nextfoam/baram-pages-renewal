@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1186,12 +1188,12 @@
 </ul>
 <h1 id="initialization">초기화(Initialization)</h1>
 <p>초기화는 계산에 사용하는 초기값을 설정하는 것과, 계산을 통해 저장된 데이터를 모두 지우고 초기화하는 역할을 한다. x, y, z 방향의 속도 성분과 압력, 온도, 체적분율 등의 초기값을 설정한다.</p>
-<p>난류는 속도 크기(velocity scale), 난류 강도(turbulence intensity), 난류 점도 비율(viscosity ratio)를 사용한다. Spalart-Allmaras 모델을 사용할 때는 속도 크기와 난류 점도 비율만 사용한다. 이 값을 이용해서 <span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span>, <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span> <span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span> 등의 값을 계산해서 초기조건으로 사용하는데, 계산 방법은 다음과 같다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\nu_t = viscosityRatio * \nu</span><script type="math/tex">\nu_t = viscosityRatio * \nu</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">k = 1.5 \cdot (velocityScale \cdot turbulentIntensity)^2</span><script type="math/tex">k = 1.5 \cdot (velocityScale \cdot turbulentIntensity)^2</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\epsilon = 0.09 \cdot k^2 / \nu_t</span><script type="math/tex">\epsilon = 0.09 \cdot k^2 / \nu_t</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\omega = k / \nu_t</span><script type="math/tex">\omega = k / \nu_t</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu} = viscosityRatio * \nu</span><script type="math/tex">\tilde{\nu} = viscosityRatio * \nu</script></span></center></p>
+<p>난류는 속도 크기(velocity scale), 난류 강도(turbulence intensity), 난류 점도 비율(viscosity ratio)를 사용한다. Spalart-Allmaras 모델을 사용할 때는 속도 크기와 난류 점도 비율만 사용한다. 이 값을 이용해서 <span class="arithmatex">\(\nu_t\)</span>, <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(\epsilon\)</span>, <span class="arithmatex">\(\omega\)</span> <span class="arithmatex">\(\tilde{\nu}\)</span> 등의 값을 계산해서 초기조건으로 사용하는데, 계산 방법은 다음과 같다.</p>
+<p><center><span class="arithmatex">\(\nu_t = viscosityRatio * \nu\)</span></center></p>
+<p><center><span class="arithmatex">\(k = 1.5 \cdot (velocityScale \cdot turbulentIntensity)^2\)</span></center></p>
+<p><center><span class="arithmatex">\(\epsilon = 0.09 \cdot k^2 / \nu_t\)</span></center></p>
+<p><center><span class="arithmatex">\(\omega = k / \nu_t\)</span></center></p>
+<p><center><span class="arithmatex">\(\tilde{\nu} = viscosityRatio * \nu\)</span></center></p>
 <h2 id="advanced">추가설정(Advanced)</h2>
 <p>추가설정(Advanced)은 원하는 영역의 초기값을 따로 설정하는 기능이다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/setfield.png"><br>추가 설정</center></p>
@@ -1256,7 +1258,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

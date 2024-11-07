@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1150,13 +1152,13 @@
 <p>The number of iterations is used for steady conditions, and the End Time is used for transient conditions.</p>
 <h3 id="time-stepping-method">Time Stepping Method</h3>
 <p>The time advancement method for transient conditions can be fixed or adaptive. In the case of 'fixed', a time step size is required. In the case of the adaptive time method, the time step size is determined by the Courant Number in the flow region and the Maximum Diffusion Number in the solid region.</p>
-<p>The Courant Number (CFL) and Diffusion Number (<span class="arithmatex"><span class="MathJax_Preview">D_i</span><script type="math/tex">D_i</script></span>) are defined as follows</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">CFL = U \frac{\Delta t}{\Delta x}</span><script type="math/tex">CFL = U \frac{\Delta t}{\Delta x}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">D_i = \alpha \frac{\Delta t}{\Delta x^2}</span><script type="math/tex">D_i = \alpha \frac{\Delta t}{\Delta x^2}</script></span></center></p>
+<p>The Courant Number (CFL) and Diffusion Number (<span class="arithmatex">\(D_i\)</span>) are defined as follows</p>
+<p><center><span class="arithmatex">\(CFL = U \frac{\Delta t}{\Delta x}\)</span></center></p>
+<p><center><span class="arithmatex">\(D_i = \alpha \frac{\Delta t}{\Delta x^2}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> : thermal diffusivity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\Delta t</span><script type="math/tex">\Delta t</script></span> : time step size</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\Delta x</span><script type="math/tex">\Delta x</script></span> : grid size</li>
+<li><span class="arithmatex">\(\alpha\)</span> : thermal diffusivity</li>
+<li><span class="arithmatex">\(\Delta t\)</span> : time step size</li>
+<li><span class="arithmatex">\(\Delta x\)</span> : grid size</li>
 </ul>
 <p>For multiphase flow calculations, an additional Max Courant Number for VoF is required.</p>
 <h3 id="save-interval">Save Interval</h3>
@@ -1222,7 +1224,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

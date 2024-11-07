@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1173,7 +1175,7 @@
 <h3 id="general">기본조건(General)</h3>
 <p>정상상태 계산이기 때문에 모든 설정은 디폴트 조건을 사용한다. </p>
 <h3 id="models">모델(Models)</h3>
-<p>난류 모델은 standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용한다.</p>
+<p>난류 모델은 standard <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용한다.</p>
 <p style="text-align: center">
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/porousMedia/turbulence.png"><br> 
 </p>
@@ -1262,9 +1264,9 @@
 <p>계산 조건은 다음과 같다.</p>
 <ul>
 <li>솔버 : buoyantsimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>밀도 : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>난류 모델 : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>밀도 : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>다공성 압력 점프(Porous Jump) 경계 조건<ul>
 <li>Darcy Coefficient : -100</li>
 <li>Inertial Coefficient : -5</li>
@@ -1287,7 +1289,7 @@
 <h3 id="general_1">기본조건(General)</h3>
 <p>모든 설정은 디폴트 조건을 사용한다. </p>
 <h3 id="models_1">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용한다. </p>
+<p>난류 모델은 <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용한다. </p>
 <h3 id="materials_1">물질(Materials)</h3>
 <p>본 예제에서는 공기의 디폴트 값을 사용한다.</p>
 <h3 id="boundary-conditions_1">경계조건(Boundary Conditions)</h3>
@@ -1478,7 +1480,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

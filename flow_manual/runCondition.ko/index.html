@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1150,13 +1152,13 @@
 <p>얼마나 계산할 것인지는 정상상태일때는 계산회수(Number of iteration)을 사용하고, 비정상상태일 때는 종료 시간(End Time)을 사용한다.</p>
 <h3 id="time-stepping-method">시간 전진 방법(Time Stepping Method)</h3>
 <p>비정상상태일 때 시간 전진 방법은 일정(fixed)와 적응시간기법(adaptive)를 선택할 수 있다. 일정할 때는 시간전진간격(time step size)가 필요하다. 적응시간기법일 때는 유동영역은 Courant Number, 고체영역은 Maximum Diffusion Number에 의해 시간전진간격이 결정된다.</p>
-<p>Courant Number(CFL)와 Diffusion Number(<span class="arithmatex"><span class="MathJax_Preview">D_i</span><script type="math/tex">D_i</script></span>)는 다음과 같이 정의된다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">CFL = U \frac{\Delta t}{\Delta x}</span><script type="math/tex">CFL = U \frac{\Delta t}{\Delta x}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">D_i = \alpha \frac{\Delta t}{\Delta x^2}</span><script type="math/tex">D_i = \alpha \frac{\Delta t}{\Delta x^2}</script></span></center></p>
+<p>Courant Number(CFL)와 Diffusion Number(<span class="arithmatex">\(D_i\)</span>)는 다음과 같이 정의된다.</p>
+<p><center><span class="arithmatex">\(CFL = U \frac{\Delta t}{\Delta x}\)</span></center></p>
+<p><center><span class="arithmatex">\(D_i = \alpha \frac{\Delta t}{\Delta x^2}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> : thermal diffusivity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\Delta t</span><script type="math/tex">\Delta t</script></span> : time step size</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\Delta x</span><script type="math/tex">\Delta x</script></span> : grid size</li>
+<li><span class="arithmatex">\(\alpha\)</span> : thermal diffusivity</li>
+<li><span class="arithmatex">\(\Delta t\)</span> : time step size</li>
+<li><span class="arithmatex">\(\Delta x\)</span> : grid size</li>
 </ul>
 <p>다상유동 계산시에는 추가로 Max Courant Number for VoF가 필요하다.</p>
 <h3 id="save-interval">자동 저장 간격(Save Interval)</h3>
@@ -1222,7 +1224,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

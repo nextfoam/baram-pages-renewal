@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1288,8 +1290,8 @@
 <h2 id="flux-type">Flux Type</h2>
 <p>Appears only in density-based compressibility solvers(Solver Type selected as Density-based).</p>
 <p>There are three options to choose from: Roe-FDS, AUSM, and AUSM-up.</p>
-<p>If you select Roe-FDS, you can enter the Entropy Fix Coefficient, <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>. Enter a value between 0 and 1.</p>
-<p>AUSM-up allows you to set the Cut-off Mach Number, <span class="arithmatex"><span class="MathJax_Preview">M_\infty</span><script type="math/tex">M_\infty</script></span>. Enter a value between 0 and 10.</p>
+<p>If you select Roe-FDS, you can enter the Entropy Fix Coefficient, <span class="arithmatex">\(\epsilon\)</span>. Enter a value between 0 and 1.</p>
+<p>AUSM-up allows you to set the Cut-off Mach Number, <span class="arithmatex">\(M_\infty\)</span>. Enter a value between 0 and 10.</p>
 <p>If you select AUSM, there is no setting.</p>
 <h2 id="discretization-schemes">Discretization Schemes</h2>
 <p>Set the discretization schemes for time, pressrue, momentum, energy, turbulence and volume fraction.</p>
@@ -1300,8 +1302,8 @@
 <p>You can select Linear, Momentum Weighted Reconstruct, or Momentum Weighted to select an extrapolation technique that calculates the pressure at the cell faces from the pressure at the center of the cell.</p>
 <ul>
 <li>Linear : A linear interpolation using the cell centroids on both sides of the face, which is more stable. The linear method is recommended when there are sources of momentum such as multiple reference frames(MRFs) or porous models.</li>
-<li>Momentum Weighted : This method uses the coefficients of the momentum equation (<span class="arithmatex"><span class="MathJax_Preview">a_p</span><script type="math/tex">a_p</script></span>) as weighting factors and has good convergence. There may be stability issues with momentum sources.</li>
-<li>Momentum Weighted Reconstruct : This is a second order accuracy method that calculates the values on the left and right sides of the cell face by extrapolation using the pressure gradient at the center of the cell and averages them to use as the value of the cell face. The average uses the coefficient of the momentum equation (<span class="arithmatex"><span class="MathJax_Preview">a_p</span><script type="math/tex">a_p</script></span>) as a weighting factor. It can give more accurate results, but can be less stable.</li>
+<li>Momentum Weighted : This method uses the coefficients of the momentum equation (<span class="arithmatex">\(a_p\)</span>) as weighting factors and has good convergence. There may be stability issues with momentum sources.</li>
+<li>Momentum Weighted Reconstruct : This is a second order accuracy method that calculates the values on the left and right sides of the cell face by extrapolation using the pressure gradient at the center of the cell and averages them to use as the value of the cell face. The average uses the coefficient of the momentum equation (<span class="arithmatex">\(a_p\)</span>) as a weighting factor. It can give more accurate results, but can be less stable.</li>
 </ul>
 <h3 id="momentum-energy-turbulence-volume-fraction">Momentum, Energy, Turbulence, Volume Fraction</h3>
 <p>First Order Upwind and Second Order Upwind can be selected. These are used in the divSchemes dictionaries of the fvSchemes file.</p>
@@ -1333,8 +1335,8 @@
 <h4 id="equations">Equations</h4>
 <p>Turn on/off equations for flow, energy, user-defined functions, chemical species, etc.</p>
 <p>For energy equations, the Viscous dissipation, Kinetic energy, and Pressure Work terms can be toggled on/off. If viscous heating is included, the other two are included. If their influence is very small, omitting them can improve stability. For high velocity, high temperature, and high viscosity flows, leaving them off can cause accuracy issues.</p>
-<p>The Brinkman Number(<span class="arithmatex"><span class="MathJax_Preview">Br</span><script type="math/tex">Br</script></span>) can be used to determine the importance of viscous dissipation. The Brinkman Number is a dimensionless number that represents the ratio of energy dissipated by viscosity to energy conducted, and if it is very small, less than 1, viscous heating is negligible.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Br = \frac{U^2 \mu}{k \Delta T}</span><script type="math/tex">Br = \frac{U^2 \mu}{k \Delta T}</script></span></center></p>
+<p>The Brinkman Number(<span class="arithmatex">\(Br\)</span>) can be used to determine the importance of viscous dissipation. The Brinkman Number is a dimensionless number that represents the ratio of energy dissipated by viscosity to energy conducted, and if it is very small, less than 1, viscous heating is negligible.</p>
+<p><center><span class="arithmatex">\(Br = \frac{U^2 \mu}{k \Delta T}\)</span></center></p>
 <p>Kinetic energy becomes important when a fluid has a high velocity. Pressure work refers to the work done when a fluid is compressed or expanded and is important in problems with pumps, turbines, compressors, etc.</p>
 <p>If you are using a Sliding mesh, you can verify that the motion of the grid is properly implemented by calculating with everything off.</p>
 
@@ -1396,7 +1398,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

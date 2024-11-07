@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1189,7 +1191,7 @@
 </p>
 
 <h3 id="models">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용하고 나머지는 디폴트를 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용하고 나머지는 디폴트를 사용한다.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/turbulence.png"><br> 
 </p>
@@ -1408,13 +1410,13 @@
 <p><a href="https://drive.google.com/file/d/185vzZC9Cc7kboGWYoLyLXaWZawQHKmvr/view?usp=sharing">계산 파일 다운로드</a></p>
 <h3 id="_6">개요</h3>
 <p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/kcs-wave.png"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/kcs-wave.png" title="" /></a></p>
-<p>본 예제는 자유수면을 포함하는 선박의 저항 해석에 대한 검증 문제이다. 대상 선형은 KCS이며 아래 논문의 결과와 비교하였다. 자유수면 계산을 위해 interFoam 솔버를 사용하고, LTS(Local Time Step) 기법을 사용하는 정상상태 계산이며 난류모델은<span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span>를 사용한다. </p>
+<p>본 예제는 자유수면을 포함하는 선박의 저항 해석에 대한 검증 문제이다. 대상 선형은 KCS이며 아래 논문의 결과와 비교하였다. 자유수면 계산을 위해 interFoam 솔버를 사용하고, LTS(Local Time Step) 기법을 사용하는 정상상태 계산이며 난류모델은<span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span>를 사용한다. </p>
 <p><em>Measurement of flows around modern commercial ship models, Kim,W J.Kim, Van, S H, Kim, D H, Experiments in Fluids, 2001</em></p>
 <p>계산 및 실험 조건은 다음과 같다.</p>
 <ul>
-<li>선박의 속도 : 2.196 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span></li>
-<li>기준 면적(침수면적, wetted surface area) : 9.5121 <span class="arithmatex"><span class="MathJax_Preview">m^2/s</span><script type="math/tex">m^2/s</script></span></li>
-<li>draft : 0.3418 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> (격자에서 z좌표는 0)</li>
+<li>선박의 속도 : 2.196 <span class="arithmatex">\(m/s\)</span></li>
+<li>기준 면적(침수면적, wetted surface area) : 9.5121 <span class="arithmatex">\(m^2/s\)</span></li>
+<li>draft : 0.3418 <span class="arithmatex">\(m\)</span> (격자에서 z좌표는 0)</li>
 </ul>
 <h3 id="_7">프로그램의 구동 및 격자</h3>
 <p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [Volume of Fluid]를 선택한다. 중력은 (0 0 -9.81)로 설정한다.</p>
@@ -1430,7 +1432,7 @@
 </p>
 
 <h3 id="models_1">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델을 사용하고 나머지는 디폴트 조건을 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> 모델을 사용하고 나머지는 디폴트 조건을 사용한다.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/turbulence.png"><br> Turbulence Model 설정
 </p>
@@ -1636,7 +1638,7 @@
 </p>
 
 <h3 id="models_2">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용하고 나머지는 디폴트를 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용하고 나머지는 디폴트를 사용한다.</p>
 <h3 id="materials_2">물질(Materials)</h3>
 <p>본 예제는 이상유동이므로 두 개의 유체가 필요하다. [물질(Material)]의 상단 오른쪽의 (+)를 누르면 유체를 추가할 수 있다. waterLiquid와 waterVapor를 추가한다. </p>
 <p align='center'>
@@ -1812,7 +1814,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

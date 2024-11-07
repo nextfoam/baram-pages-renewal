@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1161,9 +1163,9 @@
 <p>Simulation conditions are as follows. </p>
 <ul>
 <li>solver : buoyantSimpleNFoam</li>
-<li>turbulence model : Standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>density : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>turbulence model : Standard <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>density : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>flow condition : velocity of large inlet(in-1) is 5 m/s, small inlet(in-2) is 10 m/s, outlet pressure is 0</li>
 </ul>
 <h3 id="start-baramflow">Start BaramFlow</h3>
@@ -1186,7 +1188,7 @@
 </p>
 
 <h3 id="models">Models</h3>
-<p>For this example, we'll use Standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use Standard <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/1.4.png"><br>
 </p>
@@ -1281,7 +1283,7 @@
 
 <h3 id="initialization">Initialization</h3>
 <p>Initial Condition allows you to enter the velocity and pressure in x, y, and z as initial values.</p>
-<p>If you are using a turbulence model, you can enter the Velocity Scale, Turbulent Intensity, and Viscosity Ratio values, and the <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> and <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> values will be calculated and used.</p>
+<p>If you are using a turbulence model, you can enter the Velocity Scale, Turbulent Intensity, and Viscosity Ratio values, and the <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(\epsilon\)</span> values will be calculated and used.</p>
 <ul>
 <li>
 <p>Velocity</p>
@@ -1353,7 +1355,7 @@
 <li>Mesh Regions: internalMesh - enabled</li>
 <li>Rest : Default</li>
 </ul>
-<p><span class="arithmatex"><span class="MathJax_Preview">p_rgh</span><script type="math/tex">p_rgh</script></span> is the pressure minus the term due to gravity (<span class="arithmatex"><span class="MathJax_Preview">\rho gh</span><script type="math/tex">\rho gh</script></span>), which is the same as the pressure when gravity is not considered, such as in this problem. <span class="arithmatex"><span class="MathJax_Preview">p_rgh</span><script type="math/tex">p_rgh</script></span> is the relative pressure relative to the operating pressure and <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> is the absolute pressure.</p>
+<p><span class="arithmatex">\(p_rgh\)</span> is the pressure minus the term due to gravity (<span class="arithmatex">\(\rho gh\)</span>), which is the same as the pressure when gravity is not considered, such as in this problem. <span class="arithmatex">\(p_rgh\)</span> is the relative pressure relative to the operating pressure and <span class="arithmatex">\(p\)</span> is the absolute pressure.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/1.12.png"><br>
 </p>
@@ -1390,10 +1392,10 @@
 <p>Simulation conditions are as follows. </p>
 <ul>
 <li>solver : buoyantSimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
-<li>density : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>flow condition : 80 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span> at inlet</li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
+<li>density : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>flow condition : 80 <span class="arithmatex">\(m/s\)</span> at inlet</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
 <p>Run the program and select 'New Case' from the launcher. In the launcher, select Pressure-based for 'Solver Type' and None for 'Multiphase Model'.</p>
@@ -1405,7 +1407,7 @@
 <h3 id="general_1">General</h3>
 <p>For this example, we'll use default conditions.</p>
 <h3 id="models_1">Models</h3>
-<p>For this example, we'll use Standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use Standard <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cantilever/3.png"><br>
 </p>
@@ -1660,7 +1662,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

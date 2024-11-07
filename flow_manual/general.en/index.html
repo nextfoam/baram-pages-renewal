@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1212,16 +1214,16 @@
 <p>Set the gravity vector component.</p>
 <p>Gravity is disabled in density-based solver.</p>
 <p>Since it is often necessary to include gravity in multiphase flows, a separate window for setting gravity is shown at program startup to reduce user errors. The settings here can be modified on the main window.</p>
-<p>Gravity must be accounted for if heat transfer by natural convection is to be considered in a single-phase flow problem. The Richardson Number(<span class="arithmatex"><span class="MathJax_Preview">Ri</span><script type="math/tex">Ri</script></span>) is used to determine if natural convection should be considered. The Richardson Number is expressed as a function of the Grashof Number(<span class="arithmatex"><span class="MathJax_Preview">Gr</span><script type="math/tex">Gr</script></span>) and the Reynolds Number. The Grashof Number is the ratio of buoyancy to viscous force.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Gr = \frac {\beta \Delta T L^3 g } {\nu^2}</span><script type="math/tex">Gr = \frac {\beta \Delta T L^3 g } {\nu^2}</script></span></center></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span> : thermal expansion coefficient</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> : distance</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\nu</span><script type="math/tex">\nu</script></span> : kinematic viscosity</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Ri = \frac {Gr} {Re^2}</span><script type="math/tex">Ri = \frac {Gr} {Re^2}</script></span></center></p>
+<p>Gravity must be accounted for if heat transfer by natural convection is to be considered in a single-phase flow problem. The Richardson Number(<span class="arithmatex">\(Ri\)</span>) is used to determine if natural convection should be considered. The Richardson Number is expressed as a function of the Grashof Number(<span class="arithmatex">\(Gr\)</span>) and the Reynolds Number. The Grashof Number is the ratio of buoyancy to viscous force.</p>
+<p><center><span class="arithmatex">\(Gr = \frac {\beta \Delta T L^3 g } {\nu^2}\)</span></center></p>
+<p><span class="arithmatex">\(\beta\)</span> : thermal expansion coefficient</p>
+<p><span class="arithmatex">\(L\)</span> : distance</p>
+<p><span class="arithmatex">\(\nu\)</span> : kinematic viscosity</p>
+<p><center><span class="arithmatex">\(Ri = \frac {Gr} {Re^2}\)</span></center></p>
 <p>In general, if the Richardson number is less than 0.1, natural convection can be ignored. If you do not need to account for natural convection, it is recommended to set the gravity to (0 0 0) for stability of the simulation. </p>
 <h2 id="operating-conditions">Operating Conditions</h2>
 <p>Set Operating Pressure. <strong>When entering pressures in the BaramFlow, use a relative pressure based on this value</strong>. If you use 0 as this value, all pressures will be absolute value.</p>
-<p>In OpenFOAM, standard solvers that include energy equation use absolute pressure without the concept of relative pressure. Since absolute pressure is large value of <span class="arithmatex"><span class="MathJax_Preview">O(10^5)</span><script type="math/tex">O(10^5)</script></span>, it is not effective for calculating small pressure changes and is inconvenient in post-processing. Therefore, BaramFlow and NextFOAM use relative pressure, which is based on the operating pressure.</p>
+<p>In OpenFOAM, standard solvers that include energy equation use absolute pressure without the concept of relative pressure. Since absolute pressure is large value of <span class="arithmatex">\(O(10^5)\)</span>, it is not effective for calculating small pressure changes and is inconvenient in post-processing. Therefore, BaramFlow and NextFOAM use relative pressure, which is based on the operating pressure.</p>
 <p>The pressure-based solvers in BaramFlow use two pressure variables, p_rgh and p. p_rgh is the pressure minus the hydrostatic pressure, relative to the operating pressure, and is used to solve the pressure equation. p is not used in the calculation, but is obtained from the calculated p_rgh as a value that includes hydrostatic pressure and is represented as absolute pressure.  Density-based solvers only use p because they do not account for gravity.</p>
 
 
@@ -1282,7 +1284,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

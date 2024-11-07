@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1150,14 +1152,14 @@
 <p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/fireInRoom/intro.png"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/fireInRoom/intro.png" /></a></p>
 <p>실내의 화재를 시뮬레이션하는 문제이다. 화학종과 연소 반응은 계산하지 않고, 화재성장곡선을 이용해서 시간에 따른 발열량과 연소가스 생성량을 에너지방정식과 사용자 정의 스칼라 방정식의 소스로 사용해서 계산한다. 테이블 아래쪽의 육면체 셀존에 소스항을 준다.</p>
 <p>화재성장곡선은 다음과 같은 2차 함수를 사용하고 25초 동안 계산한다. </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S_h = 1000 \cdot t^2</span><script type="math/tex">S_h = 1000 \cdot t^2</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S_{gas} = 5 \cdot 10^{-6} \cdot t^2</span><script type="math/tex">S_{gas} = 5 \cdot 10^{-6} \cdot t^2</script></span></p>
+<p><span class="arithmatex">\(S_h = 1000 \cdot t^2\)</span></p>
+<p><span class="arithmatex">\(S_{gas} = 5 \cdot 10^{-6} \cdot t^2\)</span></p>
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : buoyantSimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>난류 모델 : <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>밀도 : 완전기체</li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 </ul>
 <h3 id="_4">프로그램의 구동 및 격자</h3>
 <p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [None]을 선택한다.</p>
@@ -1170,7 +1172,7 @@
 <p>[시간(Time)]은 [비정상상태(Transient)]로 설정한다.</p>
 <p>[중력(Gravity)]는 (0 0 -9.81)로 설정한다.</p>
 <h3 id="models">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용한다.</p>
+<p>난류 모델은 <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용한다.</p>
 <p>[에너지(Energy)]를 [포함(include)]한다.</p>
 <p>[사용자 정의 스칼라(User-defined Scalar)]를 추가한다. [필드 이름(Field Name)]은 gas로 주고 [확산계수(diffusivity)]는 [Laminar and Turbulent Viscosity]를 선택한다. [Laminar/Turbulent Viscosity Coefficient]는 모두 1로 준다.</p>
 <p style="text-align: center">
@@ -1315,7 +1317,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

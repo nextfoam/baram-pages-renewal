@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1161,9 +1163,9 @@
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : buoyantSimpleNFoam </li>
-<li>난류 모델 : Standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>밀도 : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>난류 모델 : Standard <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>밀도 : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>유동 조건 : 면적이 넓은 입구(in-1)의 속도는 5m/s, 면적이 좁은 입구(in-2)의 속도는 10m/s, outlet은 대기압 조건</li>
 </ul>
 <h3 id="_3">프로그램의 구동</h3>
@@ -1187,7 +1189,7 @@
 
 <h3 id="models">모델(Models)</h3>
 <p>모델에서는 [난류(turbulence)], [에너지(Energy)], [화학종(Species)], [사용자 정의 스칼라(User-defined Scalar)]를 설정할 수 있다. 다상유동 모델과 솔버 유형은 시작 창에서 설정한다.</p>
-<p>본 예제에서는 Standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용한다.</p>
+<p>본 예제에서는 Standard <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용한다.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/1.4.png"><br>
 </p>
@@ -1286,7 +1288,7 @@
 
 <h3 id="initialization">초기화(Initialization)</h3>
 <p>초기값으로 x, y, z 방향의 속도와 압력을 입력할 수 있다.</p>
-<p>난류 모델을 사용할 경우 [속도 크기(Velocity Scale)], [난류 강도(Turbulent Intensity)], [난류 점도 비율(Viscosity Ratio)] 값을 입력하면 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>와 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 값이 계산되어 사용된다. </p>
+<p>난류 모델을 사용할 경우 [속도 크기(Velocity Scale)], [난류 강도(Turbulent Intensity)], [난류 점도 비율(Viscosity Ratio)] 값을 입력하면 <span class="arithmatex">\(k\)</span>와 <span class="arithmatex">\(\epsilon\)</span> 값이 계산되어 사용된다. </p>
 <ul>
 <li>
 <p>속도(Velocity)</p>
@@ -1359,7 +1361,7 @@
 <li>Mesh Regions : internalMesh - 활성화</li>
 <li>나머지 : Default</li>
 </ul>
-<p><span class="arithmatex"><span class="MathJax_Preview">p_rgh</span><script type="math/tex">p_rgh</script></span>는 압력에서 중력에 의한 항(<span class="arithmatex"><span class="MathJax_Preview">\rho gh</span><script type="math/tex">\rho gh</script></span>)을 뺀 값으로 이 문제와 같이 중력을 고려하지 않은 경우는 압력과 같은 값이다. <span class="arithmatex"><span class="MathJax_Preview">p_rgh</span><script type="math/tex">p_rgh</script></span>는 operating pressure 기준의 상대압이고 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>는 절대압력이다.</p>
+<p><span class="arithmatex">\(p_rgh\)</span>는 압력에서 중력에 의한 항(<span class="arithmatex">\(\rho gh\)</span>)을 뺀 값으로 이 문제와 같이 중력을 고려하지 않은 경우는 압력과 같은 값이다. <span class="arithmatex">\(p_rgh\)</span>는 operating pressure 기준의 상대압이고 <span class="arithmatex">\(p\)</span>는 절대압력이다.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/1.12.png"><br>
 </p>
@@ -1397,10 +1399,10 @@
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : buoyantSimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
-<li>밀도 : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>유동 조건 : inlet에서 80 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span></li>
+<li>난류 모델 : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
+<li>밀도 : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>유동 조건 : inlet에서 80 <span class="arithmatex">\(m/s\)</span></li>
 </ul>
 <h3 id="_10">프로그램의 구동 및 격자</h3>
 <p>프로그램 실행 후 [새 계산(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [None]을 선택한다.</p>
@@ -1412,7 +1414,7 @@
 <h3 id="general_1">기본조건(General)</h3>
 <p>본 예제에서는 디폴트 조건을 사용한다.</p>
 <h3 id="models_1">모델(Models)</h3>
-<p>본 예제에서는 <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 난류 모델을 사용한다. </p>
+<p>본 예제에서는 <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 난류 모델을 사용한다. </p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cantilever/3.png"><br>
 </p>
@@ -1663,7 +1665,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1184,10 +1186,10 @@
 </p>
 
 <h3 id="materials">물질(Materials)</h3>
-<p>본 예제에서는 <span class="arithmatex"><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> = 1 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span> 조건을 사용한다. 이 때 레이놀즈 수가 100이 되는 조건으로 물성치를 설정한다.</p>
+<p>본 예제에서는 <span class="arithmatex">\(U\)</span> = 1 <span class="arithmatex">\(m/s\)</span> 조건을 사용한다. 이 때 레이놀즈 수가 100이 되는 조건으로 물성치를 설정한다.</p>
 <ul>
-<li>밀도 : 1 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>점성 계수 : 0.01 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span> </li>
+<li>밀도 : 1 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>점성 계수 : 0.01 <span class="arithmatex">\(kg/ms\)</span> </li>
 </ul>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cylinder/5.4.png"><br>
@@ -1372,9 +1374,9 @@
 <p>계산 조건은 다음과 같다. </p>
 <ul>
 <li>솔버 : buoyantPimpleNFoam </li>
-<li>난류 모델 : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>난류 모델 : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>밀도 : Perfect Gas (Ideal Gas)</li>
-<li>점성 계수 : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>점성 계수 : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 </ul>
 <h3 id="_8">프로그램의 구동 및 격자</h3>
 <p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [None]을 선택한다.</p>
@@ -1386,14 +1388,14 @@
 <h3 id="general_1">기본조건(General)</h3>
 <p>시간(Time)을 비정상상태(Transient)로 변경한다. 나머지는 디폴트 조건을 사용한다.</p>
 <h3 id="models_1">모델(Models)</h3>
-<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용하고 에너지(Energy)는 포함(Include)로 바꿔준다.</p>
+<p>난류 모델은 <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> 모델을 사용하고 에너지(Energy)는 포함(Include)로 바꿔준다.</p>
 <h3 id="materials_1">물질(Materials)</h3>
 <p>본 예제에서는 공기를 작동 유체로 사용한다. 유체의 이름과 물성치를 아래와 같이 변경한다. </p>
 <ul>
 <li>밀도(Density) : 완전기체(Perfect Gas) (m/s)</li>
-<li>정압비열(Specific Heat, Cp) : 1004 <span class="arithmatex"><span class="MathJax_Preview">J/kgK</span><script type="math/tex">J/kgK</script></span> (m/s)</li>
-<li>점성계수(Viscosity) : 1.79e-05 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>열전도도(Thermal Conductivity) : 0.0245 <span class="arithmatex"><span class="MathJax_Preview">W/mK</span><script type="math/tex">W/mK</script></span></li>
+<li>정압비열(Specific Heat, Cp) : 1004 <span class="arithmatex">\(J/kgK\)</span> (m/s)</li>
+<li>점성계수(Viscosity) : 1.79e-05 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>열전도도(Thermal Conductivity) : 0.0245 <span class="arithmatex">\(W/mK\)</span></li>
 </ul>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/profileBC/Perfect Gas.png"><br>
@@ -1606,7 +1608,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

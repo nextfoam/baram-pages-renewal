@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1224,55 +1226,55 @@
 <p>There are no settings for models that do not account for viscosity, often referred to as Euler in compressible flows. When this option is selected, laminar flow is selected internally and the viscosity coefficient is set to zero. It is not necessary to set the viscosity coefficient to zero directly in the property values.</p>
 <h4 id="laminar">Laminar</h4>
 <p>There are no settings for this.</p>
-<p>The Reynolds number(<span class="arithmatex"><span class="MathJax_Preview">Re</span><script type="math/tex">Re</script></span>), the ratio of inertial and viscous forces, is used to determine whether a flow is laminar or turbulent. The criteria for laminar or turbulent flow using Reynolds number depends on the type of flow. In general, for pipe flows, Re less than 2000 is laminar and greater than 4000 is turbulent. For open channel flows, 500 and for flat plate flows, <span class="arithmatex"><span class="MathJax_Preview">10^5</span><script type="math/tex">10^5</script></span> <span class="arithmatex"><span class="MathJax_Preview">\sim</span><script type="math/tex">\sim</script></span> <span class="arithmatex"><span class="MathJax_Preview">10^6</span><script type="math/tex">10^6</script></span> is the threshold.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Re = \frac {\rho U L} {\mu^2}</span><script type="math/tex">Re = \frac {\rho U L} {\mu^2}</script></span></center></p>
+<p>The Reynolds number(<span class="arithmatex">\(Re\)</span>), the ratio of inertial and viscous forces, is used to determine whether a flow is laminar or turbulent. The criteria for laminar or turbulent flow using Reynolds number depends on the type of flow. In general, for pipe flows, Re less than 2000 is laminar and greater than 4000 is turbulent. For open channel flows, 500 and for flat plate flows, <span class="arithmatex">\(10^5\)</span> <span class="arithmatex">\(\sim\)</span> <span class="arithmatex">\(10^6\)</span> is the threshold.</p>
+<p><center><span class="arithmatex">\(Re = \frac {\rho U L} {\mu^2}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> : characteristic length</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> : viscosity</li>
+<li><span class="arithmatex">\(L\)</span> : characteristic length</li>
+<li><span class="arithmatex">\(\mu\)</span> : viscosity</li>
 </ul>
-<p>In natural convection problems, we use the Rayleigh number(<span class="arithmatex"><span class="MathJax_Preview">Ra</span><script type="math/tex">Ra</script></span>), which is the ratio of heat transfer by diffusion and convection. It is generally considered laminar below <span class="arithmatex"><span class="MathJax_Preview">10^7</span><script type="math/tex">10^7</script></span> and turbulent above <span class="arithmatex"><span class="MathJax_Preview">10^9</span><script type="math/tex">10^9</script></span>.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Ra = \frac {\rho \beta \Delta T L^3 g} {\mu \alpha}</span><script type="math/tex">Ra = \frac {\rho \beta \Delta T L^3 g} {\mu \alpha}</script></span></center></p>
+<p>In natural convection problems, we use the Rayleigh number(<span class="arithmatex">\(Ra\)</span>), which is the ratio of heat transfer by diffusion and convection. It is generally considered laminar below <span class="arithmatex">\(10^7\)</span> and turbulent above <span class="arithmatex">\(10^9\)</span>.</p>
+<p><center><span class="arithmatex">\(Ra = \frac {\rho \beta \Delta T L^3 g} {\mu \alpha}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span> : thermal expansion coefficient</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> : distance</li>
+<li><span class="arithmatex">\(\beta\)</span> : thermal expansion coefficient</li>
+<li><span class="arithmatex">\(L\)</span> : distance</li>
 </ul>
-<p><span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> : thermal diffusivity</p>
+<p><span class="arithmatex">\(\alpha\)</span> : thermal diffusivity</p>
 <h4 id="spalart-allmaras">Spalart-Allmaras</h4>
-<p>It is a one-equation turbulence model that computes the transport equation of modified kinematic viscosity (<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) and is often used in aerospace to compute turbulent flows in boundary layers. The calculated <span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span> value and a correction function for viscous effects near the wall are used to calculate the turbulent viscosity. The turbulent Prandtl number (<span class="arithmatex"><span class="MathJax_Preview">Pr_t</span><script type="math/tex">Pr_t</script></span>) can be set.</p>
+<p>It is a one-equation turbulence model that computes the transport equation of modified kinematic viscosity (<span class="arithmatex">\(\tilde{\nu}\)</span>) and is often used in aerospace to compute turbulent flows in boundary layers. The calculated <span class="arithmatex">\(\tilde{\nu}\)</span> value and a correction function for viscous effects near the wall are used to calculate the turbulent viscosity. The turbulent Prandtl number (<span class="arithmatex">\(Pr_t\)</span>) can be set.</p>
 <h4 id="k-epsilon">k-epsilon</h4>
-<p>It is a two-equation turbulence model that calculates the transport equations for the turbulent kinetic energy (<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>) and the turbulent dissipation rate (<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>). There are three models to choose from: Standard, RNG, and Realizable, and you can set the turbulent Prandtl number. If you select Realizable model, you can select standard wall function and two layer model as wall function options.</p>
+<p>It is a two-equation turbulence model that calculates the transport equations for the turbulent kinetic energy (<span class="arithmatex">\(k\)</span>) and the turbulent dissipation rate (<span class="arithmatex">\(\epsilon\)</span>). There are three models to choose from: Standard, RNG, and Realizable, and you can set the turbulent Prandtl number. If you select Realizable model, you can select standard wall function and two layer model as wall function options.</p>
 <h4 id="k-omega">k-omega</h4>
-<p>It is a two-equation turbulence model that computes transport equations for turbulent kinetic energy (<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>) and specific dissipation rate (<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>). The k-omega model currently only supports Menter's Shear Stress Transport (SST) model. Turbulent Prandtl number can be set.</p>
+<p>It is a two-equation turbulence model that computes transport equations for turbulent kinetic energy (<span class="arithmatex">\(k\)</span>) and specific dissipation rate (<span class="arithmatex">\(\omega\)</span>). The k-omega model currently only supports Menter's Shear Stress Transport (SST) model. Turbulent Prandtl number can be set.</p>
 <h4 id="les-large-eddy-simulation">LES, Large Eddy Simulation</h4>
 <p>A model that converts energy into turbulent viscosity by directly computing large vortices and using a Subgrid Scale (SGS) model for small vortices. They are only active when set to transient. You can select the Length-Scale model, which is a filtering method that distinguishes the size of vortices from the Subgrid Scale model.</p>
 <h4 id="des-detached-eddy-simulation">DES, Detached Eddy Simulation</h4>
 <p>A hybrid turbulence model that combines LES and RANS, using LES for the free flow domain and RANS for boundary layer flow. It is only active when set to transient. You can select the RANS model of the wall, the DES option, and the Length-Scale Model. For the RANS model, you can select Spalart-Allmaras and k-omega SST. For the Spalart-Allmaras option, you can select Low Reynolds Damping. For the DES option, you can select Delayed DES, and when the option is enabled, you can select DDES and IDDES.</p>
 <h4 id="two-layer-model">Two layer Model</h4>
 <p>This model was developed by NEXTFoam and uses the blending function. The standard wall function may have accuracy problems when y+ is in the buffer layer, but this model has the advantage of being used regardless of y+. <strong>Currently, we only support realizable k-epsilon models</strong>. The blending function uses the following expressions.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\lambda = {\frac 1 2} \left[1 + tanh \left( \frac{Re_y - {Re_y}^* } {A} \right) \right ]</span><script type="math/tex">\lambda = {\frac 1 2} \left[1 + tanh \left( \frac{Re_y - {Re_y}^* } {A} \right) \right ]</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">A = \frac {\Delta Re_y } {tanh(0.98)}</span><script type="math/tex">A = \frac {\Delta Re_y } {tanh(0.98)}</script></span></center></p>
+<p><center><span class="arithmatex">\(\lambda = {\frac 1 2} \left[1 + tanh \left( \frac{Re_y - {Re_y}^* } {A} \right) \right ]\)</span></center></p>
+<p><center><span class="arithmatex">\(A = \frac {\Delta Re_y } {tanh(0.98)}\)</span></center></p>
 <p><em>Ref) Shih, T. H., Liou, W. W., Shabbir, A., Yang, Z., &amp; Zhu, J. (1995). A New k-epsilon eddy Viscosity Model for High Reynolds Number Turbulent Flows. Computers and Fluids, 24(3), 227-238.</em></p>
-<h4 id="pr_tpr_t-turbulent-prandtl-number"><span class="arithmatex"><span class="MathJax_Preview">Pr_t</span><script type="math/tex">Pr_t</script></span>, Turbulent Prandtl Number</h4>
-<p>Turbulent Prantle number is a dimensionless number that represents the ratio between momentum diffusion and heat diffusion in a turbulent flow. Two settings can be set: Use for Internal Field and Use for Wall Function. The value used for Internal Field is applied to the turbulence model, and the value used for Wall Function is used for the wall function of the turbulent thermal diffusivity(<span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span>). Not used in DES/LES models.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Pr_t = \frac {\nu_t } {\alpha_t}</span><script type="math/tex">Pr_t = \frac {\nu_t } {\alpha_t}</script></span></center></p>
+<h4 id="pr_t-turbulent-prandtl-number"><span class="arithmatex">\(Pr_t\)</span>, Turbulent Prandtl Number</h4>
+<p>Turbulent Prantle number is a dimensionless number that represents the ratio between momentum diffusion and heat diffusion in a turbulent flow. Two settings can be set: Use for Internal Field and Use for Wall Function. The value used for Internal Field is applied to the turbulence model, and the value used for Wall Function is used for the wall function of the turbulent thermal diffusivity(<span class="arithmatex">\(\alpha_t\)</span>). Not used in DES/LES models.</p>
+<p><center><span class="arithmatex">\(Pr_t = \frac {\nu_t } {\alpha_t}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : turbulent viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> : turbulent thermal diffusivity</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : turbulent viscosity</li>
+<li><span class="arithmatex">\(\alpha_t\)</span> : turbulent thermal diffusivity</li>
 </ul>
-<h4 id="sc_tsc_t-turbulent-schmidt-number"><span class="arithmatex"><span class="MathJax_Preview">Sc_t</span><script type="math/tex">Sc_t</script></span>, Turbulent Schmidt Number</h4>
+<h4 id="sc_t-turbulent-schmidt-number"><span class="arithmatex">\(Sc_t\)</span>, Turbulent Schmidt Number</h4>
 <p>Turbulent Schmidt number is a dimensionless number that describes the ratio between mass diffusion and momentum diffusion in a turbulent flow. It is used for turbulent diffusion of chemical species and is not used when not calculating chemical species.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Sc_t = \frac {\nu_t } {D_t}</span><script type="math/tex">Sc_t = \frac {\nu_t } {D_t}</script></span></center></p>
+<p><center><span class="arithmatex">\(Sc_t = \frac {\nu_t } {D_t}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : turbulent viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">D_t</span><script type="math/tex">D_t</script></span> : turbulent diffusivity)</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : turbulent viscosity</li>
+<li><span class="arithmatex">\(D_t\)</span> : turbulent diffusivity)</li>
 </ul>
 <p>The diffusion flux of a chemical species is calculated by the following equation, where the smaller the turbulent Schmidt number, the better the mixing. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\vec{J_i} = - \left(  \rho D_i + \frac{\mu_t}{Sc_t}  \right) \nabla Y_i = - \rho (D_i + K) \nabla Y_i</span><script type="math/tex">\vec{J_i} = - \left(  \rho D_i + \frac{\mu_t}{Sc_t}  \right) \nabla Y_i = - \rho (D_i + K) \nabla Y_i</script></span></center></p>
+<p><center><span class="arithmatex">\(\vec{J_i} = - \left(  \rho D_i + \frac{\mu_t}{Sc_t}  \right) \nabla Y_i = - \rho (D_i + K) \nabla Y_i\)</span></center></p>
 <!--------------------------------------------------------------------------------------------------------->
 <h2 id="energy">Energy</h2>
 <p>Double-click Energy to bring up the settings window of figure~\ref{fig:energy}. Select whether to include or not.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/energy.png" width="200" height="200"><br>Energy setup</center></p>
-<p>OpenFOAM's standard solvers provide <em>simpleFoam</em>, which does not compute the energy equation, and <em>buoyantSimpleFoam</em>, which does. Instead of pressure, <em>simpleFoam</em> uses the pressure divided by density, while <em>buoyantSimpleFoam</em> uses the p_rgh, which is pressure minus hydrostatic pressure (<span class="arithmatex"><span class="MathJax_Preview">\rho g h</span><script type="math/tex">\rho g h</script></span>). However, Baram uses one solver (<em>buoyantSimpleNFoam</em>) developed by NEXTFoam, which uses p_rgh for pressure and allows you to control whether each governing equation is calculated or not.</p>
+<p>OpenFOAM's standard solvers provide <em>simpleFoam</em>, which does not compute the energy equation, and <em>buoyantSimpleFoam</em>, which does. Instead of pressure, <em>simpleFoam</em> uses the pressure divided by density, while <em>buoyantSimpleFoam</em> uses the p_rgh, which is pressure minus hydrostatic pressure (<span class="arithmatex">\(\rho g h\)</span>). However, Baram uses one solver (<em>buoyantSimpleNFoam</em>) developed by NEXTFoam, which uses p_rgh for pressure and allows you to control whether each governing equation is calculated or not.</p>
 <h2 id="species">Species</h2>
 <p>Double-click the species to bring up the settings window of figure below. Select whether to include or not. In both cases, we use the same solver(<em>buoyantSimpleNFoam</em>) and control whether the equations are computed based on your choice.</p>
 <p><a href="https://baramcfd.org/tutorials/2024/07/24/species-post/">Species tutorial : duct flow</a></p>
@@ -1285,10 +1287,10 @@
 <p>Each scalar can have a Field Name and a Diffusivity. There are two ways to set the diffusivity: Constant, Laminar and Turbulent Viscosity. </p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/uds1.png" width="300" height="300"><br>Diffusivity of user-defined scalar</center></p>
 <p>The Constant method inputs a constant, and the Laminar and Turbulent Viscosity method inputs two coefficients, Laminar and Turbulent, and uses the diffusion coefficient as follows.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">D = D_{laminar} \cdot \nu + D_{turbulent} \cdot \nu_t</span><script type="math/tex">D = D_{laminar} \cdot \nu + D_{turbulent} \cdot \nu_t</script></span></center></p>
+<p><center><span class="arithmatex">\(D = D_{laminar} \cdot \nu + D_{turbulent} \cdot \nu_t\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu</span><script type="math/tex">\nu</script></span> : kinematic viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : turbulent kinematic viscosity</li>
+<li><span class="arithmatex">\(\nu\)</span> : kinematic viscosity</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : turbulent kinematic viscosity</li>
 </ul>
 <p>User-defined scalars are calculated using OpenFOAM's function object functionality. By defining scalars here, you can enter values in the boundary condition setting part just like any other flow variable and use them for monitoring, data extraction, etc.</p>
 
@@ -1350,7 +1352,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

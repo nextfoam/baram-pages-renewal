@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1188,11 +1190,11 @@
 <p>The computational conditions are as follows </p>
 <ul>
 <li>solver : buoyantSimpleNFoam </li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>density : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>density : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>Rotation velocity : 1,000 RPM</li>
-<li>flow condition : 10 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span> at inelt</li>
+<li>flow condition : 10 <span class="arithmatex">\(m/s\)</span> at inelt</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
 <p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
@@ -1344,9 +1346,9 @@
 <p>The simulation conditions are as follows </p>
 <ul>
 <li>solver : buoyantPimpleNFoam </li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>density : 1000 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 0.001 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>density : 1000 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 0.001 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>rotation velocity : 100 RPM</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh_1">Start BaramFlow and load mesh</h3>
@@ -1429,9 +1431,9 @@
 <p>The simulations conditions are as follows </p>
 <ul>
 <li>solver : buoyantPimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>density : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>density : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>Rotation velocity : 2,000 RPM</li>
 </ul>
 <h3 id="start-baramflow">Start BaramFlow</h3>
@@ -1455,7 +1457,7 @@
 </p>
 
 <h4 id="models_2">Models</h4>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/slidingMesh/4.3.png"><br>
 </p>
@@ -1628,11 +1630,11 @@
 <p>The simulation conditions are as follows </p>
 <ul>
 <li>solver : buoyantPimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Realizable</span><script type="math/tex">Realizable</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>density : 1000 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 0.001 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>rotating velocity : 1432 <span class="arithmatex"><span class="MathJax_Preview">RPM</span><script type="math/tex">RPM</script></span></li>
-<li>flow condition : 5 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span> at inlet</li>
+<li>turbulence model : <span class="arithmatex">\(Realizable\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>density : 1000 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 0.001 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>rotating velocity : 1432 <span class="arithmatex">\(RPM\)</span></li>
+<li>flow condition : 5 <span class="arithmatex">\(m/s\)</span> at inlet</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh_2">Start BaramFlow and load mesh</h3>
 <p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
@@ -1648,7 +1650,7 @@
 </p>
 
 <h3 id="models_3">Models</h3>
-<p>For turbulence, use <span class="arithmatex"><span class="MathJax_Preview">Realizable</span><script type="math/tex">Realizable</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model and [Enhanced Wall Treatment].</p>
+<p>For turbulence, use <span class="arithmatex">\(Realizable\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model and [Enhanced Wall Treatment].</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/propeller/tur.png"><br>
 </p>
@@ -1743,7 +1745,7 @@
 <p>The simulation conditions are as follows</p>
 <ul>
 <li>solver : buoyantSimpleNFoam </li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>rotating velocity : 100 RPM</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh_3">Start BaramFlow and load mesh</h3>
@@ -1914,7 +1916,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

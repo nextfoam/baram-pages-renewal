@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1218,7 +1220,7 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/forceReport.png"><br>Force Report</center></p>
 <p>For Flow Direction, you can choose between 'Direct' and 'Angle of Attack, Sideslip.' 'Direct' involves inputting the directions of Drag and Lift as vectors. 'Angle of Attack, Sideslip' allows you to input angles based on the directions of Drag and Lift when the Angle of Attack (AOA) and Sideslip Angle (AOS) are both zero. The pitch axis is determined perpendicular to the directions of Drag and Lift.</p>
 <p>By selecting the 'Center of Rotation' and the boundary surface, and then clicking the 'Compute' button, you can view the results. Along with the Drag/Lift/Moment coefficients, the Force and Moment can be divided into pressure and viscous components, allowing you to check the values for each direction.</p>
-<p>Reference values to calculate <span class="arithmatex"><span class="MathJax_Preview">C_d</span><script type="math/tex">C_d</script></span>, <span class="arithmatex"><span class="MathJax_Preview">C_l</span><script type="math/tex">C_l</script></span>, <span class="arithmatex"><span class="MathJax_Preview">C_m</span><script type="math/tex">C_m</script></span> are set at [Setup-Reference Values].</p>
+<p>Reference values to calculate <span class="arithmatex">\(C_d\)</span>, <span class="arithmatex">\(C_l\)</span>, <span class="arithmatex">\(C_m\)</span> are set at [Setup-Reference Values].</p>
 <p>Unlike in Monitoring, in Report, calculations are performed using saved data, so there may be slight differences from the values in Monitoring depending on the write precision of the data.</p>
 <h2 id="point">Point</h2>
 <p>Enter the Field and Coordinate to be reported. If you want to report values on a boundary surface, select the relevant boundary in 'Snap onto Boundary.' In this case, even if the coordinates are not exactly on the boundary, it will display the values from the point closest to the specified coordinates.</p>
@@ -1288,7 +1290,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

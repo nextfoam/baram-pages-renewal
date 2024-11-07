@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1226,16 +1228,16 @@
 <p>캐비테이션 모델은 증기압, 모델, 모델계수를 설정한다. 액체의 압력이 증기압보다 낮을 때 캐비테이션이 발생한다.</p>
 <p><a href="https://baramcfd.org/tutorials/2024/10/07/cavitation-post/">캐비테이션 예제 : NACA66 하이드로포일</a></p>
 <h4 id="schnerr-sauer">Schnerr-Sauer</h4>
-<p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), 응축계수(Condensation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), 기포 직경(Bubble Diameter, dNuc), 기포의 수밀도(Number Density, n)를 입력한다.</p>
+<p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex">\(C_v\)</span>), 응축계수(Condensation Coefficient, <span class="arithmatex">\(C_c\)</span>), 기포 직경(Bubble Diameter, dNuc), 기포의 수밀도(Number Density, n)를 입력한다.</p>
 <p><em>Schnerr, G. H., And Sauer, J., "Physical and Numerical Modeling of Unsteady Cavitation Dynamics", Proc. 4<sup>th</sup> International Conference on Multiphase Flow,         New Orleans, U.S.A., 2001.</em></p>
 <h4 id="kunz">Kunz</h4>
-<p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), 응축계수(Condensation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), 평균유동시간(Mean flow time scale, <span class="arithmatex"><span class="MathJax_Preview">t_{Inf}</span><script type="math/tex">t_{Inf}</script></span>), 자유류속도(free stream velocity, <span class="arithmatex"><span class="MathJax_Preview">U_{Inf}</span><script type="math/tex">U_{Inf}</script></span>)를 입력한다.</p>
+<p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex">\(C_v\)</span>), 응축계수(Condensation Coefficient, <span class="arithmatex">\(C_c\)</span>), 평균유동시간(Mean flow time scale, <span class="arithmatex">\(t_{Inf}\)</span>), 자유류속도(free stream velocity, <span class="arithmatex">\(U_{Inf}\)</span>)를 입력한다.</p>
 <p><em>Kunz, R.F., Boger, D.A., Stinebring, D.R., Chyczewski, Lindau. J.W.,         Gibeling, H.J., Venkateswaran, S., Govindan, T.R., "A Preconditioned Implicit Method for Two-Phase Flows with Application to Cavitation Prediction," Computers and Fluids, 29(8):849-875, 2000.</em></p>
 <h4 id="merkle">Merkle</h4>
-<p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), 응축계수(Condensation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), 평균유동시간(Mean flow time scale, <span class="arithmatex"><span class="MathJax_Preview">t_{Inf}</span><script type="math/tex">t_{Inf}</script></span>), 자유류속도(free stream velocity, <span class="arithmatex"><span class="MathJax_Preview">U_{Inf}</span><script type="math/tex">U_{Inf}</script></span>)를 입력한다.</p>
+<p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex">\(C_v\)</span>), 응축계수(Condensation Coefficient, <span class="arithmatex">\(C_c\)</span>), 평균유동시간(Mean flow time scale, <span class="arithmatex">\(t_{Inf}\)</span>), 자유류속도(free stream velocity, <span class="arithmatex">\(U_{Inf}\)</span>)를 입력한다.</p>
 <p><em>C. L. Merkle, J. Feng, and P. E. O. Buelow, "Computational modeling of the dynamics of sheet cavitation", in Proceedings Third International Symposium on Cavitation Grenoble, France 1998.</em></p>
 <h4 id="zwart-gerber-belamri">Zwart-Gerber-Belamri</h4>
-<p>넥스트폼에서 개발한 것으로 다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), 응축계수Condensation Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), 기포 직경(Bubble Diameter, dNuc), 기포 체적분율(Nucleate Site Volume Fraction, aNuc)를 입력한다. \textcolor[rgb]{0.6,0,0}{Baram-v24.4에서는 지원하지 않으며 다음 버전에서 지원할 예정이다}.</p>
+<p>넥스트폼에서 개발한 것으로 다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex">\(C_v\)</span>), 응축계수Condensation Coefficient, <span class="arithmatex">\(C_c\)</span>), 기포 직경(Bubble Diameter, dNuc), 기포 체적분율(Nucleate Site Volume Fraction, aNuc)를 입력한다. \textcolor[rgb]{0.6,0,0}{Baram-v24.4에서는 지원하지 않으며 다음 버전에서 지원할 예정이다}.</p>
 <p><em>P. J. Zwart, A. G. Gerber, and T Belamri. A two-phase flow model for predicting cavitation dynamics. In Proceedings of the International Conference on Multiphase Flow (ICMF 04), Yokohama, Japan, 2004</em></p>
 <!---------------------------------------------------------------------------------------------------->
 <h2 id="_2">셀존 모델</h2>
@@ -1263,39 +1265,39 @@
 <p>3가지 방향에 대한 압력 손실을 각각 설정할 수 있다. 방향은 두 개의 벡터에 의해 결정된다. 두 벡터는 입력값(Direction-1 Vector, Direction-2 Vector)에 의해 결정되고 세번째 방향은 두 벡터에 수직한 방향이다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/darcy.png" width="300" height="300"><br>Darcy-Forchheimer 모델 설정</center></p>
 <p>관성 저항 계수(Inertial Resistance Coefficient(f, Forchheimer coefficient))와 점성 저항 계수(Viscous Resistance Coefficient(d, Darcy coefficient))를 벡터로 입력한다. 압력손실은 다음 식으로 계산한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S_i = \left( \mu d + \rho |U| \frac{f}{2} \right) U</span><script type="math/tex">S_i = \left( \mu d + \rho |U| \frac{f}{2} \right) U</script></span></center></p>
+<p><center><span class="arithmatex">\(S_i = \left( \mu d + \rho |U| \frac{f}{2} \right) U\)</span></center></p>
 <h4 id="power-law">Power law 모델</h4>
-<p><span class="arithmatex"><span class="MathJax_Preview">C_0</span><script type="math/tex">C_0</script></span>와 <span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span> 두 개의 값을 이용해서 다음 식으로 계산한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S_i = - \rho C_0 |U|^{C_1 -1} U</span><script type="math/tex">S_i = - \rho C_0 |U|^{C_1 -1} U</script></span></center></p>
+<p><span class="arithmatex">\(C_0\)</span>와 <span class="arithmatex">\(C_1\)</span> 두 개의 값을 이용해서 다음 식으로 계산한다.</p>
+<p><center><span class="arithmatex">\(S_i = - \rho C_0 |U|^{C_1 -1} U\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porous-powerlaw.png" width="300" height="300"><br>Power law 모델 설정</center></p>
 <h3 id="actuator-disk">액추에이터 디스크(Actuator Disk)</h3>
 <p>액추에이터 디스크 모델은 프로펠러와 같은 회전체를 디스크로 모델링하여 속도의 생성항으로 처리한다. 설정 항목은 다음과 같다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/actuatorDisk.png" width="300" height="300"><br>액추에이터 디스크 설정</center></p>
 <ul>
 <li>디스크 축 방향(Disk Direction)</li>
-<li>파워 계수(Power Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span>)</li>
-<li>추력 계수(Thrust Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_t</span><script type="math/tex">C_t</script></span>)</li>
-<li>디스크 면적(Disk Area, <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>)</li>
+<li>파워 계수(Power Coefficient, <span class="arithmatex">\(C_p\)</span>)</li>
+<li>추력 계수(Thrust Coefficient, <span class="arithmatex">\(C_t\)</span>)</li>
+<li>디스크 면적(Disk Area, <span class="arithmatex">\(A\)</span>)</li>
 <li>상류쪽 점의 좌표(Upstream Point) : 디스크 상류 임의 지점의 좌표</li>
 <li>힘 계산 방법(Force Computation method) : Froude's method와 Variable-Scaling method 중 선택</li>
 </ul>
 <p>추력을 계산하는 방법 중 Froud's method는 다음 식을 사용한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">T = 2 \rho A |u_m \cdot n|^2 a(1-a)</span><script type="math/tex">T = 2 \rho A |u_m \cdot n|^2 a(1-a)</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">a = 1 - \frac{C_p}{C_t}</span><script type="math/tex">a = 1 - \frac{C_p}{C_t}</script></span></center></p>
+<p><center><span class="arithmatex">\(T = 2 \rho A |u_m \cdot n|^2 a(1-a)\)</span></center></p>
+<p><center><span class="arithmatex">\(a = 1 - \frac{C_p}{C_t}\)</span></center></p>
 <p>추력을 계산하는 방법 중 Variable-Scaling method는 다음 식을 사용한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">T = 0.5 \rho A |u_0 \cdot n|^2 C_T ^*</span><script type="math/tex">T = 0.5 \rho A |u_0 \cdot n|^2 C_T ^*</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">{C_T}^* = C_T \left( \frac{|u_m|}{|u_0|}\right)^2</span><script type="math/tex">{C_T}^* = C_T \left( \frac{|u_m|}{|u_0|}\right)^2</script></span></center></p>
+<p><center><span class="arithmatex">\(T = 0.5 \rho A |u_0 \cdot n|^2 C_T ^*\)</span></center></p>
+<p><center><span class="arithmatex">\({C_T}^* = C_T \left( \frac{|u_m|}{|u_0|}\right)^2\)</span></center></p>
 <ul>
 <li>T : 추력의 크기</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> : 모니터링 된 유입 유체의 밀도</li>
+<li><span class="arithmatex">\(\rho\)</span> : 모니터링 된 유입 유체의 밀도</li>
 <li>A : 액추에이터 디스크의 단면적</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">U_m</span><script type="math/tex">U_m</script></span> : 모니터링된 영역에서의 평균 유입 속도</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">U_0</span><script type="math/tex">U_0</script></span> : 액추에이터 디스크에서의 평균 유입 속도</li>
+<li><span class="arithmatex">\(U_m\)</span> : 모니터링된 영역에서의 평균 유입 속도</li>
+<li><span class="arithmatex">\(U_0\)</span> : 액추에이터 디스크에서의 평균 유입 속도</li>
 <li>n : 액추에이터 디스크에 수직한 방향 벡터(상류를 향한 방향)</li>
 <li>a : 축방향 유입 계수(Axial induction factor)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span> : 파워 계수</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_T</span><script type="math/tex">C_T</script></span> : 추력 계수</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_T*</span><script type="math/tex">C_T*</script></span> : 보정된 추력 계수</li>
+<li><span class="arithmatex">\(C_p\)</span> : 파워 계수</li>
+<li><span class="arithmatex">\(C_T\)</span> : 추력 계수</li>
+<li><span class="arithmatex">\(C_T*\)</span> : 보정된 추력 계수</li>
 </ul>
 <h2 id="source-terms">생성항(Source Terms)</h2>
 <p>에너지, 질량, 난류 관련 필드 등에 생성항을 줄 수 있다.</p>
@@ -1365,7 +1367,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

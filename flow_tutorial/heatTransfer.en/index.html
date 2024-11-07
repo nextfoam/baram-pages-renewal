@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1153,18 +1155,18 @@
 <p>The calculation conditions are as follows </p>
 <ul>
 <li>solver : chtMultiRegionSimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>material properties of fluid<ul>
 <li>density : Perfect Gas</li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>thermal conductivity : 0.024 <span class="arithmatex"><span class="MathJax_Preview">5W/mK</span><script type="math/tex">5W/mK</script></span></li>
-<li>heat capacity(Cp) : 1,006 <span class="arithmatex"><span class="MathJax_Preview">J/kg</span><script type="math/tex">J/kg</script></span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>thermal conductivity : 0.024 <span class="arithmatex">\(5W/mK\)</span></li>
+<li>heat capacity(Cp) : 1,006 <span class="arithmatex">\(J/kg\)</span></li>
 </ul>
 </li>
 <li>material properties of solid<ul>
-<li>density : 1,900 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>thermal conductivity : 0.016 <span class="arithmatex"><span class="MathJax_Preview">W/mK</span><script type="math/tex">W/mK</script></span></li>
-<li>heat capacity(Cp) : 1,004 <span class="arithmatex"><span class="MathJax_Preview">J/kg</span><script type="math/tex">J/kg</script></span></li>
+<li>density : 1,900 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>thermal conductivity : 0.016 <span class="arithmatex">\(W/mK\)</span></li>
+<li>heat capacity(Cp) : 1,004 <span class="arithmatex">\(J/kg\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1178,7 +1180,7 @@
 <h3 id="general">General</h3>
 <p>Set gravity of y direction as -9.81.</p>
 <h3 id="model">Model</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p>Energy is automatically set to include when the Multi-region lattice is read.</p>
 <h3 id="materials">Materials</h3>
 <p>For this example, we will use the materials Air and Solid. </p>
@@ -1191,7 +1193,7 @@
 <h4 id="air">Air</h4>
 <ul>
 <li>Density : Perfect Gas</li>
-<li>Specific Heat capacity <span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span> : 1,006</li>
+<li>Specific Heat capacity <span class="arithmatex">\(C_p\)</span> : 1,006</li>
 <li>Viscosity : 1.79e-05</li>
 <li>Thermal Conductivity : 0.0245</li>
 <li>Molecular Weight : 28.966</li>
@@ -1208,7 +1210,7 @@
 <h4 id="solid">Solid</h4>
 <ul>
 <li>Density : 1,900</li>
-<li>Specific Heat capacity <span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span> : 1004</li>
+<li>Specific Heat capacity <span class="arithmatex">\(C_p\)</span> : 1004</li>
 <li>Thermal Conductivity : 0.016</li>
 <li>Emissivity : 0.039</li>
 </ul>
@@ -1258,7 +1260,7 @@
 <li>external-wall : wall<ul>
 <li>Velocity Condition : No Slip</li>
 <li>Temperature : Convection</li>
-<li>Heat Transfer Coefficient (<span class="arithmatex"><span class="MathJax_Preview">W/m^2 K</span><script type="math/tex">W/m^2 K</script></span>) : 4</li>
+<li>Heat Transfer Coefficient (<span class="arithmatex">\(W/m^2 K\)</span>) : 4</li>
 <li>Free Stream Temperature : 280 (K)</li>
 </ul>
 </li>
@@ -1429,7 +1431,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

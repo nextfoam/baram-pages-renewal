@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1225,16 +1227,16 @@
 <p>The cavitation model sets the vapor pressure, the model, and the model coefficients. Cavitation occurs when the pressure of the liquid is lower than the vapor pressure.</p>
 <p><a href="https://baramcfd.org/tutorials/2024/10/07/cavitation-post/">Cavitation tutorial : NACA66 hydrofoil</a></p>
 <h4 id="schnerr-sauer">Schnerr-Sauer</h4>
-<p>This is the model presented in the following paper. Enter the Evaporation Coefficient (<span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), Condensation Coefficient (<span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), and the diameter (dNuc) and number density (n) of the bubble.</p>
+<p>This is the model presented in the following paper. Enter the Evaporation Coefficient (<span class="arithmatex">\(C_v\)</span>), Condensation Coefficient (<span class="arithmatex">\(C_c\)</span>), and the diameter (dNuc) and number density (n) of the bubble.</p>
 <p><em>Schnerr, G. H., And Sauer, J., "Physical and Numerical Modeling of Unsteady Cavitation Dynamics", Proc. 4<sup>th</sup> International Conference on Multiphase Flow,         New Orleans, U.S.A., 2001.</em></p>
 <h4 id="kunz">Kunz</h4>
-<p>This is the model presented in the following paper. Enter th Evaporation Coefficient(<span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), Condensation Coefficient(<span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), Mean flow time scale(<span class="arithmatex"><span class="MathJax_Preview">t_{Inf}</span><script type="math/tex">t_{Inf}</script></span>) and free stream velocity(<span class="arithmatex"><span class="MathJax_Preview">U_{Inf}</span><script type="math/tex">U_{Inf}</script></span>).</p>
+<p>This is the model presented in the following paper. Enter th Evaporation Coefficient(<span class="arithmatex">\(C_v\)</span>), Condensation Coefficient(<span class="arithmatex">\(C_c\)</span>), Mean flow time scale(<span class="arithmatex">\(t_{Inf}\)</span>) and free stream velocity(<span class="arithmatex">\(U_{Inf}\)</span>).</p>
 <p><em>Kunz, R.F., Boger, D.A., Stinebring, D.R., Chyczewski, Lindau. J.W.,         Gibeling, H.J., Venkateswaran, S., Govindan, T.R., "A Preconditioned Implicit Method for Two-Phase Flows with Application to Cavitation Prediction," Computers and Fluids, 29(8):849-875, 2000.</em></p>
 <h4 id="merkle">Merkle</h4>
-<p>This is the model presented in the following paper. Enter Evaporation Coefficient(<span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), Condensation Coefficient(<span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), Mean flow time scale(<span class="arithmatex"><span class="MathJax_Preview">t_{Inf}</span><script type="math/tex">t_{Inf}</script></span>) and free stream velocity(<span class="arithmatex"><span class="MathJax_Preview">U_{Inf}</span><script type="math/tex">U_{Inf}</script></span>).</p>
+<p>This is the model presented in the following paper. Enter Evaporation Coefficient(<span class="arithmatex">\(C_v\)</span>), Condensation Coefficient(<span class="arithmatex">\(C_c\)</span>), Mean flow time scale(<span class="arithmatex">\(t_{Inf}\)</span>) and free stream velocity(<span class="arithmatex">\(U_{Inf}\)</span>).</p>
 <p><em>C. L. Merkle, J. Feng, and P. E. O. Buelow, "Computational modeling of the dynamics of sheet cavitation", in Proceedings Third International Symposium on Cavitation Grenoble, France 1998.</em></p>
 <h4 id="zwart-gerber-belamri">Zwart-Gerber-Belamri</h4>
-<p>This is the model presented in the following paper. Enter Evaporation Coefficient(<span class="arithmatex"><span class="MathJax_Preview">C_v</span><script type="math/tex">C_v</script></span>), Condensation Coefficient(<span class="arithmatex"><span class="MathJax_Preview">C_c</span><script type="math/tex">C_c</script></span>), bubble diameter(dNuc)and nucleate site volume fraction(aNuc). <strong>This is not supported in Baram-v24.4 and will be supported in the next version of Baram</strong>.</p>
+<p>This is the model presented in the following paper. Enter Evaporation Coefficient(<span class="arithmatex">\(C_v\)</span>), Condensation Coefficient(<span class="arithmatex">\(C_c\)</span>), bubble diameter(dNuc)and nucleate site volume fraction(aNuc). <strong>This is not supported in Baram-v24.4 and will be supported in the next version of Baram</strong>.</p>
 <p><em>P. J. Zwart, A. G. Gerber, and T Belamri. A two-phase flow model for predicting cavitation dynamics. In Proceedings of the International Conference on Multiphase Flow (ICMF 04), Yokohama, Japan, 2004</em></p>
 <!---------------------------------------------------------------------------------------------------->
 <h2 id="cell-zone-model">Cell Zone Model</h2>
@@ -1262,39 +1264,39 @@
 <p>You can set the pressure loss for each of the three directions. The direction is determined by two vectors. The two vectors are determined by the inputs(Direction-1 Vector, Direction-2 Vector) and the third direction is the direction perpendicular to the two vectors.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/darcy.png" width="300" height="300"><br>Darcy-Forchheimer model setup</center></p>
 <p>Enter the Inertial Resistance Coefficient(f, Forchheimer coefficient) and Viscous Resistance Coefficient(d, Darcy coefficient) as vectors. The pressure loss is calculated by the following equation.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S_i = \left( \mu d + \rho |U| \frac{f}{2} \right) U</span><script type="math/tex">S_i = \left( \mu d + \rho |U| \frac{f}{2} \right) U</script></span></center></p>
+<p><center><span class="arithmatex">\(S_i = \left( \mu d + \rho |U| \frac{f}{2} \right) U\)</span></center></p>
 <h4 id="power-law-model">Power law model</h4>
-<p>Using two values of <span class="arithmatex"><span class="MathJax_Preview">C_0</span><script type="math/tex">C_0</script></span> and <span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span>, calculate with the following equation</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S_i = - \rho C_0 |U|^{C_1 -1} U</span><script type="math/tex">S_i = - \rho C_0 |U|^{C_1 -1} U</script></span></center></p>
+<p>Using two values of <span class="arithmatex">\(C_0\)</span> and <span class="arithmatex">\(C_1\)</span>, calculate with the following equation</p>
+<p><center><span class="arithmatex">\(S_i = - \rho C_0 |U|^{C_1 -1} U\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porous-powerlaw.png" width="300" height="300"><br>Power Law model setup</center></p>
 <h3 id="actuator-disk">Actuator Disk</h3>
 <p>The Actuator Disk model models a rotating body, such as a propeller, as a disk and treats it as a source term for velocity. It has the following settings</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/actuatorDisk.png" width="300" height="300"><br>Actuator disk setup</center></p>
 <ul>
 <li>Disk Direction</li>
-<li>Power Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span></li>
-<li>Thrust Coefficient, <span class="arithmatex"><span class="MathJax_Preview">C_t</span><script type="math/tex">C_t</script></span></li>
-<li>Disk Area, <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span></li>
+<li>Power Coefficient, <span class="arithmatex">\(C_p\)</span></li>
+<li>Thrust Coefficient, <span class="arithmatex">\(C_t\)</span></li>
+<li>Disk Area, <span class="arithmatex">\(A\)</span></li>
 <li>Upstream Point : Coordinates of any point upstream of the disk</li>
 <li>Force Computation method : Froude's method or Variable-Scaling method</li>
 </ul>
 <p>Among the methods for calculating thrust, Froud's method uses the following equation</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">T = 2 \rho A |u_m \cdot n|^2 a(1-a)</span><script type="math/tex">T = 2 \rho A |u_m \cdot n|^2 a(1-a)</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">a = 1 - \frac{C_p}{C_t}</span><script type="math/tex">a = 1 - \frac{C_p}{C_t}</script></span></center></p>
+<p><center><span class="arithmatex">\(T = 2 \rho A |u_m \cdot n|^2 a(1-a)\)</span></center></p>
+<p><center><span class="arithmatex">\(a = 1 - \frac{C_p}{C_t}\)</span></center></p>
 <p>To calculate thrust, the Variable-Scaling method uses the following expression</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">T = 0.5 \rho A |u_0 \cdot n|^2 C_T ^*</span><script type="math/tex">T = 0.5 \rho A |u_0 \cdot n|^2 C_T ^*</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">{C_T}^* = C_T \left( \frac{|u_m|}{|u_0|}\right)^2</span><script type="math/tex">{C_T}^* = C_T \left( \frac{|u_m|}{|u_0|}\right)^2</script></span></center></p>
+<p><center><span class="arithmatex">\(T = 0.5 \rho A |u_0 \cdot n|^2 C_T ^*\)</span></center></p>
+<p><center><span class="arithmatex">\({C_T}^* = C_T \left( \frac{|u_m|}{|u_0|}\right)^2\)</span></center></p>
 <ul>
 <li>T : Thrust magnitude</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> : Monitored incoming fluid density</li>
+<li><span class="arithmatex">\(\rho\)</span> : Monitored incoming fluid density</li>
 <li>A : Actuator disk planar surface area</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">U_m</span><script type="math/tex">U_m</script></span> : Incoming velocity spatial-averaged on monitored region</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">U_0</span><script type="math/tex">U_0</script></span> : Incoming velocity spatial-averaged on actuator disk</li>
+<li><span class="arithmatex">\(U_m\)</span> : Incoming velocity spatial-averaged on monitored region</li>
+<li><span class="arithmatex">\(U_0\)</span> : Incoming velocity spatial-averaged on actuator disk</li>
 <li>n : Surface-normal vector of the actuator disk pointing upstream</li>
 <li>a : Axial induction factor</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span> : Power coefficient</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_T</span><script type="math/tex">C_T</script></span> : Thrust coefficient</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_T*</span><script type="math/tex">C_T*</script></span> : Calibrated thrust coefficient</li>
+<li><span class="arithmatex">\(C_p\)</span> : Power coefficient</li>
+<li><span class="arithmatex">\(C_T\)</span> : Thrust coefficient</li>
+<li><span class="arithmatex">\(C_T*\)</span> : Calibrated thrust coefficient</li>
 </ul>
 <h2 id="source-terms">Source Terms</h2>
 <p>You can set source terms for energy, mass, turbulence-related fields, and more. </p>
@@ -1364,7 +1366,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

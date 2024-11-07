@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1209,63 +1211,63 @@
 <h3 id="density">Density</h3>
 <p>You can choose Constant, Perfect Gas, Polynomial, or Incompressible perfect gas. Only Constant can be used when not solving energy equations and for liquids or solids. </p>
 <p>Perfect gas is calculated as a function of temperature and pressure using the following equation.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\rho = \frac {p}{RT}</span><script type="math/tex">\rho = \frac {p}{RT}</script></span></center></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> : gas constant</p>
-<p>The polynomial is defined as a function of temperature, and the coefficients <span class="arithmatex"><span class="MathJax_Preview">a_0</span><script type="math/tex">a_0</script></span>, <span class="arithmatex"><span class="MathJax_Preview">a_1</span><script type="math/tex">a_1</script></span>, <span class="arithmatex"><span class="MathJax_Preview">a_2</span><script type="math/tex">a_2</script></span>, etc. of the equation. The coefficients are set in the window in figure below. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S = a_0 \cdot T^0 + a_1 \cdot T^1 + a_2 \cdot T^2 + ... + a_n \cdot T^n</span><script type="math/tex">S = a_0 \cdot T^0 + a_1 \cdot T^1 + a_2 \cdot T^2 + ... + a_n \cdot T^n</script></span></center></p>
+<p><center><span class="arithmatex">\(\rho = \frac {p}{RT}\)</span></center></p>
+<p><span class="arithmatex">\(R\)</span> : gas constant</p>
+<p>The polynomial is defined as a function of temperature, and the coefficients <span class="arithmatex">\(a_0\)</span>, <span class="arithmatex">\(a_1\)</span>, <span class="arithmatex">\(a_2\)</span>, etc. of the equation. The coefficients are set in the window in figure below. </p>
+<p><center><span class="arithmatex">\(S = a_0 \cdot T^0 + a_1 \cdot T^1 + a_2 \cdot T^2 + ... + a_n \cdot T^n\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/density-polynomial.png" width="300" height="300"><br>Polynomial setup</center></p>
 <p>Incompressible perfect gases determine their density as a function of temperature only, as shown in the equation~\ref{eq:rho}. <strong>Currently only available when calculating species mixtures, but in the next version it will be available for all cases of solving energy equations</strong>.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\rho = \frac {p_{ref}} {RT}</span><script type="math/tex">\rho = \frac {p_{ref}} {RT}</script></span></center></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">p_{ref}</span><script type="math/tex">p_{ref}</script></span> : The pressure set in Reference Values is used.</p>
-<h3 id="specific-heat-capacity-c_pc_p">Specific Heat Capacity, <span class="arithmatex"><span class="MathJax_Preview">C_p</span><script type="math/tex">C_p</script></span></h3>
+<p><center><span class="arithmatex">\(\rho = \frac {p_{ref}} {RT}\)</span></center></p>
+<p><span class="arithmatex">\(p_{ref}\)</span> : The pressure set in Reference Values is used.</p>
+<h3 id="specific-heat-capacity-c_p">Specific Heat Capacity, <span class="arithmatex">\(C_p\)</span></h3>
 <p>You can choose between Constant and Polymomial.</p>
 <h3 id="viscosity">Viscosity</h3>
 <p>You can choose Constant, Sutherland, or Polynomial, and for liquids, you can choose a non-Newtonian fluid model such as Cross, Hershel-Bulkley, Bird-Carreau, or Non-Newtonian-power-law.</p>
 <p>The Sutherland relation expresses the viscosity of an ideal gas as a function of temperature and can only be used when calculating the energy equation. It is expressed as Sutherland Coefficient and Sutherland Temperature.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\mu = \mu_0 \left ( \frac {T} {T_0} \right )^{2/3} \frac{T_{ref} + T_s}{T + T_s} = \frac{A_s T^{2/3}}{T+T_s}</span><script type="math/tex">\mu = \mu_0 \left ( \frac {T} {T_0} \right )^{2/3} \frac{T_{ref} + T_s}{T + T_s} = \frac{A_s T^{2/3}}{T+T_s}</script></span></center></p>
-<p>For air, <span class="arithmatex"><span class="MathJax_Preview">\mu_0</span><script type="math/tex">\mu_0</script></span>=1.716e-5, <span class="arithmatex"><span class="MathJax_Preview">T_s</span><script type="math/tex">T_s</script></span>=110.4K, <span class="arithmatex"><span class="MathJax_Preview">A_s</span><script type="math/tex">A_s</script></span>=1.458e-6 when <span class="arithmatex"><span class="MathJax_Preview">T_0</span><script type="math/tex">T_0</script></span>=273.15K.</p>
+<p><center><span class="arithmatex">\(\mu = \mu_0 \left ( \frac {T} {T_0} \right )^{2/3} \frac{T_{ref} + T_s}{T + T_s} = \frac{A_s T^{2/3}}{T+T_s}\)</span></center></p>
+<p>For air, <span class="arithmatex">\(\mu_0\)</span>=1.716e-5, <span class="arithmatex">\(T_s\)</span>=110.4K, <span class="arithmatex">\(A_s\)</span>=1.458e-6 when <span class="arithmatex">\(T_0\)</span>=273.15K.</p>
 <p>With Sutherland, thermal conductivity is disabled because it is calculated with the Chapman-Enskog approach.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\kappa = \mu C_v \left(1.32+1.77 \frac {R}{C_v} \right)</span><script type="math/tex">\kappa = \mu C_v \left(1.32+1.77 \frac {R}{C_v} \right)</script></span></center></p>
+<p><center><span class="arithmatex">\(\kappa = \mu C_v \left(1.32+1.77 \frac {R}{C_v} \right)\)</span></center></p>
 <h3 id="non-newtonian-viscosity">Non-Newtonian viscosity</h3>
 <p>Cross, Hershel-Bulkley, Bird-Carreau, Non-Newtonian-power-law, etc. are non-Newtonian fluid models, which <strong>can only be used when the material is a liquid and the turbulence model is laminar</strong>. Each model uses the following equations</p>
 <p><a href="https://baramcfd.org/tutorials/2024/08/29/blood-post">Newtonian viscosity tutorial : blood flow of FDA Nozzle</a></p>
 <h4 id="cross">Cross</h4>
 <p>Use a cross power law model.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\nu = \nu_\infty + \frac {\nu_0 - \nu_\infty}{1+(m \gamma)^n}</span><script type="math/tex">\nu = \nu_\infty + \frac {\nu_0 - \nu_\infty}{1+(m \gamma)^n}</script></span></center></p>
+<p><center><span class="arithmatex">\(\nu = \nu_\infty + \frac {\nu_0 - \nu_\infty}{1+(m \gamma)^n}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_0</span><script type="math/tex">\nu_0</script></span> : zero shear viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_\infty</span><script type="math/tex">\nu_\infty</script></span> : infinite shear viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> : natural time</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> : power law index</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> : shear strain rate</li>
+<li><span class="arithmatex">\(\nu_0\)</span> : zero shear viscosity</li>
+<li><span class="arithmatex">\(\nu_\infty\)</span> : infinite shear viscosity</li>
+<li><span class="arithmatex">\(m\)</span> : natural time</li>
+<li><span class="arithmatex">\(n\)</span> : power law index</li>
+<li><span class="arithmatex">\(\gamma\)</span> : shear strain rate</li>
 </ul>
 <h4 id="hershel-bulkley">Hershel-Bulkley</h4>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\nu = min (\nu_0 , \tau_0 / \gamma + k \gamma^{n-1})</span><script type="math/tex">\nu = min (\nu_0 , \tau_0 / \gamma + k \gamma^{n-1})</script></span></center></p>
+<p><center><span class="arithmatex">\(\nu = min (\nu_0 , \tau_0 / \gamma + k \gamma^{n-1})\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_0</span><script type="math/tex">\nu_0</script></span> : zero shear viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\tau_0</span><script type="math/tex">\tau_0</script></span> : yield stress threshold</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : consistency index</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> : power law index</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> : shear strain rate</li>
+<li><span class="arithmatex">\(\nu_0\)</span> : zero shear viscosity</li>
+<li><span class="arithmatex">\(\tau_0\)</span> : yield stress threshold</li>
+<li><span class="arithmatex">\(k\)</span> : consistency index</li>
+<li><span class="arithmatex">\(n\)</span> : power law index</li>
+<li><span class="arithmatex">\(\gamma\)</span> : shear strain rate</li>
 </ul>
 <h4 id="bird-carreau">Bird-Carreau</h4>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\nu = \nu_\infty + (\nu_0 - \nu_\infty )[1+(k \gamma)^a]^{\frac {n-1}{a}}</span><script type="math/tex">\nu = \nu_\infty + (\nu_0 - \nu_\infty )[1+(k \gamma)^a]^{\frac {n-1}{a}}</script></span></center></p>
+<p><center><span class="arithmatex">\(\nu = \nu_\infty + (\nu_0 - \nu_\infty )[1+(k \gamma)^a]^{\frac {n-1}{a}}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_0</span><script type="math/tex">\nu_0</script></span> : zero shear viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_\infty</span><script type="math/tex">\nu_\infty</script></span> : infinite shear viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : relaxation time</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> : power law index</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> : linearity deviation</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> : shear strain rate</li>
+<li><span class="arithmatex">\(\nu_0\)</span> : zero shear viscosity</li>
+<li><span class="arithmatex">\(\nu_\infty\)</span> : infinite shear viscosity</li>
+<li><span class="arithmatex">\(k\)</span> : relaxation time</li>
+<li><span class="arithmatex">\(n\)</span> : power law index</li>
+<li><span class="arithmatex">\(a\)</span> : linearity deviation</li>
+<li><span class="arithmatex">\(\gamma\)</span> : shear strain rate</li>
 </ul>
 <h4 id="non-newtonian-power-law">Non-Newtonian-power-law</h4>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\nu = k \gamma ^{n-1}</span><script type="math/tex">\nu = k \gamma ^{n-1}</script></span></center></p>
+<p><center><span class="arithmatex">\(\nu = k \gamma ^{n-1}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : consistency index</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> : power law index</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> : shear strain rate</li>
+<li><span class="arithmatex">\(k\)</span> : consistency index</li>
+<li><span class="arithmatex">\(n\)</span> : power law index</li>
+<li><span class="arithmatex">\(\gamma\)</span> : shear strain rate</li>
 </ul>
-<p>This model can constrain values using the maximum and minimum values <span class="arithmatex"><span class="MathJax_Preview">\nu_0</span><script type="math/tex">\nu_0</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\nu_\infty</span><script type="math/tex">\nu_\infty</script></span>.</p>
+<p>This model can constrain values using the maximum and minimum values <span class="arithmatex">\(\nu_0\)</span>, <span class="arithmatex">\(\nu_\infty\)</span>.</p>
 <h3 id="thermal-conductivity">Thermal Conductivity</h3>
 <p>Constant and Polymomial can be used, but <strong>it depends on how the viscosity is set</strong>. If the viscosity is a constant or a non-Newtonian fluid model, the thermal conductivity is automatically set to constant. If the viscosity coefficient is polynomial, the thermal conductivity is also polynomial. When the viscosity coefficient is Sutherland, the input part is disabled because the thermal conductivity is calculated by the Chapman-Enskog approach.</p>
 <h3 id="molecular-weight">Molecular Weight</h3>
@@ -1350,7 +1352,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1218,7 +1220,7 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/forceReport.png"><br>힘 확인</center></p>
 <p>유동방향(Flow Direction)은 직접입력(Direct)와 'AOA와 AOS'을 선택할 수 있다. 직접입력은 항력과 양력의 방향을 벡터로 입력하는 방식이다. 'AOA와 AOS'는 받음각과 옆미끄럼각이 0일 때의 항력, 양역 방향을 기준으로 각도를 입력한다. 회전축(Pitch axis)는 항력, 양력 방향과 수직하게 결정된다.</p>
 <p>회전중심(Center of Rotation)과 경계면을 선택하고 계산(Compute) 버튼을 누르면 결과를 확인할 수 있다. 항력/양력/모멘트 계수와 함께 힘과 모멘트를 압력항과 점성항으로 나누어 방향별 값을 확인할 수 있다.</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">C_d</span><script type="math/tex">C_d</script></span>, <span class="arithmatex"><span class="MathJax_Preview">C_l</span><script type="math/tex">C_l</script></span>, <span class="arithmatex"><span class="MathJax_Preview">C_m</span><script type="math/tex">C_m</script></span>을 계산할 때 필요한 기준값은 기준값(Reference Values)에서 설정한다.</p>
+<p><span class="arithmatex">\(C_d\)</span>, <span class="arithmatex">\(C_l\)</span>, <span class="arithmatex">\(C_m\)</span>을 계산할 때 필요한 기준값은 기준값(Reference Values)에서 설정한다.</p>
 <p>모니터에서와 달리 데이터 추출에서는 저장된 데이터를 이용해서 계산하기 때문에 저장된 데이터의 유효자리수에 따라 모니터의 값과 미소한 차이가 있을 수 있다.</p>
 <h2 id="point">점(Point)</h2>
 <p>확인할 유동변수(Field)와 좌표(Coordinate)를 입력한다. 경계면에서의 값을 확인하고 싶다면 '경계면 상의 값'(Snap onto Boundary)에서 해당 경계면을 선택한다. 이 경우 좌표가 정확히 경계면상에 있지 않아도 좌표와 가장 인접한 지점의 값을 보여준다.</p>
@@ -1290,7 +1292,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

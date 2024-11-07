@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1150,14 +1152,14 @@
 <p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/fireInRoom/intro.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/fireInRoom/intro.png" /></a></p>
 <p>This problem simulates an indoor fire. Without calculating the chemical species and combustion reactions, calculate the calorific value and flue gas production over time using the fire growth curve as a source for the energy equation and a user-defined scalar equation. Give the source term in the hexagonal cell zone at the bottom of the table.</p>
 <p>The fire growth curve is calculated for 25 seconds using the following quadratic function </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S_h = 1000 \cdot t^2</span><script type="math/tex">S_h = 1000 \cdot t^2</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S_{gas} = 5 \cdot 10^{-6} \cdot t^2</span><script type="math/tex">S_{gas} = 5 \cdot 10^{-6} \cdot t^2</script></span></p>
+<p><span class="arithmatex">\(S_h = 1000 \cdot t^2\)</span></p>
+<p><span class="arithmatex">\(S_{gas} = 5 \cdot 10^{-6} \cdot t^2\)</span></p>
 <p>The simulation conditions are as follows </p>
 <ul>
 <li>solver : buoyantSimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>density : Perfect Gas</li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
 <p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
@@ -1170,7 +1172,7 @@
 <p>Change Time to Transient.</p>
 <p>Set Gravity as (0 0 -9.81).</p>
 <h3 id="models">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p>Include Energy.</p>
 <p>Add User-defined Scalar. Set the [Field Name] as gas and select diffusivity as [Laminar and Turbulent Viscosity].</p>
 <p>Set viscosity coefficient for laminar and turbulence as 1 for both.</p>
@@ -1317,7 +1319,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

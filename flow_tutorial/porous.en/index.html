@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1173,7 +1175,7 @@
 <h3 id="general">General</h3>
 <p>For this example, we'll use default conditions.</p>
 <h3 id="models">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p style="text-align: center">
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/porousMedia/turbulence.png"><br> Turbulence Model setup
 </p>
@@ -1265,9 +1267,9 @@
 <p>The computational conditions are as follows</p>
 <ul>
 <li>solver : buoyantsimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
-<li>density : 1.225 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model</li>
+<li>density : 1.225 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 <li>boundary conditions for porous jump<ul>
 <li>Darcy Coefficient : -100</li>
 <li>Inertial Coefficient : -5</li>
@@ -1290,7 +1292,7 @@
 <h3 id="general_1">General</h3>
 <p>For this example, we'll use default conditions.</p>
 <h3 id="models_1">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <h3 id="materials_1">Materials</h3>
 <p>Use material properties of air. </p>
 <h3 id="boundary-conditions_1">Boundary Conditions</h3>
@@ -1482,7 +1484,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

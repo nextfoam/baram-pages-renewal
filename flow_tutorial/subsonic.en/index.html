@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1172,10 +1174,10 @@
 <p>The computational conditions are as follows </p>
 <ul>
 <li>solver : buoyantSimpleNFoam </li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델</li>
+<li>turbulence model : <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> 모델</li>
 <li>density : Perfect Gas</li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>flow condition : 400 <span class="arithmatex"><span class="MathJax_Preview">km/h</span><script type="math/tex">km/h</script></span>(111.11 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span>) at inlet</li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>flow condition : 400 <span class="arithmatex">\(km/h\)</span>(111.11 <span class="arithmatex">\(m/s\)</span>) at inlet</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
 <p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
@@ -1187,7 +1189,7 @@
 <h3 id="general">General</h3>
 <p>For this example, we'll use default conditions.</p>
 <h3 id="models">모델(Models)</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span>  model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span>  model for turbulence.</p>
 <p>Include Energy.</p>
 <p style="text-align: center">
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/tur.png"><br>
@@ -1328,20 +1330,20 @@
 <h3 id="introduction_1">Introduction</h3>
 <p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzle3d.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzle3d.png" /></a></p>
 <p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/y0.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/y0.png" /></a></p>
-<p>This is an example flow simulation of a high-temperature subsonic nozzle with a temperature of 260<span class="arithmatex"><span class="MathJax_Preview">^o C</span><script type="math/tex">^o C</script></span> and a Mach number of 0.376 at the nozzle throat.</p>
+<p>This is an example flow simulation of a high-temperature subsonic nozzle with a temperature of 260<span class="arithmatex">\(^o C\)</span> and a Mach number of 0.376 at the nozzle throat.</p>
 <p>The geometry and experimental conditions are provided by NASA Langley Research Center.</p>
 <p><a href="https://turbmodels.larc.nasa.gov/jetsubsonichot_val.html">https://turbmodels.larc.nasa.gov/jetsubsonichot_val.html</a></p>
 <p>Experimental results from NASA ARN2 (Acoustic Research Nozzle 2) with the following geometry and conditions</p>
 <ul>
 <li>Radius of the nozzle neck: 1 inch</li>
-<li>Pressure ratio, <span class="arithmatex"><span class="MathJax_Preview">p/p{ref}</span><script type="math/tex">p/p{ref}</script></span> = 1.10203, <span class="arithmatex"><span class="MathJax_Preview">p{ref}</span><script type="math/tex">p{ref}</script></span> = 14.3 psi</li>
-<li>Temperature ratio, <span class="arithmatex"><span class="MathJax_Preview">T/T{ref}</span><script type="math/tex">T/T{ref}</script></span> = 1.81388, <span class="arithmatex"><span class="MathJax_Preview">T{ref}</span><script type="math/tex">T{ref}</script></span> = 530 R</li>
+<li>Pressure ratio, <span class="arithmatex">\(p/p{ref}\)</span> = 1.10203, <span class="arithmatex">\(p{ref}\)</span> = 14.3 psi</li>
+<li>Temperature ratio, <span class="arithmatex">\(T/T{ref}\)</span> = 1.81388, <span class="arithmatex">\(T{ref}\)</span> = 530 R</li>
 <li>Nozzle exit Mach number: 0.376</li>
 </ul>
-<p>Along with the experimental results, we provide calculations from the <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> k-<span class="arithmatex"><span class="MathJax_Preview">omega</span><script type="math/tex">omega</script></span> model and the Spalart-Allmaras model from the NASA WIND code.</p>
+<p>Along with the experimental results, we provide calculations from the <span class="arithmatex">\(SST\)</span> k-<span class="arithmatex">\(omega\)</span> model and the Spalart-Allmaras model from the NASA WIND code.</p>
 <ul>
 <li>solver : buoyantSimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>density : Perfect Gas</li>
 <li>viscosity and thermal conductivity : Sutherland law </li>
 <li>nozzle inlet condition : 10059.65 Pa, 534.086 K</li>
@@ -1361,7 +1363,7 @@
 </p>
 
 <h3 id="models_1">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p>Include Energy.</p>
 <h3 id="materials_1">Materials</h3>
 <p>Material properties of air is as follows </p>
@@ -1530,7 +1532,7 @@
 <p>The computational conditions are as follows </p>
 <ul>
 <li>solver : buoyantPimpleNFoam </li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span></li>
 <li>density : Perfect Gas</li>
 <li>inlet temperature : 300 K</li>
 <li>inlet pressure : 101325 Pa</li>
@@ -1550,7 +1552,7 @@
 </p>
 
 <h3 id="models_2">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> model for turbulence.</p>
 <p>Include Energy.</p>
 <h3 id="materials_2">Materials</h3>
 <p>Material properties of air is as follows </p>
@@ -1735,7 +1737,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1374,7 +1376,7 @@
 <p>Velocity Inlet condition is condition that give velocity, turbulence, temperature, chemical species mass fraction values, etc. at the inlet of the flow.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/velocityInlet.png" width="300" height="300"><br>Velocity Inlet setup</center></p>
 <p>Velocity can be given by the x, y, and z components(Component) or by the normal velocity boundary (Magnitude, Normal to Boundary).</p>
-<p>Turbulence can be represented by the value of the turbulence field (k, epsilon, omega, nuTilda) and the turbulence intensity and viscosity ratio (intensity/viscosity ratio). The Spalart-Allmaras model only supports the method of giving the Modified Turbulent Viscosity <span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>.</p>
+<p>Turbulence can be represented by the value of the turbulence field (k, epsilon, omega, nuTilda) and the turbulence intensity and viscosity ratio (intensity/viscosity ratio). The Spalart-Allmaras model only supports the method of giving the Modified Turbulent Viscosity <span class="arithmatex">\(\tilde{\nu}\)</span>.</p>
 <p>The temperature is given a constant value.</p>
 <p>The species mass fraction should be given so that the sum of all chemical species is 1.</p>
 <p>The openfoam boundary conditions used by each field are as follows</p>
@@ -1383,8 +1385,8 @@
 <li>Pressure : <em>zeroGradient</em></li>
 <li>Temperature : <em>fixedValue</em></li>
 <li>Turbulent kinetic energy(k) : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>Turbulent dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), specific dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>Modified kinematic viscosity(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>fixedValue</em></li>
+<li>Turbulent dissipation rate(<span class="arithmatex">\(\epsilon\)</span>), specific dissipation rate(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>Modified kinematic viscosity(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>fixedValue</em></li>
 <li>Species : <em>fixedValue</em></li>
 </ul>
 <h3 id="boundary-profile">Boundary profile</h3>
@@ -1392,8 +1394,8 @@
 <h4 id="temporal-distribution">Temporal Distribution</h4>
 <p>If the velocity distribution (Profile Type) is selected as 'Temporal Distribution' for the Velocity Inelt condition, it can be specified using a piecewise linear function in the window of firgure below.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/profile.png" width="300" height="300"><br>Temporal Distribution - piecewise linear</center></p>
-<p>If the temperature distribution under the Velocity Inlet condition is selected as 'Temporal Distribution', it can be specified as a piecewise linear function and a polynomial. The polynomial specifies the coefficients <span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span> of the expression in the window of figure below.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n</span><script type="math/tex">S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n</script></span></center></p>
+<p>If the temperature distribution under the Velocity Inlet condition is selected as 'Temporal Distribution', it can be specified as a piecewise linear function and a polynomial. The polynomial specifies the coefficients <span class="arithmatex">\(a_n\)</span> of the expression in the window of figure below.</p>
+<p><center><span class="arithmatex">\(S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>Temporal Distribution - polynomial</center></p>
 <p><a href="https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/">Time dependent boundary condition tutorial</a></p>
 <h4 id="spatial-distribution">Spatial Distribution</h4>
@@ -1422,31 +1424,31 @@
 <ul>
 <li>Flow Direction</li>
 <li>Ground-Normal Direction</li>
-<li>Reference Height, <span class="arithmatex"><span class="MathJax_Preview">z_{ref}</span><script type="math/tex">z_{ref}</script></span></li>
-<li>Reference Flow Speed, <span class="arithmatex"><span class="MathJax_Preview">U_{ref}</span><script type="math/tex">U_{ref}</script></span>) : velocity at reference height</li>
-<li>Surface Roughness Length, <span class="arithmatex"><span class="MathJax_Preview">z_0</span><script type="math/tex">z_0</script></span></li>
+<li>Reference Height, <span class="arithmatex">\(z_{ref}\)</span></li>
+<li>Reference Flow Speed, <span class="arithmatex">\(U_{ref}\)</span>) : velocity at reference height</li>
+<li>Surface Roughness Length, <span class="arithmatex">\(z_0\)</span></li>
 <li>Minimum z-coordinate, d) : minimum z-coordinate of ground(height from the ground is calculated as z-d)</li>
 </ul>
 <p>The velocity and turbulence distributions use the following equations</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)</span><script type="math/tex">u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</span><script type="math/tex">k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</span><script type="math/tex">\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}</span><script type="math/tex">\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}</span><script type="math/tex">u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}</script></span></center></p>
+<p><center><span class="arithmatex">\(u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)\)</span></center></p>
+<p><center><span class="arithmatex">\(k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}\)</span></center></p>
+<p><center><span class="arithmatex">\(\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}\)</span></center></p>
+<p><center><span class="arithmatex">\(\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}\)</span></center></p>
+<p><center><span class="arithmatex">\(u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> : z-coordinate</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> : minimum z-coordinate of ground</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\kappa</span><script type="math/tex">\kappa</script></span> : Von Karman's constant, 0.41</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_\mu</span><script type="math/tex">C_\mu</script></span> : constant, 0.09</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span> : constant, 0</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">C_2</span><script type="math/tex">C_2</script></span> : constant, 1</li>
+<li><span class="arithmatex">\(z\)</span> : z-coordinate</li>
+<li><span class="arithmatex">\(d\)</span> : minimum z-coordinate of ground</li>
+<li><span class="arithmatex">\(\kappa\)</span> : Von Karman's constant, 0.41</li>
+<li><span class="arithmatex">\(C_\mu\)</span> : constant, 0.09</li>
+<li><span class="arithmatex">\(C_1\)</span> : constant, 0</li>
+<li><span class="arithmatex">\(C_2\)</span> : constant, 1</li>
 </ul>
 <p>The boundary conditions in openfoam used by each field are as follows</p>
 <ul>
 <li>Velocity : _atmBoundaryLayerInletVelocity</li>
 <li>Tressure : _zeroGradient</li>
 <li>Turbulent kinetic energy(k) : _atmBoundaryLayerInletK</li>
-<li>Turbulent dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), specific dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>atmBoundaryLayerInletEpsilon</em>, <em>atmBoundaryLayerInletOmega</em></li>
+<li>Turbulent dissipation rate(<span class="arithmatex">\(\epsilon\)</span>), specific dissipation rate(<span class="arithmatex">\(\omega\)</span>) : <em>atmBoundaryLayerInletEpsilon</em>, <em>atmBoundaryLayerInletOmega</em></li>
 <li>Species : <em>fixedValue</em></li>
 </ul>
 <h2 id="free-stream">Free Stream</h2>
@@ -1471,8 +1473,8 @@
 <li>Pressure : <em>zeroGradient</em></li>
 <li>Volume fraction : <em>variableHeightFlowRate</em></li>
 <li>Turbulent kinetic energy(k) : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>Turbulent dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), specific dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>Modified kinematic viscosity(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>fixedValue</em></li>
+<li>Turbulent dissipation rate(<span class="arithmatex">\(\epsilon\)</span>), specific dissipation rate(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>Modified kinematic viscosity(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>fixedValue</em></li>
 </ul>
 <h2 id="far-field-riemann">Far-field Riemann</h2>
 <p>Riemann boundary condition used for farfield of compressible flow.</p>
@@ -1507,8 +1509,8 @@
 <ul>
 <li>Temperature : <em>inletOutletTotalTemperature</em></li>
 <li>Turbulent kinetic energy(k) : <em>turbulentIntensityInletOutletTKE</em></li>
-<li>Turbulent dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), specific dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>Modified kinematic viscosity(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>inletOutlet</em></li>
+<li>Turbulent dissipation rate(<span class="arithmatex">\(\epsilon\)</span>), specific dissipation rate(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>Modified kinematic viscosity(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>inletOutlet</em></li>
 <li>Species : <em>inletOutlet</em></li>
 </ul>
 <h4 id="non-reflecting-boundary-option">Non-Reflecting Boundary option</h4>
@@ -1526,8 +1528,8 @@
 <li>Pressure : <em>zeroGradient</em></li>
 <li>Volume fraction : <em>variableHeightFlowRate</em></li>
 <li>Turbulent kinetic energy(k) : turbulentIntensityInletOutletTKE_</li>
-<li>Turbulent dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), specific dissipation rate(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
-<li>Modified kinematic viscosity(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>inletOutlet</em> </li>
+<li>Turbulent dissipation rate(<span class="arithmatex">\(\epsilon\)</span>), specific dissipation rate(<span class="arithmatex">\(\omega\)</span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>Modified kinematic viscosity(<span class="arithmatex">\(\tilde{\nu}\)</span>) : <em>inletOutlet</em> </li>
 </ul>
 <h2 id="outflow">Outflow</h2>
 <p>Outflow uses zero gradient conditions for all fields on the exit.</p>
@@ -1559,44 +1561,44 @@
 <h4 id="convection">Convection</h4>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/convectionWallLayer.png" width="300" height="300"><br>Convection</center></p>
 <p>This condition uses a constant reference temperature and heat transfer coefficient. The heat flux through the wall is given by equation~\ref{eq:convection}. Use the <em>externalHextFluxTemperature</em> condition. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">q_{external} = h(T_{wall}-T_a)</span><script type="math/tex">q_{external} = h(T_{wall}-T_a)</script></span></center></p>
+<p><center><span class="arithmatex">\(q_{external} = h(T_{wall}-T_a)\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span> : Heat Transfer Coefficient</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">T_a</span><script type="math/tex">T_a</script></span> : Free Stream Temperature</li>
+<li><span class="arithmatex">\(h\)</span> : Heat Transfer Coefficient</li>
+<li><span class="arithmatex">\(T_a\)</span> : Free Stream Temperature</li>
 </ul>
 <p>The thickness and thermal conductivity of a wall can be used to set the thermal resistance of a solid. The thickness and thermal conductivity of multiple layers of a solid can be set for each layer. This is a way to consider the heat conduction in a solid without considering multi-region modeling. However, it has limitations in that it only considers heat conduction perpendicular to the wall and not lateral heat conduction, and it cannot consider temperature changes over time in transient calculations.</p>
 <p>In this case, the thermal resistance is calculated by the equation</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}</span><script type="math/tex">h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}</script></span></center></p>
+<p><center><span class="arithmatex">\(h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}\)</span></center></p>
 <h3 id="turbulence-condition">Turbulence Condition</h3>
 <p>The turbulence condition at the wall uses the wall function as the turbulence model, with the following conditions.</p>
-<h4 id="standard-k-epsilonk-epsilon-realizable-k-epsilonk-epsilon-rng-k-epsilonk-epsilon">standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span>, realizable <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span>, RNG <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델</h4>
+<h4 id="standard-k-epsilon-realizable-k-epsilon-rng-k-epsilon">standard <span class="arithmatex">\(k-\epsilon\)</span>, realizable <span class="arithmatex">\(k-\epsilon\)</span>, RNG <span class="arithmatex">\(k-\epsilon\)</span> 모델</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> : <em>epsilonWallFunction</em> for standard, <em>epsilonBlendedWallFunction</em> for two layer</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutkWallFunction</em> for standard, <em>nutSpaldingWallFunction</em> for two layer</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> : <em>compressible::alphatJayatillekeWallFunction</em></li>
+<li><span class="arithmatex">\(k\)</span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex">\(\epsilon\)</span> : <em>epsilonWallFunction</em> for standard, <em>epsilonBlendedWallFunction</em> for two layer</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>nutkWallFunction</em> for standard, <em>nutSpaldingWallFunction</em> for two layer</li>
+<li><span class="arithmatex">\(\alpha_t\)</span> : <em>compressible::alphatJayatillekeWallFunction</em></li>
 </ul>
-<h4 id="sst-k-omegak-omega-model">SST <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> model</h4>
+<h4 id="sst-k-omega-model">SST <span class="arithmatex">\(k-\omega\)</span> model</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span> : <em>omegaBlendedWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutSpaldingWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> : <em>compressible::alphatJayatillekeWallFunction</em></li>
+<li><span class="arithmatex">\(k\)</span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex">\(\omega\)</span> : <em>omegaBlendedWallFunction</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>nutSpaldingWallFunction</em></li>
+<li><span class="arithmatex">\(\alpha_t\)</span> : <em>compressible::alphatJayatillekeWallFunction</em></li>
 </ul>
 <h4 id="spalart-allmaras-model">Spalart-Allmaras model</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span> : <em>zeroGradient</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutSpaldingWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> : <em>compressible::alphatJayatillekeWallFunction</em></li>
+<li><span class="arithmatex">\(\tilde{\nu}\)</span> : <em>zeroGradient</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>nutSpaldingWallFunction</em></li>
+<li><span class="arithmatex">\(\alpha_t\)</span> : <em>compressible::alphatJayatillekeWallFunction</em></li>
 </ul>
 <h4 id="atmospheric-wall">Atmospheric Wall</h4>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> : <em>atmEpsilonWallFunction</em></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>atmNutkWallFunction</em></li>
+<li><span class="arithmatex">\(k\)</span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex">\(\epsilon\)</span> : <em>atmEpsilonWallFunction</em></li>
+<li><span class="arithmatex">\(\nu_t\)</span> : <em>atmNutkWallFunction</em></li>
 </ul>
-<h4 id="alpha_talpha_t"><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span></h4>
-<p><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> depends on heat transfer boundary condition.</p>
+<h4 id="alpha_t"><span class="arithmatex">\(\alpha_t\)</span></h4>
+<p><span class="arithmatex">\(\alpha_t\)</span> depends on heat transfer boundary condition.</p>
 <ul>
 <li>Adiabatic : <em>compressible::alphatWallFunction</em></li>
 <li>Constant temperature, Constant heat flux, Convection : <em>compressible::alphatJayatillekeWallFunction</em></li>
@@ -1629,18 +1631,18 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>Porous Jump setup</center></p>
 <p>The inputs are as follows</p>
 <ul>
-<li>Darcy Coefficient, <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span></li>
-<li>Inertia Coefficient, <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span></li>
-<li>Porous media thickness, <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span></li>
+<li>Darcy Coefficient, <span class="arithmatex">\(D\)</span></li>
+<li>Inertia Coefficient, <span class="arithmatex">\(I\)</span></li>
+<li>Porous media thickness, <span class="arithmatex">\(L\)</span></li>
 <li>Coupled boundary</li>
 </ul>
 <p><strong>Positive values of the Darcy Coefficient and Inertial Coefficient result in a pressure drop and negative values result in a pressure increase</strong>.</p>
-<p>The pressure change is calculated by the following equation where <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> is the viscosity, <span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> is the density, and <span class="arithmatex"><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> is the velocity.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L</span><script type="math/tex">\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L</script></span></center> </p>
+<p>The pressure change is calculated by the following equation where <span class="arithmatex">\(\mu\)</span> is the viscosity, <span class="arithmatex">\(\rho\)</span> is the density, and <span class="arithmatex">\(U\)</span> is the velocity.</p>
+<p><center><span class="arithmatex">\(\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L\)</span></center> </p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> : viscosity</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> : density</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> : velocity</li>
+<li><span class="arithmatex">\(\mu\)</span> : viscosity</li>
+<li><span class="arithmatex">\(\rho\)</span> : density</li>
+<li><span class="arithmatex">\(U\)</span> : velocity</li>
 </ul>
 <p>The boundary conditions used by openfoam are <em>porousBafflePressure</em> for pressure and <em>cyclic</em> for everything else.</p>
 <h3 id="fan">Fan</h3>
@@ -1707,7 +1709,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

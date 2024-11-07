@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1286,7 +1288,7 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/scheme0.png" width="300" height="300"><br>Formulation, 플럭스 계산 기법 설정</center></p>
 <h2 id="flux-type">플럭스 계산 기법(Flux Type)</h2>
 <p>밀도 기반 압축성 솔버(Solver Type을 Density-based로 선택)에서만 나타난다.</p>
-<p>Roe-FDS, AUSM, AUSM-up 3가지를 선택할 수 있다. Roe-FDS를 선택하면 Entropy Fix Coefficient, <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>을 입력할 수 있다. 0과 1 사이의 값을 입력한다. AUSM-up를 선택하면 Cut-off Mach Number, <span class="arithmatex"><span class="MathJax_Preview">M_\infty</span><script type="math/tex">M_\infty</script></span>를 설정할 수 있다. 0과 10 사이의 값을 입력한다. AUSM을 선택하면 별도의 설정이 없다.</p>
+<p>Roe-FDS, AUSM, AUSM-up 3가지를 선택할 수 있다. Roe-FDS를 선택하면 Entropy Fix Coefficient, <span class="arithmatex">\(\epsilon\)</span>을 입력할 수 있다. 0과 1 사이의 값을 입력한다. AUSM-up를 선택하면 Cut-off Mach Number, <span class="arithmatex">\(M_\infty\)</span>를 설정할 수 있다. 0과 10 사이의 값을 입력한다. AUSM을 선택하면 별도의 설정이 없다.</p>
 <h2 id="discretization-schemes">이산화 기법(Discretization Schemes)</h2>
 <p>시간, 압력, 운동량, 에너지, 난류, 체척분율에 대한 이산화 기법을 선택한다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/scheme1.png" width="300" height="300"><br>이산화 기법 설정</center></p>
@@ -1296,8 +1298,8 @@
 <p>셀 중심의 압력으로부터 셀면의 압력을 계산하는 내삽 기법을 선택하는 것으로 Linear, Momentum Weighted Reconstruct, Momentum Weighted를 선택할 수 있다. </p>
 <ul>
 <li>Linear : 면 양쪽 셀의 중심값을 사용하여 선형 내삽하는 방법으로 안정성이 뛰어나다. 다중기준프레임(MRF)나 다공성 모델과 같은 운동량 소스가 있는 경우 이 기법의 사용을 권장한다.</li>
-<li>Momentum Weighted : 운동량방정식의 계수(<span class="arithmatex"><span class="MathJax_Preview">a_p</span><script type="math/tex">a_p</script></span>)를 weighting factor로 사용하는 방법으로 수렴성이 뛰어니다. 운동량 소스가 있는 경우 안정성에 문제가 있을 수 있다.</li>
-<li>Momentum Weighted Reconstruct : 2차 정확도 기법이라고 할 수 있는데, 셀 중심의 압력구배를 이용한 외삽으로 셀면 좌우의 값을 계산하고 이를 평균해서 셀면의 값으로 사용하는 방법이다. 평균할 때 운동량방정식의 계수(<span class="arithmatex"><span class="MathJax_Preview">a_p</span><script type="math/tex">a_p</script></span>)를 가중 계수로 사용한다. 좀 더 정확한 결과를 얻을 수 있는 대신 안정성이 낮아질 수 있다.</li>
+<li>Momentum Weighted : 운동량방정식의 계수(<span class="arithmatex">\(a_p\)</span>)를 weighting factor로 사용하는 방법으로 수렴성이 뛰어니다. 운동량 소스가 있는 경우 안정성에 문제가 있을 수 있다.</li>
+<li>Momentum Weighted Reconstruct : 2차 정확도 기법이라고 할 수 있는데, 셀 중심의 압력구배를 이용한 외삽으로 셀면 좌우의 값을 계산하고 이를 평균해서 셀면의 값으로 사용하는 방법이다. 평균할 때 운동량방정식의 계수(<span class="arithmatex">\(a_p\)</span>)를 가중 계수로 사용한다. 좀 더 정확한 결과를 얻을 수 있는 대신 안정성이 낮아질 수 있다.</li>
 </ul>
 <h3 id="momentum-energy-turbulence-volume-fraction">운동량(Momentum), 에너지(Energy), 난류(Turbulence), 체적분율(Volume Fraction)</h3>
 <p>1차 상류기법(First Order Upwind)와 2차 상류기법(Second Order Upwind)를 선택할 수 있다. fvSchemes 파일의 divSchemes 딕셔너리에 사용된다. 1차 상류기법일 때 '<em>Gauss upwind</em>'를 사용하고, 2차 상류기법일 때는 <em>Gauss linearUpwind</em> 와 Venkatakrishnan 제한자(<em>VKLimited Gauss linear 1.0</em>)을 사용한다.</p>
@@ -1328,8 +1330,8 @@
 <h4 id="equations">방정식(Equations)</h4>
 <p>유동, 에너지, 사용자 정의 함수, 화학종 등의 방정식을 비활성화 할 수 있다. </p>
 <p>에너지방정식은 점성가열(Viscous dissipation), 운동에너지(Kinetic energy), 압력에의한 일(Pressure Work) 항을 비활성화할 수 있다. 점성가열을 포함하는 경우에는 나머지 두 개는 모두 포함된다. 이들의 영향이 매우 작은 경우 생략하면 안정성 향상 효과를 볼 수 있지만, 고속, 고온, 고점도 유동의 경우에는 정확도에 문제가 있을 수 있다. 계산여부는 thermophysicalProperties 파일에 설정된다.</p>
-<p>점성가열의 중요성을 판단할 때 브링크만 수(Brinkman Number, <span class="arithmatex"><span class="MathJax_Preview">Br</span><script type="math/tex">Br</script></span>)를 사용할 수 있다. 브링크만 수는 점성에 의해 소산된 에너지와 전도된 에너지의 비율을 나타내는 무차원수이며, 1보다 매우 작으면 점성가열은 무시할 수 있다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Br = \frac{U^2 \mu}{k \Delta T}</span><script type="math/tex">Br = \frac{U^2 \mu}{k \Delta T}</script></span></center></p>
+<p>점성가열의 중요성을 판단할 때 브링크만 수(Brinkman Number, <span class="arithmatex">\(Br\)</span>)를 사용할 수 있다. 브링크만 수는 점성에 의해 소산된 에너지와 전도된 에너지의 비율을 나타내는 무차원수이며, 1보다 매우 작으면 점성가열은 무시할 수 있다.</p>
+<p><center><span class="arithmatex">\(Br = \frac{U^2 \mu}{k \Delta T}\)</span></center></p>
 <p>운동에너지는 유체의 속도가 빠를 때 중요한 항목이 된다. 압력에의한 일은 유체가 압축되거나 팽창할 때의 일을 의미하며 펌프, 터빈, 압축기 등의 문제에서 중요한 항목이 된다. </p>
 <p>미끄럼 격자를 사용하는 경우 모든 방정식을 끄고 계산하면, 유동 계산 없이 격자의 운동만 확인할 수 있다.</p>
 
@@ -1391,7 +1393,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

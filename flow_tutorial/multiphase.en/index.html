@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1172,7 +1174,7 @@
 <ul>
 <li>water height at inlet : 1.6 m, 15696 Pa</li>
 <li>solver : interFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> </li>
+<li>turbulence model : <span class="arithmatex">\(standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> </li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
 <p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [Volume of Fluid] for [Multiphase Model].</p>
@@ -1189,7 +1191,7 @@
 </p>
 
 <h3 id="models">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/turbulence.png"><br> Turbulence Model
 </p>
@@ -1418,13 +1420,13 @@
 <p><a href="https://drive.google.com/file/d/185vzZC9Cc7kboGWYoLyLXaWZawQHKmvr/view?usp=sharing">Download simulation</a></p>
 <h3 id="introduction_1">Introduction</h3>
 <p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/kcs-wave.png"><img alt="wave height" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/kcs-wave.png" title="wave height" /></a></p>
-<p>This example is a validation problem for the resistance of a ship with a free surface. The resistance of KCS and is compared to the results in the paper below. The interFoam solver is used for the free surface simulation, a steady-state calculation using the Local Time Step (LTS) technique, and the turbulence model is <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span>. </p>
+<p>This example is a validation problem for the resistance of a ship with a free surface. The resistance of KCS and is compared to the results in the paper below. The interFoam solver is used for the free surface simulation, a steady-state calculation using the Local Time Step (LTS) technique, and the turbulence model is <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span>. </p>
 <p><em>Measurement of flows around modern commercial ship models, Kim,W J.Kim, Van, S H, Kim, D H, Experiments in Fluids, 2001</em></p>
 <p>Simulation and experiment conditions are as follows</p>
 <ul>
-<li>speed : 2.196 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span></li>
-<li>reference area(wetted surface area) : 9.5121 <span class="arithmatex"><span class="MathJax_Preview">m^2/s</span><script type="math/tex">m^2/s</script></span></li>
-<li>draft : 0.3418 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> (z coordinate at mesh is 0)</li>
+<li>speed : 2.196 <span class="arithmatex">\(m/s\)</span></li>
+<li>reference area(wetted surface area) : 9.5121 <span class="arithmatex">\(m^2/s\)</span></li>
+<li>draft : 0.3418 <span class="arithmatex">\(m\)</span> (z coordinate at mesh is 0)</li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh_1">Start BaramFlow and load mesh</h3>
 <p>Run the program and select 'New Case' from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [Volume of Fluid] for [Multiphase Model].</p>
@@ -1441,7 +1443,7 @@
 </p>
 
 <h3 id="models_1">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(SST\)</span> <span class="arithmatex">\(k-\omega\)</span> model for turbulence.</p>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/turbulence.png"><br> Turbulence Model
 </p>
@@ -1654,7 +1656,7 @@
 </p>
 
 <h3 id="models_2">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <h3 id="materials_2">Materials</h3>
 <p>Since this example is multi-phase flow, two fluids are required. You can add fluids by pressing the (+) in the top right corner of the Material Configuration section. Add waterLiquid and waterVapor. </p>
 <p align='center'>
@@ -1851,7 +1853,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

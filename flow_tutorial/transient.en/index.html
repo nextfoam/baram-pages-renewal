@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1187,8 +1189,8 @@
 <p>For this example, we use the condition of Reynolds number is 100 and velocity is 1.</p>
 <p>Set the density and viscosity as follows</p>
 <ul>
-<li>density : 1 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
-<li>viscosity : 0.01 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span> </li>
+<li>density : 1 <span class="arithmatex">\(kg/m^3\)</span></li>
+<li>viscosity : 0.01 <span class="arithmatex">\(kg/ms\)</span> </li>
 </ul>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cylinder/5.4.png"><br>
@@ -1378,9 +1380,9 @@
 <p>The computational conditions are as follows </p>
 <ul>
 <li>solver : buoyantPimpleNFoam</li>
-<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>turbulence model : <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span></li>
 <li>density : Perfect Gas</li>
-<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>viscosity : 1.79e-5 <span class="arithmatex">\(kg/ms\)</span></li>
 </ul>
 <h3 id="start-baramflow-and-load-mesh_1">Start BaramFlow and load mesh</h3>
 <p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
@@ -1392,15 +1394,15 @@
 <h3 id="general_1">General</h3>
 <p>Change Time to Transient.</p>
 <h3 id="models_1">Models</h3>
-<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>For this example, we'll use <span class="arithmatex">\(Standard\)</span> <span class="arithmatex">\(k-\epsilon\)</span> model for turbulence.</p>
 <p>Change Eergy to Include.</p>
 <h3 id="materials_1">Materials</h3>
 <p>For this example, we will use the properties of air.</p>
 <ul>
 <li>Density : Perfect Gas (m/s)</li>
-<li>Specific Heat (Cp) : 1004 <span class="arithmatex"><span class="MathJax_Preview">J/kgK</span><script type="math/tex">J/kgK</script></span> (m/s)</li>
-<li>Viscosity : 1.79e-05 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
-<li>Thermal Conductivity : 0.0245 <span class="arithmatex"><span class="MathJax_Preview">W/mK</span><script type="math/tex">W/mK</script></span></li>
+<li>Specific Heat (Cp) : 1004 <span class="arithmatex">\(J/kgK\)</span> (m/s)</li>
+<li>Viscosity : 1.79e-05 <span class="arithmatex">\(kg/ms\)</span></li>
+<li>Thermal Conductivity : 0.0245 <span class="arithmatex">\(W/mK\)</span></li>
 </ul>
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/profileBC/Perfect Gas.png"><br>
@@ -1613,7 +1615,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

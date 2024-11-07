@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -45,6 +45,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1224,56 +1226,56 @@
 <p>압축성 유동에서 Euler라고 많이 표현되는, 점성을 고려하지 않는 모델로 별도의 설정은 없다. 이 옵션을 선택하면 내부적으로 층류(laminar)가 선택되고 점성계수는 0이 된다. 물성값에서 점성계수를 직접 0으로 설정할 필요는 없다.</p>
 <h4 id="laminar">층류(Laminar)</h4>
 <p>층류유동은 별도의 설정이 없다.</p>
-<p>층류인지 난류인지의 판단은 관성력과 점성력의 비율인 레이놀즈 수(Reynolds number, <span class="arithmatex"><span class="MathJax_Preview">Re</span><script type="math/tex">Re</script></span>)를 사용한다. 레이놀즈 수를 이용한 층류/난류 판별 기준은 유동 형태에 따라 다르다. 일반적으로 관내유동의 경우 Re가 2000보다 작으면 층류 4000보다 크면 난류로 볼 수 있다. 개수로 유동의 경우 500, 평판(외부) 유동에서는 <span class="arithmatex"><span class="MathJax_Preview">10^5</span><script type="math/tex">10^5</script></span> <span class="arithmatex"><span class="MathJax_Preview">\sim</span><script type="math/tex">\sim</script></span> <span class="arithmatex"><span class="MathJax_Preview">10^6</span><script type="math/tex">10^6</script></span> 정도가 기준이 된다. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Re = \frac {\rho U L} {\mu^2}</span><script type="math/tex">Re = \frac {\rho U L} {\mu^2}</script></span></center></p>
+<p>층류인지 난류인지의 판단은 관성력과 점성력의 비율인 레이놀즈 수(Reynolds number, <span class="arithmatex">\(Re\)</span>)를 사용한다. 레이놀즈 수를 이용한 층류/난류 판별 기준은 유동 형태에 따라 다르다. 일반적으로 관내유동의 경우 Re가 2000보다 작으면 층류 4000보다 크면 난류로 볼 수 있다. 개수로 유동의 경우 500, 평판(외부) 유동에서는 <span class="arithmatex">\(10^5\)</span> <span class="arithmatex">\(\sim\)</span> <span class="arithmatex">\(10^6\)</span> 정도가 기준이 된다. </p>
+<p><center><span class="arithmatex">\(Re = \frac {\rho U L} {\mu}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> : 특성길이(characteristic length)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> : 점성계수(viscosity)\</li>
+<li><span class="arithmatex">\(L\)</span> : 특성길이(characteristic length)</li>
+<li><span class="arithmatex">\(\mu\)</span> : 점성계수(viscosity)</li>
 </ul>
-<p>자연대류 문제에서는 확산과 대류에 의한 열전달 비율인 레일리 수(Rayleigh number, <span class="arithmatex"><span class="MathJax_Preview">Ra</span><script type="math/tex">Ra</script></span>)를 사용한다. 일반적으로 <span class="arithmatex"><span class="MathJax_Preview">10^7</span><script type="math/tex">10^7</script></span> 이하에서는 층류, <span class="arithmatex"><span class="MathJax_Preview">10^9</span><script type="math/tex">10^9</script></span> 이상에서는 난류로 본다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Ra = \frac {\rho \beta \Delta T L^3 g} {\mu \alpha}</span><script type="math/tex">Ra = \frac {\rho \beta \Delta T L^3 g} {\mu \alpha}</script></span></center></p>
+<p>자연대류 문제에서는 확산과 대류에 의한 열전달 비율인 레일리 수(Rayleigh number, <span class="arithmatex">\(Ra\)</span>)를 사용한다. 일반적으로 <span class="arithmatex">\(10^7\)</span> 이하에서는 층류, <span class="arithmatex">\(10^9\)</span> 이상에서는 난류로 본다.</p>
+<p><center><span class="arithmatex">\(Ra = \frac {\rho \beta \Delta T L^3 g} {\mu \alpha}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span> : 열팽창계수(thermal expansion coefficient)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> : 거리(distance)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> : 열확산율(thermal diffusivity)</li>
+<li><span class="arithmatex">\(\beta\)</span> : 열팽창계수(thermal expansion coefficient)</li>
+<li><span class="arithmatex">\(L\)</span> : 거리(distance)</li>
+<li><span class="arithmatex">\(\alpha\)</span> : 열확산율(thermal diffusivity)</li>
 </ul>
 <h4 id="spalart-allmaras">Spalart-Allmaras</h4>
-<p>보정 동점성 계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>, modified kinematic viscosity)의 수송방정식을 계산하는 1 방정식 난류모델로, 항공우주 분야에서 경계층 난류 유동을 계산할 때 많이 사용된다. 계산된 <span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span> 값과 벽 근처에서의 점성 효과 보정함수를 이용하여 난류 점성계수를 계산한다. 난류 프란틀 수(<span class="arithmatex"><span class="MathJax_Preview">Pr_t</span><script type="math/tex">Pr_t</script></span>, turbulent Prandtl Number)를 설정할 수 있다.</p>
+<p>보정 동점성 계수(<span class="arithmatex">\(\tilde{\nu}\)</span>, modified kinematic viscosity)의 수송방정식을 계산하는 1 방정식 난류모델로, 항공우주 분야에서 경계층 난류 유동을 계산할 때 많이 사용된다. 계산된 <span class="arithmatex">\(\tilde{\nu}\)</span> 값과 벽 근처에서의 점성 효과 보정함수를 이용하여 난류 점성계수를 계산한다. 난류 프란틀 수(<span class="arithmatex">\(Pr_t\)</span>, turbulent Prandtl Number)를 설정할 수 있다.</p>
 <h4 id="k-epsilon">k-epsilon</h4>
-<p>난류 운동 에너지(k, turbulent kinetic energy)와 난류 소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>, turbulent dissipation rate)에 대한 수송방정식을 계산하는 2 방정식 난류모델이다. Standard, RNG, Realizable 3가지 모델을 선택할 수 있으며 난류 프란틀 수를 설정할 수 있다. Realizable 모델을 선택하면 벽함수 옵션으로 표준벽함수와 two layer 모델을 선택할 수 있다.</p>
+<p>난류 운동 에너지(k, turbulent kinetic energy)와 난류 소산율(<span class="arithmatex">\(\epsilon\)</span>, turbulent dissipation rate)에 대한 수송방정식을 계산하는 2 방정식 난류모델이다. Standard, RNG, Realizable 3가지 모델을 선택할 수 있으며 난류 프란틀 수를 설정할 수 있다. Realizable 모델을 선택하면 벽함수 옵션으로 표준벽함수와 two layer 모델을 선택할 수 있다.</p>
 <h4 id="k-omega">k-omega</h4>
-<p>난류 운동 에너지(k, turbulent kinetic energy)와 특정 소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>, specific dissipation rate)에 대한 수송방정식을 계산하는 2 방정식 난류모델이다.
+<p>난류 운동 에너지(k, turbulent kinetic energy)와 특정 소산율(<span class="arithmatex">\(\omega\)</span>, specific dissipation rate)에 대한 수송방정식을 계산하는 2 방정식 난류모델이다.
 k-omega 모델은 현재 Menter의 SST(Shear Stress Transport) 모델만 지원한다. 난류 프란틀 수를 설정할 수 있다.</p>
 <h4 id="les-large-eddy-simulation">LES, Large Eddy Simulation</h4>
 <p>큰 와류는 직접 계산하고 작은 와류는 서브그리드 스케일(SGS, Subgrid Scale)모델을 사용하여 에너지를 난류 점성으로 변환하는 모델이다. 비정상상태로 설정되었을 때만 활성화 된다. 서브그리드 스케일 모델과 와류의 크기를 구분하는 필터링 방법인 Length-Scale 모델을 선택할 수 있다.</p>
 <h4 id="des-detached-eddy-simulation">DES, Detached Eddy Simulation</h4>
 <p>LES와 RANS(Reynolds Averaged Navier-Stokes)를 결합한 하이브리드 난류 모델로, 자유류 영역은 LES를 경계층 유동은 RANS를 사용하는 모델이다. 비정상상태로 설정되었을 때만 활성화 된다. 벽면의 RANS 모델과 DES 옵션, Length-Scale 모델을 선택할 수 있다. RANS 모델로 Spalart-Allmaras와 SST k-omega를 선택할 수 있다. Spalart-Allmaras 옵션으로 Low Reynolds Damping을 선택할 수 있다. DES 옵션으로 Delayed DES를 선택할 수 있으며, 이 옵션이 활성화되면 DDES와 IDDES를 선택할 수 있다.</p>
 <h4 id="two-layer">Two layer 모델</h4>
-<p>넥스트폼이 아래 논문을 바탕으로 만든 벽함수 모델로, 블렌딩(blending) 함수를 사용한다. 표준벽함수는 <span class="arithmatex"><span class="MathJax_Preview">y^+</span><script type="math/tex">y^+</script></span>가 버퍼 레이어(buffer layer)에 있는 경우 정확도가 문제될 수 있는데, 이 모델은 <span class="arithmatex"><span class="MathJax_Preview">y^+</span><script type="math/tex">y^+</script></span>에 상관없이 사용할 수 있는 장점이 있다. **지금은 realizable k-epsilon 모델만 지원한다. 블렌딩 함수는 다음의 식을 사용한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\lambda = {\frac 1 2} \left[1 + tanh \left( \frac{Re_y - {Re_y}^* } {A} \right) \right ]</span><script type="math/tex">\lambda = {\frac 1 2} \left[1 + tanh \left( \frac{Re_y - {Re_y}^* } {A} \right) \right ]</script></span></center></p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">A = \frac {\Delta Re_y } {tanh(0.98)}</span><script type="math/tex">A = \frac {\Delta Re_y } {tanh(0.98)}</script></span></center></p>
+<p>넥스트폼이 아래 논문을 바탕으로 만든 벽함수 모델로, 블렌딩(blending) 함수를 사용한다. 표준벽함수는 <span class="arithmatex">\(y^+\)</span>가 버퍼 레이어(buffer layer)에 있는 경우 정확도가 문제될 수 있는데, 이 모델은 <span class="arithmatex">\(y^+\)</span>에 상관없이 사용할 수 있는 장점이 있다. **지금은 realizable k-epsilon 모델만 지원한다. 블렌딩 함수는 다음의 식을 사용한다.</p>
+<p><center><span class="arithmatex">\(\lambda = {\frac 1 2} \left[1 + tanh \left( \frac{Re_y - {Re_y}^* } {A} \right) \right ]\)</span></center></p>
+<p><center><span class="arithmatex">\(A = \frac {\Delta Re_y } {tanh(0.98)}\)</span></center></p>
 <p><em>Ref) Shih, T. H., Liou, W. W., Shabbir, A., Yang, Z., &amp; Zhu, J. (1995). A New k-epsilon eddy Viscosity Model for High Reynolds Number Turbulent Flows. Computers and Fluids, 24(3), 227-238.</em></p>
-<h4 id="pr_tpr_t-turbulent-prandtl-number">난류 프란틀 수(<span class="arithmatex"><span class="MathJax_Preview">Pr_t</span><script type="math/tex">Pr_t</script></span>, Turbulent Prandtl Number)</h4>
-<p>난류 프란틀 수는 난류 흐름에서 운동량 확산과 열 확산 간의 비율을 나타내는 무차원수이다. '내부 유동변수에 사용'(Internal Field)와 '벽함수에 사용'(Wall Function) 두 가지를 설정할 수 있다. 내부 유동변수에 사용되는 값은 난류모델에서 사용하고, 벽함수에 사용되는 값은 난류 열확산 계수(<span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span>, turbulent thermal diffusivity)의 벽함수에 사용된다. DES/LES 모델에서는 사용되지 않는다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Pr_t = \frac {\nu_t } {\alpha_t}</span><script type="math/tex">Pr_t = \frac {\nu_t } {\alpha_t}</script></span></center></p>
+<h4 id="pr_t-turbulent-prandtl-number">난류 프란틀 수(<span class="arithmatex">\(Pr_t\)</span>, Turbulent Prandtl Number)</h4>
+<p>난류 프란틀 수는 난류 흐름에서 운동량 확산과 열 확산 간의 비율을 나타내는 무차원수이다. '내부 유동변수에 사용'(Internal Field)와 '벽함수에 사용'(Wall Function) 두 가지를 설정할 수 있다. 내부 유동변수에 사용되는 값은 난류모델에서 사용하고, 벽함수에 사용되는 값은 난류 열확산 계수(<span class="arithmatex">\(\alpha_t\)</span>, turbulent thermal diffusivity)의 벽함수에 사용된다. DES/LES 모델에서는 사용되지 않는다.</p>
+<p><center><span class="arithmatex">\(Pr_t = \frac {\nu_t } {\alpha_t}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : 난류 점성 계수(turbulent viscosity)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> : 난류 열확산 계수(turbulent thermal diffusivity)</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : 난류 점성 계수(turbulent viscosity)</li>
+<li><span class="arithmatex">\(\alpha_t\)</span> : 난류 열확산 계수(turbulent thermal diffusivity)</li>
 </ul>
-<h4 id="sc_tsc_t-turbulent-schmidt-number">난류 슈미트 수(<span class="arithmatex"><span class="MathJax_Preview">Sc_t</span><script type="math/tex">Sc_t</script></span>, Turbulent Schmidt Number)</h4>
+<h4 id="sc_t-turbulent-schmidt-number">난류 슈미트 수(<span class="arithmatex">\(Sc_t\)</span>, Turbulent Schmidt Number)</h4>
 <p>난류 슈미트 수는 난류 흐름에서 물질 확산과 운동량 확산 간의 비율을 나타내는 무차원수이다. 화학종의 난류 확산에 사용되며, 화학종을 계산하지 않을 때는 사용되지 않는다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">Sc_t = \frac {\nu_t } {D_t}</span><script type="math/tex">Sc_t = \frac {\nu_t } {D_t}</script></span></center></p>
+<p><center><span class="arithmatex">\(Sc_t = \frac {\nu_t } {D_t}\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : 난류 점성 계수(turbulent viscosity)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">D_t</span><script type="math/tex">D_t</script></span> : 난류 확산 계수(turbulent diffusivity)\</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : 난류 점성 계수(turbulent viscosity)</li>
+<li><span class="arithmatex">\(D_t\)</span> : 난류 확산 계수(turbulent diffusivity)\</li>
 </ul>
 <p>화학종의 확산 플럭스는 다음식으로 계산되는데, 난류 슈미트 수가 작을 수록 혼합이 더 잘 일어난다. </p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">\vec{J_i} = - \left(  \rho D_i + \frac{\mu_t}{Sc_t}  \right) \nabla Y_i = - \rho (D_i + K) \nabla Y_i</span><script type="math/tex">\vec{J_i} = - \left(  \rho D_i + \frac{\mu_t}{Sc_t}  \right) \nabla Y_i = - \rho (D_i + K) \nabla Y_i</script></span></center></p>
+<p><center><span class="arithmatex">\(\vec{J_i} = - \left(  \rho D_i + \frac{\mu_t}{Sc_t}  \right) \nabla Y_i = - \rho (D_i + K) \nabla Y_i\)</span></center></p>
 <!--------------------------------------------------------------------------------------------------------->
 <h2 id="energy">에너지(Energy)</h2>
 <p>에너지를 더블 클릭하면 아래 그림의 설정창이 나타난다. 에너지방정식을 계산할 것인지 아닌지를 선택한다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/energy.png" width="200" height="200"><br>에너지 설정</center></p>
-<p>OpenFOAM의 표준솔버(standard solver)는 에너지방정식을 계산하지 않는 <em>simpleFoam</em> 과 계산하는 <em>buoyantSimpleFoam</em> 을 제공한다. <em>simpleFoam</em> 은 압력 대신 압력을 밀도로 나눈 변수를 사용하고, <em>buoyantSimpleFoam</em> 은 압력에서 정수압(<span class="arithmatex"><span class="MathJax_Preview">\rho g h</span><script type="math/tex">\rho g h</script></span>)을 뺀 <span class="arithmatex"><span class="MathJax_Preview">p\_rgh</span><script type="math/tex">p\_rgh</script></span> 변수를 사용한다. 그래서 각 솔버에서 계산한 압력 값이 밀도 만큼 다르다. BaramFlow의 압력기반 단상유동 솔버에서는 에너지방정식 계산 여부와 관계없이 넥스트폼이 개발한 하나의 솔버(<em>buoyantSimpleNFoam</em>)을 사용하는데, 이 솔버는 압력계산에 <span class="arithmatex"><span class="MathJax_Preview">p\_rgh</span><script type="math/tex">p\_rgh</script></span>를 사용하고 각 지배방정식의 계산여부를 제어할 수 있다.</p>
+<p>OpenFOAM의 표준솔버(standard solver)는 에너지방정식을 계산하지 않는 <em>simpleFoam</em> 과 계산하는 <em>buoyantSimpleFoam</em> 을 제공한다. <em>simpleFoam</em> 은 압력 대신 압력을 밀도로 나눈 변수를 사용하고, <em>buoyantSimpleFoam</em> 은 압력에서 정수압(<span class="arithmatex">\(\rho g h\)</span>)을 뺀 <span class="arithmatex">\(p\_rgh\)</span> 변수를 사용한다. 그래서 각 솔버에서 계산한 압력 값이 밀도 만큼 다르다. BaramFlow의 압력기반 단상유동 솔버에서는 에너지방정식 계산 여부와 관계없이 넥스트폼이 개발한 하나의 솔버(<em>buoyantSimpleNFoam</em>)을 사용하는데, 이 솔버는 압력계산에 <span class="arithmatex">\(p\_rgh\)</span>를 사용하고 각 지배방정식의 계산여부를 제어할 수 있다.</p>
 <h2 id="species">화학종 혼합(Species)</h2>
 <p>화학종 혼합을 더블 클릭하면 아래 그림의 설정창이 나타난다. 화학종방정식을 계산할 것인지 아닌지를 선택한다. 두 경우 모두 같은 솔버(<em>buoyantSimpleNFoam</em>)을 사용하고 선택에 따라 방정식 계산 여부를 제어한다.</p>
 <p><a href="https://baramcfd.org/tutorials/2024/07/24/species-post/">화학종 혼합 예제 : 덕트 유동</a></p>
@@ -1286,10 +1288,10 @@ k-omega 모델은 현재 Menter의 SST(Shear Stress Transport) 모델만 지원�
 <p>각 스칼라는 스칼라이름(Field Name)과 확산계수(Diffusivity)를 설정할 수 있다. 확산계수 설정 방법은 상수(Constant)와 '층류와 난류 점도'(Laminar and Turbulent Viscosity) 두 가지가 제공된다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/uds1.png" width="300" height="300"><br>사용자 정의 스칼라의 확산계수 설정</center></p>
 <p>상수는 고정값을 입력하고, '층류와 난류 점도' 방법은 층류와 난류 두 계수를 입력 받아 아래의 식으로 확산계수를 구한다.</p>
-<p><center><span class="arithmatex"><span class="MathJax_Preview">D = D_{laminar} \cdot \nu + D_{turbulent} \cdot \nu_t</span><script type="math/tex">D = D_{laminar} \cdot \nu + D_{turbulent} \cdot \nu_t</script></span></center></p>
+<p><center><span class="arithmatex">\(D = D_{laminar} \cdot \nu + D_{turbulent} \cdot \nu_t\)</span></center></p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu</span><script type="math/tex">\nu</script></span> : 물질의 동점성계수(kinematic viscosity)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : 난류 동점성계수(turbulent kinematic viscosity)</li>
+<li><span class="arithmatex">\(\nu\)</span> : 물질의 동점성계수(kinematic viscosity)</li>
+<li><span class="arithmatex">\(\nu_t\)</span> : 난류 동점성계수(turbulent kinematic viscosity)</li>
 </ul>
 <p>사용자 정의 스칼라는 OpenFOAM의 function object 기능을 사용하여 계산한다. 여기서 스칼라를 정의하면 다른 유동변수와 마찬가지로 경계조건에 값을 입력할 수 있고 모니터링과 데이터 추출 등에서 사용할 수 있다.</p>
 
@@ -1351,7 +1353,7 @@ k-omega 모델은 현재 Menter의 SST(Shear Stress Transport) 모델만 지원�
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
