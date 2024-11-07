@@ -1,0 +1,4029 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../report.ko/">
+      
+      
+        <link rel="next" href="../nomenclature.ko/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>NextFOAM 파일 설정 (NextFOAM in BaramFlow) - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#baramflow-nextfoam" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NextFOAM 파일 설정 (NextFOAM in BaramFlow)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../nextfoam.en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  홈
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../screenshots.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  스크린샷
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_overview.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  주요기능
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  설치
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../internationalization.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  다국어 지원
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release_notes.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  업데이트
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flow_tutorial/simple_incompressible.ko/" class="md-tabs__link">
+          
+  
+  예제 가이드
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro.ko/" class="md-tabs__link">
+          
+  
+  사용자 가이드
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../QA.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  문의
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    홈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../screenshots.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스크린샷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_overview.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    주요기능
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    설치
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internationalization.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    다국어 지원
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    업데이트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../flow_tutorial/simple_incompressible.ko/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    예제 가이드
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    사용자 가이드
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            사용자 가이드
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BaramFlow
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            BaramFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    설치와 실행
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    일반 (General)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    모델  (Models)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    물질 (Materials)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cellZone.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    셀존 조건 (Cell Zone Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    경계 조건 (Boundary Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    기준 값 (Reference Values)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    수치해석 기법 (Numerical Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    모니터 (Monitor)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initial.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    초기조건 (Initialization)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runCondition.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    계산 조건 (Run Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    실행 (Run)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    데이터 추출 (Report)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    NextFOAM 파일 설정 (NextFOAM in BaramFlow)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    NextFOAM 파일 설정 (NextFOAM in BaramFlow)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본조건(General)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      모델(Model)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      물질(Materials)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cell-zone-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      셀존 조건(Cell Zone Conditions)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      경계조건(Boundary Condition)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      수치해석 기법(Numerical Conditions)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      모니터(Monitor)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      초기화(Initialization)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      계산 조건(Run Conditions)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nomenclature.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    용어해설 (Nomenclature)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../mesh_manual/intro.ko/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BaramMesh
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QA.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    문의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../../flow_manual/nextfoam.en/">English</a></li>
+</ul>
+<h1 id="baramflow-nextfoam">BaramFlow의 설정이 NextFOAM에서 사용되는 방법</h1>
+<p>BaramFlow는 넥스트폼이 개발한 OpenFOAM의 포크인 NextFOAM을 사용한다. BaramFlow의 각종 설정들이 NextFOAM에 어떻게 적용되는지를 설명한다. NextFOAM에서 사용되는 용어들은 이탤릭체로 표현하였다.</p>
+<h2 id="general">기본조건(General)</h2>
+<h3 id="time">시간 전진 기법 설정(Time)</h3>
+<p>시간에 대한 설정은 <strong>system/fvSchemes</strong> 파일의 <em>ddtSchemes</em> 딕셔너리에서 한다.</p>
+<p>정상상태 압력기반 솔버의 단상유동은 <em>steadyState</em>, 2상유동은 <em>localEuler</em> 이다. 밀도기반 솔버도 <em>localEuler</em> 이다.</p>
+<div class="highlight"><pre><span></span><code>ddtSchemes
+{
+    default     &lt;steadyState or localEuler&gt;;
+}
+</code></pre></div>
+<p>비정상상태는 시간의 이산화 기법이 1차 음해법(First Order Implicit)일 때는 <em>Euler</em>, 2차 음해법(Second Order Implicit)일 때는 <em>backward</em> 이다.</p>
+<div class="highlight"><pre><span></span><code>ddtSchemes
+{
+    default     &lt;Euler or backward&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="gravity">중력(Gravity)</h3>
+<p>중력 벡터의 입력값을 <strong>constant/g</strong> 파일에 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>dimensions  [0 1 -2 0 0 0 0];
+value       (&lt;x-value&gt; &lt;y-value&gt; &lt;z-value&gt;);
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="operating-conditions">작동조건(Operating Conditions)</h3>
+<p>작동 조건(Operating Conditions) 입력값을 <strong>constant/operatingConditions</strong> 파일에 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>operatingPressure operatingPressure [1 -1 -2 0 0 0 0]   &lt;value&gt;;
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h2 id="model">모델(Model)</h2>
+<h3 id="turbulence">난류(Turbulence)</h3>
+<p>난류는 <strong>constant/turbulenceProperties</strong> 파일에 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            kOmegaSST;
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   1e5;
+}
+</code></pre></div>
+<p><em>simulationType</em> 설정과 그에 따른 딕셔너리가 필요하다. <em>simulationType</em> 은 <em>laminar</em>, <em>RAS</em>, <em>LES</em> 등이 있다.</p>
+<p><em>turbulence</em> 와 <em>printCoeffs</em> 는 항상 on 이다. </p>
+<p><em>viscosityRatioMax</em> 는 [수치해석기법] - [고급설정]에서 입력한 최대 점도 비율(Maximum Viscosity Ratio) 값이다.</p>
+<h4 id="laminar">층류(Laminar)</h4>
+<div class="highlight"><pre><span></span><code>simulationType  laminar;
+</code></pre></div>
+<p>뉴턴 유체의 경우 아무런 추가 설정이 없다. 비뉴턴체의 경우 <em>laminar</em> 딕셔너리에서 모델을 설정한다. 비뉴턴유체 모델은 Cross, Herschel-Bulkley, Bird-Carreau, Non-Newtonian power law를 선택할 수 있다. 각 모델의 계수는 다음과 같이 설정한다.</p>
+<p>Cross
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  CrossPowerLaw;
+    CrossPowerLawCoeffs
+    {
+        nu0     &lt;value&gt;;
+        nuInf   &lt;value&gt;;
+        m       &lt;value&gt;;
+        n       &lt;value&gt;;
+        tauStar &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Herschel-Bulkley
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  HerschelBulkley;
+    HerschelBulkleyCoeffs
+    {
+        nu0     &lt;value&gt;;
+        tau0    &lt;value&gt;;
+        k       &lt;value&gt;;
+        n       &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Bird-Carreau
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  BirdCarreau;
+    BirdCarreauCoeffs
+    {
+        nu0     &lt;value&gt;;
+        nuInf   &lt;value&gt;;
+        k       &lt;value&gt;;
+        n       &lt;value&gt;;
+        a       &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Non-Newtonian power law
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  powerLaw;
+    powerLawCoeffs
+    {
+        nuMax   &lt;value&gt;;
+        nuMin   &lt;value&gt;;
+        k       &lt;value&gt;;
+        n       &lt;value&gt;;
+    }
+}
+</code></pre></div></p>
+<h4 id="spalart-allmaras">Spalart-Allmaras</h4>
+<p>항상 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            SpalartAllmaras;
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k-epsilon">k-epsilon</h4>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            kEpsilon; // RNGkEpsilon, realizableKE
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   &lt;value&gt;;
+    kEpsilonCoeffs
+    {
+        Prt     &lt;value&gt;;
+        Sct     &lt;value&gt;;
+    }
+    ReyStar     60;
+    deltaRey    10;
+}
+</code></pre></div>
+<p><em>RASModel</em> 은 Standard일 때는 <em>kEpsilon</em>, RNG일 때는 <em>RNGkEpsilon</em>, Realizable일 때는 <em>realizableKE</em> 를 사용한다.</p>
+<p><em>Prt</em> 는 난류 프란틀 수(Turbulent Prandtl Number)의 내부 유동변수에 사용(for internal Field)에 입력된 값이다.</p>
+<p><em>Sct</em> 는 난류 슈미트 수(Turbulent Schmidt Number)의 값이다.</p>
+<p><em>ReyStar</em> 와 <em>deltaRey</em> 는 realizable 모델에서 벽함수가 Enhanced Wall Treatment(two layer)일 때만 사용되며 항상 60과 10이다.</p>
+<h4 id="k-omega-sst">k-omega SST</h4>
+<p>항상 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            kOmegaSST;
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="les">LES</h4>
+<p>LES 모델의 <em>simulationType_은 _LES</em> 이다. Subgrid-Scale 모델과 Length-Scale 모델을 설정하고 그에 따른 딕셔너리가 필요하다.</p>
+<p>Subgrid-Scale 모델은 <em>LESModel</em> 에서 설정하고 Length-Scale 모델은 <em>delta</em> 에서 설정한다.</p>
+<div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            &lt;Smagorinsky or WALE or dynamicKEqn or kEqn&gt;;
+    turbulence          on;
+    printCoeffs         off;
+    delta               &lt;cubeRootVol or dynamicKEqn or kEqn&gt;; 
+    viscosityRatioMax   &lt;value&gt;;
+    SmagorinskyCoeffs
+    {
+        Ck              &lt;value&gt;;
+        Ce              &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+}
+</code></pre></div>
+<h5 id="subgrid-scale">Subgrid-Scale 모델</h5>
+<p>Smagorinsky-Lilly(<em>Smagorinsky</em>), WALE(<em>WALE</em>), Kinetic-Energy Transport(<em>dynamicKEqn</em>), One Equation Eddy Viscosity(<em>kEqn</em>) 4가지를 선택할 수 있다. Smagorinsky-Lilly일 때는 위와 같으며, 나머지들의 딕셔너리는 다음과 같다.</p>
+<p>WALE
+<div class="highlight"><pre><span></span><code>    WALECoeffs
+    {
+        Ck      &lt;value&gt;;
+        Ce      &lt;value&gt;;
+        Cw      &lt;value&gt;;
+        Sct     &lt;value&gt;;
+    }
+</code></pre></div>
+Kinetic-Energy Transport
+<div class="highlight"><pre><span></span><code>    dynamicKEqnCoeffs
+    {
+        filter      simple;
+        Sct         &lt;value&gt;;
+    }
+</code></pre></div>
+One Equation Eddy Viscosity
+<div class="highlight"><pre><span></span><code>    kEqnCoeffs
+    {
+        Ck      &lt;value&gt;;
+        Ce      &lt;value&gt;;
+        Sct     &lt;value&gt;;
+    }
+</code></pre></div></p>
+<p><em>Sct</em> 는 난류 슈미트 수이다. 화학종을 계산할 때만 입력창이 나타난다. 화학종 계산이 없을 때는 항상 0.7을 사용한다.</p>
+<h5 id="length-scale">Length-Scale 모델</h5>
+<p>Cube-root Volume(<em>cubeRootVol</em>), Van Driest(<em>dynamicKEqn</em>), smooth(<em>smooth</em>) 3가지를 선택할 수 있다. Cube-root Volume일 때는 위와 같으며, 나머지들의 딕셔너리는 다음과 같다.</p>
+<p>Van Driest
+<div class="highlight"><pre><span></span><code>    vanDriestCoeffs
+    {
+        delta           cubeRootVol;
+        kappa           0.41;
+        Aplus           26;
+        Cdelta          0.158;
+        calcInterval    1;
+        cubeRootVolCoeffs
+        {
+            deltaCoeff  2.0;
+        }
+    }
+</code></pre></div>
+smooth
+<div class="highlight"><pre><span></span><code>    smoothCoeffs
+    {
+        delta           cubeRootVol;
+        maxDeltaRatio   1.1;
+        cubeRootVolCoeffs
+        {
+            deltaCoeff  1;
+        }
+    }
+</code></pre></div></p>
+<h4 id="des">DES</h4>
+<p>DES 모델의 <em>simulationType_은 _LES</em> 이다. </p>
+<p>RAS 모델, DES 옵션, Length-Scale 모델을 설정하고 그에 따른 딕셔너리가 필요하다.</p>
+<p><div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            SpalartAllmarasDES; //kOmegaSSTDES; 
+    turbulence          on;
+    delta               &lt;cubeRootVol or dynamicKEqn or smooth&gt;;
+    viscosityRatioMax   &lt;value&gt;;
+    SpalartAllmarasDESCoeffs
+    {
+        CDES            &lt;value&gt;;
+        lowReCorrection &lt;yes or no&gt;;
+        Sct             &lt;value&gt;;
+    }
+    kOmegaSSTDES
+    {
+        CDESkom         &lt;value&gt;;
+        CDESkeps        &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+}
+</code></pre></div>
+RAS 모델은 <em>LESModel</em> 에서 설정하고 Length-Scale 모델은 <em>delta</em> 에서 설정한다.</p>
+<h5 id="ras">RAS 모델</h5>
+<p>Spalart-Allmaras(<em>SpalartAllmarasDES</em>), k-omega SST(<em>kOmegaSSTDES</em>) 2가지를 선택할 수 있다. </p>
+<p>Spalart-Allmaras일 때 Low-Re Damping 옵션이 있다. 이 옵션을 사용할 때는 <em>SpalartAllmarasDESCoeffs</em> 딕셔너리의 <em>lowReCorrection</em> 이 _yes_가 되고 아닐 때는 _no_가 된다.</p>
+<h5 id="des_1">DES 옵션</h5>
+<p>DES 옵션의 Delayed DES를 켜면 Shielding Function 옵션이 나타나고 DDES와 IDDES를 선택할 수 있다. IDDES를 선택하면 Lengh-Scale 모델은 없어진다.</p>
+<p>DDES를 선택하면 <em>LESModel</em> 이 RAS 모델에 따라 <em>SpalartAllmarasDDES</em>, <em>kOmegaSSTDDES</em> 가 된다.
+<div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            SpalartAllmarasDDES; //kOmegaSSTDDES;
+    turbulence          on;
+    delta               &lt;cubeRootVol or dynamicKEqn or smooth&gt;;
+    viscosityRatioMax   &lt;value&gt;;
+    SpalartAllmarasDDESCoeffs
+    {
+        CDES            &lt;value&gt;;
+        lowReCorrection &lt;yes or no&gt;;
+        Sct             &lt;value&gt;;
+    }
+    kOmegaSSTDDES
+    {
+        CDESkom         &lt;value&gt;;
+        CDESkeps        &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+}
+</code></pre></div></p>
+<p>IDDES를 선택하면 <em>LESModel</em> 이 RAS 모델에 따라 <em>SpalartAllmarasIDDES</em>, <em>kOmegaSSTIDDES</em> 가 된다.
+<div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            SpalartAllmarasIDDES; //kOmegaSSTIDDES;
+    turbulence          on;
+    delta               IDDESDelta;
+    viscosityRatioMax   1e5;
+    SpalartAllmarasIDDESCoeffs
+    {
+        CDES            &lt;value&gt;;
+        lowReCorrection &lt;yes or no&gt;;
+        Sct             &lt;value&gt;;
+    }
+    kOmegaSSTIDDES
+    {
+        CDESkom         &lt;value&gt;2;
+        CDESkeps        &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    IDDESDeltaCoeffs
+    {
+        hmax maxDeltaxyzCubeRoot;
+        maxDeltaxyzCubeRootCoeffs
+        {
+        }
+    }
+}
+</code></pre></div></p>
+<h5 id="length-scale_1">Length-Scale 모델</h5>
+<p>Lengh-Scale 모델은 LES에서와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="energy">에너지(Energy)</h3>
+<p>에너지 방정식 계산 여부는 <strong>system/fvSolution</strong> 파일의 <em>SIMPLE</em> 과 <em>PIMPLE</em> 딕셔너리의 <em>solveEnergy</em> 에 설정된다.</p>
+<div class="highlight"><pre><span></span><code>SiMPLE //PIMPLE
+{
+    ...
+    solveEnergy     &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="species">화학종 혼합(Species)</h3>
+<p>화학종 혼합은 <strong>constant/thermophysicalProperties</strong> 파일에 설정된다.</p>
+<h4 id="thermotype">thermoType 딕셔너리</h4>
+<p><em>mixture</em> 가 다음과 같이 <em>multiComponentMixture</em> 가 된다.</p>
+<div class="highlight"><pre><span></span><code>thermoType
+{
+    type            heRhoThermo;
+    mixture         multiComponentMixture;
+    transport       const;
+    thermo          hConst; 
+    equationOfState rhoConst; 
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+</code></pre></div>
+<h4 id="species_1">species 딕셔너리</h4>
+<p>계산에 사용될 화학종들을 써 준다. 이와 함께 <em>inertSpecie</em> 를 지정해 주어야 한다. 이것은 수송방정식을 계산하지 않으며 질량분율은 1에서 나머지 화학종 값의 합을 뺀 것을 사용한다. </p>
+<div class="highlight"><pre><span></span><code>species
+(
+    &lt;species1&gt;
+    &lt;species2&gt;
+    ...
+);
+
+inertSpecie     &lt;specie1&gt;
+</code></pre></div>
+<h4 id="_1">각 화학종의 딕셔너리</h4>
+<p>각 화확종의 물성값을 설정하는 딕셔너리가 있어야 한다. <em>mixture</em> 딕셔너리와 같은 형태인데 단지 <em>transport</em> 에 확산계수 <em>Dm</em> 이 있는 것만 다르다.</p>
+<div class="highlight"><pre><span></span><code>&lt;specie1&gt;
+{
+    thermodynamics
+    {
+        ...
+    }
+    transport
+    {
+        mu  &lt;value&gt;;
+        Pr  &lt;value&gt;;
+        Dm  &lt;value&gt;;
+    }
+    specie
+    {
+        ...
+    }
+    equationOfState
+    {
+        ...
+    }
+}
+
+&lt;specie2&gt;
+...
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="user-defined-scalars">사용자 정의 스칼라(User-defined Scalars)</h3>
+<p>사용자 정의 스칼라는 <strong>system/controlDict</strong> 파일의 functions 딕셔너리에 설정된다.</p>
+<p>확산 계수가 상수인 경우 입력한 값은 <em>D</em> 에 사용되고, 층류 및 난류 확산계수인 경우는 <em>alphaD</em> 와 <em>alphaDt</em> 에 사용된다.</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+
+    &lt;name&gt;
+    {
+        type            scalarTransport;
+        libs            (&quot;/baram/solvers/openfoam/lib/libsolverFunctionObjects.so&quot;);
+        field           &lt;uds name&gt;;
+        schemesField    scalar;
+        nCorr           2;
+        writeControl    runTime;
+        writeInterval   &lt;value&gt;;
+        D               &lt;value&gt;; // Constant
+        //alphaD          &lt;value&gt;; // Laminar and Turbulent Viscosity
+        //alphaDt         &lt;value&gt;; // Laminar and Turbulent Viscosity
+    }
+}
+</code></pre></div>
+<p><em>schemesField</em> 는 항상 <em>scalar</em> 이다. 이것은 수치해석 기법을 <strong>system/fvSolution</strong>, <strong>system/fvSchemes</strong> 파일에서 설정할 때 scalar라는 이름의 값을 사용하는 것이다.</p>
+<p><em>writeInterval</em> 은 계산조건에서 설정한 자동 저장 간격(Save Interval) 값을 사용한다.</p>
+<!---------------------------------------------------------------------------------->
+<h2 id="materials">물질(Materials)</h2>
+<p>물성값은 단상유동은 <strong>constant/thermophysicalProperties</strong> 파일에서, 다상유동은 <strong>constant/transportProperties</strong> 파일에서 설정한다. 비뉴턴유체의 점성 모델은 <strong>constant/turbulenceProperties</strong> 파일에서 설정한다.</p>
+<h3 id="thermophysicalproperties">thermophysicalProperties</h3>
+<h4 id="thermotype_1">thermoType 딕셔너리</h4>
+<p><em>thermoType</em> 은 <em>mixture</em>, <em>transport</em>, <em>thermo</em>, <em>equationOfState</em>, <em>specie</em>, <em>energy</em> 등의 6가지를 설정한다.</p>
+<p>유체일 때
+<div class="highlight"><pre><span></span><code>thermoType
+{
+    type            heRhoThermo;
+    mixture         pureMixture;     
+    transport       const;          
+    thermo          hConst;         
+    equationOfState rhoConst;  
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+</code></pre></div>
+고체일 때
+<div class="highlight"><pre><span></span><code>thermoType
+{
+    type            heSolidThermo;
+    mixture         pureMixture;     
+    transport       constIso;          
+    thermo          hConst;         
+    equationOfState rhoConst;  
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+</code></pre></div></p>
+<ul>
+<li>
+<p>type : 유체일 때는 항상 <em>heRhoThermo</em> 를 사용하고, 고체일 때는 <em>heSolidThermo</em> 를 사용한다. </p>
+</li>
+<li>
+<p>mixture : 화학종 혼합을 계산하지 않을 때는 항상 <em>pureMixture</em> 를 사용한다. 화학종 혼합을 계산할 때는 <em>multiComponentMixture</em> 를 사용한다. 고체일 때는 항상 <em>pureMixture</em> 를 사용한다.</p>
+</li>
+<li>
+<p>transport : 유체인 경우 점성계수와 열전도도가 상수일 때는 <em>const</em> 를 사용하고, 다항식일 때는 <em>polynomial</em> 을 사용한다. 고체인 경우 열전도도가 상수일 때는 <em>constIso</em> 를 사용한다. </p>
+</li>
+<li>
+<p>thermo : 정압비열이 상수일 때 <em>hConst</em> 를 사용하고, 다항식일 때 <em>hPolynomial</em> 을 사용한다.</p>
+</li>
+<li>
+<p>equationOfState : 밀도가 상수일 때 <em>rhoConst</em> 를 사용하고, 완전기체일 때는 <em>perfectGas</em> 를, 비압축성 완전기체일 때는 <em>incompressiblePerfectGas</em> 를 사용한다. 다항식일 때는 <em>icoPolynomial</em> 를 사용한다.</p>
+</li>
+<li>
+<p>specie : 항상 <em>specie</em> 를 사용한다.</p>
+</li>
+<li>
+<p>energy : 항상 <em>sensibleEnthalpy</em> 를 사용한다.</p>
+</li>
+</ul>
+<h4 id="mixture">mixture 딕셔너리</h4>
+<p>화학종 혼합을 계산하지 않을 때 유체의 물성값은 <em>mixture</em> 딕셔너리에서 설정한다. <em>mixture</em> 딕셔너리에는 <em>thermodynamics</em>, <em>transport</em>, <em>specie</em>, <em>equationOfState</em> 등의 딕셔너리가 있다. 사용 예는 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>...
+mixture
+{
+    thermodynamics
+    {
+        Cp      1006.0;
+        Hf      0;
+    }
+    transport
+    {
+        mu      1.79e-05;
+        Pr      0.7349959183673469;
+    }
+    specie
+    {
+        nMoles      1;
+        molWeight   28.966;
+    }
+    equationOfState
+    {
+        rho     1.225;
+    }
+}
+...
+</code></pre></div>
+<h5 id="thermodynamics">thermodynamics</h5>
+<p><em>Cp</em> 와 <em>Hf</em> 를 설정한다. <em>Cp</em> 는 정압비열이며 <em>Hf</em> 는 생성열이다. BaramFlow에는 아직 화학반응이 포함되어 있지 않기 때문에 <em>Hf</em> 는 사용되지 않으며 항상 0으로 설정된다.</p>
+<p>정압비열이 상수일 때 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>thermodynamics
+{
+    Cp  &lt;value&gt;;
+    Hf  0;
+}
+</code></pre></div>
+<p>정압비열이 다항식일 때는 다음과 같다.</p>
+<p><div class="highlight"><pre><span></span><code>thermodynamics
+{
+    Hf          0;
+    Sf          0;
+    CpCoeffs&lt;8&gt; (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+}
+</code></pre></div>
+<em>Sf</em> 는 표준 엔트로피(standard entropy)이며 BaramFlow에는 아직 화학반응이 포함되어 있지 않기 때문에 <em>Sf</em> 는 사용되지 않으며 항상 0으로 설정된다.</p>
+<p>다항식은 아래의 식과 같이 7차식으로 표현하기 때문에 8개의 계수가 필요하다. </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">Cp = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4 + a_5 T^5 + a_6 T^6 + a_7 T^7</span><script type="math/tex">Cp = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4 + a_5 T^5 + a_6 T^6 + a_7 T^7</script></span></p>
+<h5 id="transport">transport</h5>
+<p><em>mu_와 _Pr_을 설정한다. _mu</em> 는 점성계수이며 <em>Pr</em> 은  프란트 수(Prandtl Number)이다. </p>
+<p>Viscosity와 Thermal Conductivity가 상수일 때 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>transport
+{
+    mu  &lt;value&gt;;
+    Pr  &lt;value&gt;;
+}
+</code></pre></div>
+<p>점성계수와 열전도도가 다항식일 때는 다음과 같다.</p>
+<p><div class="highlight"><pre><span></span><code>transport
+{
+    muCoeffs&lt;8&gt;     (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+    kappaCoeffs&lt;8&gt;  (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+}
+</code></pre></div>
+점성계수가 Sutherland일 때는 다음과 같다.
+<div class="highlight"><pre><span></span><code>transport
+{
+    As  &lt;value&gt;;
+    Ts  &lt;value&gt;;
+}
+</code></pre></div>
+<em>As</em> 는 Sutherland 계수, <em>Ts</em> 는 Sutherland 온도</p>
+<h5 id="specie">specie</h5>
+<p>_specie_에는 물질의 분자량을 설정한다.
+<div class="highlight"><pre><span></span><code>specie
+{
+    nMoles      1;
+    molWeight   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h5 id="equationofstate">equationOfState</h5>
+<p>밀도가 상수일 때 다음과 같다.
+<div class="highlight"><pre><span></span><code>equationOfState
+{
+    rho &lt;value&gt;;
+}
+</code></pre></div></p>
+<p>밀도가 다항식일 때는 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>equationOfState
+{
+    rhoCoeffs&lt;8&gt;     (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+}
+</code></pre></div>
+<p>밀도가 이상기체일 때는 equationOfState 딕셔너리가 필요 없다.</p>
+<p>밀도가 비압축성 이상기체일 때는 다음과 같다.</p>
+<p><div class="highlight"><pre><span></span><code>equationOfState
+{
+    pRef    &lt;value&gt;;
+}
+</code></pre></div>
+[기준값]의 압력을 사용한다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="transportproperties">transportProperties</h3>
+<p>다상유동 문제에서 각 상의 물성을 설정한다. <em>phases</em> 라는 딕셔너리와 각 상에 대한 딕셔너리가 필요하며, 표면장력, 캐비테이션 등을 설정한다.</p>
+<h4 id="phases">phases</h4>
+<p>상이 2개일 때 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>phases  (&lt;phase1&gt; &lt;phase2&gt;);
+</code></pre></div>
+<p>상이 3개 이상일 때는 다음과 같다.
+<div class="highlight"><pre><span></span><code>phases
+(
+    &lt;phase1&gt; 
+    {
+        transportModel  Newtonian;
+        nu              &lt;value&gt;;
+        rho             &lt;value&gt;;
+    } 
+    &lt;phase2&gt;
+    {
+        transportModel  Newtonian;
+        nu              &lt;value&gt;;
+        rho             &lt;value&gt;;
+    }
+    ... 
+);
+</code></pre></div></p>
+<h4 id="_2">각 상의 물성값</h4>
+<p>상이 2개일 때는 다음과 같다.
+<div class="highlight"><pre><span></span><code>&lt;phase1&gt;
+{
+    transportModel  Newtonian;
+    nu              &lt;value&gt;;
+    rho             &lt;value&gt;;
+}
+&lt;phase2&gt;
+{
+    transportModel  Newtonian;
+    nu              &lt;value&gt;;
+    rho             &lt;value&gt;;
+}
+</code></pre></div></p>
+<p>상이 3개 이상일 때는 <em>phases</em> 딕셔너리에 설정하기 때문에 필요없다. </p>
+<h4 id="_3">표면장력</h4>
+<p>상이 2개일 때 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>sigma   &lt;value&gt;;
+</code></pre></div>
+<p>상이 3개 이상일 때는 각 상간의 값을 다음과 같이 설정한다.
+<div class="highlight"><pre><span></span><code>sigmas
+(
+    (&lt;phase1&gt; &lt;phase2&gt;) &lt;value&gt;
+    (&lt;phase1&gt; &lt;phase3&gt;) &lt;value&gt;
+    (&lt;phase2&gt; &lt;phase3&gt;) &lt;value&gt;
+    ...
+);
+</code></pre></div></p>
+<h4 id="_4">캐비테이션</h4>
+<p>캐비테이션 문제에서는 증기압을 <em>pSat</em> 에 설정하고, 캐비테이션 모델을 <em>phaseChangeTwoPhaseMixture</em> 에 설정한다. </p>
+<div class="highlight"><pre><span></span><code>pSat                        &lt;value&gt;;
+phaseChangeTwoPhaseMixture  SchnerrSauer; //Kunz, Merkle, Zwart
+</code></pre></div>
+<p>각 모델의 계수는 별도의 딕셔너리로 다음과 같이 설정한다.</p>
+<p>Schnerr-Sauer 모델
+<div class="highlight"><pre><span></span><code>SchnerrSauerCoeffs
+{
+    n       &lt;value&gt;;
+    dNuc    &lt;value&gt;;
+    Cc      &lt;value&gt;;
+    Cv      &lt;value&gt;;
+}
+</code></pre></div>
+Kunz, Merkle 모델
+<div class="highlight"><pre><span></span><code>KunzCoeffs // MerkleCoeffs
+{
+    UInf    &lt;value&gt;;
+    tInf    &lt;value&gt;;
+    Cc      &lt;value&gt;;
+    Cv      &lt;value&gt;;
+}
+</code></pre></div>
+Zwart-Gerber-Belamri 모델
+<div class="highlight"><pre><span></span><code>ZwartCoeffs
+{
+    aNuc    &lt;value&gt;;
+    dNuc    &lt;value&gt;;
+    Cc      &lt;value&gt;;
+    Cv      &lt;value&gt;;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h2 id="cell-zone-conditions">셀존 조건(Cell Zone Conditions)</h2>
+<h3 id="multiple-reference-frame-mrf">다중기준좌표계(Multiple Reference Frame, MRF)</h3>
+<p>다중기준좌표계는 **constant/MRFProperties**에서 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    cellZone    &lt;cell zone name&gt;;
+    active      yes;
+    nonRotatingPatches
+    (
+        &lt;patch name 1&gt;
+        &lt;patch name 2&gt;
+        ...
+    );
+    origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+    axis        (&lt;x-axis&gt; &lt;y-axis&gt; &lt;z-axis&gt;);
+    omega       &lt;radian per sec&gt;;
+}
+</code></pre></div>
+<p><em>omega</em> 는 입력한 분당 회전수(RPM) 값을 초당 라디안(radian)으로 변환해서 사용한다.</p>
+<h3 id="sliding-mesh">미끄럼 격자(Sliding Mesh)</h3>
+<p>미끄럼 격자는 <strong>constant/dynamicMeshDict</strong> 파일에서 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>dynamicFvMesh       dynamicMotionSolverListFvMesh;
+motionSolverLibs    (&quot;libfvMotionSolvers.so&quot;);
+motionSolver        fvMotionSolvers;
+solvers
+{
+    &lt;name&gt;
+    {
+        solver solidBody;
+        solidBodyMotionFunction rotatingMotion;
+        cellZone rotating;
+        rotatingMotionCoeffs
+        {
+            origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+            axis        (&lt;x-axis&gt; &lt;y-axis&gt; &lt;z-axis&gt;);
+            omega       &lt;radian per sec&gt;;
+        }
+    }
+}
+</code></pre></div>
+<p><em>omega</em> 는 입력한 분당 회전수(RPM) 값을 초당 라디안(radian)으로 변환해서 사용한다.</p>
+<h3 id="porous-zone">다공성 매질(Porous Zone)</h3>
+<p>다공성 매질은 <strong>system/fvOptions</strong> 파일에서 설정한다.</p>
+<h4 id="power-law">Power Law 모델</h4>
+<p>입력 받은 C0, C1은 <em>powerLawCoeffs</em> 에 사용된다.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type    explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+        type    powerLaw;
+        powerLawCoeffs
+        {
+            C0      &lt;value&gt;;
+            C1      &lt;value&gt;;
+            coordinateSystem
+            {
+                type        cartesian;
+                origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+                rotation
+                {
+                    type    axesRotation;
+                    e1      (1 0 0);
+                    e2      (0 1 0);
+                }
+            }
+        }
+        selectionMode   cellZone;
+        cellZone        &lt;cell zone name&gt;;
+    }
+}
+</code></pre></div>
+<h4 id="darcy-forchheimer">Darcy Forchheimer 모델</h4>
+<p>입력 받은 방향벡터 1과 2는 <em>coordinateSystem</em> 의 <em>e1</em>, <em>e2</em> 에 사용된다. 관성저항계수와 점성저항계수는 <em>DarcyForchheimerCoeffs</em> 의 <em>f</em> 와 <em>d</em> 에 사용된다.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type    explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+        type    DarcyForchheimer;
+        DarcyForchheimerCoeffs
+        {
+            d d [ 0 -2 0 0 0 0 0 ]  (&lt;x-d&gt; &lt;y-d&gt; &lt;z-d&gt;);
+            f f [ 0 -1 0 0 0 0 0 ]  (&lt;x-f&gt; &lt;y-f&gt; &lt;z-f&gt;);
+            coordinateSystem
+            {
+                type        cartesian;
+                origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+                rotation
+                {
+                    type    axes;
+                    e1      (&lt;x-dir1&gt; &lt;y-dir1&gt; &lt;z-dir1&gt;);
+                    e2      (&lt;x-dir2&gt; &lt;y-dir2&gt; &lt;z-dir2&gt;);
+                }
+            }
+        }
+        selectionMode   cellZone;
+        cellZone        &lt;cell zone name&gt;;
+    }
+}
+</code></pre></div>
+<h3 id="actuator-disk">액추에이터 디스크(Actuator Disk)</h3>
+<p>액추에이터 디스크 모델은 <strong>system/fvOptions</strong> 파일에서 설정한다.</p>
+<p>입력 받은 디스크 축 방향은 <em>diskDir</em> 에, 파워 계수는 <em>Cp</em> 에, 추력 계수는 <em>Ct</em> 에  디스크 면적은 <em>diskArea</em> 에, 상류쪽 점의 좌표는 <em>monitorCoeffs에, 힘 계산 방법은 _variant</em> 에 사용된다. </p>
+<div class="highlight"><pre><span></span><code>actuationDiskSource_porousZone
+{
+    type            actuationDiskSource;
+    fields          (U);
+    diskDir         (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Cp              &lt;value&gt;;
+    Ct              &lt;value&gt;;
+    diskArea        &lt;value&gt;;
+    monitorMethod   points;
+    monitorCoeffs
+    {
+        points      ((&lt;x&gt; &lt;y&gt; &lt;z&gt;));
+    }   
+    variant         &lt;Froude or variableScaling&gt;;
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+<h3 id="source-terms">생성항(Source Terms)</h3>
+<p>질량, 에너지, 난류, 화학종 관련 필드에 생성항을 줄 수 있다. </p>
+<p>생성항은 <strong>system/fvOptions</strong> 파일에서 설정한다.</p>
+<p>무엇에 대한 생성항인지는 <em>sources_에서 설정한다. 질량은 _rho</em>, 에너지는 <em>h</em>, 난류 관련 필드는 <em>k</em>, <em>epsilon</em>, <em>omega</em> 등이다. </p>
+<p>값은 <em>sources</em> 에서 (\<explicit value> \<implicit value>)와 같이 주는데 입력한 값은 explicit value에 쓰고 implicit value에는 0.0을 쓴다.</p>
+<p>값의 크기 설정 방법(Specification Method)는 전체 체적에 대한 값(Value for Entire Cell Zone)과 단위 체적당 값(Value per Unit Volume) 두 가지가 있으며 <em>volumeMode</em> 에서 설정한다. 전체 체적에 대한 값은 <em>absolute</em>, 단위 체적당 값은 <em>specific</em> 이다.</p>
+<p>셀존이 아닌 전체 영역에 생성항을 줄 때는 <em>selectionMode</em> 가 <em>all</em> 이 된다.</p>
+<p><div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            scalarSemiImplicitSource;
+    volumeMode      &lt;absolute or specific&gt;;
+    sources
+    {
+        rho         (&lt;value&gt; 0.0); // h, k, epsilon, omega, nuTilda, &lt;species&gt;
+    }
+    selectionMode   cellZone; //all;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+값의 변화 설정 방법이 조각별 선형 함수일 때
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            scalarSemiImplicitSource;
+    volumeMode      &lt;absolute or specific&gt;;
+    sources
+    {
+        h
+        {
+            explicit table  ( (&lt;t0&gt; &lt;t1&gt; ...) (&lt;flowrate0&gt; &lt;flowrate1&gt;) ... );
+            implicit        none;
+        }
+    }
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+값의 변화 설정 방법이 다항식일 때
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            scalarSemiImplicitSource;
+    volumeMode      &lt;absolute or specific&gt;;
+    sources
+    {
+        h   
+        {
+            explicit polynomial ( (&lt;a0&gt; 0) (&lt;a1&gt; 1) ... );
+            implicit none;
+        }
+    }
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div></p>
+<h4 id="_5">사용자 정의 스칼라의 생성항</h4>
+<p>사용자 정의 스칼라의 생성항은 <strong>system/fvOptions</strong> 파일이 아닌 <strong>system/controlDict</strong> 파일의 <em>functions</em> 딕셔너리에서 설정한다.</p>
+<p><em>functions</em> 의 사용자 정의 스칼라 부분에 <em>fvOptions</em>  라는 딕셔너리로 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+
+    &lt;name&gt;
+    {
+        type            scalarTransport;
+        ...
+        fvOptions
+        {
+            &lt;name&gt;
+            {
+                type            scalarSemiImplicitSource;
+                volumeMode      absolute;
+                sources     
+                {
+                    &lt;uds name&gt;  (&lt;value&gt; 0.0);
+                }
+                selectionMode   cellZone;
+                cellZone        &lt;cell zone name&gt;;
+            }
+        }
+    }
+}
+</code></pre></div>
+<h3 id="fixed-values">고정값(Fixed Values)</h3>
+<p>속도, 온도, 난류 관련 필드 등의 값을 <strong>system/fvOptions</strong> 파일에서 고정할 수 있다. </p>
+<h4 id="_6">속도</h4>
+<p><em>type</em> 은 <em>meanVelocityForce</em> 이다. </p>
+<p>입력한 속도는 <em>Ubar</em> 에, 완화계수는 <em>relaxation</em> 에 사용된다.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            meanVelocityForce;
+    active          yes;
+    fields          (U);
+    Ubar            (&lt;Ux&gt; &lt;Uy&gt; &lt;Uz&gt;);
+    relaxation      &lt;value&gt;;
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+<h4 id="_7">온도</h4>
+<p><em>type</em> 은 <em>fixedTemperatureConstraint</em> 이다. </p>
+<p>입력한 온도는  <em>temperature</em> 에 사용된다.
+<div class="highlight"><pre><span></span><code>fixedTemperature_porousZone
+{
+    type            fixedTemperatureConstraint;
+    active          yes;
+    mode            uniform;
+    temperature     constant &lt;value&gt;;
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div></p>
+<h4 id="_8">난류, 화학종</h4>
+<p><em>type</em> 은 <em>scalarFixedValueConstraint</em> 이다. </p>
+<p>스칼라의 종류와 입력한 값은 <em>fixedValues</em> 딕셔너리에 사용된다.
+<div class="highlight"><pre><span></span><code>fixedTemperature_porousZone
+{
+    type            scalarFixedValueConstraint;
+    active          yes;
+    fieldValues
+    {
+        k   &lt;value&gt;;  // epsilon, omega, nuTilda
+    }
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div></p>
+<h4 id="_9">사용자 정의 스칼라</h4>
+<p>사용자 정의 스칼라의 고정값은 <strong>system/fvOptions</strong> 파일이 아닌 <strong>system/controlDict</strong> 파일의 <em>functions</em> 딕셔너리에서 설정한다.</p>
+<p><em>functions</em> 의 사용자 정의 스칼라 부분에 <em>fvOptions</em> 라는 딕셔너리로 다음과 같이 설정한다.</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+
+    &lt;name&gt;
+    {
+        type            scalarTransport;
+        ...
+        fvOptions
+        {
+            &lt;name&gt;
+            {
+                type            scalarFixedValueConstraint;
+                active          yes;
+                fieldValues
+                {
+                    &lt;uds name&gt;  &lt;value&gt;;
+                }
+                selectionMode   cellZone;
+                cellZone        &lt;cell zone name&gt;;
+            }
+        }
+    }
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h2 id="boundary-condition">경계조건(Boundary Condition)</h2>
+<p>경계조건은 <strong>0</strong> 폴더 아래의 파일들에 설정된다.</p>
+<h3 id="velocity-inlet">입구속도(Velocity Inlet)</h3>
+<h4 id="u">U</h4>
+<p>속도지정방법(Velocity Specification Method)이 경계면에 수직한 속도(Magnitude, Normal to Boundary)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type     surfaceNormalFixedValue;
+    refValue uniform -&lt;value&gt;;
+}
+</code></pre></div></p>
+<p>속도지정방법(Velocity Specification Method)이 x, y, z 성분(Component)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (&lt;Ux&gt; &lt;Uy&gt; &lt;Uz&gt;);
+}
+</code></pre></div>
+시간에 따른 속도분포를 사용할 때, 속도지정방법이 경계면에 수직한 속도이면
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type            uniformNormalFixedValue;
+    uniformValue    table;
+    uniformValueCoeffs
+    {
+        values
+        (
+            (&lt;time0&gt;    -&lt;velocityMagnitude0&gt;)
+            (&lt;time1&gt;    -&lt;velocityMagnitude1&gt;)
+            (&lt;time2&gt;    -&lt;velocityMagnitude2&gt;)
+            ...
+        );
+    }
+}
+</code></pre></div>
+시간에 따른 속도분포를 사용할 때, 속도지정방법이 x, y, z 성분이면
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            uniformFixedValue;
+    uniformValue    table;
+    uniformValueCoeffs
+    {
+        values
+        (
+            (&lt;time0&gt;  (&lt;Ux0&gt; &lt;Uy0&gt; &lt;Uz0&gt;))
+            (&lt;time1&gt;  (&lt;Ux1&gt; &lt;Uy1&gt; &lt;Uz1&gt;))
+            (&lt;time2&gt;  (&lt;Ux2&gt; &lt;Uy2&gt; &lt;Uz2&gt;))
+            ...
+        );
+    }
+}
+</code></pre></div>
+속도의 공간분포를 사용할 때, x, y, z 좌표 파일은 <strong>constant/boundaryData/\<patch name>/points_U</strong> 이고, Ux, Uy, Uz 파일은 <strong>constant/boundaryData/\<patch name>/0/U</strong> 이다.</p>
+<p><div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type    timeVaryingMappedFixedValue;
+    points  points_U;
+}
+</code></pre></div>
+constant/boundaryData/\<patch name>/points_U
+<div class="highlight"><pre><span></span><code>&lt;number of points&gt;
+(
+    (&lt;x-coordinate0&gt; &lt;y-coordinate0&gt; &lt;z-coordinate0&gt;)
+    (&lt;x-coordinate1&gt; &lt;y-coordinate1&gt; &lt;z-coordinate1&gt;)
+    ...    
+)
+</code></pre></div>
+constant/boundaryData/\<patch name>/0/U
+<div class="highlight"><pre><span></span><code>&lt;number of points&gt;
+(
+    (&lt;Ux0&gt; &lt;Uy0&gt; &lt;Uz0&gt;)
+    (&lt;Ux1&gt; &lt;Uy1&gt; &lt;Uz1&gt;)
+    ...    
+)
+</code></pre></div></p>
+<h4 id="p_rgh">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type     zeroGradient;
+}
+</code></pre></div>
+<h4 id="t">T</h4>
+<p>상수일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+시간에 따른 변화에 조각별 선형함수(piecewise linear)를 사용할 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type            uniformFixedValue;
+    uniformValue    table;
+    uniformValueCoeffs
+    {
+        values
+        (
+            (&lt;time0&gt;    &lt;T0&gt;)
+            (&lt;time1&gt;    &lt;T1&gt;)
+            (&lt;time2&gt;    &lt;T2&gt;)
+            ...
+        );
+    }
+}
+</code></pre></div>
+시간에 따른 변화에 다항식(polynomial)을 사용할 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type            uniformFixedValue;
+    uniformValue    polynomial
+    (
+        (a0  0)
+        (a1  1)
+        (a2  2)
+        ...
+    );
+}
+</code></pre></div></p>
+<h4 id="k">k</h4>
+<p>지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;inlet value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega">epsilon, omega</h4>
+<p>지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;inlet value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletTDR;
+    viscosityRatio  uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda">nuTilda</h4>
+<p>지정방법이 보정 난류 점상계수(Modifed Turbulent Viscosity)일 때 
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류 점도비율(Turbulent Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletNuTilda;
+    viscosityRatio  &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut-alphat">nut, alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="_10">체적분율, 화학종, 사용자 정의 스칼라</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="flow-rate-inlet">입구 유량(Flow Rate Inlet)</h3>
+<h4 id="u_1">U</h4>
+<p>유량 정의 방법이 체적 유량(Volume Flow Rate)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type                flowRateInletVelocity;
+    volumetricFlowRate  &lt;value&gt;;
+}
+</code></pre></div>
+유량 정의 방법이 질량 유량(Mass Flow Rate)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            flowRateInletVelocity;
+    massFlowRate    &lt;value&gt;;
+    rhoInlet        &lt;value&gt;;
+}
+</code></pre></div></p>
+<p>압력, 온도, 난류의 설정은 입구 속도 조건일 때와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="pressure-inlet">입구 전압력(Pressure Inlet)</h3>
+<h4 id="u_2">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    pressureInletOutletVelocity;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_1">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    totalPressure;
+    p0      uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>온도, 난류의 설정은 입구 속도 조건일 때와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="abl-inlet">대기경계층 입구(ABL Inlet)</h3>
+<h4 id="u_3">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletVelocity;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_2">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="k_1">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletK;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="epsilon">epsilon</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletEpsilon;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="omega">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletOmega;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="nut">nut</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="free-stream">비압축성 자유류(Free Stream)</h3>
+<h4 id="u_4">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestreamVelocity;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_3">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestreamPressure;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="t_1">T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k_2">k</h4>
+<p>지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega_1">epsilon, omega</h4>
+<p>지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;inlet value&gt;;
+}
+</code></pre></div>
+지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletTDR;
+    viscosityRatio  uniform &lt;value&gt;;
+    value uniform   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda_1">nuTilda</h4>
+<p>지정방법이 보정 난류 점상계수(Modifed Turbulent Viscosity)일 때 
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;inlet value&gt;;
+}
+</code></pre></div>
+지정방법이 난류 점도비율(Turbulent Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletNuTilda;
+    viscosityRatio  &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut-alphat_1">nut, alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="species-user-defined-scalar">species, user defined scalar</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="open-channel-inlet">개수로 입구(Open Channel Inlet)</h3>
+<h4 id="u_5">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        variableHeightFlowRateInletVelocity;
+    alpha       alpha.&lt;secondary material name&gt;;
+    flowRate    &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_4">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="alpha">alpha.\<secondary material name></h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        variableHeightFlowRate;
+    lowerBound  0.0;
+    upperBound  1.0;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>난류의 설정은 입구 속도 조건일 때와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="far-field-riemann">압축성 리만(Far-field Riemann)</h3>
+<h4 id="u_6">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    farfieldRiemann;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    MInf    &lt;value&gt;;
+    pInf    &lt;value&gt;;
+    TInf    &lt;value&gt;;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+<h4 id="p-t">p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    farfieldRiemann;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    MInf    &lt;value&gt;;
+    pInf    &lt;value&gt;;
+    TInf    &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>난류의 설정은 입구 속도 조건일 때와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="subsonic-inlet">아음속 입구(Subsonic Inlet)</h3>
+<h4 id="u_7">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    subsonicInlet;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    p0      &lt;value&gt;;
+    T0      &lt;value&gt;;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+<h4 id="p-t_1">p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    subsonicInlet;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    p0      &lt;value&gt;;
+    T0      &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>난류의 설정은 입구 속도 조건일 때와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="supersonic-inflow">초음속 입구(Supersonic Inflow)</h3>
+<h4 id="u_8">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+<h4 id="p-t_2">p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>난류의 설정은 입구 속도 조건일 때와 같다.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="pressure-outlet">출구 압력(Pressure Outlet)</h3>
+<h4 id="u_9">U</h4>
+<p>Non-reflecging Boundary 옵션을 사용하지 않을 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    pressureInletOutletVelocity;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+Non-reflecging Boundary 옵션을 사용할 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    waveTransmissive;
+    gamma   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="p_rgh_5">p_rgh</h4>
+<p>Non-reflecging Boundary 옵션을 사용하지 않을 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    totalPressure;
+    p0      uniform &lt;value&gt;; # value is static pressure
+}
+</code></pre></div>
+Non-reflecging Boundary 옵션을 사용할 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    waveTransmissive;
+    gamma   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="t_2">T</h4>
+<p>유입류 조건(Specify Backflow Properties) 옵션을 사용하지 않을 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용할 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutletTotalTemperature;
+    gamma       &lt;value&gt;;
+    inletValue  uniform &lt;value&gt;;
+    T0          uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="k_3">k</h4>
+<p>유입류 조건(Specify Backflow Properties) 옵션을 사용하지 않을 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용하고, 지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용하고, 지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega_2">epsilon, omega</h4>
+<p>유입류 조건(Specify Backflow Properties) 옵션을 사용하지 않을 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용하고, 지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용하고, 지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        viscosityRatioInletOutletTDR;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda_2">nuTilda</h4>
+<p>유입류 조건(Specify Backflow Properties) 옵션을 사용하지 않을 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용하고, 지정방법이 보정 난류 점상계수(Modifed Turbulent Viscosity)일 때 
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+유입류 조건(Specify Backflow Properties) 옵션을 사용하고, 지정방법이 난류 점도비율(Turbulent Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        viscosityRatioInletOutletNuTilda;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut-alphat_2">nut, alphat</h4>
+<p>Without Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+With Specify Backflow Properties, Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h3 id="open-channel-outlet">개수로 출구(Open Channel Outlet)</h3>
+<h4 id="u_10">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    outletPhaseMeanVelocity;
+    Umean   &lt;value&gt;;
+    alpha   alpha.&lt;sescondary phase name&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_6">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="k_4">k</h4>
+<p>지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega_3">epsilon, omega</h4>
+<p>지정방법이 K와 Epsilon일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류강도와 점도비율(Intensity and Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletTDR;
+    viscosityRatio  uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda_3">nuTilda</h4>
+<p>지정방법이 보정 난류 점상계수(Modifed Turbulent Viscosity)일 때 
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+지정방법이 난류 점도비율(Turbulent Viscosity Ratio)일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        viscosityRatioInletOutletNuTilda;
+    inletValue  uniform &lt;inlet value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut_1">nut</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="outflow">유출(Outflow)</h3>
+<h4 id="u-p_rgh-t-k-epsilon-omega-nutilda">U, p_rgh, T, k, epsilon, omega, nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="subsonic-outflow">아음속 출구(Subsonic Outflow)</h3>
+<h4 id="u-p-t">U, p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    subsonicOutflow;
+    pExit   &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k-epsilon-omega-nutilda">k, epsilon, omega, nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="nut-alphat_3">nut, alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="supersonic-outflow">초음속 출구(Supersonic Outflow)</h3>
+<h4 id="u-p_rgh-t-k-epsilon-omega-nutilda_1">U, p_rgh, T, k, epsilon, omega, nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="wall">벽면(Wall)</h3>
+<h4 id="u_11">U</h4>
+<p>정지(No Slip)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0)
+}
+</code></pre></div>
+미끄럼 벽(Slip)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    slip;
+}
+</code></pre></div>
+움직이는 벽(Moving Wall)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    movingWallVelocity;
+    value   uniform (0 0 0)
+}
+</code></pre></div>
+대기경계층 지표면(Atmospheric Wall)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0)
+}
+</code></pre></div>
+직선 속도(Translational Moving Wall)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (&lt;Ux&gt; &lt;Uy&gt; &lt;Uz&gt;)
+}
+</code></pre></div>
+회전 속도(Rotational Moving Wall)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    rotatingWallVelocity;
+    origin  (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+    axis    (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+    omega   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="p_rgh_7">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedFluxPressure;
+}
+</code></pre></div>
+<h4 id="p-of-density-based-solver">p of density based solver</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="t_3">T</h4>
+<p>단열(Adiabatic)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+일정 온도(Constant Temperature)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+일정 열유속(Constant Heat Flux)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        externalWallHeatFluxTemperature;
+    mode        flux;
+    q           uniform &lt;value&gt;;
+    kappaMethod fluidThermo;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+외부로 대류열전달(Convection)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            externalWallHeatFluxTemperature;
+    mode            coefficient;
+    h               uniform &lt;value&gt;;
+    Ta              uniform &lt;value&gt;;
+    kappaMethod     fluidThermo;
+    value           uniform &lt;value&gt;;
+    thicknessLayers (&lt;value0&gt; &lt;value1&gt; &lt;...&gt;);
+    kappaLayers     (&lt;value0&gt; &lt;value1&gt; &lt;...&gt;);
+}
+</code></pre></div></p>
+<h4 id="k_5">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    kqRWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="epsilon_1">epsilon</h4>
+<p>표준벽함수(Standard Wall Function)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Two layer 벽함수
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonBlendedWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+대기경계층 지표면(Atmospheric Wall)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmEpsilonWallFunction;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="omega_1">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        omegaBlendedWallFunction;
+    blending    tanh;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="nutilda_4">nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="nut_2">nut</h4>
+<p>표준벽함수(Standard Wall Function)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutkWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Two layer 벽함수, SST k-omega 모델, Spalart-Allmaras 모델
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutSpaldingWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+대기경계층 지표면(Atmospheric Wall)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmNutkWallFunction;
+    z0      &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="alphat">alphat</h4>
+<p>단열(Adiabatic) 조건일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatWallFunction;
+    Prt     &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+일정 온도, 일정 열유속, 외부로 대류열전달 조건일 때
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatJayatillekeWallFunction;
+    Prt     &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h3 id="thermo-coupled-wall">연결 벽면(Thermo-Coupled Wall)</h3>
+<h4 id="u_12">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0);
+}
+</code></pre></div>
+<h4 id="p_rgh_8">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedFluxPressure;
+}
+</code></pre></div>
+<h4 id="t_4">T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        compressible::turbulentTemperatureRadCoupledMixed;
+    Tnbr        T;
+    kappaMethod fluidThermo;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k_6">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    kqRWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="epsilon_2">epsilon</h4>
+<p>표준벽함수(Standard Wall Function)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Two layer 벽함수
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonBlendedWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="omega_2">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        omegaBlendedWallFunction;
+    blending    tanh;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="nutilda_5">nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        zeroGradient;
+}
+</code></pre></div>
+<h4 id="nut_3">nut</h4>
+<p>k-epsilon, 표준벽함수(Standard Wall Function)
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutkWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+k-omega, Two-layer 벽함수, Spalart-Allmaras
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutSpaldingWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="alphat_1">alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatJayatillekeWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="region-interface">영역간 인터페이스(Region Interface)</h3>
+<h4 id="u_13">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0);
+}
+</code></pre></div>
+<h4 id="p_rgh_9">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedFluxPressure;    
+}
+</code></pre></div>
+<h4 id="t_5">T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::turbulentTemperatureCoupledBaffleMixed;    
+}
+</code></pre></div>
+<h4 id="k_7">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    kqRWallFunction;    
+}
+</code></pre></div>
+<h4 id="epsilon_3">epsilon</h4>
+<p>standard wall function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonWallFunction;    
+}
+</code></pre></div>
+two layer wall function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonBlendedWallFunction;    
+}
+</code></pre></div></p>
+<h4 id="omega_3">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    omegaBlendedWallFunction;    
+}
+</code></pre></div>
+<h4 id="nutilda_6">nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;    
+}
+</code></pre></div>
+<h4 id="nut_4">nut</h4>
+<p>k-epsilon, standard wall function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutkWallFunction;    
+}
+</code></pre></div>
+two layer wall function, SST k-omega, Spalart-Allmaras
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutSpaldingWallFunction;    
+}
+</code></pre></div></p>
+<h4 id="alphat_2">alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatJayatillekeWallFunction;    
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="2-empty">2차원 경계(Empty)</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    empty;
+}
+</code></pre></div>
+<h3 id="wedge">축대칭 경계(Wedge)</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    wedge;
+}
+</code></pre></div>
+<h3 id="symmetry">대칭(Symmetry)</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    symmetry;
+}
+</code></pre></div>
+<h3 id="interface">인터페이스(Interface)</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclicAMI;    
+}
+</code></pre></div>
+<h3 id="cyclic">Cyclic</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclic;
+}
+</code></pre></div>
+<h3 id="porous-jump">다공성 압력 점프(Porous Jump)</h3>
+<p>All fields except p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclic;
+}
+</code></pre></div>
+p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        porousBafflePressure;
+    patchType   cyclic;
+    D           &lt;value&gt;;
+    I           &lt;value&gt;;
+    length      &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h3 id="fan">팬(Fan)</h3>
+<p>All fields except p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclic;
+}
+</code></pre></div>
+p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        fan;
+    patchType   cyclic;
+    jumpTable   csvFile;
+    jumpTableCoeffs
+    {
+      nHeaderLine       0;
+      refColumn         0;
+      componentColumns  (1);
+      separator         &quot;,&quot;;
+      mergeSeparators   no;
+      file              &quot;&lt;path and file name&gt;&quot;;
+    }
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h2 id="numerical-conditions">수치해석 기법(Numerical Conditions)</h2>
+<p>수치해석 기법은 <strong>system/fvSolution</strong> 파일과 <strong>system/fvSchemes</strong> 파일에서 설정한다.</p>
+<h3 id="-pressure-velocity-coupling-scheme">압력-속도 연성기법(Pressure-Velocity Coupling Scheme)</h3>
+<p>압력-속도 연성기법은 <strong>system/fvSolution</strong> 파일의 <em>SIMPLE</em>, <em>PIMPLE</em> 딕셔너리의 <em>consistent</em> 에 설정한다. 값이 SIMPLE 이면 <em>no</em>, SIMPLEC 이면 <em>yes</em> 이다.</p>
+<div class="highlight"><pre><span></span><code>SIMPLE
+{
+    consistent      &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<h3 id="momentum-predictor">운동량방정식 계산(Momentum Predictor)</h3>
+<p>운동량방정식 계산은 <strong>system/fvSolution</strong> 파일 <em>PIMPLE</em> 딕셔너리의 <em>momentumPredictor</em> 에서 <em>on</em> 혹은 <em>off</em> 로 설정한다.</p>
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    momentumPredictor   &lt;on or off&gt;;
+    ...
+}
+</code></pre></div>
+<h3 id="flux-type">플럭스 계산 기법(Flux Type)</h3>
+<p>플럭스 계산 기법(Flux Type)은 <strong>system/fvSolution</strong> 파일의 <em>Riemann</em> 딕셔너리에 설정한다. <em>Riemann</em> 은 밀도기반 솔버에서 사용되는 것으로 다음과 같다.</p>
+<p><div class="highlight"><pre><span></span><code>Riemann
+{
+    fluxScheme      &lt;roeFlux or AUSMplusFlux or AUSMplusUpFlux&gt;;
+    secondOrder     &lt;yes or no&gt;;
+    reconGradScheme VKLimited Gauss linear 1;
+    roeFluxCoeffs
+    {
+        epsilon     &lt;value&gt;;
+    }
+    AUSMplusUpFluxCoeffs
+    {
+        MInf        &lt;value&gt;;
+    }
+}
+</code></pre></div>
+ <em>fluxScheme</em> 은 Roe-FDS일 때는 <em>roeFlux</em> 로, AUSM일 때는 <em>AUSMplusFlux</em> 로, AUSM-up일 때는 <em>AUSMplusUpFlux</em> 가 된다.</p>
+<p>Entropy Fix Coefficient 값은 <em>roeFluxCoeffs</em> 의 <em>epsilon</em> 에 설정되고, Cut-off Mach Number 값은 <em>AUSMplusUpFluxCoeffs</em> 의 <em>MInf</em> 에 설정된다.</p>
+<h3 id="discretization-schemes">이산화 기법(Discretization Schemes)</h3>
+<h4 id="time_1">시간(Time)</h4>
+<p><strong>system/fvSchemes</strong> 파일의 <em>ddtSchemes</em> 딕셔너리에 설정된다.</p>
+<p>1차 음해법(First Order Implicit)일 때 <em>Euler</em>, 2차 음해법(Second Order Implicit)일 때 <em>backward</em> 가 된다.</p>
+<div class="highlight"><pre><span></span><code>ddtSchemes
+{
+    default     &lt;Euler or backward&gt;;
+}
+</code></pre></div>
+<h4 id="pressure">압력(Pressure)</h4>
+<p><strong>system/fvSchemes</strong> 파일의 <em>interpolationSchemes</em> 에 설정된다.</p>
+<p>Linear 이면 다음과 같다.
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+    default             linear;
+    interpolate(p)      linear;
+    interpolate(p_rgh)  linear;
+}
+</code></pre></div>
+Momentum Weighted 면 다음과 같다.
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+  default               linear;
+  interpolate(p)        momentumWeighted;
+  interpolate(p_rgh)    momentumWeighted;
+}
+</code></pre></div>
+Momentum Weighted Reconstruct 이면 다음과 같다.
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+    default             linear;
+    interpolate(p)      momentumWeightedReconstruct;
+    interpolate(p_rgh)  momentumWeightedReconstruct;
+}
+</code></pre></div></p>
+<h4 id="momentum-energy-turbulence-volume-fraction">운동량(Momentum), 에너지(Energy), 난류(Turbulence), 체적분율(Volume Fraction)</h4>
+<p><strong>system/fvSchemes</strong> 파일의 divSchemes 딕셔너리에 설정된다.</p>
+<p>1차 상류기법(First Order Upwind)일 때는 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code>divSchemes
+{
+    default             Gauss linear;
+    div(phi,U)          Gauss upwind;
+    div(rhoPhi,U)       Gauss upwind;
+    div(phiNeg,U)       Gauss upwind;
+    div(phiPos,U)       Gauss upwind;
+    div(phi,k)          Gauss upwind;
+    div(phi,epsilon)    Gauss upwind;
+    div(phi,omega)      Gauss upwind;
+    div(phi,nuTilda)    Gauss upwind;
+    div(phi,alpha)      Gauss upwind;
+    div(phirb,alpha)    Gauss upwind;
+    div(phi,scalar)     Gauss upwind;
+}
+</code></pre></div>
+<p>2차 상류기법(Second Order Upwind)일 때는 다음과 같다.
+<div class="highlight"><pre><span></span><code>divSchemes
+{
+    default             Gauss linear;
+    div(phi,U)          Gauss linearUpwind momentumReconGrad;
+    div(rhoPhi,U)       Gauss linearUpwind momentumReconGrad;
+    div(phiNeg,U)       Gauss MinmodV;
+    div(phiPos,U)       Gauss MinmodV;
+    div(phi,k)          Gauss linearUpwind turbulenceReconGrad;
+    div(phi,epsilon)    Gauss linearUpwind turbulenceReconGrad;
+    div(phi,omega)      Gauss linearUpwind turbulenceReconGrad;
+    div(phi,nuTilda)    Gauss linearUpwind turbulenceReconGrad;
+    div(phi,alpha)      Gauss vanLeer;
+    div(phirb,alpha)    Gauss linear;
+    div(phi,scalar)     Gauss linearUpwind momentumReconGrad;
+}
+</code></pre></div></p>
+<h4 id="_11">밀도기반 솔버</h4>
+<p>밀도기반 솔버에서는 유동(Flow)의 이산화 기법은 <strong>system/fvSolution</strong> 파일의 Riemann 딕셔너리에서 설정한다. 1차 상류기법(First Order Upwind)일 때는 <em>secondOrder</em> 가 <em>no</em>, 2차 상류기법(Second Order Upwind)일 때는 <em>yes</em> 가 된다.</p>
+<div class="highlight"><pre><span></span><code>Riemann
+{
+    ...
+    secondOrder     &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<p>난류에 대해서는 압력기반 솔버와 같다.</p>
+<h3 id="under-relaxation-factors">완화계수(Under-Relaxation Factors)</h3>
+<p>완화계수는 <strong>system/fvSolution</strong> 파일의 <em>relaxationFactors</em> 딕셔너리에 설정된다.</p>
+<p>완화계수에 입력한 값들이 다음과 같이 설정된다.</p>
+<div class="highlight"><pre><span></span><code>relaxationFactors
+{
+    fields
+    {
+        p           &lt;value&gt;;
+        pFinal      &lt;value&gt;;
+        p_rgh       &lt;value&gt;;
+        p_rghFinal  &lt;value&gt;;
+        rho         &lt;value&gt;;
+        rhoFinal    &lt;value&gt;;
+    }
+    equations
+    {
+        U           &lt;value&gt;;
+        UFinal      &lt;value&gt;;
+        h           &lt;value&gt;;
+        hFinal      &lt;value&gt;;
+        &quot;(k|epsilon|omega|nuTilda)&quot;         &lt;value&gt;;
+        &quot;(k|epsilon|omega|nuTilda)Final&quot;    &lt;value&gt;;
+        alpha.waterLiquid       &lt;value&gt;;
+        alpha.waterLiquidFinal  &lt;value&gt;;
+        scalar                  &lt;value&gt;;
+        scalarFinal             &lt;value&gt;;
+    }
+}
+</code></pre></div>
+<h3 id="improve-stability">안정성 향상(Improve Stability)</h3>
+<p>안정성 향상 옵션은 <strong>system/fvSchemes</strong> 파일의 <em>laplacianSchemes</em> 딕셔너리에 설정된다.</p>
+<p>안정성 향상 옵션이 꺼져 있을 때 다음과 같다.</p>
+<p><div class="highlight"><pre><span></span><code>laplacianSchemes
+{
+    default     Gauss linear corrected;
+}
+</code></pre></div>
+안정성 향상 옵션이 켜져 있을 때 다음과 같다.</p>
+<p><div class="highlight"><pre><span></span><code>laplacianSchemes
+{
+    default     Gauss linear limited corrected 0.5;
+}
+</code></pre></div>
+밀도기반 솔버에서는 이 옵션이 적용되지 않고, 옵션이 꺼져 있을 때와 같은 설정을 사용한다.</p>
+<h3 id="max-iterations-per-time-step-number-of-correctors">시간당 반복계산 회수(Max Iterations per Time Step), 압력보정 회수(Number of Correctors)</h3>
+<p><strong>system/fvSolution</strong> 파일의 <em>PIMPLE</em> 딕셔너리에 설정된다.</p>
+<p>시간당 반복계산 회수는 <em>nOuterCorrectors</em>, 압력보정 회수는 <em>nCorrectors</em> 에 사용된다.</p>
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    nCorrectors                 &lt;value&gt;;
+    nOuterCorrectors            &lt;value&gt;;
+    ...
+}
+</code></pre></div>
+<h3 id="multiphase">다상유동(Multiphase)</h3>
+<p>다상유동은 <strong>system/fvSolution</strong> 파일의 <em>solvers</em> 딕셔너리에 설정된다.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    &quot;alpha.*&quot;
+    {
+        ...
+        nAlphaSubCycles     &lt;value&gt;;
+        nAlphaCorr          &lt;value&gt;;
+        MULESCorr           &lt;yes or no&gt;;
+        cAlpha              &lt;value&gt;;
+        nLimiterIter        &lt;value&gt;;
+        ...
+  }
+    ...
+}
+</code></pre></div>
+시간당 반복계산 회수(Max. Iteration per Time Step)는 <em>nAlphaSubCycles</em> 값으로 설정되며, 보정 회수(Number of Correctors)는 <em>nAlphaCorr</em> 값으로 설정된다.</p>
+<p>MULES 기법(MULES Variant)이 Explicit이면 <em>MULESCorr</em> 은 <em>no</em> 가 되고 Semi-implicit이면 _yes_가 된다. </p>
+<p>상 경계면 압축계수(Phase Interface Compression Factor)는 <em>cAlpha</em> 값으로 설정된다.</p>
+<p>제한자에 대한 MULES 반복 회수(Number of MULES iterations over the limiter)는 <em>nLimiterIter</em> 값으로 설정된다.</p>
+<h3 id="convergence-criteria">수렴 판정 기준(Convergence Criteria)</h3>
+<p>압력기반 솔버는 <strong>system/fvSolution</strong> 파일에 설정된다. <em>SIMPLE</em> 과 <em>PIMPLE</em> 딕셔너리의 <em>residualControl</em> 을 사용한다.</p>
+<p><div class="highlight"><pre><span></span><code>SIMPLE
+{
+    ...
+    residualControl
+    {
+        p           &lt;value&gt;;
+        p_rgh       &lt;value&gt;;
+        U           &lt;value&gt;;
+        h           &lt;value&gt;;
+        &quot;(k|epsilon|omega|nuTilda)&quot; &lt;value&gt;;
+        &quot;alpha.*&quot;   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+비정상상태 문제에서는 <em>residualControl</em> 에 <em>tolerance</em> 와 <em>relTol</em> 2가지가 있다. 설정한 Absolute 값은 <em>tolerance</em> 에, Relative 값은 <em>relTol</em> 에 사용된다.
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    residualControl
+    {
+        ...
+        p_rgh
+        {
+            tolerance       &lt;value&gt;;
+            relTol          &lt;value&gt;;
+        }
+        U
+        {
+            tolerance       &lt;value&gt;;
+            relTol          &lt;value&gt;;
+        }
+        ...
+    }
+}
+</code></pre></div>
+밀도기반 솔버는 <strong>system/fvSolution</strong> 파일의 <em>LU-SGS</em> 딕셔너리에 설정된다.</p>
+<div class="highlight"><pre><span></span><code>LU-SGS
+{
+    residualControl
+    {
+        rho     0.001;
+        rhoU    0.001;
+        rhoE    0.001;
+        &quot;(k|epsilon|omega|nuTilda)&quot; 0.001;
+    }
+}
+</code></pre></div>
+<h3 id="limits">값의 제한(Limits)</h3>
+<p><strong>system/fvOptions</strong> 파일에 <em>limitT</em> 딕셔너리를 사용해서 온도의 최소/최대값을 제한한다.
+<div class="highlight"><pre><span></span><code>limitT
+{
+    type            limitTemperature;
+    active          yes;
+    selectionMode   all;
+    min             1;
+    max             5000;
+}
+</code></pre></div></p>
+<h3 id="equations">방정식 선택(Equations)</h3>
+<p><strong>system/fvSolution</strong> 파일에서 유동, 에너지, 화학종 방정식 각각에 대해 계산할 것인지를 선택한다. </p>
+<p><em>SIMPLE</em> 과 <em>PIMPLE</em> 딕셔너리의 <em>solveFlow</em>, <em>solveEnergy</em>, <em>solveSpecies</em> 를 사용한다.</p>
+<div class="highlight"><pre><span></span><code>SIMPLE // PIMPLE
+{
+    ...
+    solveFlow                   &lt;yes or no&gt;;
+    solveEnergy                 &lt;yes or no&gt;;
+    solveSpecies                &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<p>에너지방정식은 점성가열, 운동에너지, 압력에 의한 일 등의 3가지를 계산할 것인지 선택할 수 있다. <strong>constant/thermophysicalProperties</strong> 파일에 다음과 같이 설정된다.
+<div class="highlight"><pre><span></span><code>includeViscousDissipation   &lt;true of false&gt;;
+includeKineticEnergy        &lt;true of false&gt;;
+includePressureWork         &lt;true of false&gt;;
+</code></pre></div></p>
+<h3 id="_12">기타 디폴트 설정</h3>
+<h4 id="fvsolution-simple">fvSolution 파일의 SIMPLE</h4>
+<p><em>nNonOrthogonalCorrectors</em>, <em>pRefCell</em>, <em>pRefValue</em> 는 항상 0을 사용한다.</p>
+<div class="highlight"><pre><span></span><code>SIMPLE
+{
+    ...
+    nNonOrthogonalCorrectors    0;
+    pRefCell                    0;
+    pRefValue                   0;
+    ...
+}
+</code></pre></div>
+<h4 id="fvsolution-pimple">fvSolution 파일의 PIMPLE</h4>
+<p><em>turbOnFinalIterOnly</em> 는 항상 <em>false</em> 이다. <em>nAlphaSpreadIter</em> 와 <em>nAlphaSweepIter</em> 은 항상 0이고, <em>rDeltaTSmoothingCoeff</em> 와 <em>rDeltaTDampingCoeff</em> 는 항상 0.5이다.</p>
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    turbOnFinalIterOnly         false;
+    nAlphaSpreadIter            0;
+    nAlphaSweepIter             0;
+    rDeltaTSmoothingCoeff       0.5;
+    rDeltaTDampingCoeff         0.5;
+    ...
+}
+</code></pre></div>
+<h4 id="fvsolution-solvers">fvSolution 파일의 solvers</h4>
+<p>계산할 유동 변수에 대한 행렬 연산 방법을 설정한다. <em>solver</em> 와 <em>preconditioner</em> 는 변수에 따라 다르다. <em>tolerance</em> 는 1e-16, <em>relative tolerance(relTol)</em> 는 0.1, <em>minimum iteration(minIter)</em> 는 1을, <em>maximum iteration(maxIter)</em> 는 5를 사용한다. 다만 체적분율(alpha)의 경우 <em>tolerance</em> 는 1e-8, <em>relTol</em> 은 0, <em>minIter</em> 는 1, <em>maxIter</em> 는 10을 사용한다.</p>
+<h5 id="_13">압력</h5>
+<p>p_rgh은 <em>PCG</em> solver와 <em>GAMG</em> preconditioner를 사용한다.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    p_rgh
+    {
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            smoother        DIC;
+            tolerance       1e-5;
+            relTol          0.1;
+        }
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+    }
+    ...
+}
+</code></pre></div></p>
+<h5 id="_14">속도, 난류, 화학종, 사용자 정의 스칼라</h5>
+<p>U, k, epsilon, omega, nuTilda, scalar, Yi 등은 <em>PBiCGStab</em> solver와 <em>DILU</em> preconditioner를 사용한다.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    &quot;(U|k|epsilon|omega|nuTilda|scalar|Yi)&quot;
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+  }
+    ...
+}
+</code></pre></div></p>
+<h5 id="_15">에너지</h5>
+<p>h는 <em>PBiCGStab</em> solver와 <em>GAMG</em> preconditioner를 사용한다.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    h
+    {
+        solver          PBiCGStab;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            smoother        DILU;
+            tolerance       1e-5;
+            relTol          0.1;
+        }
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+    }
+    ...
+}
+</code></pre></div></p>
+<h5 id="_16">밀도</h5>
+<p>rho는 <em>PCG</em> solver와 <em>DIC</em> preconditioner를 사용한다.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    rho
+    {
+        solver          PCG;
+        preconditioner  DIC;
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+    }
+    ...
+}
+</code></pre></div></p>
+<h5 id="alpha_1">체적 분율(alpha)</h5>
+<p>alpha는 <em>smoothSolver</em> solver와 <em>symGaussSeidel</em> smoother를 사용한다.</p>
+<p><em>icAlpha</em> 는 0, <em>alphaApplyPrevCorr</em> 는 <em>yes</em> 로 설정된다.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    &quot;alpha.*&quot;
+    {
+        solver              smoothSolver;
+        smoother            symGaussSeidel;
+        icAlpha             0;
+        alphaApplyPrevCorr  yes;
+        tolerance           1e-8;
+        relTol              0;
+        minIter             1;
+        maxIter             10;
+  }
+    ...
+}
+</code></pre></div></p>
+<h4 id="fvsolution-fieldbounds">fvSolution 파일의 fieldBounds</h4>
+<p><em>fieldBounds</em> 는 밀도기반 솔버에서 사용되는 값의 제한으로 항상 다음과 같다.
+<div class="highlight"><pre><span></span><code>fieldBounds
+{
+    p       1e-06   1e+10;
+    rho     1e-06   1e+10;
+    h       1e-06   1e+10;
+    e       1e-06   1e+10;
+    rhoE    1e-06   1e+10;
+    T       1e-06   3e+4;
+    U       3e+4;
+}
+</code></pre></div></p>
+<h4 id="fvschemes-gradschemes">fvSchemes 파일의 gradSchemes</h4>
+<p>압력기반 솔버는 항상 <em>Gauss linear</em> 를 사용한다. <em>momentumReconGrad</em>, <em>energyReconGrad</em>, <em>turbulenceReconGrad</em> 등은 _divSchemes_에 사용하기 위한 정의이다.
+<div class="highlight"><pre><span></span><code>gradSchemes
+{
+    default             Gauss linear;
+    momentumReconGrad   VKLimited Gauss linear 1.0;
+    energyReconGrad     VKLimited Gauss linear 1.0;
+    turbulenceReconGrad VKLimited Gauss linear 1.0;
+}
+</code></pre></div>
+밀도기반 솔버는 다음과 같은 조건을 항상 사용한다.
+<div class="highlight"><pre><span></span><code>gradSchemes
+{
+    default         Gauss linear;
+    grad(k)         VKLimited Gauss linear 0.5;
+    grad(epsilon)   VKLimited Gauss linear 0.5;
+    grad(omega)     VKLimited Gauss linear 0.5;
+    grad(nuTilda)   VKLimited Gauss linear 0.5;
+    reconGrad       VKLimited Gauss linear 0.5;
+}
+</code></pre></div></p>
+<h4 id="fvschemes-interpolationschemes">fvSchemes 파일의 interpolationSchemes</h4>
+<p>밀도기반 솔버에서는 다음의 설정을 사용한다.
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+    default             linear;
+    interpolate(rho)    linearUpwind phi grad(rho);
+}
+</code></pre></div></p>
+<h4 id="fvschemes-sngradschemes">fvSchemes 파일의 snGradSchemes</h4>
+<p>항상 다음의 설정을 사용한다.
+<div class="highlight"><pre><span></span><code>snGradSchemes
+{
+    default     corrected;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h2 id="monitor">모니터(Monitor)</h2>
+<p>모니터링은 <strong>system/controlDict</strong> 파일의 <em>functions</em> 딕셔너리를 사용한다.</p>
+<h3 id="force">힘(Force)</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name of forces&gt;
+    {
+        type            forces;
+        libs    (&quot;/baram/solvers/openfoam/lib/libforces.so&quot;);
+        patches
+        (
+            &lt;patch name 1&gt;
+            ...
+        );
+        CofR            (&lt;x&gt; &lt;x&gt; &lt;x&gt;);
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+    &lt;name of force coefficients&gt;
+    {
+        type            forceCoeffs;
+        libs    (&quot;/baram/solvers/openfoam/lib/libforces.so&quot;);
+        patches
+        (
+            &lt;patch name 1&gt;
+            ...
+        );
+        coefficients    (Cd Cl CmPitch);
+        rho             rho;
+        Aref            &lt;value&gt;;
+        lRef            &lt;value&gt;;
+        magUInf         &lt;value&gt;;
+        rhoInf          &lt;value&gt;;
+        dragDir         (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+        liftDir         (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+        CofR            (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+        updateHeader    false;
+        log             false;
+        pRef            &lt;value&gt;;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+저장 간격(Write Interval)은 <em>writeInterval</em> 에 설정된다. 유동 방향(Flow Direction)의 항력 방향(Drag Direction)은 <em>dragDir</em> 에, 양력 방향(Lift Direction)은 <em>liftDir</em> 에, 회전중심(Center of Rotation)은 <em>CofR</em> 에 설정된다. 경계면(Boundaries)에 선택된 것들은 <em>patches</em> 에 설정된다.</p>
+<h3 id="point">점(Point)</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type            probes;
+        libs    (&quot;/baram/solvers/openfoam/lib/libsampling.so&quot;);
+        fields          (&lt;field&gt;);
+        probeLocations  ( (&lt;x&gt; &lt;y&gt; &lt;z&gt;) );
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+저장 간격(Write Interval)은 <em>writeInterval</em> 에, 유동 변수(Field)는 <em>fields</em> 에, 좌표(Coordidate)는 <em>probeLocations</em> 에 설정된다.</p>
+<h3 id="surface">면(Surface)</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type            surfaceFieldValue;
+        libs    (&quot;/baram/solvers/openfoam/lib/libfieldFunctionObjects.so&quot;);
+        regionType      patch;
+        name            &lt;patch name&gt;;
+        surfaceFormat   none;
+        fields          (&lt;field&gt;);
+        operation       &lt;value&gt;;
+        writeFields     false;
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+저장 간격(Write Interval)은 <em>writeInterval</em> 에, 유동 변수(Field Variable)은 <em>fields</em> 에, 함수(Report Type)은 <em>operation</em> 에, 면(Surface)는 <em>name</em> 에 설정된다.</p>
+<h3 id="volume">체적(Volume)</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type            volFieldValue;
+        libs    (&quot;/baram/solvers/openfoam/lib/libfieldFunctionObjects.so&quot;);
+        regionType      cellZone;
+        name            &lt;cel zone name&gt;;
+        fields          (&lt;field&gt;);
+        operation       &lt;value&gt;;
+        writeFields     false;
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+저장 간격(Write Interval)은 <em>writeInterval</em> 에, 유동 변수(Field Variable)은 <em>fields</em> 에, 함수(Report Type)은 <em>operation</em> 에, 체적(Volume)은 <em>name</em> 에 설정된다.</p>
+<h3 id="residual">잔차(Residual)</h3>
+<p>잔차 데이터를 생성하고 저장하기 위해서 <strong>system/controlDict</strong> 파일의 <em>functions</em> 딕셔너리를 사용한다. </p>
+<p><em>fields</em> 는 솔버에 따라 다르게 설정된다.</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type                solverInfo;
+        libs    (&quot;/baram/solvers/openfoam/lib/libutilityFunctionObjects.so&quot;);
+        executeControl      timeStep;
+        executeInterval     1;
+        writeResidualFields no;
+        fields
+        (
+            U
+            p_rgh
+            k
+            epsilon
+            ...
+        );
+    }
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h2 id="initialization">초기화(Initialization)</h2>
+<p>특정 부분을 초기화할 때 <strong>system/setFields</strong> 파일을 사용한다.</p>
+<p><em>defaultFieldValues</em> 의 값은 전체 영역에 대해 설정한 값이며, <em>regions</em> 의 값은 특정 영역에 대해 설정한 값이다.
+<div class="highlight"><pre><span></span><code>defaultFieldValues
+(
+    volScalarFieldValue &lt;field&gt; &lt;value&gt; 
+    ...
+);
+regions
+(
+    boxToCell
+    {
+        box  (&lt;x1&gt; &lt;y1&gt; &lt;z1&gt;) (&lt;x2&gt; &lt;y2&gt; &lt;z2&gt;);
+        fieldValues
+        (
+            volScalarFieldValue &lt;field&gt; &lt;value&gt;
+            ... 
+        );
+    }
+    ... 
+);
+</code></pre></div>
+다상유동의 체적분율(alpha)을 초기화할 때는 다음과 같이 모든 상을 값을 설정한다.
+<div class="highlight"><pre><span></span><code>defaultFieldValues
+(
+    volScalarFieldValue alpha.&lt;secondary phase1&gt;  &lt;value&gt; 
+    volScalarFieldValue alpha.&lt;primaty phase&gt;     &lt;1-value&gt; 
+);
+regions
+(
+    boxToCell
+    {
+        box  (&lt;x1&gt; &lt;y1&gt; &lt;z1&gt;) (&lt;x2&gt; &lt;y2&gt; &lt;z2&gt;);
+        fieldValues
+        (
+            volScalarFieldValue alpha.&lt;secondary phase1&gt;    &lt;value&gt; 
+            volScalarFieldValue alpha.&lt;primaty phase1&gt;      &lt;1-value&gt; 
+        );
+    } 
+);
+</code></pre></div>
+첫번째 상(Primary phase)의 값은 전체 값의 합이 1이 되도록 결정된다.</p>
+<!---------------------------------------------------------------------------------->
+<h2 id="run-conditions">계산 조건(Run Conditions)</h2>
+<p>계산 조건은 <strong>system/controlDict</strong> 파일에 다음과 같이 설정된다.</p>
+<div class="highlight"><pre><span></span><code>application         &lt;solver&gt;;
+startFrom           latestTime;
+startTime           0;
+stopAt              endTime;
+endTime             &lt;value&gt;;
+deltaT              &lt;value&gt;;
+writeControl        adjustableRunTime;
+writeInterval       &lt;value&gt;;
+purgeWrite          &lt;value&gt;;
+writeFormat         &lt;binary or ascii&gt;;
+writePrecision      &lt;value&gt;;
+writeCompression    off;
+writeAtEnd          true;
+timeFormat          general;
+timePrecision       &lt;value&gt;;
+runTimeModifiable   yes;
+adjustTimeStep      &lt;yes or no&gt;;
+maxCo               &lt;value&gt;;
+maxDi               &lt;value&gt;;
+maxAlphaCo          &lt;value&gt;;
+</code></pre></div>
+<ul>
+<li><em>endTime</em> : 계산 회수(Number of Iteration) 혹은 종료 시간(End Time)의 값</li>
+<li><em>deltaT</em> : 시간 전진 간격(Time Step Size)의 값</li>
+<li><em>writeInterval</em> : 자동 저장 간격(Save Interval)의 값</li>
+<li><em>purgeWrite</em> : 가장 최근 파일만 저장(Retain Only the Most Recent Files)의 값</li>
+<li><em>writeFormat</em> : 데이터 저장 포맷(Data Write Format)의 값</li>
+<li><em>writePrecision</em> : 데이터 저장 유효숫자(Data Write Precision)의 값</li>
+<li><em>timePrecision</em> : 시간 저장 유효숫자(Time Precision)의 값</li>
+<li><em>adjustTimeStep</em> : 시간 전진 방법(Time Stepping Method)의 값</li>
+<li><em>maxCo</em> : Courant Number의 값</li>
+<li><em>maxDi</em> : Maximum Diffusion Number의 값</li>
+<li><em>maxAlphaCo</em> : Max Courant Number for VoF의 값</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

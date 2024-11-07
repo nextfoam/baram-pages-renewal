@@ -1,0 +1,4032 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../report.en/">
+      
+      
+        <link rel="next" href="../nomenclature.ko/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>NextFOAM in BaramFlow - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-settings-from-baramflow-are-used-in-nextfoam" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NextFOAM in BaramFlow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../nextfoam.ko/" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../screenshots/" class="md-tabs__link">
+        
+  
+    
+  
+  Screenshots
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_overview/" class="md-tabs__link">
+        
+  
+    
+  
+  Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../internationalization/" class="md-tabs__link">
+        
+  
+    
+  
+  Internationalization
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release_notes/" class="md-tabs__link">
+        
+  
+    
+  
+  Release notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flow_tutorial/simple_incompressible.en/" class="md-tabs__link">
+          
+  
+  Tutorial Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro.en/" class="md-tabs__link">
+          
+  
+  Users' Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../QA/" class="md-tabs__link">
+        
+  
+    
+  
+  Q&A
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../screenshots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internationalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internationalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../flow_tutorial/simple_incompressible.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Tutorial Guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Users' Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Users' Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BaramFlow
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            BaramFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation and Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Materials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cellZone.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cell Zone Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boundary.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boundary Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Values
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numerical Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initial.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initialization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runCondition.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    NextFOAM in BaramFlow
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    NextFOAM in BaramFlow
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cell-zone-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell Zone Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Conditions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nomenclature.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    용어해설 (Nomenclature) (Korean)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../mesh_manual/intro.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BaramMesh
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q&A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../../flow_manual/nextfoam.ko/">Korean</a></li>
+</ul>
+<h1 id="how-settings-from-baramflow-are-used-in-nextfoam">How settings from BaramFlow are used in NextFOAM</h1>
+<p>BaramFlow uses NextFOAM, a fork of OpenFOAM developed by NEXTfoam Co.,Ltd. This section describes how various settings in BaramFlow are applied to NextFOAM. Terms used in NextFOAM are italicized.</p>
+<h2 id="general">General</h2>
+<h3 id="time">Time</h3>
+<p>Time is set in the <em>ddtSchemes</em> dictionary in the <strong>system/fvSchemes</strong> file.</p>
+<p>If Time is steady, the pressure-based solver uses <em>steadyState</em> for single-phase flows and <em>localEuler</em> for two-phase flows. Density-based solver uses <em>localEuler</em>.</p>
+<p><div class="highlight"><pre><span></span><code>ddtSchemes
+{
+    default     &lt;steadyState or localEuler&gt;;
+}
+</code></pre></div>
+If Time is transient, use <em>Euler</em> for First Order Implicit and <em>backward</em> for Second Order Implicit.</p>
+<div class="highlight"><pre><span></span><code>ddtSchemes
+{
+    default     &lt;Euler or backward&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="gravity">Gravity</h3>
+<p>Set the input vector of gravity in the <strong>constant/g</strong> file as follows</p>
+<div class="highlight"><pre><span></span><code>dimensions  [0 1 -2 0 0 0 0];
+value       (&lt;x-value&gt; &lt;y-value&gt; &lt;z-value&gt;);
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="operating-conditions">Operating Conditions</h3>
+<p>Set the input value of Operating Conditions in <strong>constant/operatingConditions</strong> file as follows</p>
+<div class="highlight"><pre><span></span><code>operatingPressure operatingPressure [1 -1 -2 0 0 0 0]   &lt;value&gt;;
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h2 id="model">Model</h2>
+<h3 id="turbulence">Turbulence</h3>
+<p>Turbulence is set in the <strong>constant/turbulenceProperties</strong> file as follows</p>
+<p><div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            kOmegaSST;
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   1e5;
+}
+</code></pre></div>
+Set <em>simulationType</em> and corresponding dictionary. The <em>simulationType</em> can be <em>laminar</em>, <em>RAS</em>, <em>LES</em>, etc.</p>
+<p><em>turbulence</em> and <em>printCoeffs</em> are always <em>on</em>. </p>
+<p><em>viscosityRatioMax</em> is the input value of Maximum Viscosity Ratio at [Numerical Conditions] - [Advanced].</p>
+<h4 id="laminar">Laminar</h4>
+<div class="highlight"><pre><span></span><code>simulationType  laminar;
+</code></pre></div>
+<p>For Newtonian fluids, there are no additional settings. For non-Newtonian flow, set the model in the <em>laminar</em> dictionary. Non-Newtonian models can be Cross, Herschel-Bulkley, Bird-Carreau, or Non-Newtonian power law. The coefficients for each model are set as follows</p>
+<p>Cross
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  CrossPowerLaw;
+    CrossPowerLawCoeffs
+    {
+        nu0     &lt;value&gt;;
+        nuInf   &lt;value&gt;;
+        m       &lt;value&gt;;
+        n       &lt;value&gt;;
+        tauStar &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Herschel-Bulkley
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  HerschelBulkley;
+    HerschelBulkleyCoeffs
+    {
+        nu0     &lt;value&gt;;
+        tau0    &lt;value&gt;;
+        k       &lt;value&gt;;
+        n       &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Bird-Carreau
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  BirdCarreau;
+    BirdCarreauCoeffs
+    {
+        nu0     &lt;value&gt;;
+        nuInf   &lt;value&gt;;
+        k       &lt;value&gt;;
+        n       &lt;value&gt;;
+        a       &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Non-Newtonian power law
+<div class="highlight"><pre><span></span><code>laminar
+{
+    model           generalizedNewtonian;
+    viscosityModel  powerLaw;
+    powerLawCoeffs
+    {
+        nuMax   &lt;value&gt;;
+        nuMin   &lt;value&gt;;
+        k       &lt;value&gt;;
+        n       &lt;value&gt;;
+    }
+}
+</code></pre></div></p>
+<h4 id="spalart-allmaras">Spalart-Allmaras</h4>
+<p>Always as follows</p>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            SpalartAllmaras;
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k-epsilon">k-epsilon</h4>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            kEpsilon; // RNGkEpsilon, realizableKE
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   &lt;value&gt;;
+    kEpsilonCoeffs
+    {
+        Prt     &lt;value&gt;;
+        Sct     &lt;value&gt;;
+    }
+    ReyStar     60;
+    deltaRey    10;
+}
+</code></pre></div>
+<p><em>RASModel</em> is <em>kEpsilon</em> for Standard일, <em>RNGkEpsilon</em> for RNG, <em>realizableKE</em> for Realizable.</p>
+<p><em>Prt</em> is the input of 'for internal Field' of 'Turbulent Prandtl Number'.</p>
+<p><em>Sct</em> is the input of 'Turbulent Schmidt Number'.</p>
+<p><em>ReyStar</em> and <em>deltaRey</em> is used for Enhanced Wall Treatment(two layer) and is fixed as 60 and 10.</p>
+<h4 id="k-omega-sst">k-omega SST</h4>
+<p>Always as follows</p>
+<div class="highlight"><pre><span></span><code>simulationType  RAS;
+RAS
+{
+    RASModel            kOmegaSST;
+    turbulence          on;
+    printCoeffs         on;
+    viscosityRatioMax   &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="les">LES</h4>
+<p><em>simulationType</em> of LES is <em>LES</em>. 'Subgrid-Scale model', 'Length-Scale model' and corresponding dictionaries are needed.</p>
+<p>Subgrid-Scale model is set at <em>LESModel</em> and Length-Scale model is at <em>delta</em>.</p>
+<div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            &lt;Smagorinsky or WALE or dynamicKEqn or kEqn&gt;;
+    turbulence          on;
+    printCoeffs         off;
+    delta               &lt;cubeRootVol or dynamicKEqn or kEqn&gt;; 
+    viscosityRatioMax   &lt;value&gt;;
+    SmagorinskyCoeffs
+    {
+        Ck              &lt;value&gt;;
+        Ce              &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+}
+</code></pre></div>
+<h5 id="subgrid-scale-model">Subgrid-Scale model</h5>
+<p>You can choose between Smagorinsky-Lilly(<em>Smagorinsky</em>), WALE(<em>WALE</em>), Kinetic-Energy Transport(<em>dynamicKEqn</em>), One Equation Eddy Viscosity(<em>kEqn</em>). For Smagorinsky-Lilly, the dictionary looks like the above, and for the rest, it looks like this</p>
+<p>WALE
+<div class="highlight"><pre><span></span><code>    WALECoeffs
+    {
+        Ck      &lt;value&gt;;
+        Ce      &lt;value&gt;;
+        Cw      &lt;value&gt;;
+        Sct     &lt;value&gt;;
+    }
+</code></pre></div>
+Kinetic-Energy Transport
+<div class="highlight"><pre><span></span><code>    dynamicKEqnCoeffs
+    {
+        filter      simple;
+        Sct         &lt;value&gt;;
+    }
+</code></pre></div>
+One Equation Eddy Viscosity
+<div class="highlight"><pre><span></span><code>    kEqnCoeffs
+    {
+        Ck      &lt;value&gt;;
+        Ce      &lt;value&gt;;
+        Sct     &lt;value&gt;;
+    }
+</code></pre></div></p>
+<p><em>Sct</em> is turbulent Schmidt number and only use for species transport. If species is not included, always use 0.7.</p>
+<h5 id="length-scale-model">Length-Scale model</h5>
+<p>You can choose between Cube-root Volume(<em>cubeRootVol</em>), Van Driest(<em>dynamicKEqn</em>), smooth(<em>smooth</em>). For Cube-root Volume, the dictionary looks like the above, and for the rest, it looks like this.</p>
+<p>Van Driest
+<div class="highlight"><pre><span></span><code>    vanDriestCoeffs
+    {
+        delta           cubeRootVol;
+        kappa           0.41;
+        Aplus           26;
+        Cdelta          0.158;
+        calcInterval    1;
+        cubeRootVolCoeffs
+        {
+            deltaCoeff  2.0;
+        }
+    }
+</code></pre></div>
+smooth
+<div class="highlight"><pre><span></span><code>    smoothCoeffs
+    {
+        delta           cubeRootVol;
+        maxDeltaRatio   1.1;
+        cubeRootVolCoeffs
+        {
+            deltaCoeff  1;
+        }
+    }
+</code></pre></div></p>
+<h4 id="des">DES</h4>
+<p><em>simulationType</em> of DES model is <em>LES</em>. </p>
+<p>RAS Model, DES Option, Length-Scale Model and corresponding dictionaries are needed.</p>
+<p><div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            SpalartAllmarasDES; //kOmegaSSTDES; 
+    turbulence          on;
+    delta               &lt;cubeRootVol or dynamicKEqn or smooth&gt;;
+    viscosityRatioMax   &lt;value&gt;;
+    SpalartAllmarasDESCoeffs
+    {
+        CDES            &lt;value&gt;;
+        lowReCorrection &lt;yes or no&gt;;
+        Sct             &lt;value&gt;;
+    }
+    kOmegaSSTDES
+    {
+        CDESkom         &lt;value&gt;;
+        CDESkeps        &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+}
+</code></pre></div>
+RAS Model is set at <em>LESModel</em> and Length-Scale Model is at <em>delta</em>.</p>
+<h5 id="ras-model">RAS Model</h5>
+<p>You can choose between Spalart-Allmaras(<em>SpalartAllmarasDES</em>), k-omega SST(<em>kOmegaSSTDES</em>). </p>
+<p>For Spalart-Allmaras, there is Low-Re Damping option. When useing this option, <em>lowReCorrection</em> of <em>SpalartAllmarasDESCoeffs</em> is <em>yes</em> and otherwise <em>no</em>.</p>
+<h5 id="des-option">DES Option</h5>
+<p>For Delayed DES, there is Shielding Function options of DDES and IDDES. For IDDES, Lengh-Scale Model disappears.</p>
+<p>For DDES, <em>LESModel</em> is SpalartAllmarasDDES or kOmegaSSTDDES according to RAS Model.
+<div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            SpalartAllmarasDDES; //kOmegaSSTDDES;
+    turbulence          on;
+    delta               &lt;cubeRootVol or dynamicKEqn or smooth&gt;;
+    viscosityRatioMax   &lt;value&gt;;
+    SpalartAllmarasDDESCoeffs
+    {
+        CDES            &lt;value&gt;;
+        lowReCorrection &lt;yes or no&gt;;
+        Sct             &lt;value&gt;;
+    }
+    kOmegaSSTDDES
+    {
+        CDESkom         &lt;value&gt;;
+        CDESkeps        &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+}
+</code></pre></div></p>
+<p>For IDDES, <em>LESModel</em> is <em>SpalartAllmarasIDDES</em> or <em>kOmegaSSTIDDES</em> according to RAS Model.
+<div class="highlight"><pre><span></span><code>simulationType          LES;
+LES
+{
+    LESModel            SpalartAllmarasIDDES; //kOmegaSSTIDDES;
+    turbulence          on;
+    delta               IDDESDelta;
+    viscosityRatioMax   1e5;
+    SpalartAllmarasIDDESCoeffs
+    {
+        CDES            &lt;value&gt;;
+        lowReCorrection &lt;yes or no&gt;;
+        Sct             &lt;value&gt;;
+    }
+    kOmegaSSTIDDES
+    {
+        CDESkom         &lt;value&gt;2;
+        CDESkeps        &lt;value&gt;;
+        Sct             &lt;value&gt;;
+    }
+    IDDESDeltaCoeffs
+    {
+        hmax maxDeltaxyzCubeRoot;
+        maxDeltaxyzCubeRootCoeffs
+        {
+        }
+    }
+}
+</code></pre></div></p>
+<h5 id="length-scale-model_1">Length-Scale Model</h5>
+<p>Lengh-Scale Model is same as LES.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="energy">Energy</h3>
+<p>Energy optopn is set in the <strong>system/fvSolution</strong> file. <em>solveEnergy</em> of <em>SIMPLE</em> and <em>PIMPLE</em> dictionary is <em>yes</em> or <em>no</em>.</p>
+<div class="highlight"><pre><span></span><code>SiMPLE //PIMPLE
+{
+    ...
+    solveEnergy     &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="species">Species</h3>
+<p>Species is set in the <strong>constant/thermophysicalProperties</strong> file.</p>
+<h4 id="thermotype-dictionary">thermoType dictionary</h4>
+<p><em>mixture</em> is set as <em>multiComponentMixture</em>.</p>
+<div class="highlight"><pre><span></span><code>thermoType
+{
+    type            heRhoThermo;
+    mixture         multiComponentMixture;
+    transport       const;
+    thermo          hConst; 
+    equationOfState rhoConst; 
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+</code></pre></div>
+<h4 id="species-dictionary">species dictionary</h4>
+<p>Write the chemical species to be used in the calculation. You must also specify an <em>inertSpecie</em>. It does not calculate the transport equations and uses a mass fraction of 1 minus the sum of the remaining chemical species values. </p>
+<div class="highlight"><pre><span></span><code>species
+(
+    &lt;species1&gt;
+    &lt;species2&gt;
+    ...
+);
+
+inertSpecie     &lt;specie1&gt;
+</code></pre></div>
+<h4 id="dictionaries-of-each-species">dictionaries of each species</h4>
+<p>There must be material properties dictionary for each species. The dictionary is same with <em>mixture</em> dictionary except thers is <em>Dm</em> at <em>transport</em>.</p>
+<div class="highlight"><pre><span></span><code>&lt;specie1&gt;
+{
+    thermodynamics
+    {
+        ...
+    }
+    transport
+    {
+        mu  &lt;value&gt;;
+        Pr  &lt;value&gt;;
+        Dm  &lt;value&gt;;
+    }
+    specie
+    {
+        ...
+    }
+    equationOfState
+    {
+        ...
+    }
+}
+
+&lt;specie2&gt;
+...
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="user-defined-scalars">User-defined Scalars</h3>
+<p>User-defined Scalars is set in the functions dictionary of <strong>system/controlDict</strong> file.</p>
+<p>If diffussivity is Constant, input value is set at <em>D</em>. If diffussivity is 'Laminar and Turbulent Diffusivity' , input values are set at <em>alphaD</em> and <em>alphaDt</em>.</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+
+    &lt;name&gt;
+    {
+        type            scalarTransport;
+        libs            (&quot;/baram/solvers/openfoam/lib/libsolverFunctionObjects.so&quot;);
+        field           &lt;uds name&gt;;
+        schemesField    scalar;
+        nCorr           2;
+        writeControl    runTime;
+        writeInterval   &lt;value&gt;;
+        D               &lt;value&gt;; // Constant
+        //alphaD          &lt;value&gt;; // Laminar and Turbulent Viscosity
+        //alphaDt         &lt;value&gt;; // Laminar and Turbulent Viscosity
+    }
+}
+</code></pre></div>
+<p><em>schemesField</em> is fixed as <em>scalar</em>. So there must be settings for <em>scalar</em> at <strong>system/fvSolution</strong> and <strong>system/fvSchemes</strong> file.</p>
+<p><em>writeInterval</em> is the input value of 'Save Interval' at 'Run Conditions'.</p>
+<!---------------------------------------------------------------------------------->
+<h2 id="materials">Materials</h2>
+<p>Material properties are set in the <strong>constant/thermophysicalProperties</strong> file for single-phase and in <strong>constant/transportProperties</strong> for multi-phase. For non-Newtonial flow properties are set in the <strong>constant/turbulenceProperties</strong> file.</p>
+<h3 id="thermophysicalproperties">thermophysicalProperties</h3>
+<h4 id="thermotype-dictionary_1">thermoType dictionary</h4>
+<p>There are <em>mixture</em>, <em>transport</em>, <em>thermo</em>, <em>equationOfState</em>, <em>specie</em> and <em>energy</em> in <em>thermoType</em>.</p>
+<p>For fluid
+<div class="highlight"><pre><span></span><code>thermoType
+{
+    type            heRhoThermo;
+    mixture         pureMixture; 
+    transport       const;
+    thermo          hConst; 
+    equationOfState rhoConst; 
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+</code></pre></div>
+for solid
+<div class="highlight"><pre><span></span><code>thermoType
+{
+    type            heSolidThermo;
+    mixture         pureMixture; 
+    transport       constIso; 
+    thermo          hConst; 
+    equationOfState rhoConst;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+</code></pre></div></p>
+<ul>
+<li>
+<p>type : <em>heRhoThermo</em> for fluid, <em>heSolidThermo</em> for solid</p>
+</li>
+<li>
+<p>mixture : If species is not included, <em>pureMixture</em>, otherwise <em>multiComponentMixture</em>. For solid, <em>pureMixture</em>.</p>
+</li>
+<li>
+<p>transport : If viscosity and thermal conductivity is constant,  <em>const</em>, if polynimial, <em>polynomial</em>. For solid, if thermal conductivity is constant <em>constIso</em>. </p>
+</li>
+<li>
+<p>thermo : <em>hConst</em> for specific heat is constant, <em>hPolynomial</em> for Polynomial.</p>
+</li>
+<li>
+<p>equationOfState : <em>rhoConst</em> for density is constant, <em>perfectGas</em> for Perfect gas, <em>incompressiblePerfectGas</em> for Incompressible perfect gas. <em>icoPolynomial</em> for Polynomial</p>
+</li>
+<li>
+<p>specie : always <em>specie</em></p>
+</li>
+<li>
+<p>energy : always <em>sensibleEnthalpy</em></p>
+</li>
+</ul>
+<h4 id="mixture-dictionary">mixture dictionary</h4>
+<p>If species is not included, material properties are set in <em>mixture</em> dictionary. There are <em>thermodynamics</em>, <em>transport</em>, <em>specie</em>, <em>equationOfState</em> in <em>mixture</em>. Example is as follows</p>
+<div class="highlight"><pre><span></span><code>...
+mixture
+{
+    thermodynamics
+    {
+        Cp      1006.0;
+        Hf      0;
+    }
+    transport
+    {
+        mu      1.79e-05;
+        Pr      0.7349959183673469;
+    }
+    specie
+    {
+        nMoles      1;
+        molWeight   28.966;
+    }
+    equationOfState
+    {
+        rho     1.225;
+    }
+}
+...
+</code></pre></div>
+<h5 id="thermodynamics">thermodynamics</h5>
+<p>Set <em>Cp</em> and <em>Hf</em>. <em>Cp</em> is specific heat capacity and <em>Hf</em> is heat of formation. BaramFlow has no capability of chemical reaction yet, so <em>Hf</em> is not used and set as 0.</p>
+<p>If <em>Cp</em> is constant, dictionary is as follows</p>
+<div class="highlight"><pre><span></span><code>thermodynamics
+{
+    Cp  &lt;value&gt;;
+    Hf  0;
+}
+</code></pre></div>
+<p>If <em>Cp</em> is Polynomial, dictionary is like this</p>
+<p><div class="highlight"><pre><span></span><code>thermodynamics
+{
+    Hf          0;
+    Sf          0;
+    CpCoeffs&lt;8&gt; (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+}
+</code></pre></div>
+<em>Sf</em> is standard entropy and it also not use and set as 0.</p>
+<p>As polynomial equation is expressed as 7<sup>th</sup> equation as follows, 8 coefficients are required. The coefficients not given are set as 0.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">Cp = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4 + a_5 T^5 + a_6 T^6 + a_7 T^7</span><script type="math/tex">Cp = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4 + a_5 T^5 + a_6 T^6 + a_7 T^7</script></span></p>
+<h5 id="transport">transport</h5>
+<p>Set viscosity, <em>mu</em> and Prandtl Number, <em>Pr</em>. </p>
+<p>If viscosity and  thermal conductivity is constannt,</p>
+<div class="highlight"><pre><span></span><code>transport
+{
+    mu  &lt;value&gt;;
+    Pr  &lt;value&gt;;
+}
+</code></pre></div>
+<p>If viscosity and  thermal conductivity is polynomial,</p>
+<div class="highlight"><pre><span></span><code>transport
+{
+    muCoeffs&lt;8&gt;     (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+    kappaCoeffs&lt;8&gt;  (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+}
+</code></pre></div>
+<p>If viscosity is Sutherland,
+<div class="highlight"><pre><span></span><code>transport
+{
+    As  &lt;value&gt;;
+    Ts  &lt;value&gt;;
+}
+</code></pre></div>
+<em>As</em> is Sutherland coefficient, <em>Ts</em> is Sutherland temperature</p>
+<h5 id="specie">specie</h5>
+<p>Set molecular weight at <em>specie</em>
+<div class="highlight"><pre><span></span><code>specie
+{
+    nMoles      1;
+    molWeight   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h5 id="equationofstate">equationOfState</h5>
+<p>If density is constant,
+<div class="highlight"><pre><span></span><code>equationOfState
+{
+    rho &lt;value&gt;;
+}
+</code></pre></div></p>
+<p>If density is polynomial</p>
+<div class="highlight"><pre><span></span><code>equationOfState
+{
+    rhoCoeffs&lt;8&gt;     (&lt;a0&gt; &lt;a1&gt; &lt;a2&gt; ... &lt;a7&gt;)
+}
+</code></pre></div>
+<p>If density is perfect gas, equationOfState dictionary is not needed.</p>
+<p>if density is incomprssible perect gas, </p>
+<p><div class="highlight"><pre><span></span><code>equationOfState
+{
+    pRef    &lt;value&gt;;
+}
+</code></pre></div>
+Pressure at [Reference] is used at pRef.</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="transportproperties">transportProperties</h3>
+<p>Define material properties for multi-phase flow. There must be <em>phases</em> dictionary and additional dictionaries for each phase. </p>
+<p>Surface tension and Cavitation is set here.</p>
+<h4 id="phases">phases</h4>
+<p>For 2 pahse</p>
+<div class="highlight"><pre><span></span><code>phases  (&lt;phase1&gt; &lt;phase2&gt;);
+</code></pre></div>
+<p>For more than 2 pahse
+<div class="highlight"><pre><span></span><code>phases
+(
+    &lt;phase1&gt; 
+    {
+        transportModel  Newtonian;
+        nu              &lt;value&gt;;
+        rho             &lt;value&gt;;
+    } 
+    &lt;phase2&gt;
+    {
+        transportModel  Newtonian;
+        nu              &lt;value&gt;;
+        rho             &lt;value&gt;;
+    }
+    ... 
+);
+</code></pre></div></p>
+<h4 id="properties-for-each-phase">Properties for each phase</h4>
+<p>For 2 phase
+<div class="highlight"><pre><span></span><code>&lt;phase1&gt;
+{
+    transportModel  Newtonian;
+    nu              &lt;value&gt;;
+    rho             &lt;value&gt;;
+}
+&lt;phase2&gt;
+{
+    transportModel  Newtonian;
+    nu              &lt;value&gt;;
+    rho             &lt;value&gt;;
+}
+</code></pre></div></p>
+<p>For more than 2 phase, noting is needed because properties are set in <em>phases</em>. </p>
+<h4 id="surface-tension">Surface tension</h4>
+<p>For 2 phase</p>
+<div class="highlight"><pre><span></span><code>sigma   &lt;value&gt;;
+</code></pre></div>
+<p>For more than 2 phase, values for each other are needed as follows
+<div class="highlight"><pre><span></span><code>sigmas
+(
+    (&lt;phase1&gt; &lt;phase2&gt;) &lt;value&gt;
+    (&lt;phase1&gt; &lt;phase3&gt;) &lt;value&gt;
+    (&lt;phase2&gt; &lt;phase3&gt;) &lt;value&gt;
+    ...
+);
+</code></pre></div></p>
+<h4 id="cavitation">Cavitation</h4>
+<p>Set vapor pressure at <em>pSat</em> and cavitation model at <em>phaseChangeTwoPhaseMixture</em> </p>
+<div class="highlight"><pre><span></span><code>pSat                        &lt;value&gt;;
+phaseChangeTwoPhaseMixture  SchnerrSauer; //Kunz, Merkle, Zwart
+</code></pre></div>
+<p>Coefficients for each model must be set as dictionary as follows</p>
+<p>Schnerr-Sauer model
+<div class="highlight"><pre><span></span><code>SchnerrSauerCoeffs
+{
+    n       &lt;value&gt;;
+    dNuc    &lt;value&gt;;
+    Cc      &lt;value&gt;;
+    Cv      &lt;value&gt;;
+}
+</code></pre></div>
+Kunz, Merkle model
+<div class="highlight"><pre><span></span><code>KunzCoeffs // MerkleCoeffs
+{
+    UInf    &lt;value&gt;;
+    tInf    &lt;value&gt;;
+    Cc      &lt;value&gt;;
+    Cv      &lt;value&gt;;
+}
+</code></pre></div>
+Zwart-Gerber-Belamri model
+<div class="highlight"><pre><span></span><code>ZwartCoeffs
+{
+    aNuc    &lt;value&gt;;
+    dNuc    &lt;value&gt;;
+    Cc      &lt;value&gt;;
+    Cv      &lt;value&gt;;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h2 id="cell-zone-conditions">Cell Zone Conditions</h2>
+<h3 id="multiple-reference-frame-mrf">Multiple Reference Frame, MRF</h3>
+<p>MRF is set in the <strong>constant/MRFProperties</strong> file as follows</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    cellZone    &lt;cell zone name&gt;;
+    active      yes;
+    nonRotatingPatches
+    (
+        &lt;patch name 1&gt;
+        &lt;patch name 2&gt;
+        ...
+    );
+    origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+    axis        (&lt;x-axis&gt; &lt;y-axis&gt; &lt;z-axis&gt;);
+    omega       &lt;radian per sec&gt;;
+}
+</code></pre></div>
+<p><em>omega</em> is calculate from the input of RPM to rps(radian per sec)</p>
+<h3 id="sliding-mesh">Sliding Mesh</h3>
+<p>Sliding Mesh is set in the <strong>constant/dynamicMeshDict</strong> file as follows</p>
+<div class="highlight"><pre><span></span><code>dynamicFvMesh       dynamicMotionSolverListFvMesh;
+motionSolverLibs    (&quot;libfvMotionSolvers.so&quot;);
+motionSolver        fvMotionSolvers;
+solvers
+{
+    &lt;name&gt;
+    {
+        solver solidBody;
+        solidBodyMotionFunction rotatingMotion;
+        cellZone rotating;
+        rotatingMotionCoeffs
+        {
+            origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+            axis        (&lt;x-axis&gt; &lt;y-axis&gt; &lt;z-axis&gt;);
+            omega       &lt;radian per sec&gt;;
+        }
+    }
+}
+</code></pre></div>
+<p><em>omega</em> is calculate from the input of RPM to rps(radian per sec)</p>
+<h3 id="porous-zone">Porous Zone</h3>
+<p>Porous Zone is set in the <strong>system/fvOptions</strong> file.</p>
+<h4 id="power-law-model">Power Law model</h4>
+<p>Inputs of C0 and C1 is used at <em>powerLawCoeffs</em>.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type    explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+        type    powerLaw;
+        powerLawCoeffs
+        {
+            C0      &lt;value&gt;;
+            C1      &lt;value&gt;;
+            coordinateSystem
+            {
+                type        cartesian;
+                origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+                rotation
+                {
+                    type    axesRotation;
+                    e1      (1 0 0);
+                    e2      (0 1 0);
+                }
+            }
+        }
+        selectionMode   cellZone;
+        cellZone        &lt;cell zone name&gt;;
+    }
+}
+</code></pre></div>
+<h4 id="darcy-forchheimer-model">Darcy Forchheimer model</h4>
+<p>Input values of direction vector 1 and 2 are used at <em>e1</em> and <em>e2 of _coordinateSystem</em>. Inertial Resistance Coefficient(f, Forchheimer coefficient) and Viscous Resistance Coefficient(d, Darcy coefficient) is used at <em>f</em> and <em>d</em> of <em>DarcyForchheimerCoeffs</em>.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type    explicitPorositySource;
+    explicitPorositySourceCoeffs
+    {
+        type    DarcyForchheimer;
+        DarcyForchheimerCoeffs
+        {
+            d d [ 0 -2 0 0 0 0 0 ]  (&lt;x-d&gt; &lt;y-d&gt; &lt;z-d&gt;);
+            f f [ 0 -1 0 0 0 0 0 ]  (&lt;x-f&gt; &lt;y-f&gt; &lt;z-f&gt;);
+            coordinateSystem
+            {
+                type        cartesian;
+                origin      (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+                rotation
+                {
+                    type    axes;
+                    e1      (&lt;x-dir1&gt; &lt;y-dir1&gt; &lt;z-dir1&gt;);
+                    e2      (&lt;x-dir2&gt; &lt;y-dir2&gt; &lt;z-dir2&gt;);
+                }
+            }
+        }
+        selectionMode   cellZone;
+        cellZone        &lt;cell zone name&gt;;
+    }
+}
+</code></pre></div>
+<h3 id="actuator-disk">Actuator Disk</h3>
+<p>Actuator Disk is set in the <strong>system/fvOptions</strong> file.</p>
+<p>Input of Disk Direction is used at <em>diskDir</em>, Power Coefficient at <em>Cp</em>, Thrust Coefficient at <em>Ct</em>, Disk Area at <em>diskArea</em>, Upstream Point at <em>monitorCoeffs</em> and Force Computation method at <em>variant</em>. </p>
+<div class="highlight"><pre><span></span><code>actuationDiskSource_porousZone
+{
+    type            actuationDiskSource;
+    fields          (U);
+    diskDir         (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Cp              &lt;value&gt;;
+    Ct              &lt;value&gt;;
+    diskArea        &lt;value&gt;;
+    monitorMethod   points;
+    monitorCoeffs
+    {
+        points      ((&lt;x&gt; &lt;y&gt; &lt;z&gt;));
+    }   
+    variant         &lt;Froude or variableScaling&gt;;
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+<h3 id="source-terms">Source Terms</h3>
+<p>Mass, energy, turbulence and species source can be set in the <strong>system/fvOptions</strong> file.</p>
+<p>What the source term is for is set at <em>sources</em>. <em>rho</em> for mass, <em>h</em> for energy, <em>k</em>, <em>epsilon</em>, <em>omega</em>, <em>nuTilda</em> for turbulence. </p>
+<p>The value is given in <em>sources</em> as (\<explicit value> \<implicit value>), where the value entered is written to the explicit value and 0.0 is written to the implicit value.</p>
+<p>There are 2 options of 'Value for Entire Cell Zone' and 'Value per Unit Volume' for Specification Method. It is set at <em>volumeMode</em> as  <em>absolute</em> for 'Value for Entire Cell Zone' and <em>specific</em> for 'Value per Unit Volume'.</p>
+<p>When giving source term to an entire region rather than a cell zone, the <em>selectionMode</em> will be <em>all</em>.</p>
+<p><div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            scalarSemiImplicitSource;
+    volumeMode      &lt;absolute or specific&gt;;
+    sources
+    {
+        rho         (&lt;value&gt; 0.0); // h, k, epsilon, omega, nuTilda, &lt;species&gt;
+    }
+    selectionMode   cellZone; //all;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+For piecewise linear
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            scalarSemiImplicitSource;
+    volumeMode      &lt;absolute or specific&gt;;
+    sources
+    {
+        h
+        {
+            explicit table  ( (&lt;t0&gt; &lt;t1&gt; ...) (&lt;flowrate0&gt; &lt;flowrate1&gt;) ... );
+            implicit        none;
+        }
+    }
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+For polynomial
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            scalarSemiImplicitSource;
+    volumeMode      &lt;absolute or specific&gt;;
+    sources
+    {
+        h   
+        {
+            explicit polynomial ( (&lt;a0&gt; 0) (&lt;a1&gt; 1) ... );
+            implicit none;
+        }
+    }
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div></p>
+<h4 id="source-term-of-user-defined-scalar">Source term of user defined scalar</h4>
+<p>Source term of user defined scalar is not set in <strong>system/fvOptions</strong> file, but in the <em>functions</em> dictionary of <strong>system/controlDict</strong> file.</p>
+<p>In the user define scalar dictionary of <em>functions</em>, <em>fvOptions</em> dictionary is set as follows</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+
+    &lt;name&gt;
+    {
+        type            scalarTransport;
+        ...
+        fvOptions
+        {
+            &lt;name&gt;
+            {
+                type            scalarSemiImplicitSource;
+                volumeMode      absolute;
+                sources     
+                {
+                    &lt;uds name&gt;  (&lt;value&gt; 0.0);
+                }
+                selectionMode   cellZone;
+                cellZone        &lt;cell zone name&gt;;
+            }
+        }
+    }
+}
+</code></pre></div>
+<h3 id="fixed-values">Fixed Values</h3>
+<p>You can fix velocity, temprature, turbulence, specie and user defined scalars in the file <strong>system/fvOptions</strong>. </p>
+<h4 id="velocity">Velocity</h4>
+<p><em>type</em> is <em>meanVelocityForce</em>. </p>
+<p>Input velocity is set at <em>Ubar</em>, relaxation factors are at <em>relaxation</em>.</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;
+{
+    type            meanVelocityForce;
+    active          yes;
+    fields          (U);
+    Ubar            (&lt;Ux&gt; &lt;Uy&gt; &lt;Uz&gt;);
+    relaxation      &lt;value&gt;;
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div>
+<h4 id="temperature">Temperature</h4>
+<p><em>type</em> is <em>fixedTemperatureConstraint</em>. </p>
+<p>Input temperature is set at <em>temperature</em>.
+<div class="highlight"><pre><span></span><code>fixedTemperature_porousZone
+{
+    type            fixedTemperatureConstraint;
+    active          yes;
+    mode            uniform;
+    temperature     constant &lt;value&gt;;
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div></p>
+<h4 id="turbulence-and-species">Turbulence and Species</h4>
+<p><em>type</em> is <em>scalarFixedValueConstraint</em>. </p>
+<p>Field and input value is set at <em>fixedValues</em>.
+<div class="highlight"><pre><span></span><code>fixedTemperature_porousZone
+{
+    type            scalarFixedValueConstraint;
+    active          yes;
+    fieldValues
+    {
+        k   &lt;value&gt;;  // epsilon, omega, nuTilda
+    }
+    selectionMode   cellZone;
+    cellZone        &lt;cell zone name&gt;;
+}
+</code></pre></div></p>
+<h4 id="fixed-value-of-user-defined-scalar">Fixed value of user defined scalar</h4>
+<p>Fixed value of user defined scalar is not set in <strong>system/fvOptions</strong>, but in the <em>functions</em> dictionary of <strong>system/controlDict</strong> file.</p>
+<p>In the user define scalar dictionary of <em>functions</em>, <em>fvOptions</em> dictionary is set as follows</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+
+    &lt;name&gt;
+    {
+        type            scalarTransport;
+        ...
+        fvOptions
+        {
+            &lt;name&gt;
+            {
+                type            scalarFixedValueConstraint;
+                active          yes;
+                fieldValues
+                {
+                    &lt;uds name&gt;  &lt;value&gt;;
+                }
+                selectionMode   cellZone;
+                cellZone        &lt;cell zone name&gt;;
+            }
+        }
+    }
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h2 id="boundary-conditions">Boundary Conditions</h2>
+<p>Boundary Conditions are set in files in <strong>0</strong> folder. </p>
+<h3 id="velocity-inlet">Velocity Inlet</h3>
+<h4 id="u">U</h4>
+<p>Velocity Specification Method : Magnitude, Normal to Boundary
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type     surfaceNormalFixedValue;
+    refValue uniform -&lt;value&gt;;
+}
+</code></pre></div></p>
+<p>Velocity Specification Method : Component
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (&lt;Ux&gt; &lt;Uy&gt; &lt;Uz&gt;);
+}
+</code></pre></div>
+time dependent profile, magnitude, normal to boundary
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type            uniformNormalFixedValue;
+    uniformValue    table;
+    uniformValueCoeffs
+    {
+        values
+        (
+            (&lt;time0&gt;    -&lt;velocityMagnitude0&gt;)
+            (&lt;time1&gt;    -&lt;velocityMagnitude1&gt;)
+            (&lt;time2&gt;    -&lt;velocityMagnitude2&gt;)
+            ...
+        );
+    }
+}
+</code></pre></div>
+time dependent profile, component
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            uniformFixedValue;
+    uniformValue    table;
+    uniformValueCoeffs
+    {
+        values
+        (
+            (&lt;time0&gt;  (&lt;Ux0&gt; &lt;Uy0&gt; &lt;Uz0&gt;))
+            (&lt;time1&gt;  (&lt;Ux1&gt; &lt;Uy1&gt; &lt;Uz1&gt;))
+            (&lt;time2&gt;  (&lt;Ux2&gt; &lt;Uy2&gt; &lt;Uz2&gt;))
+            ...
+        );
+    }
+}
+</code></pre></div>
+Using spatial profile, file of x, y, z coordinate is <strong>constant/boundaryData/\<patch name>/points_U</strong> and file of Ux, Uy, Uz valueis <strong>constant/boundaryData/\<patch name>/0/U</strong>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type    timeVaryingMappedFixedValue;
+    points  points_U;
+}
+</code></pre></div>
+constant/boundaryData/\<patch name>/points_U
+<div class="highlight"><pre><span></span><code>&lt;number of points&gt;
+(
+    (&lt;x-coordinate0&gt; &lt;y-coordinate0&gt; &lt;z-coordinate0&gt;)
+    (&lt;x-coordinate1&gt; &lt;y-coordinate1&gt; &lt;z-coordinate1&gt;)
+    ...    
+)
+</code></pre></div>
+constant/boundaryData/\<patch name>/0/U
+<div class="highlight"><pre><span></span><code>&lt;number of points&gt;
+(
+    (&lt;Ux0&gt; &lt;Uy0&gt; &lt;Uz0&gt;)
+    (&lt;Ux1&gt; &lt;Uy1&gt; &lt;Uz1&gt;)
+    ...    
+)
+</code></pre></div></p>
+<h4 id="p_rgh">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type     zeroGradient;
+}
+</code></pre></div>
+<h4 id="t">T</h4>
+<p>Constant
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+time dependent, piecewise linear
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type            uniformFixedValue;
+    uniformValue    table;
+    uniformValueCoeffs
+    {
+        values
+        (
+            (&lt;time0&gt;    &lt;T0&gt;)
+            (&lt;time1&gt;    &lt;T1&gt;)
+            (&lt;time2&gt;    &lt;T2&gt;)
+            ...
+        );
+    }
+}
+</code></pre></div>
+time dependent, polynomial
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt; 
+{
+    type            uniformFixedValue;
+    uniformValue    polynomial
+    (
+        (a0  0)
+        (a1  1)
+        (a2  2)
+        ...
+    );
+}
+</code></pre></div></p>
+<h4 id="k">k</h4>
+<p>Specification Method : K and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;inlet value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega">epsilon, omega</h4>
+<p>Specification Method : K and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;inlet value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletTDR;
+    viscosityRatio  uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda">nuTilda</h4>
+<p>Specification Method : Modifed Turbulent Viscosity
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Turbulent Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletNuTilda;
+    viscosityRatio  &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut-alphat">nut, alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="volume-fraction-species-user-defined-scalar">volume fraction, species, user defined scalar</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="flow-rate-inlet">Flow Rate Inlet</h3>
+<h4 id="u_1">U</h4>
+<p>Flow Rate Specification Method : Volume Flow Rate
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type                flowRateInletVelocity;
+    volumetricFlowRate  &lt;value&gt;;
+}
+</code></pre></div>
+Flow Rate Specification Method : Mass Flow Rate
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            flowRateInletVelocity;
+    massFlowRate    &lt;value&gt;;
+    rhoInlet        &lt;value&gt;;
+}
+</code></pre></div></p>
+<p>Dictionary of p_rgh, T, turbulence is the same with Velocity Inlet</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="pressure-inlet">Pressure Inlet</h3>
+<h4 id="u_2">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    pressureInletOutletVelocity;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_1">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    totalPressure;
+    p0      uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>Dictionary of T, turbulence is the same with Velocity Inlet</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="abl-inlet">ABL Inlet</h3>
+<h4 id="u_3">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletVelocity;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_2">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="k_1">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletK;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="epsilon">epsilon</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletEpsilon;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="omega">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmBoundaryLayerInletOmega;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    zDir    (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    Uref    &lt;value&gt;;
+    Zref    &lt;value&gt;;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="nut">nut</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="free-stream">Free Stream</h3>
+<h4 id="u_4">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestreamVelocity;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_3">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestreamPressure;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="t_1">T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k_2">k</h4>
+<p>Specification Method : K and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega_1">epsilon, omega</h4>
+<p>Specification Method : K and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;inlet value&gt;;
+}
+</code></pre></div>
+Specification Method : Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletTDR;
+    viscosityRatio  uniform &lt;value&gt;;
+    value uniform   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda_1">nuTilda</h4>
+<p>Specification Method : Modifed Turbulent Viscosity
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            freestream;
+    freestreamValue uniform &lt;inlet value&gt;;
+}
+</code></pre></div>
+Specification Method : Turbulent Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletNuTilda;
+    viscosityRatio  &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut-alphat_1">nut, alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="species-user-defined-scalar">species, user defined scalar</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="open-channel-inlet">Open Channel Inlet</h3>
+<h4 id="u_5">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        variableHeightFlowRateInletVelocity;
+    alpha       alpha.&lt;secondary material name&gt;;
+    flowRate    &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_4">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="alpha">alpha.\<secondary material name></h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        variableHeightFlowRate;
+    lowerBound  0.0;
+    upperBound  1.0;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>Dictionary of turbulence is the same with Velocity Inlet</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="far-field-riemann">Far-field Riemann</h3>
+<h4 id="u_6">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    farfieldRiemann;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    MInf    &lt;value&gt;;
+    pInf    &lt;value&gt;;
+    TInf    &lt;value&gt;;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+<h4 id="p-t">p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    farfieldRiemann;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    MInf    &lt;value&gt;;
+    pInf    &lt;value&gt;;
+    TInf    &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>Dictionary of turbulence is the same with Velocity Inlet</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="subsonic-inlet">Subsonic Inlet</h3>
+<h4 id="u_7">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    subsonicInlet;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    p0      &lt;value&gt;;
+    T0      &lt;value&gt;;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+<h4 id="p-t_1">p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    subsonicInlet;
+    flowDir (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+    p0      &lt;value&gt;;
+    T0      &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>Dictionary of turbulence is the same with Velocity Inlet</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="supersonic-inflow">Supersonic Inflow</h3>
+<h4 id="u_8">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+<h4 id="p-t_2">p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<p>Dictionary of turbulence is the same with Velocity Inlet</p>
+<!---------------------------------------------------------------------------------->
+<h3 id="pressure-outlet">Pressure Outlet</h3>
+<h4 id="u_9">U</h4>
+<p>Without Non-reflecging Boundary option
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    pressureInletOutletVelocity;
+    value   uniform (&lt;Ux&gt; &lt;Ux&gt; &lt;Ux&gt;);
+}
+</code></pre></div>
+With Non-reflecging Boundary option
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    waveTransmissive;
+    gamma   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="p_rgh_5">p_rgh</h4>
+<p>Without Non-reflecging Boundary option
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    totalPressure;
+    p0      uniform &lt;value&gt;; # value is static pressure
+}
+</code></pre></div>
+With Non-reflecging Boundary option
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    waveTransmissive;
+    gamma   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="t_2">T</h4>
+<p>Without Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+With Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutletTotalTemperature;
+    gamma       &lt;value&gt;;
+    inletValue  uniform &lt;value&gt;;
+    T0          uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="k_3">k</h4>
+<p>Without Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+With Specify Backflow Properties, k and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+With Specify Backflow Properties, Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega_2">epsilon, omega</h4>
+<p>Without Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+With Specify Backflow Properties, k and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+With Specify Backflow Properties, Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        viscosityRatioInletOutletTDR;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda_2">nuTilda</h4>
+<p>Without Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+With Specify Backflow Properties, Modifed Turbulent Viscosity
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+With Specify Backflow Properties, Turbulent Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        viscosityRatioInletOutletNuTilda;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut-alphat_2">nut, alphat</h4>
+<p>Without Specify Backflow Properties
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+With Specify Backflow Properties, Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h3 id="open-channel-outlet">Open Channel Outlet</h3>
+<h4 id="u_10">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    outletPhaseMeanVelocity;
+    Umean   &lt;value&gt;;
+    alpha   alpha.&lt;sescondary phase name&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="p_rgh_6">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="k_4">k</h4>
+<p>Specification Method : K and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            turbulentIntensityInletOutletTKE;
+    turbIntensity   uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="epsilon-omega_3">epsilon, omega</h4>
+<p>Specification Method : K and Epsilon
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Intensity and Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            viscosityRatioInletOutletTDR;
+    viscosityRatio  uniform &lt;value&gt;;
+    value           uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nutilda_3">nuTilda</h4>
+<p>Specification Method : Modified Turbulent Viscosity
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        inletOutlet;
+    inletValue  uniform &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+Specification Method : Turbulent Viscosity Ratio
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        viscosityRatioInletOutletNuTilda;
+    inletValue  uniform &lt;inlet value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="nut_1">nut</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="outflow">Outflow</h3>
+<h4 id="u-p_rgh-t-k-epsilon-omega-nutilda">U, p_rgh, T, k, epsilon, omega, nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="subsonic-outflow">Subsonic Outflow</h3>
+<h4 id="u-p-t">U, p, T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    subsonicOutflow;
+    pExit   &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k-epsilon-omega-nutilda">k, epsilon, omega, nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="nut-alphat_3">nut, alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    calculated;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="supersonic-outflow">Supersonic Outflow</h3>
+<h4 id="u-p_rgh-t-k-epsilon-omega-nutilda_1">U, p_rgh, T, k, epsilon, omega, nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="wall">Wall</h3>
+<h4 id="u_11">U</h4>
+<p>No Slip
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0)
+}
+</code></pre></div>
+Slip
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    slip;
+}
+</code></pre></div>
+Moving Wall
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    movingWallVelocity;
+    value   uniform (0 0 0)
+}
+</code></pre></div>
+Atmospheric Wall
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0)
+}
+</code></pre></div>
+Translational Moving Wall
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (&lt;Ux&gt; &lt;Uy&gt; &lt;Uz&gt;)
+}
+</code></pre></div>
+Rotational Moving Wall
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    rotatingWallVelocity;
+    origin  (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+    axis    (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+    omega   &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="p_rgh_7">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedFluxPressure;
+}
+</code></pre></div>
+<h4 id="p-of-density-based-solver">p of density based solver</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="t_3">T</h4>
+<p>Adiabatic
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+Constant Temperature
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Constant Heat Flux
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        externalWallHeatFluxTemperature;
+    mode        flux;
+    q           uniform &lt;value&gt;;
+    kappaMethod fluidThermo;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+Convection
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type            externalWallHeatFluxTemperature;
+    mode            coefficient;
+    h               uniform &lt;value&gt;;
+    Ta              uniform &lt;value&gt;;
+    kappaMethod     fluidThermo;
+    value           uniform &lt;value&gt;;
+    thicknessLayers (&lt;value0&gt; &lt;value1&gt; &lt;...&gt;);
+    kappaLayers     (&lt;value0&gt; &lt;value1&gt; &lt;...&gt;);
+}
+</code></pre></div></p>
+<h4 id="k_5">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    kqRWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="epsilon_1">epsilon</h4>
+<p>Standard Wall Function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Two layer Wall Function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonBlendedWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Atmospheric Wall
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmEpsilonWallFunction;
+    z0      &lt;value&gt;;
+    d       &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="omega_1">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        omegaBlendedWallFunction;
+    blending    tanh;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="nutilda_4">nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;
+}
+</code></pre></div>
+<h4 id="nut_2">nut</h4>
+<p>Standard Wall Function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutkWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Two layer Wall Function, SST k-omega model, Spalart-Allmaras model
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutSpaldingWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Atmospheric Wall
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    atmNutkWallFunction;
+    z0      &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="alphat">alphat</h4>
+<p>Adiabatic boundary condition
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatWallFunction;
+    Prt     &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Constant temperature, Constant heat flux, Convection boundary condition
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatJayatillekeWallFunction;
+    Prt     &lt;value&gt;;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h3 id="thermo-coupled-wall">Thermo-Coupled Wall</h3>
+<h4 id="u_12">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0);
+}
+</code></pre></div>
+<h4 id="p_rgh_8">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedFluxPressure;
+}
+</code></pre></div>
+<h4 id="t_4">T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        compressible::turbulentTemperatureRadCoupledMixed;
+    Tnbr        T;
+    kappaMethod fluidThermo;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="k_6">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    kqRWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="epsilon_2">epsilon</h4>
+<p>Standard Wall Function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+Two layer Wall Function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonBlendedWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="omega_2">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        omegaBlendedWallFunction;
+    blending    tanh;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div>
+<h4 id="nutilda_5">nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        zeroGradient;
+}
+</code></pre></div>
+<h4 id="nut_3">nut</h4>
+<p>k-epsilon, Standard Wall Function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutkWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+k-omega, Two-layer Wall Function, Spalart-Allmaras
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutSpaldingWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h4 id="alphat_1">alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatJayatillekeWallFunction;
+    value   uniform &lt;value&gt;;
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="region-interface">Region Interface</h3>
+<h4 id="u_13">U</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedValue;
+    value   uniform (0 0 0);
+}
+</code></pre></div>
+<h4 id="p_rgh_9">p_rgh</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    fixedFluxPressure;    
+}
+</code></pre></div>
+<h4 id="t_5">T</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::turbulentTemperatureCoupledBaffleMixed;    
+}
+</code></pre></div>
+<h4 id="k_7">k</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    kqRWallFunction;    
+}
+</code></pre></div>
+<h4 id="epsilon_3">epsilon</h4>
+<p>standard wall function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonWallFunction;    
+}
+</code></pre></div>
+two layer wall function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    epsilonBlendedWallFunction;    
+}
+</code></pre></div></p>
+<h4 id="omega_3">omega</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    omegaBlendedWallFunction;    
+}
+</code></pre></div>
+<h4 id="nutilda_6">nuTilda</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    zeroGradient;    
+}
+</code></pre></div>
+<h4 id="nut_4">nut</h4>
+<p>k-epsilon, standard wall function
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutkWallFunction;    
+}
+</code></pre></div>
+two layer wall function, SST k-omega, Spalart-Allmaras
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    nutSpaldingWallFunction;    
+}
+</code></pre></div></p>
+<h4 id="alphat_2">alphat</h4>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    compressible::alphatJayatillekeWallFunction;    
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h3 id="empty">Empty</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    empty;
+}
+</code></pre></div>
+<h3 id="wedge">Wedge</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    wedge;
+}
+</code></pre></div>
+<h3 id="symmetry">Symmetry</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    symmetry;
+}
+</code></pre></div>
+<h3 id="interface">Interface</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclicAMI;    
+}
+</code></pre></div>
+<h3 id="cyclic">Cyclic</h3>
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclic;
+}
+</code></pre></div>
+<h3 id="porous-jump">Porous Jump</h3>
+<p>All fields except p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclic;
+}
+</code></pre></div>
+p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        porousBafflePressure;
+    patchType   cyclic;
+    D           &lt;value&gt;;
+    I           &lt;value&gt;;
+    length      &lt;value&gt;;
+    value       uniform &lt;value&gt;;
+}
+</code></pre></div></p>
+<h3 id="fan">Fan</h3>
+<p>All fields except p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type    cyclic;
+}
+</code></pre></div>
+p_rgh
+<div class="highlight"><pre><span></span><code>&lt;boundayr name&gt;
+{
+    type        fan;
+    patchType   cyclic;
+    jumpTable   csvFile;
+    jumpTableCoeffs
+    {
+      nHeaderLine       0;
+      refColumn         0;
+      componentColumns  (1);
+      separator         &quot;,&quot;;
+      mergeSeparators   no;
+      file              &quot;&lt;path and file name&gt;&quot;;
+    }
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h2 id="numerical-conditions">Numerical Conditions</h2>
+<p>Numerical Conditions are set in <strong>system/fvSolution</strong> and <strong>system/fvSchemes</strong> file.</p>
+<h3 id="pressure-velocity-coupling-scheme">Pressure-Velocity Coupling Scheme</h3>
+<p>Pressure-Velocity Coupling Scheme is set at <em>consistent</em> of <em>SIMPLE</em> and <em>PIMPLE</em> dictionary of <strong>system/fvSolution file</strong>. </p>
+<p><em>no</em> for SIMPLE, <em>yes</em> for SIMPLEC</p>
+<div class="highlight"><pre><span></span><code>SIMPLE
+{
+    consistent      &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<h3 id="momentum-predictor">Momentum Predictor</h3>
+<p>Momentum Predictor is set at the <em>momentumPredictor</em> of <em>PIMPLE</em> dictionary in the <strong>system/fvSolution</strong> file.</p>
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    momentumPredictor   &lt;on or off&gt;;
+    ...
+}
+</code></pre></div>
+<h3 id="flux-type">Flux Type</h3>
+<p>Flux Type is set at <em>Riemann</em> dictionary in the <strong>system/fvSolution</strong> file. <em>Riemann</em> dictionary is used only for density based solver and as follows</p>
+<p><div class="highlight"><pre><span></span><code>Riemann
+{
+    fluxScheme      &lt;roeFlux or AUSMplusFlux or AUSMplusUpFlux&gt;;
+    secondOrder     &lt;yes or no&gt;;
+    reconGradScheme VKLimited Gauss linear 1;
+    roeFluxCoeffs
+    {
+        epsilon     &lt;value&gt;;
+    }
+    AUSMplusUpFluxCoeffs
+    {
+        MInf        &lt;value&gt;;
+    }
+}
+</code></pre></div>
+ <em>fluxScheme</em> is <em>roeFlux</em> for Roe-FDS, <em>AUSMplusFlux</em> for AUSM, <em>AUSMplusUpFlux</em> for AUSM-up.</p>
+<p>Entropy Fix Coefficient is set at <em>epsilon</em> of <em>roeFluxCoeffs</em>, Cut-off Mach Number is at <em>MInf</em> of <em>AUSMplusUpFluxCoeffs</em>.</p>
+<h3 id="discretization-schemes">Discretization Schemes</h3>
+<h4 id="time_1">Time</h4>
+<p>Time is set at <em>ddtSchemes</em> dictionary in the <strong>system/fvSchemes</strong> file.</p>
+<p><em>Euler</em> for First Order Implicit , <em>backward</em> for Second Order Implicit</p>
+<div class="highlight"><pre><span></span><code>ddtSchemes
+{
+    default     &lt;Euler or backward&gt;;
+}
+</code></pre></div>
+<h4 id="pressure">Pressure</h4>
+<p>Pressure is set at <em>interpolationSchemes</em> dictionar in the <strong>system/fvSchemes</strong> file.</p>
+<p>For Linear
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+    default             linear;
+    interpolate(p)      linear;
+    interpolate(p_rgh)  linear;
+}
+</code></pre></div>
+For Momentum Weighted
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+  default               linear;
+  interpolate(p)        momentumWeighted;
+  interpolate(p_rgh)    momentumWeighted;
+}
+</code></pre></div>
+For Momentum Weighted Reconstruct
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+    default             linear;
+    interpolate(p)      momentumWeightedReconstruct;
+    interpolate(p_rgh)  momentumWeightedReconstruct;
+}
+</code></pre></div></p>
+<h4 id="momentum-energy-turbulence-volume-fraction">Momentum, Energy, Turbulence, Volume Fraction</h4>
+<p>These are set in divSchemes dictionary in the <strong>system/fvSchemes</strong> file.</p>
+<p>For First Order Upwind</p>
+<div class="highlight"><pre><span></span><code>divSchemes
+{
+    default             Gauss linear;
+    div(phi,U)          Gauss upwind;
+    div(rhoPhi,U)       Gauss upwind;
+    div(phiNeg,U)       Gauss upwind;
+    div(phiPos,U)       Gauss upwind;
+    div(phi,k)          Gauss upwind;
+    div(phi,epsilon)    Gauss upwind;
+    div(phi,omega)      Gauss upwind;
+    div(phi,nuTilda)    Gauss upwind;
+    div(phi,alpha)      Gauss upwind;
+    div(phirb,alpha)    Gauss upwind;
+    div(phi,scalar)     Gauss upwind;
+}
+</code></pre></div>
+<p>For Second Order Upwind
+<div class="highlight"><pre><span></span><code>divSchemes
+{
+    default             Gauss linear;
+    div(phi,U)          Gauss linearUpwind momentumReconGrad;
+    div(rhoPhi,U)       Gauss linearUpwind momentumReconGrad;
+    div(phiNeg,U)       Gauss MinmodV;
+    div(phiPos,U)       Gauss MinmodV;
+    div(phi,k)          Gauss linearUpwind turbulenceReconGrad;
+    div(phi,epsilon)    Gauss linearUpwind turbulenceReconGrad;
+    div(phi,omega)      Gauss linearUpwind turbulenceReconGrad;
+    div(phi,nuTilda)    Gauss linearUpwind turbulenceReconGrad;
+    div(phi,alpha)      Gauss vanLeer;
+    div(phirb,alpha)    Gauss linear;
+    div(phi,scalar)     Gauss linearUpwind momentumReconGrad;
+}
+</code></pre></div></p>
+<h4 id="for-density-based-solver">For density based solver</h4>
+<p>Discretization scheme of Flow is set at Riemann dictionary in the <strong>system/fvSolution</strong> file. For 'First Order Upwind' <em>secondOrder</em> is <em>no</em>, otherwise <em>yes</em></p>
+<div class="highlight"><pre><span></span><code>Riemann
+{
+    ...
+    secondOrder     &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<p>For turbulence same as pressure based solver.</p>
+<h3 id="under-relaxation-factors">Under-Relaxation Factors</h3>
+<p>Relaxation Factors is set at <em>relaxationFactors</em> dictionary in the <strong>system/fvSolution</strong> file.</p>
+<p>Input values are set as follows</p>
+<div class="highlight"><pre><span></span><code>relaxationFactors
+{
+    fields
+    {
+        p           &lt;value&gt;;
+        pFinal      &lt;value&gt;;
+        p_rgh       &lt;value&gt;;
+        p_rghFinal  &lt;value&gt;;
+        rho         &lt;value&gt;;
+        rhoFinal    &lt;value&gt;;
+    }
+    equations
+    {
+        U           &lt;value&gt;;
+        UFinal      &lt;value&gt;;
+        h           &lt;value&gt;;
+        hFinal      &lt;value&gt;;
+        &quot;(k|epsilon|omega|nuTilda)&quot;         &lt;value&gt;;
+        &quot;(k|epsilon|omega|nuTilda)Final&quot;    &lt;value&gt;;
+        alpha.waterLiquid       &lt;value&gt;;
+        alpha.waterLiquidFinal  &lt;value&gt;;
+        scalar                  &lt;value&gt;;
+        scalarFinal             &lt;value&gt;;
+    }
+}
+</code></pre></div>
+<h3 id="improve-stability">Improve Stability</h3>
+<p>Improve Stability option is set at <em>laplacianSchemes</em> dictionary in the <strong>system/fvSchemes</strong> file.</p>
+<p>If option is Off</p>
+<p><div class="highlight"><pre><span></span><code>laplacianSchemes
+{
+    default     Gauss linear corrected;
+}
+</code></pre></div>
+If option is On</p>
+<p><div class="highlight"><pre><span></span><code>laplacianSchemes
+{
+    default     Gauss linear limited corrected 0.5;
+}
+</code></pre></div>
+If solver is density based, this option is not used and laplacianSchemes dictionary is same as option is off.</p>
+<h3 id="max-iterations-per-time-step-number-of-correctors">Max Iterations per Time Step, Number of Correctors</h3>
+<p>These are set at <em>PIMPLE</em> dictionary in the <strong>system/fvSolution</strong> file.</p>
+<p><em>nOuterCorrectors</em> for Max Iterations per Time Step, <em>nCorrectors</em> for Number of Correctors</p>
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    nCorrectors                 &lt;value&gt;;
+    nOuterCorrectors            &lt;value&gt;;
+    ...
+}
+</code></pre></div>
+<h3 id="multiphase">Multiphase</h3>
+<p>Multiphase related setups are set at <em>solvers</em> dictionary in the <strong>system/fvSolution</strong> file.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    &quot;alpha.*&quot;
+    {
+        ...
+        nAlphaSubCycles     &lt;value&gt;;
+        nAlphaCorr          &lt;value&gt;;
+        MULESCorr           &lt;yes or no&gt;;
+        cAlpha              &lt;value&gt;;
+        nLimiterIter        &lt;value&gt;;
+        ...
+  }
+    ...
+}
+</code></pre></div>
+<em>nAlphaSubCycles</em> for Max. Iteration per Time Step, <em>nAlphaCorr</em> for Number of Correctors</p>
+<p>If MULES Variant is Explicit, <em>MULESCorr</em> is <em>no</em>, otherwise <em>yes</em></p>
+<p>Phase Interface Compression Factor is set at <em>cAlpha</em>.</p>
+<p>Number of MULES iterations over the limiter is set at <em>nLimiterIter</em>.</p>
+<h3 id="convergence-criteria">Convergence Criteria</h3>
+<p>For pressure based solver convergence criteria is set at <em>residualControl</em> dictionary of <em>SIMPLE</em> and <em>PIMPLE</em> in the <strong>system/fvSolution</strong> file. </p>
+<p><div class="highlight"><pre><span></span><code>SIMPLE
+{
+    ...
+    residualControl
+    {
+        p           &lt;value&gt;;
+        p_rgh       &lt;value&gt;;
+        U           &lt;value&gt;;
+        h           &lt;value&gt;;
+        &quot;(k|epsilon|omega|nuTilda)&quot; &lt;value&gt;;
+        &quot;alpha.*&quot;   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+For transient, there are <em>tolerance</em> and <em>relTol</em> in <em>residualControl</em> dictionary. Inputs of Absolute are set for <em>tolerance</em> and inputs of Relative are set for <em>relTol</em>.
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    residualControl
+    {
+        ...
+        p_rgh
+        {
+            tolerance       &lt;value&gt;;
+            relTol          &lt;value&gt;;
+        }
+        U
+        {
+            tolerance       &lt;value&gt;;
+            relTol          &lt;value&gt;;
+        }
+        ...
+    }
+}
+</code></pre></div>
+For density based solver convergence criteria is set at <em>LU-SGS</em> dictionay in the <strong>system/fvSolution</strong> file.</p>
+<div class="highlight"><pre><span></span><code>LU-SGS
+{
+    residualControl
+    {
+        rho     0.001;
+        rhoU    0.001;
+        rhoE    0.001;
+        &quot;(k|epsilon|omega|nuTilda)&quot; 0.001;
+    }
+}
+</code></pre></div>
+<h3 id="limits">Limits</h3>
+<p><em>limitT</em> dictionary in the <strong>system/fvOptions</strong> file is used for limit temperature.
+<div class="highlight"><pre><span></span><code>limitT
+{
+    type            limitTemperature;
+    active          yes;
+    selectionMode   all;
+    min             1;
+    max             5000;
+}
+</code></pre></div></p>
+<h3 id="equations">Equations</h3>
+<p>In <em>SIMPLE</em> and <em>PIMPLE</em> dictionary in the <strong>system/fvSolution</strong> file, you can on/off equations of flow, energy and species. </p>
+<div class="highlight"><pre><span></span><code>SIMPLE // PIMPLE
+{
+    ...
+    solveFlow                   &lt;yes or no&gt;;
+    solveEnergy                 &lt;yes or no&gt;;
+    solveSpecies                &lt;yes or no&gt;;
+    ...
+}
+</code></pre></div>
+<p>3 terms of energy equation as Viscous dissipation, Kinetic energy, Pressure Work can be of/off in the <strong>constant/thermophysicalProperties</strong> file.
+<div class="highlight"><pre><span></span><code>includeViscousDissipation   &lt;true of false&gt;;
+includeKineticEnergy        &lt;true of false&gt;;
+includePressureWork         &lt;true of false&gt;;
+</code></pre></div></p>
+<h3 id="default-numerical-conditions">Default numerical conditions</h3>
+<h4 id="simple-in-fvsolution-file">SIMPLE in fvSolution file</h4>
+<p><em>nNonOrthogonalCorrectors</em>, <em>pRefCell</em>, <em>pRefValue</em> are fixed as 0.</p>
+<div class="highlight"><pre><span></span><code>SIMPLE
+{
+    ...
+    nNonOrthogonalCorrectors    0;
+    pRefCell                    0;
+    pRefValue                   0;
+    ...
+}
+</code></pre></div>
+<h4 id="pimple-in-fvsolution-file">PIMPLE in fvSolution file</h4>
+<p><em>turbOnFinalIterOnly</em> is <em>false</em>. <em>nAlphaSpreadIter</em> and <em>nAlphaSweepIter</em> is 0, <em>rDeltaTSmoothingCoeff</em> and <em>rDeltaTDampingCoeff</em> is 0.5.</p>
+<div class="highlight"><pre><span></span><code>PIMPLE
+{
+    ...
+    turbOnFinalIterOnly         false;
+    nAlphaSpreadIter            0;
+    nAlphaSweepIter             0;
+    rDeltaTSmoothingCoeff       0.5;
+    rDeltaTDampingCoeff         0.5;
+    ...
+}
+</code></pre></div>
+<h4 id="solvers-in-fvsolution-file">solvers in fvSolution file</h4>
+<p>solvers dictionary is for matrix solver for each field. </p>
+<p><em>solver</em> and <em>preconditioner</em> are depend on field. </p>
+<p><em>tolerance</em> is fixed as 1e-16, <em>relative tolerance(relTol)</em> is 0.1, <em>minimum iteration(minIter)</em> is 1 and <em>maximum iteration(maxIter)</em> is 5 except volume fraction(alpha). </p>
+<p>For alpha, <em>tolerance</em> is fixed as 1e-8, <em>relTol</em> is 0, <em>minIter</em> is 1 and <em>maxIter</em> is 10.</p>
+<h5 id="pressure_1">Pressure</h5>
+<p>p_rgh uses <em>PCG</em> solver and <em>GAMG</em> preconditioner.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    p_rgh
+    {
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            smoother        DIC;
+            tolerance       1e-5;
+            relTol          0.1;
+        }
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+    }
+    ...
+}
+</code></pre></div></p>
+<h5 id="velocity-turbulence-species-user-defined-scalar">Velocity, turbulence, species, user defined scalar</h5>
+<p>U, k, epsilon, omega, nuTilda, scalar and Yi use <em>PBiCGStab</em> solver and <em>DILU</em> preconditioner.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    &quot;(U|k|epsilon|omega|nuTilda|scalar|Yi)&quot;
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+  }
+    ...
+}
+</code></pre></div></p>
+<h5 id="energy_1">Energy</h5>
+<p>h uses <em>PBiCGStab</em> solver and <em>GAMG</em> preconditioner.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    h
+    {
+        solver          PBiCGStab;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            smoother        DILU;
+            tolerance       1e-5;
+            relTol          0.1;
+        }
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+    }
+    ...
+}
+</code></pre></div></p>
+<h5 id="density">Density</h5>
+<p>rho uses <em>PCG</em> solver and <em>DIC</em> preconditioner.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    rho
+    {
+        solver          PCG;
+        preconditioner  DIC;
+        tolerance       1e-16;
+        relTol          0.1;
+        minIter         1;
+        maxIter         5;
+    }
+    ...
+}
+</code></pre></div></p>
+<h5 id="alpha_1">alpha</h5>
+<p>alpha uses <em>smoothSolver</em> solver and <em>symGaussSeidel</em> smoother.</p>
+<p><em>icAlpha</em> is fixed as 0 and <em>alphaApplyPrevCorr</em> is fixed as <em>yes</em>.
+<div class="highlight"><pre><span></span><code>solvers
+{
+    ...
+    &quot;alpha.*&quot;
+    {
+        solver              smoothSolver;
+        smoother            symGaussSeidel;
+        icAlpha             0;
+        alphaApplyPrevCorr  yes;
+        tolerance           1e-8;
+        relTol              0;
+        minIter             1;
+        maxIter             10;
+  }
+    ...
+}
+</code></pre></div></p>
+<h4 id="fieldbounds-in-fvsolution-file">fieldBounds in fvSolution file</h4>
+<p><em>fieldBounds</em> is used only in density based solver for limit values as follows
+<div class="highlight"><pre><span></span><code>fieldBounds
+{
+    p       1e-06   1e+10;
+    rho     1e-06   1e+10;
+    h       1e-06   1e+10;
+    e       1e-06   1e+10;
+    rhoE    1e-06   1e+10;
+    T       1e-06   3e+4;
+    U       3e+4;
+}
+</code></pre></div></p>
+<h4 id="gradschemes-in-fvschemes-file">gradSchemes in fvSchemes file</h4>
+<p>In pressure based solver always use <em>Gauss linear</em>. <em>momentumReconGrad</em>, <em>energyReconGrad</em> and <em>turbulenceReconGrad</em> are definition to use in <em>divSchemes</em>.
+<div class="highlight"><pre><span></span><code>gradSchemes
+{
+    default             Gauss linear;
+    momentumReconGrad   VKLimited Gauss linear 1.0;
+    energyReconGrad     VKLimited Gauss linear 1.0;
+    turbulenceReconGrad VKLimited Gauss linear 1.0;
+}
+</code></pre></div>
+In density based solver, always use conditions below
+<div class="highlight"><pre><span></span><code>gradSchemes
+{
+    default         Gauss linear;
+    grad(k)         VKLimited Gauss linear 0.5;
+    grad(epsilon)   VKLimited Gauss linear 0.5;
+    grad(omega)     VKLimited Gauss linear 0.5;
+    grad(nuTilda)   VKLimited Gauss linear 0.5;
+    reconGrad       VKLimited Gauss linear 0.5;
+}
+</code></pre></div></p>
+<h4 id="interpolationschemes-in-fvschemes-file">interpolationSchemes in fvSchemes file</h4>
+<p>In density based solver setup is fixed as follows
+<div class="highlight"><pre><span></span><code>interpolationSchemes
+{
+    default             linear;
+    interpolate(rho)    linearUpwind phi grad(rho);
+}
+</code></pre></div></p>
+<h4 id="sngradschemes-int-fvschemes-file">snGradSchemes int fvSchemes file</h4>
+<p>Always use setup below
+<div class="highlight"><pre><span></span><code>snGradSchemes
+{
+    default     corrected;
+}
+</code></pre></div></p>
+<!---------------------------------------------------------------------------------->
+<h2 id="monitor">Monitor</h2>
+<p>Monitor is set in <em>functions</em> dictionary in the <strong>system/controlDict</strong> file.</p>
+<h3 id="force">Force</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name of forces&gt;
+    {
+        type            forces;
+        libs    (&quot;/baram/solvers/openfoam/lib/libforces.so&quot;);
+        patches
+        (
+            &lt;patch name 1&gt;
+            ...
+        );
+        CofR            (&lt;x&gt; &lt;x&gt; &lt;x&gt;);
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+    &lt;name of force coefficients&gt;
+    {
+        type            forceCoeffs;
+        libs    (&quot;/baram/solvers/openfoam/lib/libforces.so&quot;);
+        patches
+        (
+            &lt;patch name 1&gt;
+            ...
+        );
+        coefficients    (Cd Cl CmPitch);
+        rho             rho;
+        Aref            &lt;value&gt;;
+        lRef            &lt;value&gt;;
+        magUInf         &lt;value&gt;;
+        rhoInf          &lt;value&gt;;
+        dragDir         (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+        liftDir         (&lt;x-dir&gt; &lt;y-dir&gt; &lt;z-dir&gt;);
+        CofR            (&lt;x&gt; &lt;y&gt; &lt;z&gt;);
+        updateHeader    false;
+        log             false;
+        pRef            &lt;value&gt;;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+Write Interval is set at <em>writeInterval</em>. Drag Direction is set at <em>dragDir</em>, Lift Direction is at <em>liftDir</em>, Center of Rotation is at <em>CofR</em>. Selected Boundaries are set at <em>patches</em>.</p>
+<h3 id="point">Point</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type            probes;
+        libs    (&quot;/baram/solvers/openfoam/lib/libsampling.so&quot;);
+        fields          (&lt;field&gt;);
+        probeLocations  ( (&lt;x&gt; &lt;y&gt; &lt;z&gt;) );
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+<em>writeInterval</em> for Write Interval, <em>fields</em> for Field, <em>probeLocations</em> for Coordidate</p>
+<h3 id="surface">Surface</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type            surfaceFieldValue;
+        libs    (&quot;/baram/solvers/openfoam/lib/libfieldFunctionObjects.so&quot;);
+        regionType      patch;
+        name            &lt;patch name&gt;;
+        surfaceFormat   none;
+        fields          (&lt;field&gt;);
+        operation       &lt;value&gt;;
+        writeFields     false;
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+<em>writeInterval</em> for Write Interval, <em>fields</em> for Field Variable, <em>operation</em> for Report Type, <em>name</em> for Surface</p>
+<h3 id="volume">Volume</h3>
+<p><div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type            volFieldValue;
+        libs    (&quot;/baram/solvers/openfoam/lib/libfieldFunctionObjects.so&quot;);
+        regionType      cellZone;
+        name            &lt;cel zone name&gt;;
+        fields          (&lt;field&gt;);
+        operation       &lt;value&gt;;
+        writeFields     false;
+        updateHeader    false;
+        log             false;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   &lt;value&gt;;
+    }
+}
+</code></pre></div>
+<em>writeInterval</em> for Write Interval, <em>fields</em> for Field Variable, <em>operation</em> for Report Type, <em>name</em> for Volume</p>
+<h3 id="residual">Residual</h3>
+<p>To create and save residual data, use <em>functions</em> dictionary in the <strong>system/controlDict</strong> file. </p>
+<p><em>fields</em> are depend on solver.</p>
+<div class="highlight"><pre><span></span><code>functions
+{
+    ...
+    &lt;name&gt;
+    {
+        type                solverInfo;
+        libs    (&quot;/baram/solvers/openfoam/lib/libutilityFunctionObjects.so&quot;);
+        executeControl      timeStep;
+        executeInterval     1;
+        writeResidualFields no;
+        fields
+        (
+            U
+            p_rgh
+            k
+            epsilon
+            ...
+        );
+    }
+}
+</code></pre></div>
+<!---------------------------------------------------------------------------------->
+<h2 id="initialization">Initialization</h2>
+<p>To initialize volume value, <strong>system/setFields</strong> file is used.</p>
+<p>Values of <em>defaultFieldValues</em> is the input values for all domain and values of <em>regions</em> are for certain volume.
+<div class="highlight"><pre><span></span><code>defaultFieldValues
+(
+    volScalarFieldValue &lt;field&gt; &lt;value&gt; 
+    ...
+);
+regions
+(
+    boxToCell
+    {
+        box  (&lt;x1&gt; &lt;y1&gt; &lt;z1&gt;) (&lt;x2&gt; &lt;y2&gt; &lt;z2&gt;);
+        fieldValues
+        (
+            volScalarFieldValue &lt;field&gt; &lt;value&gt;
+            ... 
+        );
+    }
+    ... 
+);
+</code></pre></div>
+For volume fraction initialize, values of all phases are set as follows
+<div class="highlight"><pre><span></span><code>defaultFieldValues
+(
+    volScalarFieldValue alpha.&lt;secondary phase1&gt;  &lt;value&gt; 
+    volScalarFieldValue alpha.&lt;primaty phase&gt;     &lt;1-value&gt; 
+);
+regions
+(
+    boxToCell
+    {
+        box  (&lt;x1&gt; &lt;y1&gt; &lt;z1&gt;) (&lt;x2&gt; &lt;y2&gt; &lt;z2&gt;);
+        fieldValues
+        (
+            volScalarFieldValue alpha.&lt;secondary phase1&gt;    &lt;value&gt; 
+            volScalarFieldValue alpha.&lt;primaty phase1&gt;      &lt;1-value&gt; 
+        );
+    } 
+);
+</code></pre></div>
+The value of Primary phase must be set as sum of all phase is one.</p>
+<!---------------------------------------------------------------------------------->
+<h2 id="run-conditions">Run Conditions</h2>
+<p>Run Conditions are set in the <strong>system/controlDict</strong> file as follows</p>
+<div class="highlight"><pre><span></span><code>application         &lt;solver&gt;;
+startFrom           latestTime;
+startTime           0;
+stopAt              endTime;
+endTime             &lt;value&gt;;
+deltaT              &lt;value&gt;;
+writeControl        adjustableRunTime;
+writeInterval       &lt;value&gt;;
+purgeWrite          &lt;value&gt;;
+writeFormat         &lt;binary or ascii&gt;;
+writePrecision      &lt;value&gt;;
+writeCompression    off;
+writeAtEnd          true;
+timeFormat          general;
+timePrecision       &lt;value&gt;;
+runTimeModifiable   yes;
+adjustTimeStep      &lt;yes or no&gt;;
+maxCo               &lt;value&gt;;
+maxDi               &lt;value&gt;;
+maxAlphaCo          &lt;value&gt;;
+</code></pre></div>
+<ul>
+<li><em>endTime</em> : value of Number of Iteration or End Time</li>
+<li><em>deltaT</em> : value of Time Step Size</li>
+<li><em>writeInterval</em> : value of Save Interval</li>
+<li><em>purgeWrite</em> : value of Retain Only the Most Recent Files</li>
+<li><em>writeFormat</em> : value of Data Write Format</li>
+<li><em>writePrecision</em> : value of Data Write Precision</li>
+<li><em>timePrecision</em> : value of Time Precision</li>
+<li><em>adjustTimeStep</em> : value of Time Stepping Method</li>
+<li><em>maxCo</em> : value of Courant Number</li>
+<li><em>maxDi</em> : value of Maximum Diffusion Number</li>
+<li><em>maxAlphaCo</em> : value of Max Courant Number for VoF</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

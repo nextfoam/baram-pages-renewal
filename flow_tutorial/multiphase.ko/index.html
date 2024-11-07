@@ -1,0 +1,1819 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../uds.ko/">
+      
+      
+        <link rel="next" href="../nonNewtonian.ko/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>다상유동 해석 예제 - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              다상유동 해석 예제
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../multiphase.en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  홈
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../screenshots.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  스크린샷
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_overview.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  주요기능
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  설치
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../internationalization.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  다국어 지원
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release_notes.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  업데이트
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../simple_incompressible.ko/" class="md-tabs__link">
+          
+  
+  예제 가이드
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flow_manual/intro.ko/" class="md-tabs__link">
+          
+  
+  사용자 가이드
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../QA.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  문의
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    홈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../screenshots.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스크린샷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_overview.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    주요기능
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    설치
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internationalization.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    다국어 지원
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    업데이트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    예제 가이드
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            예제 가이드
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BaramFlow
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            BaramFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_incompressible.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    간단한 비압축성 유동 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../car_external.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    자동차 외부 유동 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transient.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    비정상 상태 유동 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rotate.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    회전체 유동 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ABL.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    대기경계측 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porous.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    다공성 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatTransfer.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    열전달 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../species.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    화학종 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uds.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    사용자 정의 스칼라 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    다상유동 해석 예제
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    다상유동 해석 예제
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#weir" class="md-nav__link">
+    <span class="md-ellipsis">
+      위어(Weir) 유동
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-kcskriso-container-ship" class="md-nav__link">
+    <span class="md-ellipsis">
+      선박 저항 - KCS(KRISO Container Ship)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-naca66" class="md-nav__link">
+    <span class="md-ellipsis">
+      캐비테이션 - NACA66 하이드로포일
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nonNewtonian.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    비뉴턴유체 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subsonic.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    비뉴턴유체 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../densityBased.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    밀도 기반 압축성 유동 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batchRun.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    일괄 계산 유동 해석 예제
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../mesh_tutorial/mixingPipe.ko/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BaramMesh
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../flow_manual/intro.ko/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    사용자 가이드
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QA.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    문의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../../flow_tutorial/multiphase.en/">English</a></li>
+</ul>
+<h1 id="_1">다상유동</h1>
+<h2 id="weir">위어(Weir) 유동</h2>
+<p><a href="https://drive.google.com/file/d/1ODSzqSH9TfIjkmnVNm5p5XLBPX-gjplN/view?usp=sharing">격자 파일 다운로드</a></p>
+<p><a href="https://drive.google.com/file/d/1mZsJla3w9X_95I51-dUixL-jbFXyVT4Z/view?usp=sharing">계산 파일 다운로드</a></p>
+<h3 id="_2">개요</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/main.png"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/main.png" /></a></p>
+<p>위어(Weir)는 수공학에서 수로에 설지하는 구조물로 물이 넘치게 만들어 특정 수위를 유지하거나 유량을 측정하는데 사용한다. CFD에서는 이론식으로 구할 수 있는 유량과 해석 결과를 비교하여 코드 검증용으로 사용하기도 한다.</p>
+<p>본 예제는 사각 위어에서 수위가 일정한 경우에 유량 해석을 위한 예제이다.</p>
+<p>계산 조건은 다음과 같다.</p>
+<ul>
+<li>물의 입구 수위 : 1.6 m, 15696 Pa</li>
+<li>솔버 : interFoam</li>
+<li>난류모델 : standard 𝑘 − ε </li>
+</ul>
+<h3 id="_3">프로그램의 구동 및 격자</h3>
+<p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [Volume of Fluid]를 선택한다. 중력은 (0 0 -9.81)로 설정한다.</p>
+<p>격자는 주어진 polyMesh 폴더를 활용한다. 상단 탭에서 [파일(File)]-[격자 불러오기(Load Mesh)]-[OpenFOAM]을 순서대로 클릭하고 polyMesh 폴더를 선택한다. </p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/launcher.png"><br> 
+</p>
+<p><br></p>
+<h3 id="general">기본조건(General)</h3>
+<p>[시간(Time)]은 [비정상상태(Transient)]로 설정한다.</p>
+<p>[중력(Gravity)]는 (0 0 -9.81)을 사용한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/general.png"><br> 
+</p>
+
+<h3 id="models">모델(Models)</h3>
+<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용하고 나머지는 디폴트를 사용한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/turbulence.png"><br> 
+</p>
+
+<h3 id="materials">물질(Materials)</h3>
+<p>본 예제는 이상유동이므로 두 개의 유체가 필요하다. [물질(Material)]의 상단 오른쪽의 (+)를 누르면 유체를 추가할 수 있다. water-liquid를 추가하고 이름을 water로 바꾸어 준다.</p>
+<ul>
+<li>
+<p>water</p>
+<ul>
+<li>밀도 : 1000</li>
+<li>점성계수 : 0.001</li>
+</ul>
+</li>
+<li>
+<p>air</p>
+<ul>
+<li>밀도 : 1.225</li>
+<li>점성계수 : 1.79e-5</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/material.png"><br> Materials 설정
+</p>
+
+<h3 id="cell-zone-conditions">셀존 조건(Cell zone Conditions)</h3>
+<p>[셀존 조건(Cell zone Conditions)]에는 region0가 있다.(다중영역일 때는 여러개의 영역이 표시된다.) 영역의 유체를 설정한다. region0를 더블 클릭하면 설정창이 열린다. [첫번째 유체(Primary Material)]은 air, [두번째 유체(Secondary material)]은 water로 지정한다. 표면장력(Surface Tension)은 0을 사용한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/region.png"><br> Cell Zone Conditions 설정
+</p>
+
+<h3 id="boundary-conditions">경계조건(Boundary Conditions)</h3>
+<p>경계조건은 다음과 같이 설정한다.</p>
+<ul>
+<li>water-in : 입구 압력(Pressure Inlet)<ul>
+<li>전압력(Total Pressure) : 15696</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, water) : 1</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/inlet.png"><br> 
+</p>
+
+<ul>
+<li>air-in : 입구 압력(Pressure Inlet)<ul>
+<li>전압력(Total Pressure) : 0</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, water) : 0</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/inlet-air.png"><br> 
+</p>
+
+<ul>
+<li>top : 출구 압력(Pressure Outlet), 유입류 조건(Specify Backflow Properties) <ul>
+<li>전압력(Total Pressure) : 0</li>
+<li>유입류 난류 강도(Backflow Turbulent Intensity) : 1</li>
+<li>유입류 난류 점도 비율(Backflow Turbulent Viscosity Ratio) : 10</li>
+<li>유입류 체적분율(Backflow Volume Fraction, water) : 0</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/top.png"><br> 
+</p>
+
+<ul>
+<li>
+<p>out, out-1 : 유출(Outflow)</p>
+</li>
+<li>
+<p>weir, bottom : 벽면(wall)</p>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/wall.png"><br> 
+</p>
+
+<ul>
+<li>front, front-1, back, back-1 : 대칭(symmetry)</li>
+</ul>
+<h3 id="numerical-conditions">수치해석 기법(Numerical Conditions)</h3>
+<p>수치해석 조건은 다음과 같이 설정한다.</p>
+<ul>
+<li>
+<p>압력-속도 연성 기법(Pressure-Velocity Coupling Scheme) : SIMPLE</p>
+</li>
+<li>
+<p>운동량방정식 계산(Use Momentum Predictor) : On</p>
+</li>
+<li>
+<p>이산화 기법(Discretization Scheme)</p>
+<ul>
+<li>시간 : 1차 음해법(First Order Implicit)</li>
+<li>압력 : Momentum Weighted Reconstruct</li>
+<li>운동량 : 2차 상류기법(Second Order Upwind)</li>
+<li>난류 : 1차 상류기법(First Order Upwind)</li>
+<li>체적분율 : 2차 상류기법(Second Order Upwind)</li>
+</ul>
+</li>
+<li>
+<p>완화계수(Under-Relaxation Factors) : 모두 1로 설정</p>
+</li>
+<li>
+<p>안정성 향상(Improve Stability) : Off</p>
+</li>
+<li>
+<p>시간당 반복계산 회수(Max Iterations per Time Step) : 1</p>
+</li>
+<li>
+<p>압력보정 회수(Number of Correctors) : 2</p>
+</li>
+<li>
+<p>다상유동(Multiphase)와 수렴 판정 기준(Convergence Criteria) : 디폴트 사용</p>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/numerical.png"><br> 
+</p>
+
+<h3 id="monitor">모니터(Monitor)</h3>
+<p>[추가(Add)]-[면(Surface)]를 선택하여 아래 그림과 같이 설정한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/monitor.png"><br> 
+</p>
+
+<h3 id="initialization">초기화(Initialization)</h3>
+<p>초기조건은 다음과 같이 입력한다.</p>
+<ul>
+<li>속도 : (0 0 0)</li>
+<li>압력 : 0</li>
+<li>속도 크기(Scale of Velocity) : 1</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, water) : 0</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/initial.png"><br> 
+</p>
+
+<p>water 영역의 초기조건을 주기 위해 두 개의 섹션을 만든다.</p>
+<p>[초기화(Initialization)]-[추가설정(Advanced)]-[영역(Section)]-[만들기(Create)]를 클릭한 후 다음과 같이 설정한다.</p>
+<ul>
+<li>
+<p>region1</p>
+<ul>
+<li>영영 형태(Section Type) : 육면체(Hex)</li>
+<li>최소(Min.point) : (0.05 -1 0)</li>
+<li>최대(Max.point) : (2 1 0.2)</li>
+<li>체적분율(Volume Fraction, water) : 1</li>
+</ul>
+</li>
+<li>
+<p>region2</p>
+<ul>
+<li>영영 형태(Section Type) : 육면체(Hex)</li>
+<li>최소(Min.point) : (-2 -1 0)</li>
+<li>최대(Max.point) : (-0.05 1 1.6)</li>
+<li>체적분율(Volume Fraction, water) : 1</li>
+</ul>
+</li>
+</ul>
+<p>[경계면도 포함(Override Boundary Value)] 옵션은 사용하지 않는다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/setFields.png"><br> 
+</p>
+
+<p>[추가설정(Advanced)]-[영역(Section)]에 두 개의 섹션이 만들어졌고 각 항목의 눈 모양 표시를 클릭하면 영역을 디스플레이 할 수 있다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/setFieldsDisplay.png"><br> 초기화 영역 디스플레이
+</p>
+
+<p>하단의 [초기화(Initialize)] 버튼을 클릭한다. 그 후, 메뉴의 [파일(File)]-[저장(Save)] 버튼을 클릭하여 저장한다.</p>
+<h3 id="_4">계산</h3>
+<p>메뉴의 [병렬연산(Parallel)]-[환경설정(Environment)]를 클릭하고 원하는 코어수를 입력한다. </p>
+<p>[계산 조건(Run Conditions)]은 다음과 같이 설정하고 [계산시작(Start Calculation)] 버튼을 누르면 계산이 시작된다.</p>
+<ul>
+<li>시간 전진 기법(Time Stepping Method) : 적응시간기법(Adaptive)</li>
+<li>Courant Number : 1</li>
+<li>Courant Number for VoF : 1</li>
+<li>종료시간(End Time) : 20</li>
+<li>자동 저장 간격(Save Interval) : 0.1</li>
+</ul>
+<p>계산이 시작되면 아래와 같이 모니터링 그래프가 그려진다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/run.png"><br> 유량 모니터링 화면
+</p>
+
+<h3 id="_5">후처리</h3>
+<p>물의 흐름을 그려본다.</p>
+<p>메뉴에서 [외부 프로그램(External tools)]-[ParaView] 버튼을 클릭해서 paraview를 실행한다.</p>
+<p>병렬연산이면 [Case Type]을 [Decomposed Case]로 변경한다.</p>
+<p align='left'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/clip.png"> [Clip] 필터를 이용해서 Volume fraction이 0.5 이상인 영역을 잘라준다.
+</p>
+
+<p>[Field]를 [U]로 변경한다. Pipeline Browser의 baram.foam을 [Outline]으로 표시하고, weir.stl 파일을 읽어 [Solid Color]로 표시하면 아래 그림과 같이 된다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/pvClip.png"><br>  
+</p>
+
+<p align='left'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/weir/play.png"> [Play] 아이콘을 누르면 동영상을 볼 수 있다.
+</p>
+
+<!--------------------------------------------------------------------------------------------------->
+<h2 id="-kcskriso-container-ship">선박 저항 - KCS(KRISO Container Ship)</h2>
+<p><a href="https://drive.google.com/file/d/1GC8NdJuT3Eog9FWQ9M7XyqoCrVOx1TpP/view?usp=sharing">격자 파일 다운로드</a></p>
+<p><a href="https://drive.google.com/file/d/185vzZC9Cc7kboGWYoLyLXaWZawQHKmvr/view?usp=sharing">계산 파일 다운로드</a></p>
+<h3 id="_6">개요</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/kcs-wave.png"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/kcs-wave.png" title="" /></a></p>
+<p>본 예제는 자유수면을 포함하는 선박의 저항 해석에 대한 검증 문제이다. 대상 선형은 KCS이며 아래 논문의 결과와 비교하였다. 자유수면 계산을 위해 interFoam 솔버를 사용하고, LTS(Local Time Step) 기법을 사용하는 정상상태 계산이며 난류모델은<span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span>를 사용한다. </p>
+<p><em>Measurement of flows around modern commercial ship models, Kim,W J.Kim, Van, S H, Kim, D H, Experiments in Fluids, 2001</em></p>
+<p>계산 및 실험 조건은 다음과 같다.</p>
+<ul>
+<li>선박의 속도 : 2.196 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span></li>
+<li>기준 면적(침수면적, wetted surface area) : 9.5121 <span class="arithmatex"><span class="MathJax_Preview">m^2/s</span><script type="math/tex">m^2/s</script></span></li>
+<li>draft : 0.3418 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> (격자에서 z좌표는 0)</li>
+</ul>
+<h3 id="_7">프로그램의 구동 및 격자</h3>
+<p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [Volume of Fluid]를 선택한다. 중력은 (0 0 -9.81)로 설정한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/launcher.png"><br> launcher 설정
+</p>
+
+<p>격자는 주어진 polyMesh 폴더를 활용한다. 상단 탭에서 [파일(File)]-[격자 불러오기(Load Mesh)]-[OpenFOAM]을 순서대로 클릭하고 polyMesh 폴더를 선택한다. </p>
+<h3 id="general_1">기본조건(General)</h3>
+<p>정상상태 계산이기 때문에 모든 설정은 디폴트 조건을 사용한다. 시작 창에서 설정한 중력이 표시된다. 시작 창에서 중력을 주지 않았을 때 여기서 설정할 수 있다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/general.png"><br> General 설정
+</p>
+
+<h3 id="models_1">모델(Models)</h3>
+<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델을 사용하고 나머지는 디폴트 조건을 사용한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/turbulence.png"><br> Turbulence Model 설정
+</p>
+
+<h3 id="materials_1">물질(Materials)</h3>
+<p>본 예제는 이상유동이므로 두 개의 유체가 필요하다. [물질(Material)]의 상단 오른쪽의 (+)를 누르면 유체를 추가할 수 있다. water-liquid를 추가하고 이름을 water로 바꾸어 준다.</p>
+<p>각 유체의 물성치는 다음과 같이 설정한다.</p>
+<ul>
+<li>
+<p>water</p>
+<ul>
+<li>밀도 : 1000</li>
+<li>점성계수 : 0.001</li>
+</ul>
+</li>
+<li>
+<p>air</p>
+<ul>
+<li>밀도 : 1.225</li>
+<li>점성계수 : 1.79e-5</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/material.png"><br> 
+</p>
+
+<h3 id="cell-zone-conditions_1">셀존 조건(Cell zone Conditions)</h3>
+<p>[셀존 조건(Cell Zone Conditions)]에는 region0가 있다.(다중영역일 때는 여러개의 영역이 표시된다.) 영역의 유체를 설정한다. region0를 더블 클릭하면 설정창이 열린다. [첫번째 유체(Primary Material)]은 Air, [두번재 유체(Secondary material)]은 water로 지정한다.</p>
+<p>표면장력(Surface Tension)은 0을 사용한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/region.png"><br> 
+</p>
+
+<h3 id="boundary-conditions_1">경계조건(Boundary Conditions)</h3>
+<p>경계조건은 다음과 같이 설정한다.</p>
+<ul>
+<li>far_inlet : 입구 속도(Velocity Inlet)<ul>
+<li>속도 크기 : 2.196</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, water) : 0</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/inlet.png"><br> 
+</p>
+
+<ul>
+<li>far_outlet : 개수로 출구(Open Channel Outlet)<ul>
+<li>속도 크기(Umean) : 2.196</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/outlet.png"><br> 
+</p>
+
+<ul>
+<li>far_top : 출구 압력(Pressure Outlet)<ul>
+<li>전압력(Total Pressure) : 0</li>
+<li>유입류 난류 강도(Backflow Turbulent Intensity)  : 1</li>
+<li>유입류 난류 점도 비율(Backflow Turbulent Viscosity Ratio)  : 10</li>
+<li>유입류 체적분율(Backflow Volume Fraction, water) : 0</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/top.png"><br> 
+</p>
+
+<ul>
+<li>KCS_dummy_hub, KCS_hub_aft, KCS_hub_cap, KCS_hull, KCS_transom, KCS_deck : 벽면(wall)</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/wall.png"><br> 
+</p>
+
+<ul>
+<li>centerplane, far_side, far_bottom : 대칭(symmetry)</li>
+</ul>
+<h3 id="reference-values">기준값(Reference Values)</h3>
+<p>유체력계수를 계산하기 위한 기준값을 다음과 같이 설정한다.</p>
+<ul>
+<li>면적 : 4.75605(대칭 조건을 사용하므로 침수면적의 절반)</li>
+<li>밀도 : 1000</li>
+<li>길이 : 7.2786</li>
+<li>속도 : 2.196</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/ref.png"><br> 
+</p>
+
+<h3 id="numerical-conditions_1">수치해석 기법(Numerical Conditions)</h3>
+<p>수치해석 조건은 다음과 같이 설정한다.</p>
+<ul>
+<li>압력-속도 연성 기법(Pressure-Velocity Coupling Scheme) : SIMPLE</li>
+<li>운동량방정식 계산(Use Momentum Predictor) : Off</li>
+<li>이산화 기법(Discretization Schemes) : 압력은 Momentum Weighted Reconstruct, 나머지는 모두 2차 상류기법(Second Order Upwind)</li>
+<li>완화계수(Under-Relaxation Factors) : 모두 1</li>
+<li>안정성 향상(Improve Stability) : Off</li>
+<li>시간당 반복계산 회수(Max Iteration per Time Step) : 1</li>
+<li>압력 보정 회수(Number of Correctors) : 2</li>
+<li>다상유동(Multiphase)와 수렴 판정 기준(Convergence Criteria) : 디폴트 사용</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/numerical.png"><br> 
+</p>
+
+<h3 id="monitor_1">모니터(Monitor)</h3>
+<p>선박의 유체력계수를 모니터링 한다.</p>
+<p>Add-Forces 선택 후 다음과 같이 설정한다.</p>
+<ul>
+<li>양력 방향(Lift Direction) : (0 0 1)</li>
+<li>항력 방향(Drag Direction) : (-1 0 0)</li>
+<li>회전 중심(Center of Rotation) : (0 0 0)</li>
+<li>경계면(Boundaries) : KCS_dummy_hub, KCS_hub_aft, KCS_hub_cap, KCS_hull, KCS_transom, KCS_deck</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/monitor.png"><br> 
+</p>
+
+<h3 id="initialization_1">초기화(Initialization)</h3>
+<p>초기조건은 다음과 같이 입력한다.</p>
+<ul>
+<li>속도 : (-2.196 0 0)</li>
+<li>압력 : 0</li>
+<li>속도 크기(Scale of Velocity) : 2.196</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, water) : 0</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/initial.png"><br> 
+</p>
+
+<p>water 영역의 초기조건을 주기 위해 섹션을 만든다.</p>
+<p>[초기화(Initialization)]-[추가설정(Advanced)]-[영역(Section)]-[만들기(Create)]를 클릭한 후 다음과 같이 설정한다.</p>
+<ul>
+<li>영영 형태(Section Type) : 육면체(Hex)</li>
+<li>최소(Min.point) : (-999 -999 -999)</li>
+<li>최대(Max.point) : (999 999 0)</li>
+<li>체적분율(Volume Fraction, water)  : 1</li>
+</ul>
+<p>[경계면도 포함(Override Boundary Value)] 옵션을 사용하여 경계조건의 값도 바꾸어 준다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/setFields.png"><br> 
+</p>
+
+<h3 id="_8">계산</h3>
+<p>메뉴의 [병렬연산(Parallel)]-[환경설정(Environment)]를 클릭하고 원하는 코어수를 입력한다. </p>
+<p>[계산 조건(Run Conditions)]에서 [계산회수(Number of Iterations)]을 2000으로 준다.</p>
+<p>[계산시작(Start Calculation)] 버튼을 누르면 계산이 시작된다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/parallel.png"><br> 
+</p>
+
+<p>계산이 시작되면 아래와 같이 잔차(residual) 그래프가 그려진다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/residual.png"><br> 
+</p>
+
+<h3 id="_9">후처리</h3>
+<p>메뉴에서 [외부 프로그램(External tools)]-[ParaView] 버튼을 클릭해서 ParaView를 실행한다</p>
+<p>병렬연산이면 [Case Type]을 [Decomposed Case]로 변경한다.</p>
+<p>선박의 경계면들을 선택하고 [Coloring]을 [alpha.water]로 선택하면 다음과 같은 그림을 확인할 수 있다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/kcs/post.png"><br> 
+</p>
+<!--------------------------------------------------------------------------------------------------->
+<h2 id="-naca66">캐비테이션 - NACA66 하이드로포일</h2>
+<p><a href="https://drive.google.com/file/d/1a6uUi1CKbzZEYa9e4R3-ABR8ZY6LOtKq/view?usp=sharing">격자 파일 다운로드</a></p>
+<p><a href="https://drive.google.com/file/d/1iaVyUwowI6nrSYlnIkcniAcM3aiDFBXu/view?usp=sharing">계산 파일 다운로드</a></p>
+<h3 id="_10">개요</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/cav-contour.png"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/cav-contour.png" /></a></p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/cav-Cp.png"><img alt="" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/cav-Cp.png" /></a></p>
+<p>NACA66 익형 주위의 캐비테이션 해석 검증 문제이다.</p>
+<p>캐비테이션 문제 검증용으로 많이 사용되는 아래 논문의 형상 및 조건을 사용하였다.</p>
+<p><em>Viscous and Nuclei Effects on Hydrodynamic Loadings and Cavitation of NACA66(MOD) Foil section, Y.T.Shen, P.E. Dimotakis, J. Fluids Eng. sep. 1989</em></p>
+<p>속도는 2.01 m/s 이며, 캐비테이션 수는 0.84 이다.</p>
+<p>캐비테이션 모델은 Schnerr-Sauer를 사용하였으며 계수들은 다음과 같다.</p>
+<ul>
+<li>증발계수(Evaporation Coefficient) : 1</li>
+<li>응축계수(Condensation Coefficient) : 1</li>
+<li>기포직경(Bubble Diameter) : 2e-6</li>
+<li>기포의 수밀도(Bubble Number Density) : 1.6e+9</li>
+<li>증기압(Vapor pressure) : 2420 Pa</li>
+</ul>
+<h3 id="_11">프로그램의 구동 및 격자</h3>
+<p>프로그램 실행 후 [새 작업(New Case)]를 선택한다. 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [Volume of Fluid]를 선택한다. 중력은 (0 0 0)으로 설정한다.</p>
+<p>격자는 주어진 polyMesh 폴더를 활용한다. 상단 탭에서 [파일(File)]-[격자 불러오기(Load Mesh)]-[OpenFOAM]을 순서대로 클릭하고 polyMesh 폴더를 선택한다. </p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/launcher.png"><br> 
+</p>
+<p><br></p>
+<h3 id="general_2">기본조건(General)</h3>
+<p>[시간(Time)]은 [비정상상태(Transient)]로 설정한다.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/general.png"><br> 
+</p>
+
+<h3 id="models_2">모델(Models)</h3>
+<p>난류 모델은 <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델을 사용하고 나머지는 디폴트를 사용한다.</p>
+<h3 id="materials_2">물질(Materials)</h3>
+<p>본 예제는 이상유동이므로 두 개의 유체가 필요하다. [물질(Material)]의 상단 오른쪽의 (+)를 누르면 유체를 추가할 수 있다. waterLiquid와 waterVapor를 추가한다. </p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/material.png"><br> 
+</p>
+
+<h3 id="cell-zone-conditions_2">셀존 조건(Cell zone Conditions)</h3>
+<p>[셀존 조건(Cell Zone Conditions)]에는 region0가 있다.(다중영역일 때는 여러개의 영역이 표시된다.) 영역의 유체를 설정한다. region0를 더블 클릭하면 설정창이 열린다. [첫번째 유체(Primary Material)]은 waterVapor,  [두번째 유체(Secondary material)]은 waterLiquid로 지정한다. 표면장력(Surface Tension)은 0.07을 사용한다.</p>
+<p>캐비테이션(Cavitation) 옵션을 켠다. 모델은 [Schnerr-Sauer]를 선택하고 [증기압(Vaporization Pressure)]는 2430을 입력한다. Model Constants 는 다음의 값을 사용한다.</p>
+<ul>
+<li>증발계수(Evaporation Coefficient) : 1</li>
+<li>응축계수(Condensation Coefficient) : 1</li>
+<li>기포직경(Bubble Diameter) : 2.0e-06</li>
+<li>기포의 수밀도(Bubble Number Density) : 1.6e+9</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/region.png"><br> 
+</p>
+
+<h3 id="boundary-conditions_2">경계조건(Boundary Conditions)</h3>
+<p>경계조건은 다음과 같이 설정한다.</p>
+<ul>
+<li>B_INLET : 입구 속도(Velocity Inlet)<ul>
+<li>속도 크기(Velocity Magnitude) : 2.01</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, waterLiquid) : 1</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/inlet.png"><br> 
+</p>
+
+<ul>
+<li>B_OUTLET : 출구 압력(Pressure Outlet)<ul>
+<li>압력(Pressure) : 4113.788</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/outlet.png"><br>
+</p>
+
+<ul>
+<li>
+<p>B_SYM : 대칭(Symmetry)</p>
+</li>
+<li>
+<p>FOIL_DOWN, FOIL_UP : 벽면(Wall)</p>
+</li>
+<li>
+<p>EMPTY : 2차원 경계(Empty)</p>
+</li>
+</ul>
+<h3 id="numerical-conditions_2">수치해석 기법(Numerical Conditions)</h3>
+<p>수치해석 조건은 다음과 같이 설정한다.</p>
+<ul>
+<li>
+<p>압력-속도 연성 기법(Pressure-Velocity Coupling Scheme) : SIMPLE</p>
+</li>
+<li>
+<p>운동량방정식 계산(Use Momentum Predictor) : On</p>
+</li>
+<li>
+<p>이산화 기법(Discretization Scheme)</p>
+<ul>
+<li>시간 : 1차 음해법(First Order Implicit)</li>
+<li>압력 : Momentum Weighted Reconstruct</li>
+<li>운동량 : 2차 상류기법(Second Order Upwind)</li>
+<li>난류 : 1차 상류기법(First Order Upwind)</li>
+<li>체적분율 : 2차 상류기법(Second Order Upwind)</li>
+</ul>
+</li>
+<li>
+<p>완화계수(Under-Relaxation Factors) : 디폴트 값 사용</p>
+</li>
+<li>안정성 향상(Improve Stability) : Off</li>
+<li>시간당 반복계산 회수(Max Iterations per Time Step) : 10</li>
+<li>압력보정 회수(Number of Correctors) : 2</li>
+<li>다상유동(Multiphase)와 수렴 판정 기준(Convergence Criteria) : 디폴트 사용</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/numerical.png"><br> 
+</p>
+
+<h3 id="initialization_2">초기화(Initialization)</h3>
+<p>초기조건은 다음과 같이 입력한다.</p>
+<ul>
+<li>속도 : (2.01 0 0)</li>
+<li>압력 : 4113.788</li>
+<li>속도 크기(Scale of Velocity) : 2.01</li>
+<li>난류 강도(Turbulent Intensity) : 1</li>
+<li>난류 점도 비율(Turbulent Viscosity Ratio) : 10</li>
+<li>체적분율(Volume Fraction, waterLiquid) : 1</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/initial.png"><br> 
+</p>
+
+<p>하단의 [초기화(Initialize)] 버튼을 클릭한다. 그 후, 메뉴의 [파일(File)]-[저장(Save)] 버튼을 클릭하여 저장한다.</p>
+<h3 id="_12">계산</h3>
+<p>메뉴의 [병렬연산(Parallel)]-[환경설정(Environment)]를 클릭하고 원하는 코어수를 입력한다. </p>
+<p>[계산 조건(Run Conditions)]은 다음과 같이 설정하고 [계산시작(Start Calculation)] 버튼을 누르면 계산이 시작된다.</p>
+<ul>
+<li>시간 전진 기법(Time Stepping Method) : 일정(Fixed)</li>
+<li>시간 전진 간격(Time Step Size) : 0.01</li>
+<li>종료시간(End Time) : 10</li>
+<li>자동 저장 간격(Save Interval) : 0.5</li>
+</ul>
+<h3 id="_13">후처리</h3>
+<p>메뉴에서 [외부 프로그램(External tools)]-[ParaView] 버튼을 클릭해서 ParaView를 실행한다</p>
+<p>병렬연산이면 [Case Type]을 [Decomposed Case]로 변경한다.</p>
+<p>[Coloring]을 [p_rgh] 혹은 [alpha.waterLiquid]를 선택하면 압력과 체적분율을 확인할 수 있다.</p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/cav-contour.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavitation/cav-contour.png" /></a></p>
+<p>하이드로포일 표면의 압력데이터를 얻으려면 원하는 경계면(FOIL-UP)만 선택하고, 메뉴의 [File]-[Save Data]를 실행하면 csv 형식의 데이터 파일을 얻을 수 있다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

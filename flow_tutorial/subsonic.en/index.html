@@ -1,0 +1,1742 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../nonNewtonian.en/">
+      
+      
+        <link rel="next" href="../densityBased.en/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Compressible subsonic flow - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#compressible-subsonic-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compressible subsonic flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../subsonic.ko/" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../screenshots/" class="md-tabs__link">
+        
+  
+    
+  
+  Screenshots
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_overview/" class="md-tabs__link">
+        
+  
+    
+  
+  Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../internationalization/" class="md-tabs__link">
+        
+  
+    
+  
+  Internationalization
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release_notes/" class="md-tabs__link">
+        
+  
+    
+  
+  Release notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../simple_incompressible.en/" class="md-tabs__link">
+          
+  
+  Tutorial Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flow_manual/intro.en/" class="md-tabs__link">
+          
+  
+  Users' Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../QA/" class="md-tabs__link">
+        
+  
+    
+  
+  Q&A
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../screenshots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internationalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internationalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorial Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BaramFlow
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            BaramFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_incompressible.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple incompressible flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../car_external.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Car external flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transient.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transient flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rotate.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotating machinery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ABL.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atmospheric boundary layer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porous.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porous media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatTransfer.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heat transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../species.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Species transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uds.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User defined scalar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiphase.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-phase flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nonNewtonian.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-Newtonian fluid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Compressible subsonic flow
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Compressible subsonic flow
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-speed-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      High speed train
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hot-subsonic-jet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hot subsonic jet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsonic-cavity-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsonic cavity flow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../densityBased.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Density based compressible flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batchRun.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Batch run
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../mesh_tutorial/mixingPipe.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BaramMesh
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../flow_manual/intro.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Users' Guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q&A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../../flow_tutorial/subsonic.ko/">Korean</a></li>
+</ul>
+<h1 id="compressible-subsonic-flow">Compressible subsonic flow</h1>
+<h2 id="high-speed-train">High speed train</h2>
+<p><a href="https://drive.google.com/file/d/1eL9zqfmXct3zMtJIJUuoap27afeMkdq2/view?usp=sharing">Download mesh</a></p>
+<p><a href="https://drive.google.com/file/d/1FnEN0tfTE5Pg2Co61oMx8VfsrBI1Oz7q/view?usp=sharing">Download simulation</a></p>
+<h3 id="introduction">Introduction</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mesh/train/intro.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mesh/train/intro.png" /></a></p>
+<p>High-speed trains run in the subsonic compressible flow regime with Mach numbers in the range of 0.3 to 0.4. In CFD, the pressure-based solver of SIMPLE algorithm is often used for low-speed flows and the density-based solver for high-speed flows. This challenge aims to validate the stability of Baram's incompressible solver, buoyantSimpleNFoam, in the subsonic compressible flow regime.</p>
+<p>We use a high-speed train model with simplified vehicle connections, bogies(wheels), and pantographs, and the train speed is 400 km/h. </p>
+<p>With a mesh of about 2 millions, the convergence was achieved in about 300 iterations(about 20 minutes on an 8-core CPU). The convergence is much better compared to the results obtained using OpenFOAM's standard solvers buoyantSimpleFoam and rhoSimpleFoam.</p>
+<p>The computational conditions are as follows </p>
+<ul>
+<li>solver : buoyantSimpleNFoam </li>
+<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델</li>
+<li>density : Perfect Gas</li>
+<li>viscosity : 1.79e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>flow condition : 400 <span class="arithmatex"><span class="MathJax_Preview">km/h</span><script type="math/tex">km/h</script></span>(111.11 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span>) at inlet</li>
+</ul>
+<h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
+<p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
+<p>Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOAM] in that order and select the polyMesh folder. </p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/mesh.png"><br>
+</p>
+
+<h3 id="general">General</h3>
+<p>For this example, we'll use default conditions.</p>
+<h3 id="models">모델(Models)</h3>
+<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span>  model for turbulence.</p>
+<p>Include Energy.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/tur.png"><br>
+</p>
+
+<h3 id="materials">Materials</h3>
+<p>Material properties of air is as follows </p>
+<ul>
+<li>Density : Perfect Gas</li>
+<li>Specific heat : 1006</li>
+<li>Viscosity : 1.79e-05</li>
+<li>Thermal Conductivity : 0.0245</li>
+<li>Molecular Weight : 28.966</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/mat.png"><br>
+</p>
+
+<h3 id="boundary-conditions">Boundary Conditions</h3>
+<p>Set the boundary type and values as shown below.</p>
+<ul>
+<li>Hex6_1_xMin : Velocity Inlet<ul>
+<li>Velocity Specification Method : Magnitude, Normal to Boundary</li>
+<li>Velocity Magnitude : 111.11</li>
+<li>Turbulence Specification Method : Intensity and Viscosity Ratio</li>
+<li>Turbulent Intensity : 1</li>
+<li>Viscosity ratio : 100</li>
+<li>Temperature : 300</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/inletbc.png">
+</p>
+
+<ul>
+<li>Hex6_1_xMax : Pressure Outlet<ul>
+<li>Pressure  : 0</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/outletbc.png">
+</p>
+
+<ul>
+<li>Hex6_1_zMin : Wall<ul>
+<li>Velocity Condition : Translational Moving Wall</li>
+<li>Velocity : (111.11 0 0)</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/groundbc.png">
+</p>
+
+<ul>
+<li>
+<p>train_surface_0 : Wall</p>
+</li>
+<li>
+<p>Hex6_1_yMin, Hex6_1_yMax, Hex6_1_zMax : Symmetry</p>
+</li>
+</ul>
+<h3 id="reference-values">Reference Values</h3>
+<p>The Reference Value is used to calculate the aerodynamic coefficient. Since this is not a problem with experimental data, you do not need to enter an exact value and set the velocity to 111.11.</p>
+<h3 id="numerical-conditions">Numerical Conditions</h3>
+<p>In this example, we'll change the settings as shown below.</p>
+<ul>
+<li>
+<p>Pressure-Velocity Coupling : SIMPLEC</p>
+</li>
+<li>
+<p>Discretization Schemes</p>
+<ul>
+<li>Pressure : Momentum Weighted Reconstruct</li>
+<li>Momentum, Energy, Turbulence :Second Order Wpwind</li>
+</ul>
+</li>
+<li>
+<p>Under-Relaxation Factors</p>
+<ul>
+<li>Pressure : 0.8</li>
+<li>Momentum, Energy, Turbulence : 0.9</li>
+<li>Density : 1.0</li>
+</ul>
+</li>
+<li>
+<p>Convergence Criteria</p>
+<ul>
+<li>Pressure, Momentum, Turbulence : 1e-4</li>
+<li>Energy : 1e-6</li>
+</ul>
+</li>
+</ul>
+<h3 id="monitor">Monitor</h3>
+<p>Monitor the force coefficients of train.</p>
+<p>Select [Monitors]-[Add]-[Forces] and select train_surface_0 at [Boundaries].</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/monitor.png"><br>
+</p>
+
+<h3 id="initialization">Initialization</h3>
+<p>Enter the value and click the Initialize button at the bottom. Then click the [File]-[Save] menu to save the case file.</p>
+<ul>
+<li>Velocity : (111.11 0 0)</li>
+<li>Pressure : 0</li>
+<li>Temperature : 300</li>
+<li>Scale of velocity : 111.11</li>
+<li>Turbulent Intensity : 1</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+</ul>
+<h3 id="run">Run</h3>
+<p>Selct [Parallel]-[Environment] in menu. Set Number of Cores as you want and select [Local Machine] for [Parallel Type].</p>
+<p>Change the values as shown below, and click [Start Calculation] button.</p>
+<ul>
+<li>Number of Iterations : 1000</li>
+<li>Save Interval : 1000</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/run.png"><br>
+</p>
+
+<p>When the calculation is started, you can see the graphs of Residuals and Force monitor as shown below.</p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/residual.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/residual.png" /></a></p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/force.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/force.png" /></a></p>
+<h3 id="post-processing">Post-processing</h3>
+<p>Click the parview button in [External tools] to open the paraview.</p>
+<p>Change the [Case Type] to [Decomposed Case].</p>
+<p>To draw the pressure distribution around the vehicle, select train_surface_0, ground, symmetry from Mesh Regions and Coloring as p_rgh.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/train/contour.png"><br>
+</p>
+<!------------------------------------------------------------------------------------------------------------->
+<h2 id="hot-subsonic-jet">Hot subsonic jet</h2>
+<p><a href="https://drive.google.com/file/d/1fq6KLFt2mpidQchHwQ9j9mRgty5rlr3G/view?usp=sharing">Download mesh</a></p>
+<p><a href="https://drive.google.com/file/d/1I2zMwTUwXwLbYIoBFZ4UDt8m86tWS9Hr/view?usp=sharing">Download simulation</a></p>
+<h3 id="introduction_1">Introduction</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzle3d.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzle3d.png" /></a></p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/y0.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/y0.png" /></a></p>
+<p>This is an example flow simulation of a high-temperature subsonic nozzle with a temperature of 260<span class="arithmatex"><span class="MathJax_Preview">^o C</span><script type="math/tex">^o C</script></span> and a Mach number of 0.376 at the nozzle throat.</p>
+<p>The geometry and experimental conditions are provided by NASA Langley Research Center.</p>
+<p><a href="https://turbmodels.larc.nasa.gov/jetsubsonichot_val.html">https://turbmodels.larc.nasa.gov/jetsubsonichot_val.html</a></p>
+<p>Experimental results from NASA ARN2 (Acoustic Research Nozzle 2) with the following geometry and conditions</p>
+<ul>
+<li>Radius of the nozzle neck: 1 inch</li>
+<li>Pressure ratio, <span class="arithmatex"><span class="MathJax_Preview">p/p{ref}</span><script type="math/tex">p/p{ref}</script></span> = 1.10203, <span class="arithmatex"><span class="MathJax_Preview">p{ref}</span><script type="math/tex">p{ref}</script></span> = 14.3 psi</li>
+<li>Temperature ratio, <span class="arithmatex"><span class="MathJax_Preview">T/T{ref}</span><script type="math/tex">T/T{ref}</script></span> = 1.81388, <span class="arithmatex"><span class="MathJax_Preview">T{ref}</span><script type="math/tex">T{ref}</script></span> = 530 R</li>
+<li>Nozzle exit Mach number: 0.376</li>
+</ul>
+<p>Along with the experimental results, we provide calculations from the <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> k-<span class="arithmatex"><span class="MathJax_Preview">omega</span><script type="math/tex">omega</script></span> model and the Spalart-Allmaras model from the NASA WIND code.</p>
+<ul>
+<li>solver : buoyantSimpleNFoam</li>
+<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">standard</span><script type="math/tex">standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span></li>
+<li>density : Perfect Gas</li>
+<li>viscosity and thermal conductivity : Sutherland law </li>
+<li>nozzle inlet condition : 10059.65 Pa, 534.086 K</li>
+</ul>
+<h3 id="start-baramflow-and-load-mesh_1">Start BaramFlow and load mesh</h3>
+<p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
+<p>Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOAM] in that order and select the polyMesh folder.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/nozzleMesh.png"><br>
+</p>
+
+<h3 id="general_1">General</h3>
+<p>Set Time as Steady, Gravity as (0 0 0).</p>
+<p>Set Operating Pressure as  98595.03.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/general.png"><br>
+</p>
+
+<h3 id="models_1">Models</h3>
+<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Standard</span><script type="math/tex">Standard</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p>Include Energy.</p>
+<h3 id="materials_1">Materials</h3>
+<p>Material properties of air is as follows </p>
+<ul>
+<li>Density : Perfect Gas</li>
+<li>Specific heat : 1006</li>
+<li>Viscosity : Sutherland, As = 1.46e-6, Ts = 110.4</li>
+<li>Molecular Weight : 28.966</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/mat.png"><br>
+</p>
+
+<h3 id="boundary-conditions_1">Boundary Conditions</h3>
+<p>Set the boundary type and values as shown below.</p>
+<ul>
+<li>inlet : Pressure Inlet<ul>
+<li>Total Pressure : 10059.65</li>
+<li>Turbulence Specification Method : Intensity and Viscosity Ratio</li>
+<li>Turbulent Intensity : 1</li>
+<li>Viscosity ratio : 10</li>
+<li>Temperature : 534.086</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/bc-inlet.png">
+</p>
+
+<ul>
+<li>outlet : Pressure Outlet<ul>
+<li>Pressure : 0</li>
+<li>Specify Backflow Properties : on<ul>
+<li>Backflow Total Temperature : 294.4444</li>
+<li>Turbulence Specification Method : Intensity and Viscosity Ratio</li>
+<li>Turbulent Intensity : 1</li>
+<li>Viscosity ratio : 10</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/bc-outlet.png">
+</p>
+
+<ul>
+<li>farfield : Velocity Inlet<ul>
+<li>Velocity Specification Method : Component (3.44 0 0)</li>
+<li>Turbulence Specification Method : Intensity and Viscosity Ratio</li>
+<li>Turbulent Intensity : 1</li>
+<li>Viscosity ratio : 10</li>
+<li>Temperature : 294.4444</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/bc-far.png">
+</p>
+
+<ul>
+<li>
+<p>nozzle : Wall</p>
+<ul>
+<li>Velocity : No Slip</li>
+<li>Temperature : Adiabatic</li>
+</ul>
+</li>
+<li>
+<p>frontAndBackPlanes_pos, frontAndBackPlanes_neg : Wedge</p>
+</li>
+</ul>
+<h3 id="numerical-conditions_1">Numerical Conditions</h3>
+<p>In this example, we'll change the settings as shown below.</p>
+<ul>
+<li>
+<p>Pressure-Velocity Coupling : SIMPLEC</p>
+</li>
+<li>
+<p>Discretization Schemes</p>
+<ul>
+<li>Pressure : Momentum Weighted Reconstruct</li>
+<li>Momentum, Energy, Turbulence :Second Order Wpwind</li>
+</ul>
+</li>
+<li>
+<p>Under-Relaxation Factors</p>
+<ul>
+<li>Pressure : 0.1</li>
+<li>Momentum : 0.3</li>
+<li>Energy : 0.9</li>
+<li>Turbulence : 0.2</li>
+</ul>
+</li>
+<li>
+<p>Convergence Criteria</p>
+<ul>
+<li>Pressure : 0</li>
+<li>Momentum, Energy, Turbulence : 0.001</li>
+</ul>
+</li>
+<li>
+<p>Advanced</p>
+<ul>
+<li>Minimum Static Temperature : 100</li>
+<li>Maximum Static Temperature : 1000</li>
+</ul>
+</li>
+</ul>
+<h3 id="monitor_1">Monitor</h3>
+<p>In this example, we will monitor the axial velocity of a point with x/D of 20 on the axis. Select [Add]-[Points]. </p>
+<p>Enter X-Velocity for Field and (1.016 0 0) for Coordinate.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/monitor.png"><br>
+</p>
+
+<h3 id="initialization_1">Initialization</h3>
+<p>Enter the value and click the Initialize button at the bottom. Then click the [File]-[Save] menu to save the case file.</p>
+<ul>
+<li>Velocity : (3.44 0 0)</li>
+<li>Pressure : 0</li>
+<li>Temperature : 294.4444</li>
+<li>Scale of velocity : 100</li>
+<li>Turbulent Intensity : 1</li>
+<li>Turbulent Viscosity Ratio : 200</li>
+</ul>
+<h3 id="run_1">Run</h3>
+<p>Selct [Parallel]-[Environment] in menu. Set Number of Cores as you want and select [Local Machine] for [Parallel Type].</p>
+<p>Change the values as shown below, and click [Start Calculation] button.</p>
+<ul>
+<li>Number of Iterations : 20000</li>
+<li>Save Interval : 1000</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/run.png"><br>
+</p>
+
+<p>When the calculation is started, you can see the graphs of Residuals and point monitor as shown below.</p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/residual.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/residual.png" /></a></p>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/point.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/point.png" /></a></p>
+<h3 id="post-processing_1">Post-processing</h3>
+<p>Click the parview button in [External tools] to open the paraview.</p>
+<p>Change the [Case Type] to [Decomposed Case].</p>
+<p>Change [Coloring] to U.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/jet/contour.png"><br>
+</p>
+
+<!------------------------------------------------------------------------------------------------------------->
+<h2 id="subsonic-cavity-flow">Subsonic cavity flow</h2>
+<p><a href="https://drive.google.com/file/d/1u__XyUIi_xiL5-LmuT9OaBNda7s7qpDk/view?usp=sharing">Download mesh</a></p>
+<p><a href="https://drive.google.com/file/d/1rfwtg18SiB2Bh50VE4vnXEYeOg0U0qMs/view?usp=sharing">Download simulation</a></p>
+<h3 id="introduction_2">Introduction</h3>
+<p><a href="https://youtu.be/NI_MVr7M7dI" target="_blank"><img alt="include surface's own gap" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-pressureContour.png" /></a></p>
+<p>This example computes subsonic two-dimensional cavity flow. </p>
+<p>The geometry and flow conditions are as follows</p>
+<ul>
+<li>L/D = 2 (the ratio of the length and height of the cavity)</li>
+<li>Mach Number = 0.6</li>
+<li>Reynolds Number = 2.75e+5</li>
+<li>Prandtl Number = 0.7</li>
+</ul>
+<p>The mesh was converted from a plot3d format created in matlab. </p>
+<p>The solver is buoyantPimpleNFoam, a pressure-based thermal flow solver developed by NEXTfoam.</p>
+<p>The boundary conditions at the outlet and the top surface are waveTransmissive (non-reflecting) with no reflection of pressure waves.</p>
+<p>The computational conditions are as follows </p>
+<ul>
+<li>solver : buoyantPimpleNFoam </li>
+<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span></li>
+<li>density : Perfect Gas</li>
+<li>inlet temperature : 300 K</li>
+<li>inlet pressure : 101325 Pa</li>
+</ul>
+<h3 id="start-baramflow-and-load-mesh_2">Start BaramFlow and load mesh</h3>
+<p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
+<p>Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOAM] in that order and select the polyMesh folder. </p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/launcher.png"><br>
+</p>
+
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-mesh.png"><img alt="include surface's own gap" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-mesh.png" title="include surface's own gap" /></a></p>
+<h3 id="general_2">General</h3>
+<p>Change Time to Transient. </p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-general.png"><br>
+</p>
+
+<h3 id="models_2">Models</h3>
+<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> model for turbulence.</p>
+<p>Include Energy.</p>
+<h3 id="materials_2">Materials</h3>
+<p>Material properties of air is as follows </p>
+<ul>
+<li>Density : Perfect Gas</li>
+<li>Specific heat : 1006</li>
+<li>Viscosity : 0.00178 (value for the Reynolds number)</li>
+<li>Thermal Conductivity : 2.562 (value for the Prandtl number)</li>
+<li>Molecular Weight : 28.966</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-material.png"><br>
+</p>
+
+<h3 id="boundary-conditions_2">Boundary Conditions</h3>
+<p>Set the boundary type and values as shown below.</p>
+<ul>
+<li>inlet : Velocity Inlet<ul>
+<li>Velocity Specification Method : Magnitude, Normal to Boundary</li>
+<li>Velocity Magnitude : 208.31</li>
+<li>Turbulence Specification Method : Intensity and Viscosity Ratio</li>
+<li>Turbulent Intensity : 1</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+<li>Temperature : 300</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-inletbc.png">
+</p>
+
+<ul>
+<li>outlet, top : Pressure Outlet<ul>
+<li>Pressure  : 0</li>
+<li>with Non-Reflecting Boundary option</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-outletbc.png">
+</p>
+
+<ul>
+<li>
+<p>cavityFront, cavityBottom, cavityRear, frontBottom, rearBottom : Wall</p>
+<ul>
+<li>Velocity Condition : No Slip</li>
+</ul>
+</li>
+<li>
+<p>frontPlane, backPlane : Empty</p>
+</li>
+</ul>
+<h3 id="numerical-conditions_2">Numerical Conditions</h3>
+<p>In this example, we'll change the settings as shown below.</p>
+<ul>
+<li>
+<p>Pressure-Velocity Coupling : SIMPLE</p>
+</li>
+<li>
+<p>Discretization Schemes</p>
+<ul>
+<li>Time : Second Order Implicit</li>
+<li>Pressure : Momentum Weighted Reconstruct</li>
+<li>Momentum, Energy, Turbulence : Second Order Wpwind</li>
+</ul>
+</li>
+<li>
+<p>Max Iteration per Time Step : 20</p>
+</li>
+<li>
+<p>Number of Correctors : 2</p>
+</li>
+<li>
+<p>Under-Relaxation Factors</p>
+<ul>
+<li>Pressure : 0.3 / 1</li>
+<li>Momentum, Turbulence : 0.7 / 1</li>
+<li>Energy, Density : 1 / 1</li>
+</ul>
+</li>
+</ul>
+<h3 id="monitor_2">Monitor</h3>
+<p>Monitor pressure at cavity center point. Click [Add]-[Point]. </p>
+<p>Set coordinate as (0 -0.5 0.25).</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-monitor.png"><br>
+</p>
+
+<h3 id="initialization_2">Initialization</h3>
+<p>Set values as follows</p>
+<ul>
+<li>Velocity : (208.31 0 0)</li>
+<li>Pressure : 0</li>
+<li>Temperature : 300</li>
+<li>Scale of velocity : 208.31  </li>
+<li>Turbulent Intensity : 1</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+</ul>
+<p>Initialize the velocity inside the cavity to zero. Under [Advanced]-[Sections], select [Create]-[Hex] and enter the Min/Max coordinates as (-1 -1 -1), (1 0 1). Select Velcity and give it a value of (0 0 0).</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-setField.png"><br>
+</p>
+
+<p>Enter the value and click the Initialize button at the bottom. Then click the [File]-[Save] menu to save the case file.</p>
+<h3 id="run_2">Run</h3>
+<p>Selct [Parallel]-[Environment] in menu. Set Number of Cores as you want and select [Local Machine] for [Parallel Type].</p>
+<p>Change the values as shown below, and click [Start Calculation] button.</p>
+<ul>
+<li>Time Stepping Method : Fixed</li>
+<li>Time Step Size : 1e-5</li>
+<li>End Time : 0.5</li>
+<li>Save Interval : Every 0.002 sec</li>
+</ul>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-run.png"><br>
+</p>
+
+<h3 id="post-processing_2">Post-processing</h3>
+<p>Click the parview button in [External tools] to open the paraview.</p>
+<p>Change the [Case Type] to [Decomposed Case].</p>
+<p>Change [Coloring] to U.</p>
+<p style="text-align: center">
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/cavity/2d-contour.png"><br>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

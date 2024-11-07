@@ -1,0 +1,1809 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../simple_incompressible.en/">
+      
+      
+        <link rel="next" href="../transient.en/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Car external flow - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#car-external-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Car external flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../car_external.ko/" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../screenshots/" class="md-tabs__link">
+        
+  
+    
+  
+  Screenshots
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_overview/" class="md-tabs__link">
+        
+  
+    
+  
+  Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../internationalization/" class="md-tabs__link">
+        
+  
+    
+  
+  Internationalization
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release_notes/" class="md-tabs__link">
+        
+  
+    
+  
+  Release notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../simple_incompressible.en/" class="md-tabs__link">
+          
+  
+  Tutorial Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flow_manual/intro.en/" class="md-tabs__link">
+          
+  
+  Users' Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../QA/" class="md-tabs__link">
+        
+  
+    
+  
+  Q&A
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../screenshots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internationalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internationalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorial Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BaramFlow
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            BaramFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_incompressible.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple incompressible flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Car external flow
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Car external flow
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ahmed-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ahmed body
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#driveaer" class="md-nav__link">
+    <span class="md-ellipsis">
+      DriveAer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transient.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transient flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rotate.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotating machinery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ABL.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atmospheric boundary layer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porous.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porous media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatTransfer.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heat transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../species.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Species transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uds.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User defined scalar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiphase.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-phase flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nonNewtonian.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-Newtonian fluid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subsonic.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compressible subsonic flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../densityBased.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Density based compressible flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batchRun.en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Batch run
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../mesh_tutorial/mixingPipe.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BaramMesh
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../flow_manual/intro.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Users' Guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q&A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../../flow_tutorial/car_external.ko/">Korean</a></li>
+</ul>
+<h1 id="car-external-flow">Car External Flow</h1>
+<h2 id="ahmed-body">Ahmed body</h2>
+<p><a href="https://drive.google.com/file/d/1qVQqF6oavui3NCoAQ2QCpSmo824CVbx_/view?usp=sharing">Downlaod mesh</a></p>
+<p><a href="https://drive.google.com/file/d/1bvY3-XtcuimHAnliKtSojHWPNmcYnmZr/view?usp=sharing">Downlaod simulation</a></p>
+<h3 id="introduction">Introduction</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/intro.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/intro.png" /></a></p>
+<p>S.R. Ahmed used a simplified automobile model to experimentally observe the change in flow structure as a function of rearward inclination angle. Since then, this problem has been used to validate automotive external aerodynamic analyses. This example uses steady-state incompressible flow conditions for a velocity of 40 m/s at a rearward tilt angle of 25°. </p>
+<p>ref : <em>S.R. Ahmed, G. Ramm, Some Salient Features of the Time-Averaged Ground Vehicle Wake, SAE-Paper 840300, 1984</em></p>
+<p>In the paper Drag coefficient(Cd) is 0.285. Simulation result is 0.287, 0.7% difference.</p>
+<p>Simulation conditions are as follows. </p>
+<ul>
+<li>solver : buoyantSimpleNFoam</li>
+<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Realizable</span><script type="math/tex">Realizable</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
+<li>density : 1.2 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
+<li>viscosity : 1.8e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>flow condition : 40 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span> at inlet</li>
+</ul>
+<h3 id="start-baramflow-and-load-mesh">Start BaramFlow and load mesh</h3>
+<p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/launcher.png"><br>
+</p>
+
+<p>Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOAM] in that order and select the polyMesh folder. </p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.1.1.png"><br>
+</p>
+
+<h3 id="general">General</h3>
+<p>For this example, we'll use default conditions.</p>
+<h3 id="models">모델(Models)</h3>
+<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Realizable</span><script type="math/tex">Realizable</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.2.png"><br>
+</p>
+
+<h3 id="materials">Materials</h3>
+<p>Material properties of air is as follows </p>
+<ul>
+<li>air<ul>
+<li>Density : 1.2 𝑘𝑔/㎥ </li>
+<li>Viscosity : 1.8e-5 𝑘𝑔/𝑚s</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.3.png"><br>
+</p>
+
+<h3 id="boundary-conditions">Boundary Conditions</h3>
+<p>Set the boundary type and values as shown below.</p>
+<ul>
+<li>minx : velocity Inlet<ul>
+<li>Velocity Specfication Method : Magnitude, Normal to Boundary</li>
+<li>Profile Type : Constant</li>
+<li>Velocity Magnitude : 40 (m/s)</li>
+<li>Turbulent Intensity : 1 (%)</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.4.png"><br>
+</p>
+
+<ul>
+<li>maxx : Pressure Outlet<ul>
+<li>Pressure : 0 (Pa)</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.5.png"><br>
+</p>
+
+<ul>
+<li>miny : Wall (Velocity Condition : Translation Moving Wall)<ul>
+<li>Velocity : (40, 0, 0) (m/s)</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.6.png"><br>
+</p>
+
+<ul>
+<li>bottom, leg, nose1, nose2, nose3, nose4, nose5, rear, side, slant, top : Wall<ul>
+<li>Velocity Condition : No Slip</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.7.png"><br>
+</p>
+
+<ul>
+<li>minz, maxz, maxy : symmetry</li>
+</ul>
+<h3 id="reference-values">Reference Values</h3>
+<p>Set the Reference Value for the aerodynamic coefficient calculation as follows.</p>
+<ul>
+<li>Area : 0.056(kg/m<sup>2</sup>, (50% of the cross-sectional area perpendicular to the flow direction)</li>
+<li>Density : 1.2 (kg/m<sup>3</sup>)</li>
+<li>Length : 1 (m)</li>
+<li>Pressure : 0 (Pa)</li>
+<li>Velocity : 40 (m/s)</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.8.png"><br>
+</p>
+
+<h3 id="numerical-conditions">Numerical Conditions</h3>
+<p>In this example, we'll change the settings as shown below.</p>
+<ul>
+<li>
+<p>Pressure-Velocity Coupling Scheme : SIMPLE</p>
+</li>
+<li>
+<p>Discretization Scheme</p>
+<ul>
+<li>Pressure : Momentum Weighted Reconstruct</li>
+<li>Momentum : Second Order Upwind</li>
+<li>Turbulence : Second Order Upwind</li>
+</ul>
+</li>
+<li>
+<p>Under-Relaxation Factors</p>
+<ul>
+<li>Pressure : 0.3</li>
+<li>Momentum : 0.7</li>
+<li>Turbulence : 0.7</li>
+</ul>
+</li>
+<li>
+<p>Convergence Criteria</p>
+<ul>
+<li>Pressure : 0.001</li>
+<li>Momentum : 0.001</li>
+<li>Turbulence : 0.001</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.10.1.png"><br>
+</p>
+
+<h3 id="monitor">Monitor</h3>
+<p>Monitor the force coefficients of car.</p>
+<p>Select [Monitors]-[Add]-[Forces] and set values as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.9.png"><br>
+</p>
+
+<h3 id="initialization">Initialization</h3>
+<p>Set values as follows</p>
+<ul>
+<li>
+<p>Velocity</p>
+<ul>
+<li>X-Velocity : 40 (m/s)</li>
+<li>Y-Velocity : 0 (m/s)</li>
+<li>Z-Velocity : 0 (m/s)</li>
+</ul>
+</li>
+<li>
+<p>Pressure</p>
+<ul>
+<li>0 (Pa)</li>
+</ul>
+</li>
+<li>
+<p>Turbulence</p>
+<ul>
+<li>Scale of Velocity : 40 (m/s)</li>
+<li>Turbulent Intensity : 1 (%)</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.11.png"><br>
+</p>
+
+<p>Enter the value and click the Initialize button at the bottom. Then click the [File]-[Save] menu to save the case file.</p>
+<h3 id="run">Run</h3>
+<p>In Run Conditions, set the following settings and proceed with the calculation.</p>
+<ul>
+<li>Number of Iterations : 2000</li>
+<li>Save Interval : 300</li>
+<li>Data Write Format : Binary</li>
+<li>Selct [Parallel]-[Environment] in menu. Set Number of Cores as you want and select [Local Machine] for [Parallel Type].</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.12.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.25.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.26.png"><br>
+</p>
+
+<p>When the calculation is started, you can see the graphs of Residuals and Force monitor as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/residual.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/force.png"><br>
+</p>
+
+<h3 id="post-processing">Post-processing</h3>
+<h4 id="scalar-distribution-at-boundary">Scalar distribution at boundary</h4>
+<p>BARAM uses ParaView for post-processing. To start post-processing, click the ParaView button in [External Tools]. In this example, we will draw the pressure distribution and streamlines.</p>
+<p>Change the Case Type to Decomposed Case.</p>
+<ul>
+<li>In [Mesh Regions] select boundaries<ul>
+<li>Bottom, internalMesh, leg, miny, nose1, nose2, nose3, nose5, rear, side, slant, top</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.20.png"><br>
+</p>
+
+<p>Change solid color to p_rgh.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.15.png"><br>
+</p>
+
+<h4 id="streamline">Streamline</h4>
+<p>Draw the streamline of the flow around the vehicle.</p>
+<p>Utilize the [Extract block] function to extract the geometry of the vehicle and floor as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/21.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.24.png"><br>
+</p>
+
+<p>Change p to [Solid Color].</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.21.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.22.png"><br>
+</p>
+
+<p>In the Pipeline Browser on the left, click baram.foam once to activate it.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.23.png"><br>
+</p>
+
+<p>Click [Stream Tracer] icon.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.16.png"><br>
+</p>
+
+<p>Change settings as follows</p>
+<ul>
+<li>Seed Type : Point Cloud</li>
+<li>Center : (0.7, 0.1, 0.1)</li>
+<li>Radius :  0.2</li>
+<li>Number of Points : 100</li>
+<li>Coloring : Vorticity</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.17.png"><br>
+</p>
+
+<p>You can see streamline as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.18.png"><br>
+</p>
+
+<h2 id="driveaer">DriveAer</h2>
+<p><a href="https://drive.google.com/file/d/1uL_roJ1xnBsmG87HTwQ4fie4txDhjCjW/view?usp=sharing">Download mesh</a></p>
+<p><a href="https://drive.google.com/file/d/1sug9iCm2bMCYez2AsrI164yn_xAm1IOX/view?usp=sharing">Download simulation</a></p>
+<h3 id="introduction_1">Introduction</h3>
+<p><a href="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/intro.png"><img alt="intro" src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/intro.png" /></a></p>
+<p>DrivAer is a full-scale vehicle model for exterior design and aerodynamic testing used in the field of automotive engineering to simulate and evaluate the exterior shape and aerodynamic characteristics of vehicles. The model was introduced to bridge the gap between simplified models and highly complex production vehicles, and CAD files and experimental results for many types of geometries are publicly available.</p>
+<p>This example uses a fastback model with side mirrors and wheels.</p>
+<p><a href="https://www.epc.ed.tum.de/en/aer/research-groups/automotive/drivaer/">https://www.epc.ed.tum.de/en/aer/research-groups/automotive/drivaer/</a></p>
+<p>Use steady-state incompressible flow conditions with moving ground and rotating wheel.</p>
+<p>The experimental results in the paper show that drag coefficient(Cd) is 0.247 for ASME and 0.243 for SAE, and the simulation results show that Cd = 0.243, which is consistent with the SAE experimental results.</p>
+<p>The simulation conditions are as follows </p>
+<ul>
+<li>solver : buoyantSimpleNFoam </li>
+<li>turbulence model : <span class="arithmatex"><span class="MathJax_Preview">Realizable</span><script type="math/tex">Realizable</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model</li>
+<li>density : 1.205 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
+<li>viscosity : 1.82e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+<li>flow condition : 30 <span class="arithmatex"><span class="MathJax_Preview">m/s</span><script type="math/tex">m/s</script></span> at inlet</li>
+</ul>
+<h3 id="start-baramflow-and-load-mesh_1">Start BaramFlow and load mesh</h3>
+<p>Run the program and select [New Case] from the launcher. In the launcher, select [Pressure-based] for [Solver Type] and [None] for [Multiphase Model].</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mixingPipe/launcher.png"><br>
+</p>
+
+<p>Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOAM] in that order and select the polyMesh folder. </p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/1.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/2.png"><br>
+</p>
+
+<h3 id="general_1">General</h3>
+<p>For this example, we'll use default conditions.</p>
+<h3 id="models_1">Models</h3>
+<p>For this example, we'll use <span class="arithmatex"><span class="MathJax_Preview">Realizable</span><script type="math/tex">Realizable</script></span> <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> model for turbulence.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/3.png"><br>
+</p>
+
+<h3 id="materials_1">Materials</h3>
+<p>For this example, we will use the properties of air.</p>
+<ul>
+<li>air<ul>
+<li>Density : 1.205 <span class="arithmatex"><span class="MathJax_Preview">kg/m^3</span><script type="math/tex">kg/m^3</script></span></li>
+<li>Viscosity : 1.82e-5 <span class="arithmatex"><span class="MathJax_Preview">kg/ms</span><script type="math/tex">kg/ms</script></span></li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/4.png"><br>
+</p>
+
+<h3 id="boundary-conditions_1">Boundary Conditions</h3>
+<p>Each boundary condition is set as follows</p>
+<ul>
+<li>minX : velocity Inlet<ul>
+<li>Velocity Specfication Method : Magnitude, Normal to Boundary</li>
+<li>Profile Type : Constant</li>
+<li>Velocity Magnitude : 30 (m/s)</li>
+<li>Turbulent Intensity : 1 (%)</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/5.png"><br>
+</p>
+
+<ul>
+<li>maxX : Pressure Outlet<ul>
+<li>Pressure : 0 (Pa)</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/6.png"><br>
+</p>
+
+<ul>
+<li>
+<p>minY, maxY, maxZ : Symemtry</p>
+</li>
+<li>
+<p>minZ : Wall</p>
+<ul>
+<li>Velocity Condition : Translational Moving Wall</li>
+<li>Velocity : (30, 0, 0)</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/7.png"><br>
+</p>
+
+<ul>
+<li>body_no_wheel : Wall<ul>
+<li>Velocity Condition : No Slip</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/8.png"><br>
+</p>
+
+<ul>
+<li>Wheels_Front_Smooth : Wall<ul>
+<li>Velocity Condition : Rotational Moving Wall</li>
+<li>Speed (RPM) : 898.8</li>
+<li>Rotation-Axis Origin : (0.007, 0, 0)</li>
+<li>Rotation-Axis Direction : (0, -1, 0)</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/9.png"><br>
+</p>
+
+<ul>
+<li>Wheels_Rear_Smooth : Wall<ul>
+<li>Velocity Condition : Rotational Moving Wall</li>
+<li>Speed (RPM) : 898.8</li>
+<li>Rotation-Axis Origin : (2.7932, 0, 0)</li>
+<li>Rotation-Axis Direction : (0, -1, 0)</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/10.png"><br>
+</p>
+
+<h3 id="reference-values_1">Reference Values</h3>
+<p>Set the Reference Value for the aerodynamic coefficient calculation as follows.</p>
+<ul>
+<li>Area : 1.08</li>
+<li>Density : 1.205</li>
+<li>Length : 4.6132</li>
+<li>Pressure : 0</li>
+<li>Velocity : 30</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/11.png"><br>
+</p>
+
+<h3 id="numerical-conditions_1">Numerical Conditions</h3>
+<p>In this example, we'll change the settings as shown below.</p>
+<ul>
+<li>
+<p>Pressure-Velocity Coupling Scheme : SIMPLEC</p>
+</li>
+<li>
+<p>Discretization Scheme</p>
+<ul>
+<li>Pressure : Momentum Weighted Reconstruct</li>
+<li>Momentum : Second Order Upwind</li>
+<li>Turbulence : Second Order Upwind</li>
+</ul>
+</li>
+<li>
+<p>Under-Relaxation Factors</p>
+<ul>
+<li>Pressure : 0.9</li>
+<li>Momentum : 0.9</li>
+<li>Turbulence : 0.9</li>
+<li>Density : 0.9</li>
+</ul>
+</li>
+<li>
+<p>Convergence Criteria</p>
+<ul>
+<li>Pressure : 0.00001</li>
+<li>Momentum : 0.001</li>
+<li>Turbulence : 0.001</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/13.png"><br>
+</p>
+
+<h3 id="monitor_1">Monitor</h3>
+<p>Monitor the force coefficients of car.</p>
+<p>Select [Monitors]-[Add]-[Forces] and set values as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/12.png"><br>
+</p>
+
+<h3 id="initialization_1">Initialization</h3>
+<p>Change the values as shown below</p>
+<ul>
+<li>
+<p>Velocity</p>
+<ul>
+<li>X-Velocity : 30 (m/s)</li>
+<li>Y-Velocity : 0 (m/s)</li>
+<li>Z-Velocity : 0 (m/s)</li>
+</ul>
+</li>
+<li>
+<p>Pressure</p>
+<ul>
+<li>0 (Pa)</li>
+</ul>
+</li>
+<li>
+<p>Turbulence</p>
+<ul>
+<li>Scale of Velocity : 30 (m/s)</li>
+<li>Turbulent Intensity : 1 (%)</li>
+<li>Turbulent Viscosity Ratio : 10</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/15.png"><br>
+</p>
+
+<p>Enter the value and click the Initialize button at the bottom. Then click the [File]-[Save] menu to save the case file.</p>
+<h3 id="run_1">Run</h3>
+<p>Change the values as shown below, and click [Start Calculation] button.</p>
+<ul>
+<li>Number of Iterations : 2,000</li>
+<li>Save Interval : 100</li>
+<li>Data Write Format : Binary</li>
+<li>Selct [Parallel]-[Environment] in menu. Set Number of Cores as you want and select [Local Machine] for [Parallel Type].</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/16.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/28.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/29.png"><br>
+</p>
+
+<p>When the calculation is started, you'll see a graph of Residuals and Force monitor as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/residual.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/force.png"><br>
+</p>
+
+<h3 id="post-processing_1">Post-processing</h3>
+<h4 id="scalar-distribution-at-boundary_1">Scalar distribution at boundary</h4>
+<p>BARAM uses ParaView for post-processing. To start post-processing, click the ParaView button in [External Tools]. In this example, we will draw the pressure distribution and streamlines.</p>
+<p>Change the Case Type to Decomposed Case.</p>
+<ul>
+<li>In [Mesh Regions] select boundaries<ul>
+<li>Wheels_Front_Smooth, Wheels_Rear_Smooth, body_no_wheels</li>
+</ul>
+</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/19.png"><br>
+</p>
+
+<p>Utilize the [Extract block] function to extract the geometry of the vehicle and floor as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/21.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/22.png"><br>
+</p>
+
+<p>Change [Solid Color] to p_rgh.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/20.png"><br>
+</p>
+
+<h4 id="streamline_1">Streamline</h4>
+<p>Draw the streamline of the flow around the vehicle.</p>
+<p>Change p to [Solid Color].</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/23.png"><br>
+</p>
+
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/24.png"><br>
+</p>
+
+<p>In the Pipeline Browser on the left, click baram.foam once to activate it.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/25.png"><br>
+</p>
+
+<p>Click [Stream Tracer] icon.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/ahmedBody/2.16.png"><br>
+</p>
+
+<p>Change settings as follows</p>
+<ul>
+<li>Seed Type : Point Cloud</li>
+<li>Center : (-1.5, 0.1, 0.1)</li>
+<li>Radius :  0.2</li>
+<li>Number of Points : 100</li>
+<li>Coloring : U</li>
+</ul>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/26.png"><br>
+</p>
+
+<p>You can see streamline as shown below.</p>
+<p align='center'>
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/27.png"><br>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1712 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../cellZone.ko/">
+      
+      
+        <link rel="next" href="../reference.ko/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>경계 조건 (Boundary Conditions) - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#boundary-conditions" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              경계 조건 (Boundary Conditions)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../boundary.en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  홈
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../screenshots.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  스크린샷
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_overview.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  주요기능
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  설치
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../internationalization.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  다국어 지원
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../release_notes.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  업데이트
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flow_tutorial/simple_incompressible.ko/" class="md-tabs__link">
+          
+  
+  예제 가이드
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro.ko/" class="md-tabs__link">
+          
+  
+  사용자 가이드
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../QA.ko/" class="md-tabs__link">
+        
+  
+    
+  
+  문의
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    홈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../screenshots.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스크린샷
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_overview.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    주요기능
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    설치
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internationalization.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    다국어 지원
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    업데이트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../flow_tutorial/simple_incompressible.ko/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    예제 가이드
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    사용자 가이드
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            사용자 가이드
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BaramFlow
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            BaramFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    개요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    설치와 실행
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    일반 (General)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    모델  (Models)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    물질 (Materials)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cellZone.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    셀존 조건 (Cell Zone Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    경계 조건 (Boundary Conditions)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    경계 조건 (Boundary Conditions)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#velocity-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      입구 속도(Velocity Inlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-rate-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      입구 유량(Flow Rate Inlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pressure-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      입구 전압력(Pressure Inlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abl-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      대기경계층 입구(ABL Inlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      비압축성 자유류(Free Stream)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-channel-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      개수로 입구(Open Channel Inlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#far-field-riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      압축성 리만(Far-field Riemann)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsonic-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      아음속 입구(Subsonic Inlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supersonic-inflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      초음속 입구(Supersonic Inflow)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pressure-outlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      출구 압력(Pressure Outlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-channel-outlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      개수로 출구(Open Channel Outlet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      유출(Outflow)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsonic-outflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      아음속 출구(Subsonic Outflow)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supersonic-outflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      초음속 출구(Supersonic Outflow)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wall" class="md-nav__link">
+    <span class="md-ellipsis">
+      벽면(Wall)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermo-coupled-wall" class="md-nav__link">
+    <span class="md-ellipsis">
+      연결 벽면(Thermo-Coupled Wall)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      기타 경계조건(Misc)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    기준 값 (Reference Values)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    수치해석 기법 (Numerical Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    모니터 (Monitor)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initial.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    초기조건 (Initialization)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runCondition.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    계산 조건 (Run Conditions)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    실행 (Run)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    데이터 추출 (Report)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nextfoam.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NextFOAM 파일 설정 (NextFOAM in BaramFlow)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nomenclature.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    용어해설 (Nomenclature)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../mesh_manual/intro.ko/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BaramMesh
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QA.ko/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    문의
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../../flow_manual/boundary.en/">English</a></li>
+</ul>
+<h1 id="boundary-conditions">경계조건(Boundary Conditions)</h1>
+<p>경계조건을 선택하면 설정부에 아래 그림처럼 영역 별로 경계면이 표시된다. 경계면을 선택하면 그래픽창에 그 경계면이 붉은색으로 표시된다. 경계면을 선택하고 마우스 오른쪽 버튼을 누르면 경계조건을 선택할 수 있다. </p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/boundaryCondition.png" width="300" height="300"><br>경계조건 설정</center></p>
+<p>필터링을 위한 문자열 입력(filter string) 기능을 이용하여 특정 문자열이 포함된 경계면만 표시할 수 있다.</p>
+<p>경계조건은 입구(Inlet), 출구(Outlet), 벽면(Wall), 기타(Misc)의 4개 범주로 구분되어 있으며, 각 범주에는 다음과 같은 조건들이 있다. 다상유동, 압축성유동 등의 조건에 따라 나타나는 것이 다르다. 경계면을 선택하고 더블 클릭을 하거나 Edit 버튼을 누르면 경계조건의 세부 설정창이 나타난다.</p>
+<ul>
+<li>입구<ul>
+<li>입구 속도(Velocity Inlet)</li>
+<li>입구 유량(Flow Rate Inlet)</li>
+<li>입구 전압력(Pressure Inlet)</li>
+<li>대기경계층 입구(ABL Inlet, Atmospheric Boundary Layer Inlet)</li>
+<li>비압축성 자유류(Free Stream)</li>
+<li>개수로 입구(Open Channel Inlet) : 다상 유동에만 사용</li>
+<li>압축성 리만(Far-field Riemann) : 압축성 유동에만 사용</li>
+<li>아음속 입구(Subsonic Inlet) : 압축성 유동에만 사용</li>
+<li>초음속 입구(Supersonic Inflow) : 압축성 유동에만 사용</li>
+</ul>
+</li>
+<li>출구<ul>
+<li>출구 압력(Pressure Outlet)</li>
+<li>유출(Outflow)</li>
+<li>개수로 출구(Open Channel Outlet) : 다상 유동에만 사용</li>
+<li>아음속 출구(Subsonic Outflow) : 압축성 유동에만 사용</li>
+<li>초음속 출구(Supersonic Outflow) : 압축성 유동에만 사용</li>
+</ul>
+</li>
+<li>벽면<ul>
+<li>벽면(Wall)</li>
+<li>연결 벽면(Thermo-Coupled Wall)</li>
+</ul>
+</li>
+<li>기타<ul>
+<li>대칭(Symmetry)</li>
+<li>인터페이스(Interface)</li>
+<li>2차원 경계(Empty)</li>
+<li>축대칭 경계(Wedge)</li>
+<li>Cyclic</li>
+<li>다공성 압력 점프(Porous Jump)</li>
+<li>팬(Fan)</li>
+</ul>
+</li>
+</ul>
+<h2 id="velocity-inlet">입구 속도(Velocity Inlet)</h2>
+<p>Velocity Inlet 조건은 유동의 입구에 속도, 난류, 온도, 화학종 질량분율 값 등을 주는 조건이다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/velocityInlet.png" width="300" height="300"><br>입구 속도 설정</center></p>
+<p>속도는 x, y, z 각 성분을 주는 방법(Component)와 경계면에 수직한 속도를 주는 방법(Magnitude, Normal to Boundary)이 있다.</p>
+<p>난류는 난류 필드의 값(k, epsilon, omega)을 상수로 주는 방법과 '난류 강도와 점도비율'(Intensity and Viscosity Ratio)를 주는 방법이 있다. Spalart-Allmaras 모델에서는 '보정 난류 점성계수'(Modified Turbulent Viscosity, nuTilda) 혹은 '난류 점도비율'(Turbulent Viscosity Ratio)를 상수로 줄 수 있다.</p>
+<p>온도는 일정한 값을 준다.</p>
+<p>화학종 질량분율은 전체 화학종의 합이 1이 되도록 주어야 한다.</p>
+<p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : x,y,z 성분을 줄때는 <em>fixedValue</em>, 수직한 속도를 줄때는 <em>surfaceNoramlVelocity</em></li>
+<li>압력 : <em>zeroGradient</em></li>
+<li>온도 : <em>fixedValue</em></li>
+<li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
+<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>fixedValue</em></li>
+<li>화학종 : <em>fixedValue</em></li>
+</ul>
+<h3 id="boundary-profile">속도 분포(boundary profile) 조건 설정</h3>
+<p>입구 속도 조건에서 속도와 온도를 시간에 따른 변화(temporal) 혹은 공간 상의 분포(spatial)로 지정할 수 있다.</p>
+<h4 id="temporal-distribution">시간에 따른 변화(Temporal Distribution)</h4>
+<p>입구 속도 조건에서 속도 분포(Profile Type)을 '시간에 따른 변화'로 선택하면 다음 그림의 창에서 조각별 선형 함수(Piecewise linear)를 사용하여 지정할 수 있다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/profile.png" width="300" height="300"><br>시간에 따른 변화 조건 설정 - 조각별 선형 함수</center></p>
+<p>입구 속도 조건에서 속도 분포(Profile Type)을 '시간에 따른 변화'로 선택하면 다음 그림의 창에서 조각별 선형 함수(Piecewise linear)를 사용하여 지정할 수 있다.</p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n</span><script type="math/tex">S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n</script></span></center></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>시간에 따른 변화 조건 설정 - 다항식</center></p>
+<p><a href="https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/">시간에 따라 변하는 경계조건 예제</a></p>
+<h4 id="spatial-distribution">공간 분포(Spatial Distribution)</h4>
+<p>입구 속도 조건에서 속도나 온도의 분포를 공간분포로 선택하면 csv 파일을 사용할 수 있다. 입구 속도 조건에서 속도 지정 방법이 경계면에 수직한 속도인 경우는 속도에 대해 적용할 수 없다.</p>
+<p>csv 파일은 'x좌표, y좌표, z좌표, 값'이 콤마(,)로 구분되어 있어야 한다. 입구 속도 조건에서 속도는 다음과 같은 형식이 된다(x, y, z, Ux, Uy, Uz). x, y, z 좌표는 경계면 격자점의 좌표와 일치할 필요는 없다. 데이터는 하나의 평면에 있어야 하며, 하나의 직선상에 있으면 안된다. 만일 2차원 문제와 같이 한쪽 방향으로만 분포를 갖더라도 최소한 1개 점은 직선 밖에 있어야 한다.</p>
+<div class="highlight"><pre><span></span><code>0.0, 0.0, 0.0, 0.1, 0.2, 0.0
+0.0, 0.7, 0.0, 0.1, 0.3, 0.0
+0.0, 1.2, 0.0, 0.1, 0.4, 0.0
+...
+</code></pre></div>
+<h2 id="flow-rate-inlet">입구 유량(Flow Rate Inlet)</h2>
+<p>입구 유량 조건은 유동의 입구에 유량, 난류, 온도 값을 주는 조건이다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/flowrate.png" width="300" height="300"><br>입구 유량 설정</center></p>
+<p>유량은 질량유량(mass flow rate)과 체적유량(volume flow rate)을 줄 수 있다.</p>
+<p>속도(U)가 사용하는 openfoam의 경계조건은 <em>flowRateIneltVelocity</em> 이며 압력, 난류, 온도는 '입구 속도' 조건과 동일하다. </p>
+<h2 id="pressure-inlet">입구 전압력(Pressure Inlet)</h2>
+<p>입구 전압력 조건은 유동의 입구에 전압력(total pressure)과 난류, 온도 값을 주는 조건이다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/pressureInlet.png" width="300" height="300"><br>입구 전압력 설정</center></p>
+<p>전압력은 상수로 줄 수 있으며 난류와 온도는 '입구 속도' 조건과 동일하게 준다.</p>
+<p>openfoam의 경계조건은 압력은 <em>totalPressure</em>, 속도는 _pressureInletOutletVelocity_를 사용한다.</p>
+<h2 id="abl-inlet">대기경계층 입구(ABL Inlet)</h2>
+<p>대기경계층 입구 조건은 유동의 입구에 대기경계층의 속도와 난류 분포를 주는 조건이다.</p>
+<p><a href="https://baramcfd.org/tutorials/2023/09/05/Atomospheric-post/">대기경계층 조건 예제</a></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ablInlet.png" width="300" height="300"><br>대기경계층 입구 설정</center></p>
+<p>입력 항목은 다음과 같다.</p>
+<ul>
+<li>바람 방향(Flow Direction)</li>
+<li>지면에 수직한 방향(Ground-Normal Direction)</li>
+<li>기준 고도(Reference Height, <span class="arithmatex"><span class="MathJax_Preview">z_{ref}</span><script type="math/tex">z_{ref}</script></span>)</li>
+<li>기준 풍속(Reference Flow Speed, <span class="arithmatex"><span class="MathJax_Preview">U_{ref}</span><script type="math/tex">U_{ref}</script></span>) : 기준 고도에서의 속도</li>
+<li>지표면 조도(Surface Roughness Length, <span class="arithmatex"><span class="MathJax_Preview">z_0</span><script type="math/tex">z_0</script></span>)</li>
+<li>지표면 최소 z 좌표(Minimum z-coordinate, d) : 지표면의 높이 방향 좌표 중 최소값(지표면에서 높이가 z-d 로 계산됨)</li>
+</ul>
+<p>속도와 난류 분포는 다음의 식을 사용한다.</p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)</span><script type="math/tex">u = \frac{u^*}{\kappa} ln\left(\frac{z - d + z_0}{z_0}\right)</script></span></center></p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</span><script type="math/tex">k = \frac{(u^* )^2}{\sqrt{C_\mu}} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</script></span></center></p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</span><script type="math/tex">\epsilon = \frac{(u^* )^3}{\kappa (z - d + z_0)} \sqrt{C_1 ln \left( \frac{z - d + z_0}{z_0} \right) + C_2}</script></span></center></p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}</span><script type="math/tex">\omega = \frac{u^*}{\kappa \sqrt{C_\mu}} \frac{1}{z - d + z_0}</script></span></center></p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}</span><script type="math/tex">u^* = \frac{u_{ref} \kappa} {ln \left( \frac{z_{ref} + z_0}{z_0} \right)}</script></span></center></p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> : 수직 방향 좌표</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> : 지표면의 최소 z 좌표</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\kappa</span><script type="math/tex">\kappa</script></span> : Von Karman's constant, 0.41</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">C_\mu</span><script type="math/tex">C_\mu</script></span> : constant, 0.09</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">C_1</span><script type="math/tex">C_1</script></span> : constant, 0</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">C_2</span><script type="math/tex">C_2</script></span> : constant, 1</li>
+</ul>
+<p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : _atmBoundaryLayerInletVelocity</li>
+<li>압력 : _zeroGradient</li>
+<li>난류운동에너지 : _atmBoundaryLayerInletK</li>
+<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>atmBoundaryLayerInletEpsilon</em>, <em>atmBoundaryLayerInletOmega</em></li>
+<li>화학종 : <em>fixedValue</em></li>
+</ul>
+<h2 id="free-stream">비압축성 자유류(Free Stream)</h2>
+<p>비압축성 자유류 조건은 유동이 계산 영역으로 들어오는 경우는 일정한 속도를, 나가는 경우는 속도 구배가 0이 되는 조건이다. 비압축성 외부 유동의 원방 경계조건으로 많이 사용된다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/freestream.png" width="300" height="300"><br>비압축성 자유류 설정</center></p>
+<p>자유류 속도(Free Stream Velocity)는 속도 벡터를 입력하고 압력은 상수로 주며 난류와 온도는 '입구 속도' 조건과 동일하게 준다.</p>
+<p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : <em>freestreamVelocity</em></li>
+<li>압력 : <em>freestreamPressure</em></li>
+<li>온도 : <em>freestream</em></li>
+<li>난류 : <em>freestream</em></li>
+<li>화학종 : <em>fixedValue</em></li>
+</ul>
+<h2 id="open-channel-inlet">개수로 입구(Open Channel Inlet)</h2>
+<p>개수로 입구 조건은 자유수면을 계산할 때 입구에 일정한 유량을 주고 그에 따라 수면의 높이가 변할 수 있는 조건이다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/openChannelInlet.png" width="300" height="300"><br>개수로 입구 설정</center></p>
+<p>체적유량을 상수로 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
+<p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : <em>variableHeightFlowRateInletVelocity</em></li>
+<li>압력 : <em>zeroGradient</em></li>
+<li>체적분율 : <em>variableHeightFlowRate</em></li>
+<li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
+<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>fixedValue</em></li>
+</ul>
+<h2 id="far-field-riemann">압축성 리만(Far-field Riemann)</h2>
+<p>압축성 유동의 원방경계에 사용하는 Riemann 경계조건이다.</p>
+<p><a href="https://baramcfd.org/tutorials/2024/03/21/rae2822-post/">압축성 리만 경계조건 예제 : RAE2822 에어포일</a></p>
+<p>유동의 방향, 원방에서의 마하수(Mach Number), 압력(static pressure), 온도(static temperature)를 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/riemann.png"><br>압축성 리만 설정</center></p>
+<p>유동의 방향을 결정하는 방법은 직접입력(Direct)과 '받음각과 옆미끄럼각'(AOA and AOS)' 두 가지가 있다. 직접입력일 때는 방향벡터를 입력한다. '받음각과 옆미끄럼각'일 때는 받음각과 옆미끄럼각이 0일 때의 항력 및 양력 방향과 받음각, 옆미끄럼각을 입력한다.</p>
+<p>속도, 압력, 온도의 openfoam 경계조건은 _farfieldRiemann_이며 난류는 '입구 속도' 조건과 동일하다.</p>
+<h2 id="subsonic-inlet">아음속 입구(Subsonic Inlet)</h2>
+<p>아음속 입구 조건은 압축성 유동에서 유체기계와 같은 내부유동의 입구 아음속 경계조건이다.</p>
+<p>유동의 방향 벡터, 전압력(total pressure), 전온도(total temperature)를 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/subsonicInflow.png" width="300" height="300"><br>아음속 입구 설정</center></p>
+<p>속도, 압력, 온도의 openfoam 경계조건은 _subsonicInflow_이며 난류는 '입구 속도' 조건과 동일하다.</p>
+<h2 id="supersonic-inflow">초음속 입구(Supersonic Inflow)</h2>
+<p>초음속 입구 조건은 유동의 입구가 초음속인 경우 사용하는 경계조건이다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/supersonicInflow.png" width="300" height="300"><br>초음속 입구 설정</center></p>
+<p>속도 벡터, 압력(static pressure), 온도(static temperature)를 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
+<p>속도, 압력, 온도의 openfoam 경계조건은 _fixedValue_이며 난류는 '입구 속도' 조건과 동일하다.</p>
+<h2 id="pressure-outlet">출구 압력(Pressure Outlet)</h2>
+<p>출구 압력 조건은 출구 경계면에 일정한 압력을 주는 조건이다. 입력한 압력은 유동이 빠져나가는 경우는 정압(static pressure)로, 들어오는 경우는 전압력(total pressure)로 사용된다. 압력을 입력하고 유동이 유입될 때의 조건과 'Non-Reflecting Boundary'를 옵션으로 선택할 수 있다.</p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/pressureOutlet.png" width="300" height="300"><br>출구 압력 설정</center></p>
+<p>아무런 옵션을 사용하지 않을 때, 각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : <em>pressureInletOutletVelocity</em></li>
+<li>압력 : <em>totalPressure</em> (이 조건은 유동이 유입될 때는 전압력을 사용하고, 유출될 때는 정압(static pressure)를 사용하기 때문에 이 조건에서 사용하는 압력은 정압이다)</li>
+<li>온도 : <em>zeroGradient</em></li>
+<li>난류 : <em>zeroGradient</em></li>
+<li>화학종 : <em>zeroGradient</em></li>
+</ul>
+<h4 id="specify-backflow-properties">유입류 조건(Specify Backflow Properties) 옵션</h4>
+<p>유입류 조건(Specify Backflow Properties) 옵션을 선택하면 계산영역으로 유입되는 유동의 전온도(total temperature)와 난류 조건을 줄 수 있다.</p>
+<p>이 옵션을 사용하면 온도, 난류 필드, 화학종이 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>온도 : <em>inletOutletTotalTemperature</em></li>
+<li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
+<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>inletOutlet</em></li>
+<li>화학종 : <em>inletOutlet</em></li>
+</ul>
+<h4 id="non-reflecting-boundary">Non-Reflecting Boundary 옵션</h4>
+<p>경계면에서 압력파가 반사되지 않는 조건으로, 에너지방정식을 계산하고 밀도는 완전기체, 정압비열은 상수인 경우에만 나타난다.</p>
+<p>속도와 압력에는 openfoam의 <em>waveTransmissive</em> 경계조건을 사용하고 나머지 필드는 옵션이 없을 때와 동일하다. </p>
+<p><a href="https://baramcfd.org/tutorials/2024/09/19/2d_cavity-post/">Non-Reflecting Boundary 예제 : 압축성 캐비티 유동</a></p>
+<h2 id="open-channel-outlet">개수로 출구(Open Channel Outlet)</h2>
+<p>개수로 출구 조건은 자유수면을 계산할 때 출구에 일정한 평균 속도를 주고 그에 따라 수면의 높이가 변할 수 있는 조건이다.</p>
+<p><a href="https://baramcfd.org/tutorials/2023/09/05/KCS-post/">개수로 출구 경계조건 예제 : 선박 저항 해석</a></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/openChannelOutlet.png" width="300" height="300"><br>개수로 출구 설정</center></p>
+<p>평균 속도를 상수로 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
+<p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : <em>outletPhaseMeanVelocity</em></li>
+<li>압력 : <em>zeroGradient</em></li>
+<li>체적분율 : <em>variableHeightFlowRate</em></li>
+<li>난류운동에너지 : <em>turbulentIntensityInletOutletTKE</em></li>
+<li>난류소산율(<span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>), 특성소산율(<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>) : <em>viscosityRatioInletOutletTDR</em></li>
+<li>보정동점성계수(<span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span>) : <em>inletOutlet</em> </li>
+</ul>
+<h2 id="outflow">유출(Outflow)</h2>
+<p>유출 조건은 출구의 모든 필드에 대해 구배(gradient)가 0인 조건을 사용한다.</p>
+<h2 id="subsonic-outflow">아음속 출구(Subsonic Outflow)</h2>
+<p>아음속 출구 조건은 압축성 유동에서 유체기계와 같은 내부유동의 출구 아음속 경계조건이다. 압력(static pressure)을 입력한다.</p>
+<p>속도, 압력, 온도의 openfoam 경계조건은 _subsonicOutflow_이며 난류는 _zeroGradient_이다. </p>
+<h2 id="supersonic-outflow">초음속 출구(Supersonic Outflow)</h2>
+<p>초음속 출구 조건은 압축성 유동의 출구속도가 초음속일 때 사용하는 경계조건이다.</p>
+<p>입력할 것은 없으며, 모든필드의 openfoam 경계조건은 구배(gradient)가 0인 조건을 사용한다.</p>
+<!------------------------------------------------------------------------------------------------>
+<h2 id="wall">벽면(Wall)</h2>
+<p>벽면은 유동이 통과하지 못하는 면을 의미하며 벽면의 운동에 의한 속도조건과 온도조건을 지정할 수 있다. 압력과 난류는 별도의 조건 설정이 필요없다.</p>
+<h3 id="_1">속도 조건</h3>
+<p>속도 조건은 정지(No Slip), 미끄럼 벽(Slip), 움직이는 벽(Moving Wall), 대기경계층 지표면(Atmospheric Wall), 직선 속도(Translational Moving Wall), 회전속도(Rotational Moving Wall) 조건을 선택할 수 있다.</p>
+<p>정지 조건은 벽변 점착 조건으로 속도가 (0, 0, 0)으로 설정된다.</p>
+<p>'미끄럼 벽'은 마찰이 없는 벽면으로 벽면에 수식한 속도 성분이 없다는 조건이다.</p>
+<p><strong>'움직이는 벽'은 움직이는 물체에 대한 조건으로 미끄럼 격자(Sliding Mesh)와 같은 이동격자계를 사용할 때 움직이는 물체에 적용된다</strong>.</p>
+<p>'대기경계층 지표면'은 대기경계층 문제에서 지표면에 사용된다.</p>
+<p>'직선 속도'와 '회전 속도'는 격자가 움직이지는 않지만, 벽면이 일정한 속도로 움직이는 조건으로 벽에서의 속도는 움직이는 속도와 같게 준다.</p>
+<h3 id="_2">온도 조건</h3>
+<p>온도 조건은 단열(Adiabatic), 일정 온도(Constant Temperature), 일정 열유속(Constant Heat Flux), 외부로 대류열전달(Convection) 조건을 선택할 수 있다.</p>
+<h4 id="adiabatic">단열(Adiabatic)</h4>
+<p>단열 조건으로 별도로 설정할 것은 없다.</p>
+<p>복사열전달이 없는 경우는 온도 경계조건으로 <em>zeroGradient_를 사용하고, 복사열전달이 있는 경우는 복사를 포함한 열유속이 0이라는 조건을 사용한다.(_externalWallHeatFluxTemperatur</em>})</p>
+<h4 id="constant-temperature">일정 온도(Constant Temperature)</h4>
+<p>온도가 일정한 조건이다. <em>fixedValue</em> 조건을 사용한다.</p>
+<h4 id="constant-heat-flux">일정 열유속(Constant Heat Flux)</h4>
+<p>열유속이 일정한 조건이다. <em>externalHextFluxTemperature</em> 조건을 사용한다.</p>
+<h4 id="convection">외부로 대류열전달(Convection)</h4>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/convectionWallLayer.png" width="300" height="300"><br>외부로 대류열전달 설정</center></p>
+<p>일정한 외부 온도와 열전달계수를 사용하는 조건으로, 벽에서의 열유속은 다음 식을 사용한다. <em>externalHextFluxTemperature</em> 조건을 사용한다. </p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">q_{external} = h(T_{wall}-T_a)</span><script type="math/tex">q_{external} = h(T_{wall}-T_a)</script></span></center></p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span> : 열전달계수(Heat Transfer Coefficient)</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T_a</span><script type="math/tex">T_a</script></span> : 외부온도(Free Stream Temperature) </li>
+</ul>
+<p>벽의 두께와 열전도도를 이용하여 고체의 열저항을 설정할 수 있으며, 여러 층의 고체에 대해 각각의 두께와 열전도도를 설정할 수 있다. 고체를 벽으로 모델링하여 복합영역 문제로 계산하지 않고도 고체의 열전도를 고려할 수 있는 방법이다. 그러나 벽에 수직방향의 열전도만 고려할 뿐 옆으로의 열전도를 고려할 수는 없으며, 비정상상태 계산에서 시간에 따른 고체의 온도 변화를 고려할 수는 없다.</p>
+<p>이 때 열저항은 다음 식으로 계산된다.</p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}</span><script type="math/tex">h = \frac {1} {\frac{1}{h_{convection}} + \Sigma \frac{l_{layer}}{\kappa_{layer}}}</script></span></center></p>
+<h3 id="_3">난류 경계조건</h3>
+<p>난류 벽함수(wall function)은 난류 모델에 따라 다음과 같은 조건을 사용한다.</p>
+<h4 id="standard-k-epsilonk-epsilon-realizable-k-epsilonk-epsilon-rng-k-epsilonk-epsilon">standard <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span>, realizable <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span>, RNG <span class="arithmatex"><span class="MathJax_Preview">k-\epsilon</span><script type="math/tex">k-\epsilon</script></span> 모델</h4>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> : standard일 때는 <em>epsilonWallFunction</em>, two layer일 때는 <em>epsilonBlendedWallFunction</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : standard일 때는 <em>nutkWallFunction</em>, two layer일 때는 <em>nutSpaldingWallFunction</em></li>
+</ul>
+<h4 id="sst-k-omegak-omega">SST <span class="arithmatex"><span class="MathJax_Preview">k-\omega</span><script type="math/tex">k-\omega</script></span> 모델</h4>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span> : <em>omegaBlendedWallFunction</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutSpaldingWallFunction</em></li>
+</ul>
+<h4 id="spalart-allmaras">Spalart-Allmaras 모델</h4>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\tilde{\nu}</span><script type="math/tex">\tilde{\nu}</script></span> : <em>zeroGradient</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>nutSpaldingWallFunction</em></li>
+</ul>
+<h4 id="_4">대기경계층 지표면일 때</h4>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> : <em>kqRWallFunction</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> : <em>atmEpsilonWallFunction</em></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\nu_t</span><script type="math/tex">\nu_t</script></span> : <em>atmNutkWallFunction</em></li>
+</ul>
+<h4 id="alpha_talpha_t"><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span></h4>
+<p><span class="arithmatex"><span class="MathJax_Preview">\alpha_t</span><script type="math/tex">\alpha_t</script></span> 조건은 열전달 경계조건에 따라 달라진다.</p>
+<ul>
+<li>단열(Adiabatic)일 때 : <em>compressible::alphatWallFunction</em></li>
+<li>나머지 조건일 때 : <em>compressible::alphatJayatillekeWallFunction</em></li>
+</ul>
+<h2 id="thermo-coupled-wall">연결 벽면(Thermo-Coupled Wall)</h2>
+<p>연결 벽면 조건은 계산 영역 내부에 있는 두께가 없는 벽면인 배플(baffle)에 대한 조건이다. 배플은 2개의 경계면이 쌍을 이루고 있으며 모두 연결 벽면 조건을 사용한다. 복합영역 문제에서 영역 사이(유체-고체, 고체-고체, 유체-유체)의 경계면에도 사용된다.</p>
+<p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
+<ul>
+<li>속도 : <em>noSlip</em></li>
+<li>압력 : <em>fixedFluxPressure</em></li>
+<li>온도 : <em>turbulentTemperatureCoupledBaffleMixed</em></li>
+<li>난류 : 벽면과 같은 조건 사용</li>
+<li>화학종 : <em>zeroGradient</em></li>
+</ul>
+<h2 id="misc">기타 경계조건(Misc)</h2>
+<h3 id="2-empty-wedge">2차원 경계(Empty), 축대칭 경계(Wedge)</h3>
+<p>OpenFOAM은 별도의 2차원 격자가 없으며, 3차원 격자의 높이 방향으로 하나의 격자가 있을 때 그 위와 아래면에 2차원 경계 조건을 주면 2차원 문제가 된다. 마찬가지로 축대칭 격자도 없으며 wedge 모향의 3차원 격자에 회전방향으로 하나의 격자가 있을 때 그 양쪽면에 축대칭 경계 조건을 주면 축대칭 문제가 된다.</p>
+<h3 id="symmetry">대칭(Symmetry)</h3>
+<p>대칭 조건의 경계면에 사용한다. </p>
+<h3 id="interface">인터페이스(Interface)</h3>
+<p>2개 경계면의 관계를 나타내는 조건이다. 계산 영역 내부의 두께가 없고 유동이 통과하는 경계면이나, cell zone 경계면에서 같은 위치에 2개의 경계면이 있을 때 사용한다. 쌍을 이루는 2개 경계면의 격자가 일치할 필요는 없다.</p>
+<p>내부 인터페이스(Internal Interface), 회전주기조건(Rotational Periodic), 병진주기조건(Translational Periodic)의 3가지가 있다.</p>
+<p>openfoam의 <em>cyclicAMI</em> 조건을 사용한다.</p>
+<p><a href="https://baramcfd.org/tutorials/2024/06/28/mixer-post/">회전주기조건 예제</a></p>
+<h3 id="cyclic">Cyclic</h3>
+<p>인터페이스와 비슷하지만 2개의 쌍을 이루는 격자가 완전히 일치해야 한다. </p>
+<h3 id="porous-jump">다공성 압력 점프(Porous Jump)</h3>
+<p>다공성 압력 점프 조건은 계산영역 내부에 있는 cyclic 면에서 압력 변화를 주는 조건이다. </p>
+<p><a href="https://baramcfd.org/tutorials/2023/09/05/porousJump-post/">다공성 압력 점프 예제</a></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>다공성 압력 점프 설정</center></p>
+<p>입력항목은 다음과 같다.</p>
+<ul>
+<li>Darcy Coefficient, <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span></li>
+<li>Inertia Coefficient, <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span></li>
+<li>다공성 매질 두께(Porous media thickness, <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>)</li>
+<li>연결된 경계면(Coupled boundary)</li>
+</ul>
+<p><strong>Darcy Coefficient와 Inertial Coefficient 값이 양(+)의 값일 때는 유동이 지나가면서 압력이 낮아지고, 음(-)의 값일 때 압력이 높아진다</strong>.</p>
+<p>압력 변화는 다음 식으로 계산된다. </p>
+<p><center><span class="arithmatex"><span class="MathJax_Preview">\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L</span><script type="math/tex">\Delta p = -\left(D \mu U + \frac{1}{2} I \rho U^2 \right)L</script></span></center> </p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> : 점성계수</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> : 밀도</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> : 속도</li>
+</ul>
+<p>openfoam에서 사용하는 경계조건은 압력은 <em>porousBafflePressure</em> 이고, 나머지는 모두 <em>cyclic</em> 이다.</p>
+<h3 id="fan">팬(Fan)</h3>
+<p>팬 조건은 계산영역 내부에 있는 cyclic 면에 팬의 속도-압력 관계를 파일로 주는 조건이다. </p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/fan.png" width="300" height="300"><br>팬 설정</center></p>
+<p><strong>속도-압력 파일은 csv 형식으로 첫번째 열에 속도, 두번째 열에 압력이 콤마(,)로 구분된 파일이어야 한다</strong>.</p>
+<p>openfoam에서 사용하는 경계조건은 압력은 <em>fan</em> 이고, 나머지는 모두 <em>cyclic</em> 이다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

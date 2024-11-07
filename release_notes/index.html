@@ -1,0 +1,1514 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../internationalization/">
+      
+      
+        <link rel="next" href="../flow_tutorial/simple_incompressible.en/">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Release notes - BARAM Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#release-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BARAM Page" class="md-header__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BARAM Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Release notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../release_notes.ko/" hreflang="ko" class="md-select__link">
+              Korean
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../screenshots/" class="md-tabs__link">
+        
+  
+    
+  
+  Screenshots
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../feature_overview/" class="md-tabs__link">
+        
+  
+    
+  
+  Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../internationalization/" class="md-tabs__link">
+        
+  
+    
+  
+  Internationalization
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Release notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../flow_tutorial/simple_incompressible.en/" class="md-tabs__link">
+          
+  
+  Tutorial Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../flow_manual/intro.en/" class="md-tabs__link">
+          
+  
+  Users' Guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../QA/" class="md-tabs__link">
+        
+  
+    
+  
+  Q&A
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BARAM Page" class="md-nav__button md-logo" aria-label="BARAM Page" data-md-component="logo">
+      
+  <img src="../favicon.ico" alt="logo">
+
+    </a>
+    BARAM Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internationalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internationalization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2440" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.4.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2433" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.3.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2432" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.3.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2431" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.3.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2430" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.3.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2420" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.2.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2413" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.1.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2412" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.1.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2401" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.0.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2335" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.3.5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2333" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.3.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2332" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.3.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2330" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.3.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2320" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.2.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2310" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.1.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2210" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.1.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2207" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.0.7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2206" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.0.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2205" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.0.5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2204" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.0.4
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../flow_tutorial/simple_incompressible.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Tutorial Guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../flow_manual/intro.en/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Users' Guide
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q&A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../release_notes.ko/">Korean</a></li>
+</ul>
+<h1 id="release-notes">Release Notes</h1>
+<h2 id="2440">24.4.0</h2>
+<h3 id="new-features">New Features</h3>
+<h4 id="baramflow">BaramFlow</h4>
+<ul>
+<li><strong>Cavitation:</strong> Mass transfer model for cavitation analysis has been added.</li>
+<li><strong>Non-Newtonian Viscosity:</strong> Non-Newtonian viscosity model has been added for liquid material in laminar flow.</li>
+<li><strong>Multiple phases:</strong> More than 2 phases can be set up in multiphase case.</li>
+<li><strong>FLUENT Mesh:</strong> Fluent mesh with multiple cell zones can be imported into multiple regions.</li>
+<li><strong>FLUENT Mesh:</strong> Fluent Mesh with non-tetrahedral cells can be imported.</li>
+<li><strong>Mesh:</strong> Boundaries that have no face are automatically dropped when mesh is imported.</li>
+<li><strong>Maximum Diffusion Number:</strong> <em>Maximum Diffusion Number</em> can be configured for transient multi-region case.</li>
+<li><strong>Thermal layers:</strong>  Optional thin thermal layer resistances can be configured for convection boundaries.</li>
+<li><strong>Turbulent Viscosity Ratio:</strong> <em>Turbulent Viscosity Ratio</em> spec. on boundaries for <em>Spalart-Allmaras</em> turbulence model is working now.</li>
+<li><strong>Ruler:</strong> <em>Ruler</em> has been added in Graphics view.</li>
+<li><strong>Background Color:</strong> Background color of Graphics view can be changed</li>
+<li><strong>Scalar Report:</strong> Report for scalar values has added</li>
+</ul>
+<h4 id="barammesh">BaramMesh</h4>
+<ul>
+<li><strong>Graphics View:</strong> Graphics View can be disabled for fast navigation between steps.</li>
+<li><strong>Ruler:</strong> <em>Ruler</em> has been added in Graphics view toolbar.</li>
+<li><strong>Background Color:</strong> Background color of Graphics view can be changed</li>
+<li><strong>Export:</strong> Boundaries that have no face are dropped when mesh is exported.</li>
+</ul>
+<h3 id="improvements">Improvements</h3>
+<h4 id="baramflow_1">BaramFlow</h4>
+<ul>
+<li><strong>Update Configuration:</strong> <em>Temperature limit</em> and <em>max viscosity ratio</em> settings in advanced numerical calculation can be applied on the fly during calculation</li>
+<li><strong>ABL Inlet:</strong> Species fraction and User-defined Scalars values can be configured on ABL Inlet boundary.</li>
+<li><strong>NeighbourPatch:</strong> Peer boundary for <em>cyclic</em> and <em>cyclicAMI</em> boundaries is set from <em>neighbourPatch</em> information.</li>
+<li><strong>Axes widget:</strong> Axes widget is automatically scaled when mesh is transformed.</li>
+<li><strong>Zero Gravitation:</strong> Gravitation can now be set to zero for multiphase VoF case.</li>
+<li><strong>User-defined Scalar:</strong> User-defined Scalar configuration can be modified.</li>
+<li><strong>Material Spec.:</strong> Viscosity spec. and Thermal conductivity spec. are linked.</li>
+</ul>
+<h4 id="barammesh_1">BaramMesh</h4>
+<ul>
+<li><strong>Number of Cells per Direction:</strong> <em>Number of Cells per Direction</em> in Base grid accepts only a value equal or greater than 2.</li>
+<li><strong>Export:</strong> Boundaries that have no face are dropped when mesh is exported.</li>
+<li><strong>Castellation:</strong> <em>Number of Cells between Levels</em> value of <em>zero</em> is not accepted.</li>
+<li><strong>Export 2D:</strong> Generated mesh can be exported in 2D Axi-Symmetry form.</li>
+<li><strong>Export 2D:</strong> Generated mesh can be exported in 2D planar form.</li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<h4 id="baramflow_2">BaramFlow</h4>
+<ul>
+<li><strong>Boundary:</strong> Static Temperature configuration on <em>supersonic inflow</em> boundary was not used for calculation.</li>
+<li><strong>Monitoring:</strong> Monitoring was not working for primary material field.</li>
+<li><strong>User-defined Scalars:</strong> <em>Turbulent Viscosity</em> spec. has removed.</li>
+</ul>
+<h3 id="known-issues">Known Issues</h3>
+<h4 id="baramflow_3">BaramFlow</h4>
+<ul>
+<li><strong>Cavitation:</strong> Cavitation(mass transfer) model allows only transient calculation.</li>
+<li><strong>Multiphase:</strong> Steady state calculation is not allowed if the number of phases is greater than 2.</li>
+<li><strong>Cavitation:</strong> <em>Zwart-Gerber-Belamri</em> mass transfer model is not supported yet</li>
+<li><strong>Residual:</strong> Residual is not available for cases that have more than two phases</li>
+<li><strong>Cell Zone:</strong> <em>mass source</em> is not working</li>
+</ul>
+<h4 id="barammesh_2">BaramMesh</h4>
+<ul>
+<li><strong>Export:</strong> 2D export does not support multi-region mesh.</li>
+</ul>
+<p><a href="https://blog.nextfoam.co.kr/2024/10/29/baram-release-v24-4/"><strong>Link to more information</strong></a></p>
+<h2 id="2433">24.3.3</h2>
+<h3 id="bug-fixes_1">Bug Fixes</h3>
+<h4 id="baramflow_4">BaramFlow</h4>
+<ul>
+<li><strong>Save As:</strong> Some configuration could not be changed after saving by <em>Save As</em>.</li>
+</ul>
+<h4 id="barammesh_3">BaramMesh</h4>
+<ul>
+<li><strong>Export:</strong> Application got stuck or missed <em>polyMesh</em> folder while exporting.</li>
+</ul>
+<h3 id="known-issues_1">Known Issues</h3>
+<h4 id="baramflow_5">BaramFlow</h4>
+<ul>
+<li><strong>Species Model:</strong> Density is not calculated if energy model is not turned on.</li>
+</ul>
+<h2 id="2432">24.3.2</h2>
+<h3 id="bug-fixes_2">Bug Fixes</h3>
+<h4 id="baramflow_6">BaramFlow</h4>
+<ul>
+<li><strong>Section Initialization:</strong> Volume fraction configuration in section initialization was not working</li>
+<li><strong>Monitoring:</strong> Monitoring was not working for primary material</li>
+</ul>
+<h3 id="known-issues_2">Known Issues</h3>
+<h4 id="baramflow_7">BaramFlow</h4>
+<ul>
+<li><strong>Species Model:</strong> Density is not calculated if energy model is not turned on.</li>
+<li><strong>Save As:</strong> Some configuration cannot be changed after saving by <em>Save As</em>. The problem goes away once the application exits and restarts.</li>
+</ul>
+<h4 id="barammesh_4">BaramMesh</h4>
+<ul>
+<li><strong>Export:</strong> Application gets stuck or misses <em>polyMesh</em> folder while exporting. To add boundary layers prevents this problem.</li>
+</ul>
+<h2 id="2431">24.3.1</h2>
+<h3 id="bug-fixes_3">Bug Fixes</h3>
+<h4 id="baramflow_8">BaramFlow</h4>
+<ul>
+<li><strong>Cell Zone:</strong> Cell Zone configuration is now working</li>
+</ul>
+<h3 id="known-issues_3">Known Issues</h3>
+<h4 id="baramflow_9">BaramFlow</h4>
+<ul>
+<li><strong>Species Model:</strong> Density is not calculated if energy model is not turned on.</li>
+<li><strong>Section Initialization:</strong> Volume fraction configuration in section initialization is not working</li>
+<li><strong>Monitoring:</strong> Monitoring is not working for primary material</li>
+</ul>
+<h2 id="2430">24.3.0</h2>
+<h3 id="new-features_1">New Features</h3>
+<h4 id="baramflow_10">BaramFlow</h4>
+<ul>
+<li><strong>Species Model:</strong> A species model has been added.</li>
+<li><strong>Equation Control:</strong> Equations can now be controlled to solve or not.</li>
+<li><strong>Energy Equation Terms:</strong> Each term in the energy equation can be controlled to include or exclude it.</li>
+<li><strong>Boundary Condition Copy:</strong> You can now copy a boundary condition to other boundary conditions.</li>
+</ul>
+<h4 id="barammesh_5">BaramMesh</h4>
+<ul>
+<li><strong>Expected Cell Size Display:</strong> The expected cell size is now shown in the refinement dialog.</li>
+<li><strong>Slice Cut Tool:</strong> A Slice Cut tool has been added to the display control.</li>
+</ul>
+<h3 id="improvements_1">Improvements</h3>
+<h4 id="baramflow_11">BaramFlow</h4>
+<ul>
+<li><strong>User-Defined Scalar Calculation:</strong> User-defined scalar calculations converge better in steady-state cases.</li>
+<li><strong>Output Display:</strong> Output from the decomposePar command is now displayed in the console window.</li>
+<li><strong>Viscosity Validation:</strong> A Viscosity value of zero is now rejected in the material dialog.</li>
+<li><strong>Windows Docking:</strong> Windows docking has become more versatile and convenient thanks to the <a href="https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System"><em>QT Advanced Docking System</em></a>.</li>
+</ul>
+<h4 id="barammesh_6">BaramMesh</h4>
+<ul>
+<li><strong>Feature Angle Threshold:</strong> The default value for the Feature Angle Threshold has changed from 120 to 60.</li>
+<li><strong>Export Dialog Enhancement:</strong> The Export dialog now allows separate configuration of project name and location.</li>
+</ul>
+<h3 id="bug-fixes_4">Bug Fixes</h3>
+<h4 id="baramflow_12">BaramFlow</h4>
+<ul>
+<li><strong>User-Defined Scalars:</strong> The defaultFieldValues were incorrectly configured for user-defined scalars during section initialization.</li>
+<li><strong>Residual Value Display:</strong> Residual values larger than 1 were clipped and not shown.</li>
+<li><strong>Energy Relaxation Factor:</strong> The default value for the relaxation factor of Energy has been changed to 1.0 from 0.9.</li>
+<li><strong>Locale Compatibility:</strong> BaramFlow now works correctly in locales where a comma (,) is used as the decimal separator.</li>
+<li><strong>OpenMPI Compatibility:</strong> BaramFlow no longer has trouble working with the latest Homebrew OpenMPI version 5.0.3.</li>
+</ul>
+<h4 id="barammesh_7">BaramMesh</h4>
+<ul>
+<li><strong>Mesh Quality Calculation:</strong> Mesh quality information is now correctly calculated even if a boundary layer is not added.</li>
+<li><strong>Cell Count Update:</strong> The cell count is now updated after mesh generation in each step.</li>
+<li><strong>Boundary Type Compatibility:</strong> Interface can be used as cyclic boundaries. The boundary pair of an interface now have same face ordering. The order was different in some cases before.</li>
+<li><strong>Feature Edge Refinement:</strong> Feature edge refinement is now applied only to cells that the feature edge penetrates (within 0.01m from the feature edge).</li>
+<li><strong>STL Splitter Fix:</strong> The STL splitter now handles cases where some faces have an area of zero.</li>
+<li><strong>Boundary Layer Group Configuration:</strong> The boundary layer group configuration no longer gets corrupted when both boundary layer group configuration and advanced configuration are modified.</li>
+</ul>
+<h3 id="known-issues_4">Known Issues</h3>
+<h4 id="baramflow_13">BaramFlow</h4>
+<ul>
+<li><strong>Species Model:</strong> Density is not calculated if energy model is not turned on.</li>
+<li><strong>Cell Zone:</strong> Cell Zone configuration is not working</li>
+<li><strong>Section Initialization:</strong> Volume fraction configuration in section initialization is not working</li>
+</ul>
+<h2 id="2420">24.2.0</h2>
+<h3 id="new-features_2">New Features</h3>
+<h4 id="baramflow_14">BaramFlow</h4>
+<ul>
+<li>LES/DES turbulence modeling</li>
+<li>User-defined scalar</li>
+<li>Non-Reflecting Boundary option in Pressure Outlet</li>
+<li>Calculation result is saved regardless of write interval when calculation ends</li>
+</ul>
+<h4 id="barammesh_8">BaramMesh</h4>
+<ul>
+<li>Interactive splitting of surface based on feature angle during STL import</li>
+<li>Gap-Refinement in Volume Refinement</li>
+</ul>
+<h3 id="improvements_2">Improvements</h3>
+<h4 id="baramflow_15">BaramFlow</h4>
+<ul>
+<li>Enhanced wall function has been applied</li>
+<li>Reference Pressure consideration in calculating force coefficients</li>
+<li>Maximum Viscosity ratio can be limited</li>
+<li>Margin around Y axis label has grown</li>
+<li>Default initial value for pressure is set to 101325 when density-based solver is chosen</li>
+<li>Solver NF24.2.1 is used as internal solver</li>
+</ul>
+<h4 id="barammesh_9">BaramMesh</h4>
+<ul>
+<li>VTK pipeline processing in parallel(SMP)</li>
+</ul>
+<h3 id="bug-fixes_5">Bug Fixes</h3>
+<h4 id="baramflow_16">BaramFlow</h4>
+<ul>
+<li>"Prt", energy Prandtl number, setting was in wrong position in turbulenceProperties</li>
+</ul>
+<h4 id="barammesh_10">BaramMesh</h4>
+<ul>
+<li>BaramMesh crashed sporadically when a project was closed</li>
+<li>"Cancel" button did not work in castellation and snap</li>
+</ul>
+<hr />
+<h2 id="2413">24.1.3</h2>
+<h3 id="improvements_3">Improvements</h3>
+<h4 id="baramflow_17">BaramFlow</h4>
+<ul>
+<li>Cell Zone is hilighted when selected</li>
+<li>Solver NF24.1.6 is used as internal solver</li>
+</ul>
+<h3 id="bug-fixes_6">Bug Fixes</h3>
+<h4 id="baramflow_18">BaramFlow</h4>
+<ul>
+<li>Parallel configuration dialog hung if number of processors were not changed and <em>Apply</em> button was clicked</li>
+<li>Monitoring for a point that is not snapped on a surface is now working in multi-region case</li>
+<li>"saveAs" for Parallel-configured project is now working</li>
+</ul>
+<h4 id="barammesh_11">BaramMesh</h4>
+<ul>
+<li>"Export" succeeded only when boundary layers were inserted and baramMesh run in parallel configuration</li>
+</ul>
+<hr />
+<h2 id="2412">24.1.2</h2>
+<h3 id="new-features_3">New Features</h3>
+<h4 id="baramflow_19">BaramFlow</h4>
+<ul>
+<li><em>User Parameters</em> can be defined and used for configuration</li>
+<li>Mesh information such as bounding box dimension, number of cells, and min/max cell volumes</li>
+<li>Density-base solver with far-field Riemann boundary condition for high Mach number external flow</li>
+<li>Batch processing: Users can setup <em>User Parameters</em> in combination and run them in sequence</li>
+<li>Multi-region case can be set up by importing separated multiple polyMesh which might be generated by other meshing tools</li>
+<li>Flow direction can be configured based on Angle of Attack(AoA) and Angle of Sideslip(AoS)</li>
+</ul>
+<h4 id="barammesh_12">BaramMesh</h4>
+<ul>
+<li>Mesh Quality information can be checked interactively</li>
+<li><em>Snap</em> step now supports <em>Implicit Feature Snapping</em></li>
+</ul>
+<h3 id="improvements_4">Improvements</h3>
+<h4 id="baramflow_20">BaramFlow</h4>
+<ul>
+<li>Wall function for Realizable k-e with enhanced wall treatment model has updated</li>
+<li>The concept of “Modified Pressure” has been deprecated. The solver now automatically applies pressure adjustments based on the selected solver type.</li>
+<li>Users can transfer steady-state calculation results as initial conditions for transient simulations.</li>
+<li>Units are now explicitly shown for cell zone source terms</li>
+<li>A pop-up window notifies users when the solver finishes its calculations</li>
+<li>Certain boundary condition types are inferred from mesh boundary names and geometric types</li>
+<li>Users can adjust the maximum Courant number for multi-phase steady simulations</li>
+<li>NF24.1.5 is used as internal solver</li>
+</ul>
+<h4 id="barammesh_13">BaramMesh</h4>
+<ul>
+<li>Maximum surface refinement level can be configured. It was a fixed value of minimum plus one</li>
+<li>Spaces in geometry names are automaticall replaced with underscore('_')</li>
+<li>Users can now configure region steps to include solid regions only ( no fluid region )</li>
+<li>Fixed width font is used in console window</li>
+</ul>
+<h3 id="bug-fixes_7">Bug Fixes</h3>
+<h4 id="baramflow_21">BaramFlow</h4>
+<ul>
+<li>Prevented loading of multi-region meshes inappropriately for multi-phase projects</li>
+</ul>
+<h4 id="barammesh_14">BaramMesh</h4>
+<ul>
+<li>Fixed a bug where castellation failed when a sphere was within a HEX6 bounding box</li>
+</ul>
+<h3 id="known-issues_5">Known Issues</h3>
+<h4 id="baramflow_22">BaramFlow</h4>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working in multi-region case</li>
+<li>"saveAs" for Parallel-configured project is not working</li>
+</ul>
+<h4 id="barammesh_15">BaramMesh</h4>
+<ul>
+<li>"Export" succeeds only when boundary layers are inserted and baramMesh runs in parallel configuration</li>
+</ul>
+<hr />
+<h2 id="2401">24.0.1</h2>
+<h3 id="new-features_4">New Features</h3>
+<ul>
+<li>[Flow] Point location preview has been added in point monitoring setup</li>
+<li>[Mesh] Object preview has been added in Geometry step</li>
+</ul>
+<h3 id="improvements_5">Improvements</h3>
+<ul>
+<li>[Flow] <code>pRefCell</code> is used instead of <code>pRefPoint</code>. Users don't need to configure <em>Reference Pressure Location</em> any longer.</li>
+<li>[Mesh] surface refinement level(castellatedMeshControls.refinementSurfaces.level[0]) plus one is used for castellatedMeshControls.refinementSurfaces.level[1]</li>
+</ul>
+<h3 id="bug-fixes_8">Bug Fixes</h3>
+<ul>
+<li>[Flow] Numerical Conditions page was not correctly shown if energy model was not turned on after reading multi-region mesh</li>
+<li>[Mesh] Export failed if HEX6 was used as cell zone boundary</li>
+<li>[Mesh] Castellation failed if imported volume was configured as cell zone while its surface was configured as None.</li>
+</ul>
+<h3 id="known-issues_6">Known Issues</h3>
+<ul>
+<li>[Flow] Monitoring for a point that is not snapped on a surface is not working in multi-region case</li>
+</ul>
+<hr />
+<h2 id="2335">23.3.5</h2>
+<h3 id="new-features_5">New Features</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="improvements_6">Improvements</h3>
+<ul>
+<li>[Mesh] Crossing lines between Hex6 far-end boundary and other geometries are classified as feature edges</li>
+<li>[Flow] Relative pressure is shown in monitoring chart rather than absolute pressure</li>
+<li>[Mesh] Surface for cell zones are configured as internal type to make mesh conform the surface</li>
+<li>[Flow] Warning message is displayed if a user leaves initialization page without clicking <em>initialize</em> button after changing setup</li>
+<li>[Flow] If section initializer is configured, Fixed Value type boundary value configured on boundary condition will not change the initialized values until re-initialization</li>
+</ul>
+<h3 id="bug-fixes_9">Bug Fixes</h3>
+<ul>
+<li>[Flow] Base grid for Hex6 far-end boundary was slightly bigger than the Hex6</li>
+<li>[Flow] Text filter in boundary condition list is now working</li>
+<li>[Flow] <em>Select Color</em> and <em>Opacity</em> windows in <em>display control</em> were not modal windows</li>
+<li>[Mesh] No-boundary geometries were shown in the list of boundaries in the boundary layer step</li>
+<li>[Flow] Mesh could not be loaded after project creation</li>
+<li>[Flow] Exception occurred when text is typed in the filter input in boundary conditions</li>
+</ul>
+<h3 id="known-issues_7">Known Issues</h3>
+<ul>
+<li>[Flow] Monitoring for a point that is not snapped on a surface is not working in multi-region case</li>
+</ul>
+<hr />
+<h2 id="2333">23.3.3</h2>
+<h3 id="new-features_6">New Features</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="improvements_7">Improvements</h3>
+<ul>
+<li>[Mesh] Castellation/Snap/BoundaryLayer operation can be cancelled during operation</li>
+<li>[Mesh] Default name is applied for Geometry, Region, etc</li>
+</ul>
+<h3 id="bug-fixes_10">Bug Fixes</h3>
+<ul>
+<li>[Flow] Mesh could not be loaded since v23.3.2</li>
+<li>[Flow] Module path error in baramFlow.sh has been fixed</li>
+<li>[Flow] MRFProperties file was not removed even when the property is turned off</li>
+<li>[Flow][Mesh] Window could be out of sight when display configuration is changed in multiple screen environment</li>
+</ul>
+<h3 id="known-issues_8">Known Issues</h3>
+<ul>
+<li>[Flow] Monitoring for a point that is not snapped on a surface is not working in multi-region case</li>
+<li>[Flow] Text filter in boundary condition list is not working</li>
+</ul>
+<hr />
+<h2 id="2332">23.3.2</h2>
+<h3 id="new-features_7">New Features</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="improvements_8">Improvements</h3>
+<ul>
+<li>[Flow] "Reference Pressure Location" has been moved to "General" page</li>
+<li>[Flow] Boundary type is configured automatically according to the name of boundary</li>
+<li>[Mesh] Geometry import dialog now goes to the latest used folder</li>
+<li>[Mesh] "slipFeatureAngle" is configured as the half of featureAngle internally</li>
+</ul>
+<h3 id="bug-fixes_11">Bug Fixes</h3>
+<ul>
+<li>[Flow] Chart Y range was not configured properly when the range value is big</li>
+<li>[Flow] "saveAs" menu is now stable.</li>
+<li>[Flow] "divSchemes" dictionary for Multi-phase(VoF) was not configured properly</li>
+<li>[Mesh] Default values of a few parameters have been changed</li>
+</ul>
+<h3 id="known-issues_9">Known Issues</h3>
+<ul>
+<li>[Flow] Monitoring for a point that is not snapped on a surface is not working in multi-region case</li>
+</ul>
+<hr />
+<h2 id="2330">23.3.0</h2>
+<h3 id="new-features_8">New Features</h3>
+<ul>
+<li>"BaramMesh" application for meshing job is added, and the name of "Baram" is changed to "BaramFlow" accordingly</li>
+</ul>
+<h3 id="improvements_9">Improvements</h3>
+<ul>
+<li>Time foler name in scientific notation like "1e-5" is properly handled now</li>
+<li>Monitoring for a point that is not snapped on a surface is now woring in single region case</li>
+<li>Parallel processing configuration is clear now. It's now not a configuration but an action to decompose/reconstruct</li>
+<li>Chart shows all the data when a project opened</li>
+<li>View alignment buttons on each Axis is simplified to one alignment button</li>
+<li>"Paraview" path configuration menu has been added</li>
+</ul>
+<h3 id="bug-fixes_12">Bug Fixes</h3>
+<ul>
+<li>Chart could not be shown with an exception of "ValueError: Axis limits cannot be NaN or Inf"</li>
+<li>Residual chart was not shown for a copied project</li>
+<li>Gravity could be configured only for Multi-phase(VoF) case</li>
+<li>Initialization Parameters were not applied even though Initialization button was clicked if user stayed in the page</li>
+<li>Atmospheric Wall was not shown in wall boundary condition</li>
+</ul>
+<h3 id="known-issues_10">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working in multi-region case</li>
+<li>"save as" menu is not stable yet. Copy the project project manually</li>
+</ul>
+<hr />
+<h2 id="2320">23.2.0</h2>
+<h3 id="new-features_9">New Features</h3>
+<ul>
+<li>"hostfile" setting is possible for the calculation on a cluster</li>
+</ul>
+<h3 id="improvements_10">Improvements</h3>
+<ul>
+<li>Last position and size of Window are saved for next launch</li>
+</ul>
+<h3 id="bug-fixes_13">Bug Fixes</h3>
+<ul>
+<li>Parallel calculations for more than 20 boundaries are working </li>
+<li>mesh transformation is working for decomposed mesh</li>
+<li>Fixed: Rolling menus from Toolbar displayed on the other display in multiple monitor configuration</li>
+</ul>
+<h3 id="known-issues_11">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working </li>
+<li>Batch Processing is not implemented yet</li>
+<li>"save as" menu is not stable yet. Copy the project project manually</li>
+</ul>
+<hr />
+<h2 id="2310">23.1.0</h2>
+<h3 id="new-features_10">New Features</h3>
+<ul>
+<li>Multi-Phase(VoF) problems can be simulated</li>
+<li>Feature Edge view mode added</li>
+<li>section initialization function (setFields) added</li>
+<li>About page added</li>
+</ul>
+<h3 id="improvements_11">Improvements</h3>
+<ul>
+<li>Previous console log and residuals are now shown when a project is opened</li>
+<li>Progress is displayed on reconstruction</li>
+<li>Locale change goes effective as soon as configured</li>
+<li>Finnish Translation updated thanks to Ricky-Tigg</li>
+<li>M1 macOS supported</li>
+</ul>
+<h3 id="bug-fixes_14">Bug Fixes</h3>
+<ul>
+<li>Global fvSolution was not created in multi-region case</li>
+</ul>
+<h3 id="known-issues_12">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working </li>
+<li>Batch Processing is not implemented yet</li>
+<li>Rolling menus from Toolbar can be shown on the other display in multiple monitor configuration</li>
+</ul>
+<hr />
+<h2 id="2210">22.1.0</h2>
+<h3 id="new-features_11">New Features</h3>
+<ul>
+<li>Finnish(Suomi) translation has been added thanks to <a href="https://github.com/Ricky-Tigg">Ricky Tigg</a></li>
+<li>boundary selection/highlighting</li>
+</ul>
+<h3 id="improvements_12">Improvements</h3>
+<ul>
+<li>Transition between sequential and parallel calculation gets fluent</li>
+</ul>
+<h3 id="bug-fixes_15">Bug Fixes</h3>
+<ul>
+<li>Residual chart was not displayed when a project is opened</li>
+</ul>
+<h3 id="known-issues_13">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working </li>
+<li>Batch Processing is not implemented yet</li>
+<li>Rolling menus from Toolbar can be shown on the other display in multiple monitor configuration</li>
+</ul>
+<hr />
+<h2 id="2207">22.0.7</h2>
+<h3 id="bug-fixes_16">Bug Fixes</h3>
+<ul>
+<li>Case loading failed when sliding mesh (MRF) does not have static boundaries</li>
+<li>"decompose" showed errors on some meshes</li>
+</ul>
+<h3 id="known-issues_14">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working </li>
+<li>Batch Processing is not implemented yet</li>
+<li>Rolling menus from Toolbar can be shown on the other display in multiple monitor configuration</li>
+</ul>
+<hr />
+<h2 id="2206">22.0.6</h2>
+<h3 id="new-features_12">New Features</h3>
+<ul>
+<li>show/hide check box for each boundary</li>
+</ul>
+<h3 id="improvements_13">Improvements</h3>
+<ul>
+<li><a href="https://nextfoam.github.io/baram-pages/docs/internationalization/">Internationalization support</a></li>
+</ul>
+<h3 id="bug-fixes_17">Bug Fixes</h3>
+<ul>
+<li>Project name was not updated when the folder name was changed and reopened</li>
+<li>Dialog window to ask to save was popped up even when configuration was not changed</li>
+<li><code>.gz</code> compressed polyMesh was not handled</li>
+</ul>
+<h3 id="known-issues_15">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working </li>
+<li>Batch Processing is not implemented yet</li>
+<li>Rolling menus from Toolbar can be shown on the other display in multiple monitor configuration</li>
+</ul>
+<hr />
+<h2 id="2205">22.0.5</h2>
+<h3 id="new-features_13">New Features</h3>
+<ul>
+<li>Sliding Mesh Type in Cell Zone Configuration has been implemented ( "rotationMotion" of "solidBody" solver in dynamicMeshDict )</li>
+<li>Density of materials can be configured in polynomial values</li>
+<li>Monitoring field values for volume, surface, point snap on a surface, and force coefficient</li>
+</ul>
+<h3 id="improvements_14">Improvements</h3>
+<ul>
+<li>Default gravity value has changed to (0,0,0)</li>
+<li>Reference Values are now saved in configuration file</li>
+</ul>
+<h3 id="bug-fixes_18">Bug Fixes</h3>
+<ul>
+<li>Turbulent intensity was set in percentage in the dictionaries</li>
+<li>Velocity Inlet Boundary Condition Dialog was not opened</li>
+</ul>
+<h3 id="known-issues_16">Known Issues</h3>
+<ul>
+<li>Monitoring for a point that is not snapped on a surface is not working </li>
+<li>Batch Processing is not implemented yet</li>
+</ul>
+<hr />
+<h2 id="2204">22.0.4</h2>
+<p>The first release of BARAM</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.prune", "toc.integrate", "navigation.top", "i18n", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
