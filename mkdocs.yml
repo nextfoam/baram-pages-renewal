@@ -227,6 +227,9 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra:
+  analytics:
+    provider: google
+    property: G-W2YHTXL0SF
   arithmatex:
     generic: true
   alternate:
