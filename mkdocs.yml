@@ -8,6 +8,8 @@ theme:
   logo: favicon.ico
   favicon: favicon.ico
   name: material
+  icon:
+    repo: fontawesome/brands/github
   language: en
   palette:
     # Palette toggle for automatic mode
@@ -55,7 +57,7 @@ plugins:
       default_language: 'en'
       no_translation:
         en: "This page isn't translated to English."
-        ko: "이 페이지는 영어로 번역되지 않음."
+        ko: "이 페이지는 한국어로 번역되지 않음."
       translate_nav:
         en:
           title1: "Tutorials"
