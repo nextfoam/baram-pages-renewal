@@ -22,7 +22,7 @@ For multiphase flow calculations, an additional Max Courant Number for VoF is re
 
 ### Save Interval
 
-Specifies at what intervals data should be automatically saved. If \textbf{0, no automatic saving is done and only the last result is saved.} When the calculation ends, the data at the end of the calculation is saved regardless of the value given here.
+Specifies at what intervals data should be automatically saved. If 0, no automatic saving is done and only the last result is saved. When the calculation ends, the data at the end of the calculation is saved regardless of the value given here.
 
 
 ### Retain Only the Most Recent Files

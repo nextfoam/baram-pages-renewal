@@ -1,6 +1,6 @@
 # Run
 
-## 계산 시작 및 중지
+## Calculation Start and stop
 
 Click Start Calculation to start the calculation. Once the calculation has started, Cancel Calculation, Save and Stop Calculation, and Update Configuration are enabled.
 
@@ -18,7 +18,7 @@ The figure below is an example of specifying two variables, UX and UY. The numbe
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/userParameter0.png"><br>example of User Parameter</center>
 
-Declaring, modifying, and deleting variables uses the window shown in the figure~\ref{fig:userParameter}, which appears when the Edit button is pressed. Click the (+) next to Parameter Values to add a new one. **Variable names can only contain uppercase letters, numbers, and underscores ('\_') and must start with an uppercase letter**. If click the trash icon right of the variable, variable will be deleted. But variables that are being used in your code will not be deleted.
+Declaring, modifying, and deleting variables uses the window shown in the figure, which appears when the Edit button is pressed. Click the (+) next to Parameter Values to add a new one. **Variable names can only contain uppercase letters, numbers, and underscores ('\_') and must start with an uppercase letter**. If click the trash icon right of the variable, variable will be deleted. But variables that are being used in your code will not be deleted.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/userParameter.png"><br>User Parameter Edit</center>
 
@@ -28,7 +28,7 @@ You can enter variables with a dollar sign in the same place you enter numbers f
 
 If click 'Switch to Batch Running Mode' button, you will see 'Batch Cases' appears and the button changes to 'Switch to Live Running Mode', as figure below. 'Live Running Mode' is the normal way to calculate for a single condition rather than batch calculations.
 
-[User Parameter and Batch Run tutorial](https://baramcfd.org/tutorials/2024/03/21/batchRunRAE2822-post/)
+[User Parameter and Batch Run tutorial](https://baramcfd.org/flow_tutorial/batchRun.en/)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/batchCases.png"><br>Batch Running Mode</center>
 

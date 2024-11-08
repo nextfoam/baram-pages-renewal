@@ -107,7 +107,7 @@ OpenFOAM's standard solvers provide _simpleFoam_, which does not compute the ene
 
 Double-click the species to bring up the settings window of figure below. Select whether to include or not. In both cases, we use the same solver(_buoyantSimpleNFoam_) and control whether the equations are computed based on your choice.
 
-[Species tutorial : duct flow](https://baramcfd.org/tutorials/2024/07/24/species-post/)
+[Species tutorial : duct flow](https://baramcfd.org/flow_tutorial/species.en/)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/species.png" width="200" height="200"><br>Species setup</center>
 
@@ -115,7 +115,7 @@ Double-click the species to bring up the settings window of figure below. Select
 
 A user-defined scalar is a variable that can be arbitrarily defined by the user and is also called a passive scalar because its distribution is determined by the flow field, but it does not affect the flow.
 
-[User-defined Scalars tutorial : Fire in Room](https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/)
+[User-defined Scalars tutorial : Fire in Room](https://baramcfd.org/flow_tutorial/uds.en/)
 
 Double-click this to bring up the settings window of figure below. Click the (+) to the right of 'User-defined Scalar' to add a new scalar.
 

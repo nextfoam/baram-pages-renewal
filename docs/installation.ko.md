@@ -29,9 +29,9 @@
 
 ## 리눅스에서 소스코드를 이용한 설치 방법
 
-[**Installation with NextFOAM build ›**](https://baramcfd.org/installation/2024/04/15/installationSourceCode-post/)
+[**Installation with NextFOAM build ›**](https://baramcfd.org/installation/#installing-baram-from-source-code)
 
-[**Installation with Python Virtual Environment ›**](https://baramcfd.org/installation/2024/04/15/installationPythonEnv-post/)
+[**Installation with Python Virtual Environment ›**](https://baramcfd.org/installation/#installation-with-python-virtual-environment)
 
 ## Paraview
 

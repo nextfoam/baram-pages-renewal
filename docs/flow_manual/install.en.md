@@ -4,7 +4,7 @@
 
 Visit the installation instructions for BARAM-v24.
 
-[https://baramcfd.org/docs/installation](https://baramcfd.org/docs/installation)
+[https://baramcfd.org/installation](https://baramcfd.org/installation/)
 
 BARAM-v24 is available in the Microsoft Azure cloud with no installation required. It is available by accessing the following sites
 
@@ -139,8 +139,8 @@ Make settings for parallel computation. Select the number of CPU cores and paral
 There are 3 items as Scale, Language, ParaView.
 
 * Scale : This adjusts the program's resolution, and anything higher than the default of 1.0 will result in larger windows and larger text. You must close and restart the program for the new settings to take effect.
-* 언어(Language) : Language : Currently, only English, Suomi (Finnish), and Korean are supported. Language translation is done using Qt Linguist. Anyone can contribute translations. 
-[href{https://baramcfd.org/docs/internationalization](https://baramcfd.org/docs/internationalization)
+* Language : Currently, only English, Suomi (Finnish), and Korean are supported. Language translation is done using Qt Linguist. Anyone can contribute translations. 
+[https://baramcfd.org/docs/internationalization](https://baramcfd.org/internationalization/)
 * ParaView : Specifies the location of the ParaView executable.
 
 
@@ -160,7 +160,7 @@ External Tools has a ParaView entry, which drives ParaView for post-processing.
 <!------------------------------------------------------------------>
 ## Graphics Toolbar
 
-The toolbar for three-dimensional graphics has the icons shown in the figure~\ref{fig:graphicsToolbar}.
+The toolbar for three-dimensional graphics has the icons shown in the figure.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/graphicsToolbar-1.png"><br>graphics tool bar</center>
 

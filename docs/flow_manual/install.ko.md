@@ -4,7 +4,7 @@
 
 BARAM-v24의 설치는 아래 사이트를 참고.
 
-[https://baramcfd.org/docs/installation](https://baramcfd.org/docs/installation)
+[https://baramcfd.org/installation](https://baramcfd.org/installation.ko/)
 
 마이크로소프트 Azure 클라우드에서는 별도의 설치 없이 BARAM-v24를 사용할 수 있다. 아래의 사이트에 접속해서 사용 가능.
 
@@ -143,7 +143,7 @@ BARAM을 실행하면 새로운 계산을 할 것인지 기존의 문제를 열 
 해상도(Scale), 언어(Language), ParaView 3가지가 있다.
 
 * 해상도(Scale) : 프로그램의 해상도를 조절하는 것으로 기본값인 1.0 보다 크면 창이 커지고 글자도 커진다. 새로운 설정을 적용하려면 프로그램을 닫고 다시 시작해야 한다.
-* 언어(Language) : 현재 English, Suomi(핀란드어), 한국어만 지원 된다. 언어 번역은 Qt Linguist를 사용하며 사용자가 참여할 수 있다. [href{https://baramcfd.org/docs/internationalization](https://baramcfd.org/docs/internationalization)
+* 언어(Language) : 현재 English, Suomi(핀란드어), 한국어만 지원 된다. 언어 번역은 Qt Linguist를 사용하며 사용자가 참여할 수 있다. [https://baramcfd.org/internationalization](https://baramcfd.org/internationalization.ko/)
 * ParaView : ParaView 실행파일의 위치를 지정한다.
 
 

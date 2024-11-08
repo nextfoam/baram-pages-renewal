@@ -4,7 +4,7 @@
 
 BARAM-v24의 설치는 아래 사이트를 참고.
 
-[https://baramcfd.org/docs/installation](https://baramcfd.org/docs/installation)
+[https://baramcfd.org/installation](https://baramcfd.org/installation.ko/)
 
 마이크로소프트 Azure 클라우드에서는 별도의 설치 없이 BARAM-v24를 사용할 수 있다. 아래의 사이트에 접속해서 사용 가능.
 

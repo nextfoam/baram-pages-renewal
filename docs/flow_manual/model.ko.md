@@ -107,7 +107,7 @@ OpenFOAM의 표준솔버(standard solver)는 에너지방정식을 계산하지 
 
 화학종 혼합을 더블 클릭하면 아래 그림의 설정창이 나타난다. 화학종방정식을 계산할 것인지 아닌지를 선택한다. 두 경우 모두 같은 솔버(_buoyantSimpleNFoam_)을 사용하고 선택에 따라 방정식 계산 여부를 제어한다.
 
-[화학종 혼합 예제 : 덕트 유동](https://baramcfd.org/tutorials/2024/07/24/species-post/)
+[화학종 혼합 예제 : 덕트 유동](https://baramcfd.org/flow_tutorial/species.ko/)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/species.png" width="200" height="200"><br>화학종 혼합 설정</center>
 
@@ -115,7 +115,7 @@ OpenFOAM의 표준솔버(standard solver)는 에너지방정식을 계산하지 
 
 사용자 정의 스칼라는 사용자가 임의로 정의하고 수송방정식을 계산하는 변수로, 유동장에 의해 분포가 결정되지만 이것이 유동에 영향을 미치지는 않기 때문에 passive scalar라고도 불린다.
 
-[사용자 정의 스칼라 예제 : 실내 화재(Fire in Room)](https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/)
+[사용자 정의 스칼라 예제 : 실내 화재(Fire in Room)](https://baramcfd.org/flow_tutorial/uds.ko/)
 
 이것을 선택하고 편집(Edit) 버튼을 누르면 아래 그림의 창이 나타난다. 창 위쪽의 (+) 아이콘을 누르면 새로운 스칼라를 추가할 수 있다.
 

@@ -8,19 +8,19 @@ OpenFOAM's _snappyHexMesh_ utility create mesh with the following steps
 
 1) Create a structured type background mesh that covers the entire domain with _blockMesh_ utility.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_blockMesh.png" width="400" height="400"><br>배경 격자</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_blockMesh.png" width="400" height="400"><br>Base Grid</center>
 
 2) Refine mesh where you need and remove mesh of outside domain. This process is called castellation.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_castellate.png" width="400" height="400"><br>격자세분화</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_castellate.png" width="400" height="400"><br>Castellation</center>
 
 3) Move mesh points onto the surface to achieve the correct geometry. This process is called snap.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_snap.png" width="400" height="400"><br>형상구현</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_snap.png" width="400" height="400"><br>Snap</center>
 
 4) Add boundary layer mesh from surfaces.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layer.png" width="400" height="400"><br>경계층 격자</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layer.png" width="400" height="400"><br>Boundary Layer</center>
 
 After the first step, a mesh is created in the constant/polyMesh folder, and folders 1, 2, and 3 are created after every 2, 3, and 4 steps.
 

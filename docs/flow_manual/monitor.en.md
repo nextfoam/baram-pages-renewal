@@ -34,7 +34,7 @@ Report Type can be area-weighted average, mass-weighted average, integral, mass 
 
 ## Volume
 
-The settings window for a Volume looks like the image of figure~\ref{fig:volume}. Enter the Volume, Field Variable, Report Type, and Write Interval you want to monitor.
+The settings window for a Volume looks like the image of figure. Enter the Volume, Field Variable, Report Type, and Write Interval you want to monitor.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/volume.png" width="300" height="300"><br>Volume monitoring</center>
 

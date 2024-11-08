@@ -4,7 +4,7 @@
 
 Visit the installation instructions for BARAM-v24. 
 
-[https://baramcfd.org/docs/installation](https://baramcfd.org/docs/installation)
+[https://baramcfd.org/installation](https://baramcfd.org/installation/)
 
 BARAM-v24 is available in the Microsoft Azure cloud with no installation required. It is available by accessing the following sites
 

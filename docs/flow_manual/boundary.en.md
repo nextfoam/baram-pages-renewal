@@ -76,7 +76,7 @@ If the temperature distribution under the Velocity Inlet condition is selected a
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>Temporal Distribution - polynomial</center>
 
-[Time dependent boundary condition tutorial](https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/)
+[Time dependent boundary condition tutorial](https://baramcfd.org/flow_tutorial/transient.en/#time-dependen-boundayr-condition)
 
 #### Spatial Distribution
 
@@ -115,7 +115,7 @@ The boundary conditions for openfoam use _totalPressure_ for the pressure and _p
 
 ABL Inlet is the condition that gives the velocity and turbulence distribution of the atmospheric boundary layer at the inlet of the flow.
 
-[Atmospheric Boundary Layer tutorial](https://baramcfd.org/tutorials/2023/09/05/Atomospheric-post/)
+[Atmospheric Boundary Layer tutorial](https://baramcfd.org/flow_tutorial/ABL.en/#validation-of-boundary-conditions)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ablInlet.png" width="300" height="300"><br>ABL Inlet setup</center>
 
@@ -192,7 +192,7 @@ The openfoam boundary conditions used by each field are as follows
 
 Riemann boundary condition used for farfield of compressible flow.
 
-[Far-field Riemann tutorial : RAE2822 airfoil](https://baramcfd.org/tutorials/2024/03/21/rae2822-post/)
+[Far-field Riemann tutorial : RAE2822 airfoil](https://baramcfd.org/flow_tutorial/densityBased.en/#rae2822-transonic-airfoil)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/riemann.png"><br>Farfield Riemann setup</center>
 
@@ -252,13 +252,13 @@ This is a condition where pressure waves are not reflected at the boundary. It c
 
 We use openfoam's _waveTransmissive_ boundary condition for velocity and pressure, and the rest of the fields are the same as without the option. 
 
-[Non-Reflecting Boundary tutorial : subsonic cavity flow](https://baramcfd.org/tutorials/2024/09/19/2d_cavity-post/)
+[Non-Reflecting Boundary tutorial : subsonic cavity flow](https://baramcfd.org/flow_tutorial/subsonic.en/#subsonic-cavity-flow)
 
 ## Open Channel Outlet
 
 Open Channel Outlet is a condition that gives the outlet a constant average velocity when calculating the free surface and allows the height of the water surface to vary accordingly.
 
-[Open Channel Outlet tutorial : ship resistance](https://baramcfd.org/tutorials/2023/09/05/KCS-post/)
+[Open Channel Outlet tutorial : ship resistance](https://baramcfd.org/flow_tutorial/multiphase.en/#ship-resistance-kcskriso-container-ship)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/openChannelOutlet.png" width="300" height="300"><br>Open Channel Outlet setup</center>
 
@@ -410,7 +410,7 @@ There are three types of interfaces: Internal Interface, Rotational Periodic, an
 
 Use openfoam's _cyclicAMI_ condition.
 
-[Rotational Periodic tutorial](https://baramcfd.org/tutorials/2024/06/28/mixer-post/)
+[Rotational Periodic tutorial](https://baramcfd.org/flow_tutorial/rotate.en/#mixermrf)
 
 ### Cyclic
 
@@ -420,7 +420,7 @@ interface, but the two paired mesh must match completely.
 
 Porous Jump is a condition that causes a pressure change in a cyclic plane inside the computational domain. 
 
-[Porous Jump tutorial](https://baramcfd.org/tutorials/2023/09/05/porousJump-post/)
+[Porous Jump tutorial](https://baramcfd.org/flow_tutorial/porous.en/)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>Porous Jump setup</center>
 

@@ -22,7 +22,7 @@ In the case of multiphase flow, set one as primary and the other as secondary, a
 
 The cavitation model sets the vapor pressure, the model, and the model coefficients. Cavitation occurs when the pressure of the liquid is lower than the vapor pressure.
 
-[Cavitation tutorial : NACA66 hydrofoil](https://baramcfd.org/tutorials/2024/10/07/cavitation-post/)
+[Cavitation tutorial : NACA66 hydrofoil](https://baramcfd.org/flow_tutorial/multiphase.en/#cavitation-naca66-hydrofoil)
 
 #### Schnerr-Sauer
 
@@ -65,7 +65,7 @@ When simulating a rotating object, multiple reference frames are a way to comput
 * Rotating Axis Direction : **Set the rotation direction to be counterclockwise based on the right-hand rule**.
 * Static Boundary : **You must also select an interface face. If you don't know which of the two interface faces is in the cell zone, you can select both. Including faces that are not in the cell zone does not affect the calculation**.
 
-[MRF tutorial : fan](https://baramcfd.org/tutorials/2024/03/21/simpleFan-post/)
+[MRF tutorial : fan](https://baramcfd.org/flow_tutorial/rotate.en/#fanmrf)
 
 ### Sliding Mesh
 
@@ -73,7 +73,7 @@ A sliding mesh is a method of organizing cellzones around a moving (currently on
 
 The settings are rotation speed (RPM), rotation axis center coordinates, and rotation axis direction, with the rotation direction being the same as in a MRF.
 
-[Sliding Mesh tutorial : propeller](https://baramcfd.org/tutorials/2024/06/17/propeller-post/)
+[Sliding Mesh tutorial : propeller](https://baramcfd.org/flow_tutorial/rotate.en/#propeller)
 
 ### Porous Zone
 
@@ -81,7 +81,7 @@ When there is porous media or very complex geometry in a small area, it is a way
 
 OpenFOAM's porous media model suffers from a discontinuous velocity distribution in the porous region, and the pressure loss is slightly different from the input conditions. NextFOAM, which Baram uses, solves this problem by improving the interpolation of pressure in porous regions.([For more information on this, see the documentation at this link](https://nextfoam.co.kr/proc/DownloadProc.php?fName=231101140051_yvpJhMF0nY.pdf&realfName=10thOKUCC_OpenFOAM%EC%82%AC%EC%86%8C%ED%95%9C%EB%AC%B8%EC%A0%9C%EB%93%A4.pdf))
 
-[Porous Zone tutorial : duct flow](https://baramcfd.org/tutorials/2023/09/05/porousMedia-post/)
+[Porous Zone tutorial : duct flow](https://baramcfd.org/flow_tutorial/porous.en/#porous-cell-zone)
 
 #### Darcy-Forchheimer model
 
@@ -147,7 +147,7 @@ There are two ways to give the source term: a value to be applied to the entire 
 
 For transient problems, source terms can be given by piecewise linear and polynomial according to time.
 
-[Time dependent source tutorial : Fire in Room](https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/)
+[Time dependent source tutorial : Fire in Room](https://baramcfd.org/flow_tutorial/uds.en/#fire-in-room)
 
 ## Fixed Values
 

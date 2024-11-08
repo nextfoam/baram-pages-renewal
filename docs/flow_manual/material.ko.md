@@ -70,7 +70,7 @@ Sutherland를 사용하면 열전도도는 Chapman-Enskog approach로 계산하�
 
 Cross, Hershel-Bulkley, Bird-Carreau, Non-Newtonian-power-law 등은 비뉴턴유체(non-Newtonial fluid) 점성 모델로, **물질이 액체이고 난류 모델이 층류일 때만 사용할 수 있다**. 각 모델은 다음의 식을 사용한다.
 
-[비뉴턴유체 예제 : 비뉴턴유체 혈액 유동 - FDA Nozzle](https://baramcfd.org/tutorials/2024/08/29/blood-post)
+[비뉴턴유체 예제 : 비뉴턴유체 혈액 유동 - FDA Nozzle](https://baramcfd.org/flow_tutorial/nonNewtonian.ko/)
 
 #### Cross
 

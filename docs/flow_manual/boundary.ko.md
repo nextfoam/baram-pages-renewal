@@ -77,7 +77,7 @@ Velocity Inlet 조건은 유동의 입구에 속도, 난류, 온도, 화학종 �
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>시간에 따른 변화 조건 설정 - 다항식</center>
 
-[시간에 따라 변하는 경계조건 예제](https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/)
+[시간에 따라 변하는 경계조건 예제](https://baramcfd.org/flow_tutorial/transient.ko/#_6)
 
 #### 공간 분포(Spatial Distribution)
 
@@ -116,7 +116,7 @@ openfoam의 경계조건은 압력은 _totalPressure_, 속도는 _pressureInletO
 
 대기경계층 입구 조건은 유동의 입구에 대기경계층의 속도와 난류 분포를 주는 조건이다.
 
-[대기경계층 조건 예제](https://baramcfd.org/tutorials/2023/09/05/Atomospheric-post/)
+[대기경계층 조건 예제](https://baramcfd.org/flow_tutorial/ABL.ko/#_2)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ablInlet.png" width="300" height="300"><br>대기경계층 입구 설정</center>
 
@@ -193,7 +193,7 @@ openfoam의 경계조건은 압력은 _totalPressure_, 속도는 _pressureInletO
 
 압축성 유동의 원방경계에 사용하는 Riemann 경계조건이다.
 
-[압축성 리만 경계조건 예제 : RAE2822 에어포일](https://baramcfd.org/tutorials/2024/03/21/rae2822-post/)
+[압축성 리만 경계조건 예제 : RAE2822 에어포일](https://baramcfd.org/flow_tutorial/densityBased.ko/#rae2822)
 
 유동의 방향, 원방에서의 마하수(Mach Number), 압력(static pressure), 온도(static temperature)를 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.
 
@@ -255,13 +255,13 @@ openfoam의 경계조건은 압력은 _totalPressure_, 속도는 _pressureInletO
 
 속도와 압력에는 openfoam의 _waveTransmissive_ 경계조건을 사용하고 나머지 필드는 옵션이 없을 때와 동일하다. 
 
-[Non-Reflecting Boundary 예제 : 압축성 캐비티 유동](https://baramcfd.org/tutorials/2024/09/19/2d_cavity-post/)
+[Non-Reflecting Boundary 예제 : 압축성 캐비티 유동](https://baramcfd.org/flow_tutorial/subsonic.ko/#cavity)
 
 ## 개수로 출구(Open Channel Outlet)
 
 개수로 출구 조건은 자유수면을 계산할 때 출구에 일정한 평균 속도를 주고 그에 따라 수면의 높이가 변할 수 있는 조건이다.
 
-[개수로 출구 경계조건 예제 : 선박 저항 해석](https://baramcfd.org/tutorials/2023/09/05/KCS-post/)
+[개수로 출구 경계조건 예제 : 선박 저항 해석](https://baramcfd.org/flow_tutorial/multiphase.ko/#-kcskriso-container-ship)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/openChannelOutlet.png" width="300" height="300"><br>개수로 출구 설정</center>
 
@@ -410,7 +410,7 @@ OpenFOAM은 별도의 2차원 격자가 없으며, 3차원 격자의 높이 방�
 
 openfoam의 _cyclicAMI_ 조건을 사용한다.
 
-[회전주기조건 예제](https://baramcfd.org/tutorials/2024/06/28/mixer-post/)
+[회전주기조건 예제](https://baramcfd.org/flow_tutorial/rotate.ko/#mixermrf)
 
 ### Cyclic
 
@@ -420,7 +420,7 @@ openfoam의 _cyclicAMI_ 조건을 사용한다.
 
 다공성 압력 점프 조건은 계산영역 내부에 있는 cyclic 면에서 압력 변화를 주는 조건이다. 
 
-[다공성 압력 점프 예제](https://baramcfd.org/tutorials/2023/09/05/porousJump-post/)
+[다공성 압력 점프 예제](https://baramcfd.org/flow_tutorial/porous.ko/#porous-jump)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>다공성 압력 점프 설정</center>
 

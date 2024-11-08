@@ -70,7 +70,7 @@ With Sutherland, thermal conductivity is disabled because it is calculated with 
 
 Cross, Hershel-Bulkley, Bird-Carreau, Non-Newtonian-power-law, etc. are non-Newtonian fluid models, which **can only be used when the material is a liquid and the turbulence model is laminar**. Each model uses the following equations
 
-[Newtonian viscosity tutorial : blood flow of FDA Nozzle](https://baramcfd.org/tutorials/2024/08/29/blood-post)
+[Non-Newtonian viscosity tutorial : blood flow of FDA Nozzle](https://baramcfd.org/flow_tutorial/nonNewtonian.en/)
 
 #### Cross
 
@@ -139,7 +139,7 @@ Appears only in solids. Only used for radiative heat transfer calculations (curr
 
 ## Setting Properties for a Mixture
 
-When you click the Modify Property Values for Mixture button, the window of figure~\ref{fig:mixture-properties} appears.
+When you click the Modify Property Values for Mixture button, the window of figure appears.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mixture-properties.png" width="300" height="300"><br>Setting Properties for a Mixture</center>
 

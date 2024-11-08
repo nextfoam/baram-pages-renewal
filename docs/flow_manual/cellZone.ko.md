@@ -23,7 +23,7 @@
 
 캐비테이션 모델은 증기압, 모델, 모델계수를 설정한다. 액체의 압력이 증기압보다 낮을 때 캐비테이션이 발생한다.
 
-[캐비테이션 예제 : NACA66 하이드로포일](https://baramcfd.org/tutorials/2024/10/07/cavitation-post/)
+[캐비테이션 예제 : NACA66 하이드로포일](https://baramcfd.org/flow_tutorial/multiphase.ko/#-naca66)
 
 #### Schnerr-Sauer
 
@@ -66,7 +66,7 @@
 * 회전축 방향(Rotating Axis Direction) : \textcolor[rgb]{0.6,0,0}{오른손 법칙에 따라 회전 방향이 반시계 방향이 되도록 설정}
 * 셀존 안의 움직이지 않는 경계면(Static Boundary) : \textcolor[rgb]{0.6,0,0}{인터페이스 면도 선택해야 한다}. 2개의 인터페이스 면 중 어느 것이 해당 셀존에 있는 것인지 알기 어려울 때는 모두 선택하면 된다. 셀존에 있지 않는 면이 포함되더라도 계산에 영향을 미치지 않는다.
 
-[다중기준좌표계 예제 : fan](https://baramcfd.org/tutorials/2024/03/21/simpleFan-post/)
+[다중기준좌표계 예제 : fan](https://baramcfd.org/flow_tutorial/rotate.ko/#mrf)
 
 ### 미끄럼 격자(Sliding Mesh)
 
@@ -74,7 +74,7 @@
 
 설정 항목은 회전속도(RPM), 회전축 중심 좌표, 회전 방향이며 회전 방향은 다중기준좌표계에서와 같다.
 
-[미끄럼 격자 예제 : 프로펠러](https://baramcfd.org/tutorials/2024/06/17/propeller-post/)
+[미끄럼 격자 예제 : 프로펠러](https://baramcfd.org/flow_tutorial/rotate.ko/#_17)
 
 ### 다공성 매질(Porous Zone)
 
@@ -82,7 +82,7 @@
 
 OpenFOAM의 다공성 매질 모델은 다공성 영역에서 불연속적인 속도 분포가 나타나고 압력손실도 입력 조건과 조금 다른 결과를 보이는 문제가 있다. BaramFlow가 사용하는 NextFOAM에서는 다공성 영역에서 압력의 내삽(interpolation) 방법을 개선하여 이 문제를 해결하였다.([이에 대한 자세한 내용은 아래 링크의 문서를 참고](https://nextfoam.co.kr/proc/DownloadProc.php?fName=231101140051_yvpJhMF0nY.pdf&realfName=10thOKUCC_OpenFOAM%EC%82%AC%EC%86%8C%ED%95%9C%EB%AC%B8%EC%A0%9C%EB%93%A4.pdf))
 
-[다공성 매질 예제 : 덕트 유동](https://baramcfd.org/tutorials/2023/09/05/porousMedia-post/)
+[다공성 매질 예제 : 덕트 유동](https://baramcfd.org/flow_tutorial/porous.ko/#porous-cell-zone)
 
 #### Darcy-Forchheimer 모델
 
@@ -149,7 +149,7 @@ $C_0$와 $C_1$ 두 개의 값을 이용해서 다음 식으로 계산한다.
 
 비정상상태 문제일 때 생성항을 시간에 따라 변하는 값으로 줄 수 있는데, 조각별 선형함수(piecewise linear)와 다항식(polynomial) 방법이 제공된다.
 
-[시간에 따라 변하는 생성항 예제 : 실내 화재(Fire in Room)](https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/)
+[시간에 따라 변하는 생성항 예제 : 실내 화재(Fire in Room)](https://baramcfd.org/flow_tutorial/uds.ko/#_2)
 
 ## 고정값(Fixed Values)
 

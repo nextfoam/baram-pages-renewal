@@ -28,7 +28,7 @@
 
 '일괄계산모드로 전환'(Switch to Batch Running Mode) 버튼을 누르면 다음 그림과 같이 '일괄계산 케이스'(Batch Cases)라는 부분이 나타나고 버튼은 '단위계산모드로 전환'(Switch to Live Running Mode)로 바뀐다. 단위계산모드(Live Running Mode)는 일괄계산이 아닌 하나의 조건에 대해 계산하는 일반적인 방식이다.
 
-[사용자 정의 변수와 일괄계산모드 예제](https://baramcfd.org/tutorials/2024/03/21/batchRunRAE2822-post/)
+[사용자 정의 변수와 일괄계산모드 예제](https://baramcfd.org/flow_tutorial/batchRun.ko/#rae2822)
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/batchCases.png"><br>일괄계산</center>
 
