@@ -614,9 +614,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-baram-from-source-code" class="md-nav__link">
+  <a href="#installation-with-nextfoam-build" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing BARAM from source code
+      Installation with NextFOAM build
     </span>
   </a>
   
@@ -846,9 +846,8 @@ Download them from following links.</p>
 <li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
 <li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
 </ul>
-<h2 id="installing-baram-from-source-code">Installing BARAM from source code</h2>
-<h3 id="installation-with-nextfoam-build">Installation with NextFOAM build</h3>
-<h4 id="supported-platforms_1">Supported Platforms</h4>
+<h2 id="installation-with-nextfoam-build">Installation with NextFOAM build</h2>
+<h3 id="supported-platforms_1">Supported Platforms</h3>
 <!--* Windows 10 or newer
 * macOS 10.14 or newer (Apple Silicon only)-->
 <ul>
@@ -858,7 +857,7 @@ Download them from following links.</p>
 <!--* OpenSUSE Leap 15.4-->
 <!--* Linux Mint 21 "Vanessa"-->
 
-<h4 id="baram-requires-following-installed-software_1">BARAM requires following installed software:</h4>
+<h3 id="baram-requires-following-installed-software_1">BARAM requires following installed software:</h3>
 <ul>
 <li>Python <em>3.9.x</em></li>
 </ul>
@@ -867,7 +866,7 @@ Download them from following links.</p>
 <li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
 <li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
 </ul>
-<h4 id="install-baram-nextfoam-openmpi">Install BARAM, NextFOAM, OpenMPI</h4>
+<h3 id="install-baram-nextfoam-openmpi">Install BARAM, NextFOAM, OpenMPI</h3>
 <ul>
 <li>OpenMPI is installed in the <code>/opt/openmpi-4.1.6</code> with <code>--prefix</code> option at <code>configure</code> command</li>
 </ul>
@@ -1025,7 +1024,7 @@ You can check it with the command of <code>python3 -V</code>.</p>
 <h4 id="on-linux-or-macos">On Linux or macOS</h4>
 <div class="highlight"><pre><span></span><code>source ./venv/bin/activate
 </code></pre></div>
-<h4 id="upgrade-pip-version">Upgrade pip version</h4>
+<h3 id="upgrade-pip-version">Upgrade pip version</h3>
 <div class="highlight"><pre><span></span><code>pip install --upgrade pip
 </code></pre></div>
 <h3 id="install-python-packages">Install Python packages</h3>
@@ -1069,11 +1068,11 @@ The final directory structure may look like following.
 </code></pre></div>
 <h4 id="macos-apple-silicon-only">macOS (Apple Silicon only)</h4>
 <p>Not yet prepared due to the strict code signing policy from Apple</p>
-<h4 id="compile-daemonizer-only-for-linux-and-macos">Compile Daemonizer ( only for Linux and macOS )</h4>
+<h3 id="compile-daemonizer-only-for-linux-and-macos">Compile Daemonizer ( only for Linux and macOS )</h3>
 <p>"solvers" directory was created when the compressed file was uncompressed.
 <div class="highlight"><pre><span></span><code>gcc -o solvers/openfoam/bin/baramd misc/baramd.c
 </code></pre></div></p>
-<h4 id="compile-resource-files">Compile Resource Files</h4>
+<h3 id="compile-resource-files">Compile Resource Files</h3>
 <div class="highlight"><pre><span></span><code>python convertUi.py
 </code></pre></div>
 <h3 id="run-baramflow">Run BaramFlow</h3>
