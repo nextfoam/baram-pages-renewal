@@ -157,13 +157,13 @@ Exec=bash -c '/opt/baram/baramMesh.sh'
 Terminal=false
 Type=Application
 Categories=Science
-
+```
 
  - Create `baramFlow.desktop` under `/etc/skel/Desktop`
 
-sudo vi /etc/skel/Desktop/baramFlow.desktop
-```
 
+```
+sudo vi /etc/skel/Desktop/baramFlow.desktop
 ```
 [Desktop Entry]
 Encoding=UTF-8
