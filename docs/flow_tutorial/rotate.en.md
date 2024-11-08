@@ -629,7 +629,7 @@ The simulation conditions are as follows
 
 Run the program and select 'Open' from the launcher. 
 
-Select the folder created from [BaramMesh tutorial](https://baramcfd.org/mesh/2024/03/21/fanInRoomMesh-post/).
+Select the folder created from [BaramMesh tutorial](https://baramcfd.org/mesh_tutorial/fanInRoom.en/).
 
 Then select Pressure-based for 'Solver Type' and None for 'Multiphase Model'.
 

@@ -622,7 +622,7 @@ X-속도는 5, [속도 크기(Scale of Velocity)]는 5, 나머지는 디폴트 �
 
 ### 프로그램의 구동 및 격자
 
-BaramFlow 실행 후 [기존 계산 열기(Open)]을 선택하고 [격자 생성 튜토리얼](https://baramcfd.org/mesh/2024/03/21/fanInRoomMesh-post/)에서 만든 폴더를 선택한다(혹은 [새 계산(New Case)]를 선택하고 메뉴의 [파일(File)]-[격자불러오기(Load Mesh)]-[OpenFOAM]에서 [caseName]/case/constant 폴더를 선택한다).
+BaramFlow 실행 후 [기존 계산 열기(Open)]을 선택하고 [격자 생성 튜토리얼](https://baramcfd.org/mesh_tutorial/fanInRoom.ko/)에서 만든 폴더를 선택한다(혹은 [새 계산(New Case)]를 선택하고 메뉴의 [파일(File)]-[격자불러오기(Load Mesh)]-[OpenFOAM]에서 [caseName]/case/constant 폴더를 선택한다).
 
 시작 창에서 [솔버 유형(Solver Type)]은 [압력기반(Pressure-based)]를, [다상유동 모델(Multiphase Model)]은 [None]을 선택한다.
 

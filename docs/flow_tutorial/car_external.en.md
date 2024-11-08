@@ -42,7 +42,7 @@ Use the given polyMesh folder. In the top tab, click [File]-[Load Mesh]-[OpenFOA
 
 For this example, we'll use default conditions.
 
-### 모델(Models)
+### Models
 
 For this example, we'll use $Realizable$ $k-\epsilon$ model for turbulence.
 
