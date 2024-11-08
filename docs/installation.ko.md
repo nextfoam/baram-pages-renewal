@@ -13,7 +13,7 @@
 [**Download BARAM v24.4.0 Disk Image(.dmg) for macOS with Apple Silicon ›**](https://d3c6e16xufx1gb.cloudfront.net/BARAM-24.4.0.dmg){: .md-button .md-button--primary}
 <!---{: .btn .btn-blue .text-center .fs-5onclick="trackDownload('BARAM-24.4.0.dmg')"}-->
 
-## 지원되는 OS 
+### 지원되는 OS 
 * Windows 10 or newer
 * macOS 10.14 or newer (Apple Silicon only)
 * Ubuntu 20.04 or newer
