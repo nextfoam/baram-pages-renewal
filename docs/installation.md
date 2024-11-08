@@ -24,11 +24,9 @@ Download them from following links.
 * OpenMPI 4.1 or newer ( Linux, macOS )
 * GNU C Compiler or any other C Compiler ( Linux, macOS )
 
-## Installing BARAM from source code
+## Installation with NextFOAM build
 
-### Installation with NextFOAM build
-
-#### Supported Platforms
+### Supported Platforms
 <!--* Windows 10 or newer
 * macOS 10.14 or newer (Apple Silicon only)-->
 * Ubuntu 20.04 or newer
@@ -36,7 +34,7 @@ Download them from following links.
 <!--* OpenSUSE Leap 15.4-->
 <!--* Linux Mint 21 "Vanessa"-->
 
-#### BARAM requires following installed software:
+### BARAM requires following installed software:
 
 * Python *3.9.x*
 <!--* [MS-MPI](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) 10.0 or newer ( Windows Only )-->
@@ -44,7 +42,7 @@ Download them from following links.
 * GNU C Compiler or any other C Compiler ( Linux, macOS )
 
 
-#### Install BARAM, NextFOAM, OpenMPI
+### Install BARAM, NextFOAM, OpenMPI
 
 - OpenMPI is installed in the `/opt/openmpi-4.1.6` with `--prefix` option at `configure` command
 
@@ -234,7 +232,7 @@ Run following command in the top directory of downloaded source code
 source ./venv/bin/activate
 ```
 
-#### Upgrade pip version
+### Upgrade pip version
 ```commandline
 pip install --upgrade pip
 ```
@@ -298,13 +296,13 @@ curl -L https://d3c6e16xufx1gb.cloudfront.net/solvers_linux_24.4.0_20240923.tar.
 Not yet prepared due to the strict code signing policy from Apple
 
 
-#### Compile Daemonizer ( only for Linux and macOS )
+### Compile Daemonizer ( only for Linux and macOS )
 "solvers" directory was created when the compressed file was uncompressed.
 ```commandline
 gcc -o solvers/openfoam/bin/baramd misc/baramd.c
 ```
 
-#### Compile Resource Files
+### Compile Resource Files
 ```commandline
 python convertUi.py
 ```
