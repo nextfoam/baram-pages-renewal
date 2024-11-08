@@ -616,15 +616,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-with-python-virtual-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation with Python virtual environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#paraview" class="md-nav__link">
     <span class="md-ellipsis">
       Paraview
@@ -962,47 +953,50 @@ Exec=bash -c &#39;/opt/baram/baramMesh.sh&#39;
 Terminal=false
 Type=Application
 Categories=Science
-
-
- - Create `baramFlow.desktop` under `/etc/skel/Desktop`
-
-sudo vi /etc/skel/Desktop/baramFlow.desktop
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>[Desktop Entry]
+<ul>
+<li>Create <code>baramFlow.desktop</code> under <code>/etc/skel/Desktop</code></li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo vi /etc/skel/Desktop/baramFlow.desktop
+</code></pre></div>
+[Desktop Entry]
 Encoding=UTF-8
 Name=baramFlow
 Comment=baram Flow
 Icon=/opt/baram/baramFlow.png
-Exec=bash -c &#39;/opt/baram/baramFlow.sh&#39;
+Exec=bash -c '/opt/baram/baramFlow.sh'
 Terminal=false
 Type=Application
 Categories=Science
+<div class="highlight"><pre><span></span><code>Change permission of shortcuts
 </code></pre></div>
-<p>Change permission of shortcuts</p>
-<div class="highlight"><pre><span></span><code>sudo chmod +x /etc/skel/Desktop/*
-</code></pre></div>
-<p><strong>(NOTE)</strong> You should upload <code>baramMesh.png</code> and <code>baramFlow.png</code> to <code>/opt/baram</code> directory.</p>
-<h2 id="installation-with-python-virtual-environment">Installation with Python virtual environment</h2>
-<h3 id="supported-platforms_2">Supported Platforms</h3>
-<ul>
-<li>Windows 10 or newer</li>
-<li>macOS 10.14 or newer (Apple Silicon only)</li>
-<li>Ubuntu 20.04 or newer</li>
-<li>CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )</li>
-<li>OpenSUSE Leap 15.4</li>
-<li>Linux Mint 21 "Vanessa"</li>
-</ul>
-<h3 id="baram-requires-following-installed-software_2">BARAM requires following installed software:</h3>
-<ul>
-<li>Python <em>3.9.x</em></li>
-<li><a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi">MS-MPI</a> 10.0 or newer ( Windows Only )</li>
-<li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
-<li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
-</ul>
-<h3 id="clone-the-source-code">Clone the source code</h3>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/nextfoam/baram.git
+sudo chmod +x /etc/skel/Desktop/*
+<div class="highlight"><pre><span></span><code>**(NOTE)** You should upload `baramMesh.png` and `baramFlow.png` to `/opt/baram` directory.
+
+
+## Installation with Python virtual environment
+
+### Supported Platforms
+* Windows 10 or newer
+* macOS 10.14 or newer (Apple Silicon only)
+* Ubuntu 20.04 or newer
+* CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )
+* OpenSUSE Leap 15.4
+* Linux Mint 21 &quot;Vanessa&quot;
+
+### BARAM requires following installed software:
+
+* Python *3.9.x*
+* [MS-MPI](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) 10.0 or newer ( Windows Only )
+* OpenMPI 4.1 or newer ( Linux, macOS )
+* GNU C Compiler or any other C Compiler ( Linux, macOS )
+
+
+### Clone the source code
+```commandline
+git clone https://github.com/nextfoam/baram.git
 cd baram
-</code></pre></div>
+</code></pre></div></p>
 <h3 id="setup-python-virtual-environment">Setup Python virtual environment</h3>
 <p>Run following command in the top directory of downloaded source code.
 Please don't forget that Python <strong>3.9.x</strong> is required.
