@@ -1314,11 +1314,11 @@
 <p>OpenFOAM's standard solvers provide <em>simpleFoam</em>, which does not compute the energy equation, and <em>buoyantSimpleFoam</em>, which does. Instead of pressure, <em>simpleFoam</em> uses the pressure divided by density, while <em>buoyantSimpleFoam</em> uses the p_rgh, which is pressure minus hydrostatic pressure (<span class="arithmatex">\(\rho g h\)</span>). However, Baram uses one solver (<em>buoyantSimpleNFoam</em>) developed by NEXTFoam, which uses p_rgh for pressure and allows you to control whether each governing equation is calculated or not.</p>
 <h2 id="species">Species</h2>
 <p>Double-click the species to bring up the settings window of figure below. Select whether to include or not. In both cases, we use the same solver(<em>buoyantSimpleNFoam</em>) and control whether the equations are computed based on your choice.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/07/24/species-post/">Species tutorial : duct flow</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/species.en/">Species tutorial : duct flow</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/species.png" width="200" height="200"><br>Species setup</center></p>
 <h2 id="user-defined-scalars">User-defined Scalars</h2>
 <p>A user-defined scalar is a variable that can be arbitrarily defined by the user and is also called a passive scalar because its distribution is determined by the flow field, but it does not affect the flow.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/">User-defined Scalars tutorial : Fire in Room</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/uds.en/">User-defined Scalars tutorial : Fire in Room</a></p>
 <p>Double-click this to bring up the settings window of figure below. Click the (+) to the right of 'User-defined Scalar' to add a new scalar.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/uds0.png" width="300" height="300"><br>User-defined Scalar setup</center></p>
 <p>Each scalar can have a Field Name and a Diffusivity. There are two ways to set the diffusivity: Constant, Laminar and Turbulent Viscosity. </p>

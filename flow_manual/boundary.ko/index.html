@@ -1434,7 +1434,7 @@
 <p>입구 속도 조건에서 속도 분포(Profile Type)을 '시간에 따른 변화'로 선택하면 다음 그림의 창에서 조각별 선형 함수(Piecewise linear)를 사용하여 지정할 수 있다.</p>
 <p><center><span class="arithmatex">\(S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>시간에 따른 변화 조건 설정 - 다항식</center></p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/">시간에 따라 변하는 경계조건 예제</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/transient.ko/#_6">시간에 따라 변하는 경계조건 예제</a></p>
 <h4 id="spatial-distribution">공간 분포(Spatial Distribution)</h4>
 <p>입구 속도 조건에서 속도나 온도의 분포를 공간분포로 선택하면 csv 파일을 사용할 수 있다. 입구 속도 조건에서 속도 지정 방법이 경계면에 수직한 속도인 경우는 속도에 대해 적용할 수 없다.</p>
 <p>csv 파일은 'x좌표, y좌표, z좌표, 값'이 콤마(,)로 구분되어 있어야 한다. 입구 속도 조건에서 속도는 다음과 같은 형식이 된다(x, y, z, Ux, Uy, Uz). x, y, z 좌표는 경계면 격자점의 좌표와 일치할 필요는 없다. 데이터는 하나의 평면에 있어야 하며, 하나의 직선상에 있으면 안된다. 만일 2차원 문제와 같이 한쪽 방향으로만 분포를 갖더라도 최소한 1개 점은 직선 밖에 있어야 한다.</p>
@@ -1455,7 +1455,7 @@
 <p>openfoam의 경계조건은 압력은 <em>totalPressure</em>, 속도는 _pressureInletOutletVelocity_를 사용한다.</p>
 <h2 id="abl-inlet">대기경계층 입구(ABL Inlet)</h2>
 <p>대기경계층 입구 조건은 유동의 입구에 대기경계층의 속도와 난류 분포를 주는 조건이다.</p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/Atomospheric-post/">대기경계층 조건 예제</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/ABL.ko/#_2">대기경계층 조건 예제</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ablInlet.png" width="300" height="300"><br>대기경계층 입구 설정</center></p>
 <p>입력 항목은 다음과 같다.</p>
 <ul>
@@ -1515,7 +1515,7 @@
 </ul>
 <h2 id="far-field-riemann">압축성 리만(Far-field Riemann)</h2>
 <p>압축성 유동의 원방경계에 사용하는 Riemann 경계조건이다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/03/21/rae2822-post/">압축성 리만 경계조건 예제 : RAE2822 에어포일</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/densityBased.ko/#rae2822">압축성 리만 경계조건 예제 : RAE2822 에어포일</a></p>
 <p>유동의 방향, 원방에서의 마하수(Mach Number), 압력(static pressure), 온도(static temperature)를 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/riemann.png"><br>압축성 리만 설정</center></p>
 <p>유동의 방향을 결정하는 방법은 직접입력(Direct)과 '받음각과 옆미끄럼각'(AOA and AOS)' 두 가지가 있다. 직접입력일 때는 방향벡터를 입력한다. '받음각과 옆미끄럼각'일 때는 받음각과 옆미끄럼각이 0일 때의 항력 및 양력 방향과 받음각, 옆미끄럼각을 입력한다.</p>
@@ -1554,10 +1554,10 @@
 <h4 id="non-reflecting-boundary">Non-Reflecting Boundary 옵션</h4>
 <p>경계면에서 압력파가 반사되지 않는 조건으로, 에너지방정식을 계산하고 밀도는 완전기체, 정압비열은 상수인 경우에만 나타난다.</p>
 <p>속도와 압력에는 openfoam의 <em>waveTransmissive</em> 경계조건을 사용하고 나머지 필드는 옵션이 없을 때와 동일하다. </p>
-<p><a href="https://baramcfd.org/tutorials/2024/09/19/2d_cavity-post/">Non-Reflecting Boundary 예제 : 압축성 캐비티 유동</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/subsonic.ko/#cavity">Non-Reflecting Boundary 예제 : 압축성 캐비티 유동</a></p>
 <h2 id="open-channel-outlet">개수로 출구(Open Channel Outlet)</h2>
 <p>개수로 출구 조건은 자유수면을 계산할 때 출구에 일정한 평균 속도를 주고 그에 따라 수면의 높이가 변할 수 있는 조건이다.</p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/KCS-post/">개수로 출구 경계조건 예제 : 선박 저항 해석</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/multiphase.ko/#-kcskriso-container-ship">개수로 출구 경계조건 예제 : 선박 저항 해석</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/openChannelOutlet.png" width="300" height="300"><br>개수로 출구 설정</center></p>
 <p>평균 속도를 상수로 입력하고, 난류는 '입구 속도' 조건과 동일하게 준다.</p>
 <p>각 필드가 사용하는 openfoam의 경계조건은 다음과 같다.</p>
@@ -1657,12 +1657,12 @@
 <p>2개 경계면의 관계를 나타내는 조건이다. 계산 영역 내부의 두께가 없고 유동이 통과하는 경계면이나, cell zone 경계면에서 같은 위치에 2개의 경계면이 있을 때 사용한다. 쌍을 이루는 2개 경계면의 격자가 일치할 필요는 없다.</p>
 <p>내부 인터페이스(Internal Interface), 회전주기조건(Rotational Periodic), 병진주기조건(Translational Periodic)의 3가지가 있다.</p>
 <p>openfoam의 <em>cyclicAMI</em> 조건을 사용한다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/28/mixer-post/">회전주기조건 예제</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/rotate.ko/#mixermrf">회전주기조건 예제</a></p>
 <h3 id="cyclic">Cyclic</h3>
 <p>인터페이스와 비슷하지만 2개의 쌍을 이루는 격자가 완전히 일치해야 한다. </p>
 <h3 id="porous-jump">다공성 압력 점프(Porous Jump)</h3>
 <p>다공성 압력 점프 조건은 계산영역 내부에 있는 cyclic 면에서 압력 변화를 주는 조건이다. </p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/porousJump-post/">다공성 압력 점프 예제</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/porous.ko/#porous-jump">다공성 압력 점프 예제</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>다공성 압력 점프 설정</center></p>
 <p>입력항목은 다음과 같다.</p>
 <ul>

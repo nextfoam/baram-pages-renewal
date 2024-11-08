@@ -1102,13 +1102,13 @@
 <p>BaramMesh is mesh generation module of BARAM. It uses OpenFOAM's utilities <em>blockMesh</em> and <em>snappyHexMesh</em> to generate mesh. Geometry of STL files can be imported. Simple geomertry as hexahedron, sphere, and cylinder can be created in it. It can generate octree-style three-dimensional mesh including boundary layer and can create regions, cell zones, interfaces, and baffles.</p>
 <p>OpenFOAM's <em>snappyHexMesh</em> utility create mesh with the following steps</p>
 <p>1) Create a structured type background mesh that covers the entire domain with <em>blockMesh</em> utility.</p>
-<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_blockMesh.png" width="400" height="400"><br>배경 격자</center></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_blockMesh.png" width="400" height="400"><br>Base Grid</center></p>
 <p>2) Refine mesh where you need and remove mesh of outside domain. This process is called castellation.</p>
-<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_castellate.png" width="400" height="400"><br>격자세분화</center></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_castellate.png" width="400" height="400"><br>Castellation</center></p>
 <p>3) Move mesh points onto the surface to achieve the correct geometry. This process is called snap.</p>
-<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_snap.png" width="400" height="400"><br>형상구현</center></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_snap.png" width="400" height="400"><br>Snap</center></p>
 <p>4) Add boundary layer mesh from surfaces.</p>
-<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layer.png" width="400" height="400"><br>경계층 격자</center></p>
+<p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layer.png" width="400" height="400"><br>Boundary Layer</center></p>
 <p>After the first step, a mesh is created in the constant/polyMesh folder, and folders 1, 2, and 3 are created after every 2, 3, and 4 steps.</p>
 <p>BaramMesh breaks down the above process into seven steps, including</p>
 <ol>

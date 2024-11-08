@@ -1434,7 +1434,7 @@
 <p>If the temperature distribution under the Velocity Inlet condition is selected as 'Temporal Distribution', it can be specified as a piecewise linear function and a polynomial. The polynomial specifies the coefficients <span class="arithmatex">\(a_n\)</span> of the expression in the window of figure below.</p>
 <p><center><span class="arithmatex">\(S = a_0 \cdot t^0 + a_1 \cdot t^1 + a_2 \cdot t^2 + ... + a_n \cdot t^n\)</span></center></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/polynomial.png" width="300" height="300"><br>Temporal Distribution - polynomial</center></p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/ProfileBC-post/">Time dependent boundary condition tutorial</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/transient.en/#time-dependen-boundayr-condition">Time dependent boundary condition tutorial</a></p>
 <h4 id="spatial-distribution">Spatial Distribution</h4>
 <p>In the Velocity Inlet condition, you can select a CSV file when you select the distribution of velocity or temperature as a spatial distribution. If Velocity specification method is 'Magnitude, Normal to Boundary', 'Spatial Distribution' is not applicable for velocity.</p>
 <p>The csv file should contain the values of (x, y, z, value) separated by comma(,). In the Velocity Inlet condition, the velocity would be in the following format: (x, y, z, Ux, Uy, Uz). The data must be in a single plane and not on a single straight line. If you have a distribution in only one direction, such as in a two-dimensional problem, at least one point must be outside the straight line. </p>
@@ -1455,7 +1455,7 @@
 <p>The boundary conditions for openfoam use <em>totalPressure</em> for the pressure and <em>pressureInletOutletVelocity</em> for the velocity.</p>
 <h2 id="abl-inlet">ABL Inlet</h2>
 <p>ABL Inlet is the condition that gives the velocity and turbulence distribution of the atmospheric boundary layer at the inlet of the flow.</p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/Atomospheric-post/">Atmospheric Boundary Layer tutorial</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/ABL.en/#validation-of-boundary-conditions">Atmospheric Boundary Layer tutorial</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ablInlet.png" width="300" height="300"><br>ABL Inlet setup</center></p>
 <p>The inputs are as follows</p>
 <ul>
@@ -1515,7 +1515,7 @@
 </ul>
 <h2 id="far-field-riemann">Far-field Riemann</h2>
 <p>Riemann boundary condition used for farfield of compressible flow.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/03/21/rae2822-post/">Far-field Riemann tutorial : RAE2822 airfoil</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/densityBased.en/#rae2822-transonic-airfoil">Far-field Riemann tutorial : RAE2822 airfoil</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/riemann.png"><br>Farfield Riemann setup</center></p>
 <p>Enter the direction vector of the flow, Mach number, static pressure and static temperature. </p>
 <p>There are two ways to determine the direction of the flow: Direct and “AOA and AOS". For Direct, enter the direction vector. For “AOA and AOS", enter the direction of drag and lift when the AOA and AOS are zero, as well as the value of AOA and AOS.</p>
@@ -1553,10 +1553,10 @@
 <h4 id="non-reflecting-boundary-option">Non-Reflecting Boundary option</h4>
 <p>This is a condition where pressure waves are not reflected at the boundary. It can be used when energy equation is On, the density is a perfect gas and the specific heat capacity is constant. </p>
 <p>We use openfoam's <em>waveTransmissive</em> boundary condition for velocity and pressure, and the rest of the fields are the same as without the option. </p>
-<p><a href="https://baramcfd.org/tutorials/2024/09/19/2d_cavity-post/">Non-Reflecting Boundary tutorial : subsonic cavity flow</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/subsonic.en/#subsonic-cavity-flow">Non-Reflecting Boundary tutorial : subsonic cavity flow</a></p>
 <h2 id="open-channel-outlet">Open Channel Outlet</h2>
 <p>Open Channel Outlet is a condition that gives the outlet a constant average velocity when calculating the free surface and allows the height of the water surface to vary accordingly.</p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/KCS-post/">Open Channel Outlet tutorial : ship resistance</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/multiphase.en/#ship-resistance-kcskriso-container-ship">Open Channel Outlet tutorial : ship resistance</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/openChannelOutlet.png" width="300" height="300"><br>Open Channel Outlet setup</center></p>
 <p>Enter the average velocity as a constant.</p>
 <p>The openfoam boundary conditions used by each field are as follows</p>
@@ -1659,12 +1659,12 @@
 <p>A condition that describes the relationship between two boundary surfaces. It is used when there are two boundary surfaces at the same location. It is used on boundary surfaces that have no thickness inside the computational domain and through which flow passes, or on cell zone boundaries. The mesh of the two paired boundary surfaces do not need to match.</p>
 <p>There are three types of interfaces: Internal Interface, Rotational Periodic, and Translational Periodic.</p>
 <p>Use openfoam's <em>cyclicAMI</em> condition.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/28/mixer-post/">Rotational Periodic tutorial</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/rotate.en/#mixermrf">Rotational Periodic tutorial</a></p>
 <h3 id="cyclic">Cyclic</h3>
 <p>interface, but the two paired mesh must match completely.</p>
 <h3 id="porous-jump">Porous Jump</h3>
 <p>Porous Jump is a condition that causes a pressure change in a cyclic plane inside the computational domain. </p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/porousJump-post/">Porous Jump tutorial</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/porous.en/">Porous Jump tutorial</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/porousJump.png" width="300" height="300"><br>Porous Jump setup</center></p>
 <p>The inputs are as follows</p>
 <ul>

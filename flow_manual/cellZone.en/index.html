@@ -1262,7 +1262,7 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/regionVOF.png"><br>Select fluid in multiphase</center></p>
 <h3 id="cavitation-models">Cavitation Models</h3>
 <p>The cavitation model sets the vapor pressure, the model, and the model coefficients. Cavitation occurs when the pressure of the liquid is lower than the vapor pressure.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/10/07/cavitation-post/">Cavitation tutorial : NACA66 hydrofoil</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/multiphase.en/#cavitation-naca66-hydrofoil">Cavitation tutorial : NACA66 hydrofoil</a></p>
 <h4 id="schnerr-sauer">Schnerr-Sauer</h4>
 <p>This is the model presented in the following paper. Enter the Evaporation Coefficient (<span class="arithmatex">\(C_v\)</span>), Condensation Coefficient (<span class="arithmatex">\(C_c\)</span>), and the diameter (dNuc) and number density (n) of the bubble.</p>
 <p><em>Schnerr, G. H., And Sauer, J., "Physical and Numerical Modeling of Unsteady Cavitation Dynamics", Proc. 4<sup>th</sup> International Conference on Multiphase Flow,         New Orleans, U.S.A., 2001.</em></p>
@@ -1288,15 +1288,15 @@
 <li>Rotating Axis Direction : <strong>Set the rotation direction to be counterclockwise based on the right-hand rule</strong>.</li>
 <li>Static Boundary : <strong>You must also select an interface face. If you don't know which of the two interface faces is in the cell zone, you can select both. Including faces that are not in the cell zone does not affect the calculation</strong>.</li>
 </ul>
-<p><a href="https://baramcfd.org/tutorials/2024/03/21/simpleFan-post/">MRF tutorial : fan</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/rotate.en/#fanmrf">MRF tutorial : fan</a></p>
 <h3 id="sliding-mesh">Sliding Mesh</h3>
 <p>A sliding mesh is a method of organizing cellzones around a moving (currently only rotationally supported in the current version, translationally supported in the future) object and moving the mesh around it, where each boundary between a moving cellzone and a stationary cellzone must be configured as an interface. <strong>Moving boundaries inside a cellzone should use a moving wall boundary condition</strong>.</p>
 <p>The settings are rotation speed (RPM), rotation axis center coordinates, and rotation axis direction, with the rotation direction being the same as in a MRF.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/17/propeller-post/">Sliding Mesh tutorial : propeller</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/rotate.en/#propeller">Sliding Mesh tutorial : propeller</a></p>
 <h3 id="porous-zone">Porous Zone</h3>
 <p>When there is porous media or very complex geometry in a small area, it is a way to model the pressure loss as a function of velocity without directly implementing the geometry. The pressure loss can be modeled using the Darcy-Forchheimer model and the power law model.</p>
 <p>OpenFOAM's porous media model suffers from a discontinuous velocity distribution in the porous region, and the pressure loss is slightly different from the input conditions. NextFOAM, which Baram uses, solves this problem by improving the interpolation of pressure in porous regions.(<a href="https://nextfoam.co.kr/proc/DownloadProc.php?fName=231101140051_yvpJhMF0nY.pdf&amp;realfName=10thOKUCC_OpenFOAM%EC%82%AC%EC%86%8C%ED%95%9C%EB%AC%B8%EC%A0%9C%EB%93%A4.pdf">For more information on this, see the documentation at this link</a>)</p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/porousMedia-post/">Porous Zone tutorial : duct flow</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/porous.en/#porous-cell-zone">Porous Zone tutorial : duct flow</a></p>
 <h4 id="darcy-forchheimer-model">Darcy-Forchheimer model</h4>
 <p>You can set the pressure loss for each of the three directions. The direction is determined by two vectors. The two vectors are determined by the inputs(Direction-1 Vector, Direction-2 Vector) and the third direction is the direction perpendicular to the two vectors.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/darcy.png" width="300" height="300"><br>Darcy-Forchheimer model setup</center></p>
@@ -1340,7 +1340,7 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/source.png" width="300" height="300"><br>Source term setup</center></p>
 <p>There are two ways to give the source term: a value to be applied to the entire cell zone or a value to be applied per unit volume.</p>
 <p>For transient problems, source terms can be given by piecewise linear and polynomial according to time.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/">Time dependent source tutorial : Fire in Room</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/uds.en/#fire-in-room">Time dependent source tutorial : Fire in Room</a></p>
 <h2 id="fixed-values">Fixed Values</h2>
 <p>You can fix the mean value of the velocity vector, temperature, and turbulence field in the cellzone. For velocity, a relaxation factor is used because it can cause instability in the calculation.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/fixedValue.png" width="300" height="300"><br>Fixed values setup</center></p>

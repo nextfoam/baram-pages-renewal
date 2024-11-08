@@ -1263,7 +1263,7 @@
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/regionVOF.png"><br>다상유동에서 유체 선택</center></p>
 <h3 id="_1">캐비테이션 모델</h3>
 <p>캐비테이션 모델은 증기압, 모델, 모델계수를 설정한다. 액체의 압력이 증기압보다 낮을 때 캐비테이션이 발생한다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/10/07/cavitation-post/">캐비테이션 예제 : NACA66 하이드로포일</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/multiphase.ko/#-naca66">캐비테이션 예제 : NACA66 하이드로포일</a></p>
 <h4 id="schnerr-sauer">Schnerr-Sauer</h4>
 <p>다음 논문에 제시된 모델이다. 증발계수(Evaporation Coefficient, <span class="arithmatex">\(C_v\)</span>), 응축계수(Condensation Coefficient, <span class="arithmatex">\(C_c\)</span>), 기포 직경(Bubble Diameter, dNuc), 기포의 수밀도(Number Density, n)를 입력한다.</p>
 <p><em>Schnerr, G. H., And Sauer, J., "Physical and Numerical Modeling of Unsteady Cavitation Dynamics", Proc. 4<sup>th</sup> International Conference on Multiphase Flow,         New Orleans, U.S.A., 2001.</em></p>
@@ -1289,15 +1289,15 @@
 <li>회전축 방향(Rotating Axis Direction) : \textcolor[rgb]{0.6,0,0}{오른손 법칙에 따라 회전 방향이 반시계 방향이 되도록 설정}</li>
 <li>셀존 안의 움직이지 않는 경계면(Static Boundary) : \textcolor[rgb]{0.6,0,0}{인터페이스 면도 선택해야 한다}. 2개의 인터페이스 면 중 어느 것이 해당 셀존에 있는 것인지 알기 어려울 때는 모두 선택하면 된다. 셀존에 있지 않는 면이 포함되더라도 계산에 영향을 미치지 않는다.</li>
 </ul>
-<p><a href="https://baramcfd.org/tutorials/2024/03/21/simpleFan-post/">다중기준좌표계 예제 : fan</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/rotate.ko/#mrf">다중기준좌표계 예제 : fan</a></p>
 <h3 id="sliding-mesh">미끄럼 격자(Sliding Mesh)</h3>
 <p>미끄럼 격자는 운동하는(현재 버전에서는 회전 운동만 지원, 병진 운동은 추후 지원 예정) 물체 주위를 셀존으로 구성하고 격자를 움직이는 방법이다. 운동하는 셀존과 정지한 셀존의 각 경계면은 인터페이스로 구성해야 한다. <strong>셀존 내부에 있는 움직이는 경계면은 움직이는 벽(moving wall) 경계조건을 사용해햐 한다</strong>.</p>
 <p>설정 항목은 회전속도(RPM), 회전축 중심 좌표, 회전 방향이며 회전 방향은 다중기준좌표계에서와 같다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/17/propeller-post/">미끄럼 격자 예제 : 프로펠러</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/rotate.ko/#_17">미끄럼 격자 예제 : 프로펠러</a></p>
 <h3 id="porous-zone">다공성 매질(Porous Zone)</h3>
 <p>다공성 물질이나 작은 영역에 매우 복잡한 형상이 있을 때, 형상을 직접 구현하지 않고 유속에 따른 압력 손실로 모델링하는 방법이다. 압력 손실의 모델링 방법으로 Darcy-Forchheimer 모델과 Power law 모델을 사용할 수 있다.</p>
 <p>OpenFOAM의 다공성 매질 모델은 다공성 영역에서 불연속적인 속도 분포가 나타나고 압력손실도 입력 조건과 조금 다른 결과를 보이는 문제가 있다. BaramFlow가 사용하는 NextFOAM에서는 다공성 영역에서 압력의 내삽(interpolation) 방법을 개선하여 이 문제를 해결하였다.(<a href="https://nextfoam.co.kr/proc/DownloadProc.php?fName=231101140051_yvpJhMF0nY.pdf&amp;realfName=10thOKUCC_OpenFOAM%EC%82%AC%EC%86%8C%ED%95%9C%EB%AC%B8%EC%A0%9C%EB%93%A4.pdf">이에 대한 자세한 내용은 아래 링크의 문서를 참고</a>)</p>
-<p><a href="https://baramcfd.org/tutorials/2023/09/05/porousMedia-post/">다공성 매질 예제 : 덕트 유동</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/porous.ko/#porous-cell-zone">다공성 매질 예제 : 덕트 유동</a></p>
 <h4 id="darcy-forchheimer">Darcy-Forchheimer 모델</h4>
 <p>3가지 방향에 대한 압력 손실을 각각 설정할 수 있다. 방향은 두 개의 벡터에 의해 결정된다. 두 벡터는 입력값(Direction-1 Vector, Direction-2 Vector)에 의해 결정되고 세번째 방향은 두 벡터에 수직한 방향이다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/darcy.png" width="300" height="300"><br>Darcy-Forchheimer 모델 설정</center></p>
@@ -1341,7 +1341,7 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/source.png" width="300" height="300"><br>생성항 설정</center></p>
 <p>생성항의 크기를 주는 방법은 '전체 체적에 대한 값'(Value for Entire Cell Zone)과 '단위 체적당 값'(Value per Unit Volume)을 주는 두 가지가 있다.</p>
 <p>비정상상태 문제일 때 생성항을 시간에 따라 변하는 값으로 줄 수 있는데, 조각별 선형함수(piecewise linear)와 다항식(polynomial) 방법이 제공된다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/">시간에 따라 변하는 생성항 예제 : 실내 화재(Fire in Room)</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/uds.ko/#_2">시간에 따라 변하는 생성항 예제 : 실내 화재(Fire in Room)</a></p>
 <h2 id="fixed-values">고정값(Fixed Values)</h2>
 <p>셀존의 속도 벡터, 온도, 난류 등의 평균값을 고정할 수 있다. 속도의 경우 계산의 불안정성이 발생할 수 있어 완화계수(relaxation factor)를 사용한다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/fixedValue.png" width="300" height="300"><br>고정값 설정</center></p>

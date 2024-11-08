@@ -1315,11 +1315,11 @@ k-omega 모델은 현재 Menter의 SST(Shear Stress Transport) 모델만 지원�
 <p>OpenFOAM의 표준솔버(standard solver)는 에너지방정식을 계산하지 않는 <em>simpleFoam</em> 과 계산하는 <em>buoyantSimpleFoam</em> 을 제공한다. <em>simpleFoam</em> 은 압력 대신 압력을 밀도로 나눈 변수를 사용하고, <em>buoyantSimpleFoam</em> 은 압력에서 정수압(<span class="arithmatex">\(\rho g h\)</span>)을 뺀 <span class="arithmatex">\(p\_rgh\)</span> 변수를 사용한다. 그래서 각 솔버에서 계산한 압력 값이 밀도 만큼 다르다. BaramFlow의 압력기반 단상유동 솔버에서는 에너지방정식 계산 여부와 관계없이 넥스트폼이 개발한 하나의 솔버(<em>buoyantSimpleNFoam</em>)을 사용하는데, 이 솔버는 압력계산에 <span class="arithmatex">\(p\_rgh\)</span>를 사용하고 각 지배방정식의 계산여부를 제어할 수 있다.</p>
 <h2 id="species">화학종 혼합(Species)</h2>
 <p>화학종 혼합을 더블 클릭하면 아래 그림의 설정창이 나타난다. 화학종방정식을 계산할 것인지 아닌지를 선택한다. 두 경우 모두 같은 솔버(<em>buoyantSimpleNFoam</em>)을 사용하고 선택에 따라 방정식 계산 여부를 제어한다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/07/24/species-post/">화학종 혼합 예제 : 덕트 유동</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/species.ko/">화학종 혼합 예제 : 덕트 유동</a></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/species.png" width="200" height="200"><br>화학종 혼합 설정</center></p>
 <h2 id="user-defined-scalars">사용자 정의 스칼라(User-defined Scalars)</h2>
 <p>사용자 정의 스칼라는 사용자가 임의로 정의하고 수송방정식을 계산하는 변수로, 유동장에 의해 분포가 결정되지만 이것이 유동에 영향을 미치지는 않기 때문에 passive scalar라고도 불린다.</p>
-<p><a href="https://baramcfd.org/tutorials/2024/06/16/fireInRoom-post/">사용자 정의 스칼라 예제 : 실내 화재(Fire in Room)</a></p>
+<p><a href="https://baramcfd.org/flow_tutorial/uds.ko/">사용자 정의 스칼라 예제 : 실내 화재(Fire in Room)</a></p>
 <p>이것을 선택하고 편집(Edit) 버튼을 누르면 아래 그림의 창이 나타난다. 창 위쪽의 (+) 아이콘을 누르면 새로운 스칼라를 추가할 수 있다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/uds0.png" width="300" height="300"><br>사용자 정의 스칼라 설정</center></p>
 <p>각 스칼라는 스칼라이름(Field Name)과 확산계수(Diffusivity)를 설정할 수 있다. 확산계수 설정 방법은 상수(Constant)와 '층류와 난류 점도'(Laminar and Turbulent Viscosity) 두 가지가 제공된다.</p>
