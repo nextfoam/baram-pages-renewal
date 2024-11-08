@@ -229,7 +229,7 @@ markdown_extensions:
 extra:
   analytics:
     provider: google
-    property: G-W2YHTXL0SF
+    property: G-7XR6MJZF8R
   arithmatex:
     generic: true
   alternate:
