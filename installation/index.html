@@ -623,6 +623,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation-with-python-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with Python virtual environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#paraview" class="md-nav__link">
     <span class="md-ellipsis">
       Paraview
@@ -838,8 +847,246 @@ Download them from following links.</p>
 <li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
 </ul>
 <h2 id="installing-baram-from-source-code">Installing BARAM from source code</h2>
-<p><a href="https://baramcfd.org/installation/2024/04/15/installationSourceCode-post/"><strong>Installation with NextFOAM build ›</strong></a></p>
-<p><a href="https://baramcfd.org/installation/2024/04/15/installationPythonEnv-post/"><strong>Installation with Python Virtual Environment ›</strong></a></p>
+<h3 id="installation-with-nextfoam-build">Installation with NextFOAM build</h3>
+<h4 id="supported-platforms_1">Supported Platforms</h4>
+<!--* Windows 10 or newer
+* macOS 10.14 or newer (Apple Silicon only)-->
+<ul>
+<li>Ubuntu 20.04 or newer</li>
+</ul>
+<!--* CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )-->
+<!--* OpenSUSE Leap 15.4-->
+<!--* Linux Mint 21 "Vanessa"-->
+
+<h4 id="baram-requires-following-installed-software_1">BARAM requires following installed software:</h4>
+<ul>
+<li>Python <em>3.9.x</em></li>
+</ul>
+<!--* [MS-MPI](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) 10.0 or newer ( Windows Only )-->
+<ul>
+<li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
+<li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
+</ul>
+<h4 id="install-baram-nextfoam-openmpi">Install BARAM, NextFOAM, OpenMPI</h4>
+<ul>
+<li>OpenMPI is installed in the <code>/opt/openmpi-4.1.6</code> with <code>--prefix</code> option at <code>configure</code> command</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo apt-get -y update 
+sudo apt-get -y install build-essential flex zlib1g-dev libgmp-dev libmpfr-dev
+wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.gz 
+tar zxf openmpi-4.1.6.tar.gz 
+rm openmpi-4.1.6.tar.gz 
+cd openmpi-4.1.6 
+./configure --prefix=/opt/openmpi-4.1.6 
+make -j 4 all 
+sudo make install 
+echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; | sudo tee -a /etc/bash.bashrc
+</code></pre></div>
+<ul>
+<li>Install BARAM at <code>/opt/baram</code> with required packages. <strong>pip3</strong> should be used instead of default <code>pip</code> command</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo apt install -y  qtbase5-dev
+sudo apt-get install -y &#39;^libxcb.*-dev&#39; libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev texinfo
+pip3 install --upgrade pip
+cd /opt
+sudo git clone https://github.com/nextfoam/baram.git
+cd baram
+sudo pip3 install --ignore-installed -r requirements.txt
+sudo pip3 install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.dev0-cp38-abi3-linux_x86_64.whl
+</code></pre></div>
+<ul>
+<li>
+<p>Build latest <code>NextFOAM-CFD</code> solver according to the instruction at <a href="https://github.com/nextfoam/nextfoam-cfd"><em>https://github.com/nextfoam/nextfoam-cfd</em></a></p>
+</li>
+<li>
+<p>Copy compiled <code>NextFOAM-cfd</code> solvers and <code>Third-Party</code> libraries to <code>/opt/baram/solvers/openfoam</code></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>export BARAM_DIR=&quot;/opt/baram&quot;
+
+sudo mkdir -p $BARAM_DIR/solvers/openfoam
+sudo cp -a $WM_PROJECT_DIR/platforms/linux64GccDPInt32Opt/bin $BARAM_DIR/solvers/openfoam/
+sudo cp -a $WM_PROJECT_DIR/platforms/linux64GccDPInt32Opt/lib $BARAM_DIR/solvers/openfoam/
+sudo cp -a $WM_PROJECT_DIR/etc $BARAM_DIR/solvers/openfoam/
+
+sudo mkdir -p $BARAM_DIR/solvers/openfoam/tlib
+
+sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64GccDPInt32/lib/* $BARAM_DIR/solvers/openfoam/tlib/
+sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64GccDPInt32/lib/libscotch* $BARAM_DIR/solvers/openfoam/tlib/
+sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64GccDPInt32/lib/sys-openmpi/libptscotch* $BARAM_DIR/solvers/openfoam/tlib/
+sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/fftw-3.3.10/lib/libfftw3* $BARAM_DIR/solvers/openfoam/tlib/
+sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/kahip-3.15/lib/libkahip_static.a $BARAM_DIR/solvers/openfoam/tlib/
+</code></pre></div>
+<ul>
+<li>
+<p>Compile Demonizer and resource
+<div class="highlight"><pre><span></span><code>cd /opt/baram
+sudo gcc -o solvers/openfoam/bin/baramd misc/baramd.c
+sudo python3 convertUi.py
+</code></pre></div></p>
+</li>
+<li>
+<p>Edit <code>baramMesh.sh</code></p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>sudo vi /opt/baram/baramMesh.sh
+</code></pre></div>
+Comment out <code>source</code> and change <code>python</code> to <code>python3</code></p>
+<div class="highlight"><pre><span></span><code>#source venv/bin/activate
+python3 -m baramMesh.main
+</code></pre></div>
+<ul>
+<li>Edit <code>baramFlow.sh</code>
+<div class="highlight"><pre><span></span><code>sudo vi /opt/baram/baramFlow.sh
+</code></pre></div></li>
+</ul>
+<p>Comment out <code>source</code> and change <code>python</code> to <code>python3</code></p>
+<div class="highlight"><pre><span></span><code>#source venv/bin/activate
+python3 -m baramFlow.main
+</code></pre></div>
+<h3 id="install-paraview">Install <code>paraview</code></h3>
+<ul>
+<li>Install paraview using <code>apt-get</code> command. You can install <code>paraview</code> from the <a href="https://www.paraview.org/download/">paraview official download</a> page.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo apt-get install paraview
+</code></pre></div>
+<h3 id="create-desktop-shortcuts">Create desktop shortcuts</h3>
+<ul>
+<li>Create <code>Desktop</code> directory under <code>/etc/skel</code> for all users</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo mkdir -p /etc/skel/Desktop
+</code></pre></div>
+<ul>
+<li>Create <code>baramMesh.desktop</code> under <code>/etc/skel/Desktop</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo vi /etc/skel/Desktop/baramMesh.desktop
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Encoding=UTF-8
+Name=baramMesh
+Comment=baram Mesh
+Icon=/opt/baram/baramMesh.png
+Exec=bash -c &#39;/opt/baram/baramMesh.sh&#39;
+Terminal=false
+Type=Application
+Categories=Science
+
+
+ - Create `baramFlow.desktop` under `/etc/skel/Desktop`
+
+sudo vi /etc/skel/Desktop/baramFlow.desktop
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
+Encoding=UTF-8
+Name=baramFlow
+Comment=baram Flow
+Icon=/opt/baram/baramFlow.png
+Exec=bash -c &#39;/opt/baram/baramFlow.sh&#39;
+Terminal=false
+Type=Application
+Categories=Science
+</code></pre></div>
+<p>Change permission of shortcuts</p>
+<div class="highlight"><pre><span></span><code>sudo chmod +x /etc/skel/Desktop/*
+</code></pre></div>
+<p><strong>(NOTE)</strong> You should upload <code>baramMesh.png</code> and <code>baramFlow.png</code> to <code>/opt/baram</code> directory.</p>
+<h2 id="installation-with-python-virtual-environment">Installation with Python virtual environment</h2>
+<h3 id="supported-platforms_2">Supported Platforms</h3>
+<ul>
+<li>Windows 10 or newer</li>
+<li>macOS 10.14 or newer (Apple Silicon only)</li>
+<li>Ubuntu 20.04 or newer</li>
+<li>CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )</li>
+<li>OpenSUSE Leap 15.4</li>
+<li>Linux Mint 21 "Vanessa"</li>
+</ul>
+<h3 id="baram-requires-following-installed-software_2">BARAM requires following installed software:</h3>
+<ul>
+<li>Python <em>3.9.x</em></li>
+<li><a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi">MS-MPI</a> 10.0 or newer ( Windows Only )</li>
+<li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
+<li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
+</ul>
+<h3 id="clone-the-source-code">Clone the source code</h3>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/nextfoam/baram.git
+cd baram
+</code></pre></div>
+<h3 id="setup-python-virtual-environment">Setup Python virtual environment</h3>
+<p>Run following command in the top directory of downloaded source code.
+Please don't forget that Python <strong>3.9.x</strong> is required.
+You can check it with the command of <code>python3 -V</code>.</p>
+<div class="highlight"><pre><span></span><code>python3.9 -m venv venv
+</code></pre></div>
+<h3 id="enter-into-virtual-environment">Enter into virtual environment</h3>
+<p>Run following command in the top directory of downloaded source code</p>
+<h4 id="on-windows">On Windows</h4>
+<div class="highlight"><pre><span></span><code>.\venv\Scripts\activate.bat
+</code></pre></div>
+<h4 id="on-linux-or-macos">On Linux or macOS</h4>
+<div class="highlight"><pre><span></span><code>source ./venv/bin/activate
+</code></pre></div>
+<h4 id="upgrade-pip-version">Upgrade pip version</h4>
+<div class="highlight"><pre><span></span><code>pip install --upgrade pip
+</code></pre></div>
+<h3 id="install-python-packages">Install Python packages</h3>
+<p>Run following command in the top directory of downloaded source code
+<div class="highlight"><pre><span></span><code>pip install -r requirements.txt
+</code></pre></div></p>
+<h3 id="install-qt-advanced-docking-system-package">Install QT Advanced Docking System package</h3>
+<p>Run following command in the top directory of downloaded source code</p>
+<h4 id="on-windows_1">On Windows</h4>
+<div class="highlight"><pre><span></span><code>pip install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.dev0-cp38-abi3-win_amd64.whl
+</code></pre></div>
+<h4 id="on-linux">On Linux</h4>
+<div class="highlight"><pre><span></span><code>pip install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.dev0-cp38-abi3-linux_x86_64.whl
+</code></pre></div>
+<h3 id="copy-solver-executables">Copy Solver Executables</h3>
+<p>Download and uncompress solver executables into the top directory of downloaded source code.
+The compressed files have <em><strong>solvers</strong></em> folder in it.
+Put <em><strong>solvers</strong></em> folder into the top directory.
+The final directory structure may look like following.
+<div class="highlight"><pre><span></span><code>($BARAM)
+|
++-- requirements.txt
++-- ...
++-- solvers/
+|   |
+|   +-- openfoam/
+|       |
+|       +-- bin/
+|       +-- etc/
+|       +-- ...
++-- ...
+</code></pre></div></p>
+<h4 id="windows">Windows</h4>
+<p><a href="https://d3c6e16xufx1gb.cloudfront.net/solvers_windows_24.4.0_20240923.zip">solvers_windows_24.4.0_20240923.zip</a></p>
+<h4 id="linux">Linux</h4>
+<p><a href="https://d3c6e16xufx1gb.cloudfront.net/solvers_linux_24.4.0_20240923.tar.xz">solvers_linux_24.4.0_20240923.tar.xz</a></p>
+<p>You can download the file on command line with cURL or wget command like following.
+<div class="highlight"><pre><span></span><code>wget https://d3c6e16xufx1gb.cloudfront.net/solvers_linux_24.4.0_20240923.tar.xz
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>curl -L https://d3c6e16xufx1gb.cloudfront.net/solvers_linux_24.4.0_20240923.tar.xz -o solvers_linux_24.4.0_20240923.tar.xz
+</code></pre></div>
+<h4 id="macos-apple-silicon-only">macOS (Apple Silicon only)</h4>
+<p>Not yet prepared due to the strict code signing policy from Apple</p>
+<h4 id="compile-daemonizer-only-for-linux-and-macos">Compile Daemonizer ( only for Linux and macOS )</h4>
+<p>"solvers" directory was created when the compressed file was uncompressed.
+<div class="highlight"><pre><span></span><code>gcc -o solvers/openfoam/bin/baramd misc/baramd.c
+</code></pre></div></p>
+<h4 id="compile-resource-files">Compile Resource Files</h4>
+<div class="highlight"><pre><span></span><code>python convertUi.py
+</code></pre></div>
+<h3 id="run-baramflow">Run BaramFlow</h3>
+<div class="highlight"><pre><span></span><code>python -m baramFlow.main
+</code></pre></div>
+<h3 id="run-barammesh">Run BaramMesh</h3>
+<div class="highlight"><pre><span></span><code>python -m baramMesh.main
+</code></pre></div>
+<h3 id="convenient-scripts-that-do-not-require-manual-venv-activation">Convenient Scripts that do not require manual <em>venv</em> activation</h3>
+<p><div class="highlight"><pre><span></span><code>baramFlow.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>baramMesh.sh
+</code></pre></div></p>
 <h2 id="paraview">Paraview</h2>
 <p><em>BaramFlow</em> has a menu that can launch <a href="https://www.paraview.org/"><em>ParaView</em></a> for post-process.
 Users should download and install Paraview for post-process. And users can download it in <a href="https://www.paraview.org/download/"><em>ParaView Download Site</em></a>
