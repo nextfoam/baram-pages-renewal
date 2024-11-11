@@ -95,7 +95,7 @@ The figure below shows the shape of the boundary layer as a function of the mini
 
 This value is applied to _addLayersControls.minMedialAxisAngle_ in _snappyHexMeshDict_ file
 
-#### Max. Thickmess Ratio
+#### Max. Thickness Ratio
 
 The ratio of the boundary layer thickness ($\Delta L$) to the distance to the medial axis ($\Delta M$, medial distance). If thickness ratio is greater than this value, the growth of the boundary layer is limited. Values that are too small can result in small boundary layer heights, and values that are too large can distort the geometry.
 
