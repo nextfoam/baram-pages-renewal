@@ -1152,7 +1152,6 @@
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/smoothLayerThickness.png" width="600" ><br> The effect of Smooth Layer Thickness (left) 10, (right) 100</center></p>
 <p>This value is applied to <em>addLayersControls.nSmoothThickness</em> in <em>snappyHexMeshDict</em> file</p>
 <h3 id="medial-axis">Medial Axis</h3>
-<p><em>SnappyHexMesh</em> provides <em>displacementMedialAxis</em> and <em>displacementMotionSolver</em> as mesh shrinking algorithms, while BaramMesh only supports the <em>displacementMotionSolver</em> method. The settings below are the inputs for this. </p>
 <p>Mesh shrinking is a process that pushes the mesh created in the snap step away from the boundary by the height of the boundary layer. SnappyHexMesh provides <em>displacementMedialAxis</em> and <em>displacementMotionSolver</em> as Mesh shrinking algorithms, while BaramMesh only supports the <em>displacementMedialAxis</em> method. Below are the settings for this. A Medial Axis is defined as the collection of points within the polygon that are closest to more than one of the edges. It can also be viewed (equivalently) as the points that can be the center of a circle that is entirely within the polygon and touches the polygon in at least two places.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_medialAxis.png" width="400" ><br>Figure from RJ Donaghy's paper Dimensional Reduction of Analysis Models.</center></p>
 <h4 id="min-axis-angle">Min. Axis Angle</h4>
@@ -1160,7 +1159,7 @@
 <p>The figure below shows the shape of the boundary layer as a function of the minimum axis angle for a Feature Angle Threshold of 60 when adding four boundary layers. A value that is too small can distort the shape, and a value that is too large can cause problems with the mesh outside the boundary layer.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/minAxisAngle.png" width="800" ><br> The effect of Min. Axis Angle (left) 10, (center) 90, (right) 120</center></p>
 <p>This value is applied to <em>addLayersControls.minMedialAxisAngle</em> in <em>snappyHexMeshDict</em> file</p>
-<h4 id="max-thickmess-ratio">Max. Thickmess Ratio</h4>
+<h4 id="max-thickness-ratio_1">Max. Thickness Ratio</h4>
 <p>The ratio of the boundary layer thickness (<span class="arithmatex">\(\Delta L\)</span>) to the distance to the medial axis (<span class="arithmatex">\(\Delta M\)</span>, medial distance). If thickness ratio is greater than this value, the growth of the boundary layer is limited. Values that are too small can result in small boundary layer heights, and values that are too large can distort the geometry.</p>
 <p><span class="arithmatex">\(Max. Thickness\)</span> <span class="arithmatex">\(Ratio = \frac{\Delta L}{\Delta M}\)</span></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/thicknessToMedialRatio.png" width="400" ><br> </center></p>

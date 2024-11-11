@@ -1159,7 +1159,7 @@
 <p>아래 그림은 4개의 경계층을 쌓을 때 특징각도 임계값(Feature Angle Threshold)이 60인 경우 최소 내측 축 각도에 따른 경계층 격자의 모양이다. 너무 작은 값일 때 형상이 왜곡될 수 있으며 너무 큰 값일 때는 경계층 외부의 격자에 문제가 생길 수 있다.</p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/minAxisAngle.png" width="800" height="250"><br> Min. Axis Angle의 영향 (좌) 10, (중) 90, (우) 120</center></p>
 <p><em>snappyHexMeshDict</em> 의 <em>addLayersControls.minMedialAxisAngle</em> 에 해당한다.</p>
-<h4 id="max-thickmess-ratio">최대 두께 비율(Max. Thickmess Ratio)</h4>
+<h4 id="max-thickness-ratio_1">최대 두께 비율(Max. Thickness Ratio)</h4>
 <p>내측 축까지의 거리(<span class="arithmatex">\(\Delta M\)</span>, medial distance)에 대한 경계층 두께(<span class="arithmatex">\(\Delta L\)</span>)의 비율이 이 값보다 크면 경계층 격자의 성장을 제한한다. 너무 작은 값은 경계층 높이가 작아질 수 있으며 너무 큰 값은 형상을 왜곡할 수 있다.</p>
 <p><span class="arithmatex">\(Max. Thickness\)</span> <span class="arithmatex">\(Ratio = \frac{\Delta L}{\Delta M}\)</span></p>
 <p><center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/thicknessToMedialRatio.png" width="400" ><br> </center></p>
