@@ -78,8 +78,6 @@ This value is applied to _addLayersControls.nSmoothThickness_ in _snappyHexMeshD
 
 ### Medial Axis
 
-_SnappyHexMesh_ provides _displacementMedialAxis_ and _displacementMotionSolver_ as mesh shrinking algorithms, while BaramMesh only supports the _displacementMotionSolver_ method. The settings below are the inputs for this. 
-
 Mesh shrinking is a process that pushes the mesh created in the snap step away from the boundary by the height of the boundary layer. SnappyHexMesh provides _displacementMedialAxis_ and _displacementMotionSolver_ as Mesh shrinking algorithms, while BaramMesh only supports the _displacementMedialAxis_ method. Below are the settings for this. A Medial Axis is defined as the collection of points within the polygon that are closest to more than one of the edges. It can also be viewed (equivalently) as the points that can be the center of a circle that is entirely within the polygon and touches the polygon in at least two places.
 
 <center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_medialAxis.png" width="400" ><br>Figure from RJ Donaghy's paper Dimensional Reduction of Analysis Models.</center>
