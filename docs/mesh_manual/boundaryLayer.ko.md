@@ -92,7 +92,7 @@ Mesh shrinking이라는 과정을 통해 형상구현(snap) 단계에서 만들�
 
 _snappyHexMeshDict_ 의 _addLayersControls.minMedialAxisAngle_ 에 해당한다.
 
-#### 최대 두께 비율(Max. Thickmess Ratio)
+#### 최대 두께 비율(Max. Thickness Ratio)
 
 내측 축까지의 거리($\Delta M$, medial distance)에 대한 경계층 두께($\Delta L$)의 비율이 이 값보다 크면 경계층 격자의 성장을 제한한다. 너무 작은 값은 경계층 높이가 작아질 수 있으며 너무 큰 값은 형상을 왜곡할 수 있다.
 
