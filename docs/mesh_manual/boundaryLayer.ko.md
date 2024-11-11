@@ -12,7 +12,7 @@
 
 층의 높이를 나타낼 때 절대값(Absolute)과 상대값(Relative)을 선택할 수 있다. 상대값은 경계층 격자를 쌓을 경계면의 격자 크기를 기준으로한 상대값이며, 절대값은 미터 단위의 값이다.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerConfig.png" width="400" height="400"><br>경계층격자 설정</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerConfig.png" width="400" ><br>경계층격자 설정</center>
 
 * 마지막 레이어 높이와 증가율(Final and Expansion)
 * 마지막 레이어 높이와 전체 높이(Final and Total)
@@ -25,7 +25,7 @@
 
 ## 고급 설정(Advanced Configuration)
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerAdv.png" width="300" height="300"><br>고급 설정</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerAdv.png" width="300" ><br>고급 설정</center>
 
 ### Number of Grow
 
@@ -35,7 +35,7 @@ _snappyHexMeshDict_ 의 _addLayersControls.nGrow_ 에 해당한다.
 
 아래의 그림은 특징각도 임계값(Feature Angle Threshold)의 영향으로 모서리의 점에서 경계층을 쌓지 않을 때, Number of Grow의 값에 따른 경계층 격자의 모양을 보여준다. 
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ngrow.png" width="800" height="800"><br>Number of Grow의 영향, 0(좌), 1(중), 2(우)</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/ngrow.png" width="800" ><br>Number of Grow의 영향, 0(좌), 1(중), 2(우)</center>
 
 ### 시작격자의 정적 분석(Static Analysis of Starting Mesh)
 
@@ -49,7 +49,7 @@ _snappyHexMeshDict_ 의 _addLayersControls.nGrow_ 에 해당한다.
 
 _snappyHexMeshDict_ 의 _addLayersControls.featureAngle_ 에 해당한다.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerFeatureAngle.png" width="800" height="800"><br>특징각도 임계값, 60(좌), 120(우)</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerFeatureAngle.png" width="800" ><br>특징각도 임계값, 60(좌), 120(우)</center>
 
 
 #### 최대 두께 비율(Max. Thickness Ratio)
@@ -68,25 +68,44 @@ _snappyHexMeshDict_ 의 _addLayersControls.nSmoothSurfaceNormals_ 에 해당한�
 
 #### 레이어 두께 스무딩(Smooth Layer Thickness)
 
-표면 전체에 걸쳐 층 두께를 부드럽게 조절하기 위한 반복계산 회수이다. 보통 10이면 충분하다. 
+표면 전체에 걸쳐 층 두께를 부드럽게 조절하기 위한 반복계산 회수이다. 10 정도를 추천하며, 더 큰 값이 격자 품질을 높일 수는 있지만 많은 시간이 소요된다. 
+
+아래 그림은 4개의 경계층을 쌓을 때 특징각도 임계값(Feature Angle Threshold)이 60인 경우 최대 레이어 두께 스무딩 회수에 따른 경계층 격자의 모양이다.
+
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/smoothLayerThickness.png" width="600" ><br> Smooth Layer Thickness의 영향 (좌) 10, (우) 100</center>
 
 _snappyHexMeshDict_ 의 _addLayersControls.nSmoothThickness_ 에 해당한다.
 
-### 중심축(Medial Axis)
+### 내측 축(Medial Axis)
 
-SnappyHexMesh는 Mesh shrinking 알고리즘으로 _displacementMedialAxis}와 _displacementMotionSolver}를 제공하는데 BaramMesh에서는 _displacementMotionSolver} 방법만 지원한다. 아래의 설정들은 이에 대한 입력이다.
+Mesh shrinking이라는 과정을 통해 형상구현(snap) 단계에서 만들어진 격자를 경계면에서 경계층 격자 높이만큼 밀어올린다. SnappyHexMesh는 Mesh shrinking 알고리즘으로 _displacementMedialAxis_ 와 _displacementMotionSolver_ 를 제공하는데 BaramMesh에서는 _displacementMedialAxis_ 방법만 지원한다. 아래는 이에 대한 설정값이다. 한국어로 내측 축이라고 하는 medial axis는 컴퓨터 그래픽이나 영상처리에서 많이 사용되는 개념으로 다각형 내에서 하나 이상의 가장자리에 가장 가까운 점의 집합 또는 다각형 내부에서 다각형과 접하는 원의 중심점들로 정의한다. 
 
-#### 최소 축 각도(Min. Axis Angle)
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_medialAxis.png" width="400" ><br>RJ Donaghy의 논문 Dimensional Reduction of Analysis Models의 그림 인용</center>
 
-중심축의 점들(medial axis points)을 선택하는 최소 각도 
+#### 최소 내측 축 각도(Min. Axis Angle)
+
+내측 축의 점들(medial axis points)을 선택하는 최소 각도 
+
+아래 그림은 4개의 경계층을 쌓을 때 특징각도 임계값(Feature Angle Threshold)이 60인 경우 최소 내측 축 각도에 따른 경계층 격자의 모양이다. 너무 작은 값일 때 형상이 왜곡될 수 있으며 너무 큰 값일 때는 경계층 외부의 격자에 문제가 생길 수 있다.
+
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/minAxisAngle.png" width="800" height="250"><br> Min. Axis Angle의 영향 (좌) 10, (중) 90, (우) 120</center>
 
 _snappyHexMeshDict_ 의 _addLayersControls.minMedialAxisAngle_ 에 해당한다.
 
 #### 최대 두께 비율(Max. Thickmess Ratio)
 
-층 두께와 중앙 거리(medial distance)의 비율이 이 값보다 크면 경계층 격자의 성장을 줄인다. 
+내측 축까지의 거리($\Delta M$, medial distance)에 대한 경계층 두께($\Delta L$)의 비율이 이 값보다 크면 경계층 격자의 성장을 제한한다. 너무 작은 값은 경계층 높이가 작아질 수 있으며 너무 큰 값은 형상을 왜곡할 수 있다.
+
+$Max. Thickness$ $Ratio = \frac{\Delta L}{\Delta M}$
+
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/thicknessToMedialRatio.png" width="400" ><br> </center>
+
+아래 그림은 4개의 경계층을 쌓을 때 특징각도 임계값(Feature Angle Threshold)이 60인 경우 최대 두께 비율에 따른 경계층 격자의 모양이다.
+
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/thicknessToMedialRatio1.png" width="800" ><br> Max. Thickness ratio의 영향 (좌) 0.1, (중) 0.3, (우) 1.0</center>
 
 _snappyHexMeshDict_ 의 _addLayersControls.maxThicknessToMedialRatio_ 에 해당한다.
+
 
 #### 스무딩 반복계산 회수(Number of Smoothing Iter.)
 
@@ -108,6 +127,10 @@ _snappyHexMeshDict_ 의 _addLayersControls.nRelaxIter_ 에 해당한다.
 
 층의 수를 점진적으로 감소시키기 위해, 새로운 층 쌓기를 종료하기 위한 버퍼 영역의 개수이다. 
 
+아래 그림은 4개의 경계층을 쌓을 때 특징각도 임계값(Feature Angle Threshold)이 60인 경우 버퍼 셀의 개수(Num. of Buffer Cells)에 따른 경계층 격자의 모양이다.
+
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/buffercell.png" width="600" ><br> 버퍼 셀의 개수의 영향 (좌) 0, (우) 2</center>
+
 _snappyHexMeshDict_ 의 _addLayersControls.nBufferCellsNoExtrude_ 에 해당한다.
 
 #### 최대 레이어 추가 반복회수(Max. Layer Addition Iter)
@@ -116,7 +139,7 @@ _snappyHexMeshDict_ 의 _addLayersControls.nBufferCellsNoExtrude_ 에 해당한�
 
 아래 그림에서 모서리에 경계층 격자가 생성되지 않은 것은 격자 품질 유지를 위해 격자 축소가 적용된 결과이다. 오른쪽 그림은 격자 축소가 적용되지 않은(1인 경우) 것으로 모서리에도 경계층 격자가 만들어졌지만 격자 품질이 좋지 않게 된다.
 
-<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerShrinking.png" width="800" height="800"><br>최대 레이어 추가 반복회수, 50(좌), 1(우)</center>
+<center><img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/pic/mesh_layerShrinking.png" width="800" ><br>최대 레이어 추가 반복회수, 50(좌), 1(우)</center>
 
 _snappyHexMeshDict_ 의 _addLayersControls.nLayerIter_ 에 해당한다.
 
