@@ -9,6 +9,16 @@ BARAM은 넥스트폼이 개발한 범용 전산유체역학 프로그램 패키
 + 넥스트폼이 개발한 OpenFOAM 포크인 NextFOAM을 사용합니다.
 + 해석 프로그램인 BaramFlow와 격자생성 프로그램인 BaramMesh로 구성되어 있습니다.
 
+## BARAM 매뉴얼 다운로드
+
+[**download BaramFlow Users' Guide(English)**](https://drive.google.com/file/d/1fWtrf7bhKVNgwrgEXFyf8SiL96PNFRGB/view?usp=sharing)
+
+[**download BaramFlow Users' Guide(Korean)**](https://drive.google.com/file/d/1JZt3xxTY8mP6zzK2WlP_RQXDNGPXK_GO/view?usp=sharing)
+
+[**download BaramMesh Users' Guide(English)**](https://drive.google.com/file/d/1KP1xLVkgZMZryOCcDKXVL2bBeTskDZUm/view?usp=sharing)
+
+[**download BaramMesh Users' Guide(Korean)**](https://drive.google.com/file/d/1gsY5JocHbxsZvJ5Q8GPYVTAwGvPPvuUb/view?usp=sharing)
+
 <!---
 
 2024.10
