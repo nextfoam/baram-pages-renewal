@@ -607,9 +607,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-with-nextfoam-build" class="md-nav__link">
+  <a href="#installation-with-nextfoam-build-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation with NextFOAM build
+      Installation with NextFOAM build (Linux)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-with-python-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with Python virtual environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-market-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure market place
     </span>
   </a>
   
@@ -830,7 +848,7 @@ Download them from following links.</p>
 <li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
 <li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
 </ul>
-<h2 id="installation-with-nextfoam-build">Installation with NextFOAM build</h2>
+<h2 id="installation-with-nextfoam-build-linux">Installation with NextFOAM build (Linux)</h2>
 <h3 id="supported-platforms_1">Supported Platforms</h3>
 <!--* Windows 10 or newer
 * macOS 10.14 or newer (Apple Silicon only)-->
@@ -959,44 +977,41 @@ Categories=Science
 </ul>
 <p><div class="highlight"><pre><span></span><code>sudo vi /etc/skel/Desktop/baramFlow.desktop
 </code></pre></div>
-[Desktop Entry]
+<div class="highlight"><pre><span></span><code>[Desktop Entry]
 Encoding=UTF-8
 Name=baramFlow
 Comment=baram Flow
 Icon=/opt/baram/baramFlow.png
-Exec=bash -c '/opt/baram/baramFlow.sh'
+Exec=bash -c &#39;/opt/baram/baramFlow.sh&#39;
 Terminal=false
 Type=Application
 Categories=Science
-<div class="highlight"><pre><span></span><code>Change permission of shortcuts
-</code></pre></div>
-sudo chmod +x /etc/skel/Desktop/*
-<div class="highlight"><pre><span></span><code>**(NOTE)** You should upload `baramMesh.png` and `baramFlow.png` to `/opt/baram` directory.
-
-
-## Installation with Python virtual environment
-
-### Supported Platforms
-* Windows 10 or newer
-* macOS 10.14 or newer (Apple Silicon only)
-* Ubuntu 20.04 or newer
-* CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )
-* OpenSUSE Leap 15.4
-* Linux Mint 21 &quot;Vanessa&quot;
-
-### BARAM requires following installed software:
-
-* Python *3.9.x*
-* [MS-MPI](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) 10.0 or newer ( Windows Only )
-* OpenMPI 4.1 or newer ( Linux, macOS )
-* GNU C Compiler or any other C Compiler ( Linux, macOS )
-
-
-### Clone the source code
-```commandline
-git clone https://github.com/nextfoam/baram.git
-cd baram
 </code></pre></div></p>
+<p>Change permission of shortcuts</p>
+<div class="highlight"><pre><span></span><code>sudo chmod +x /etc/skel/Desktop/*
+</code></pre></div>
+<p><strong>(NOTE)</strong> You should upload <code>baramMesh.png</code> and <code>baramFlow.png</code> to <code>/opt/baram</code> directory.</p>
+<h2 id="installation-with-python-virtual-environment">Installation with Python virtual environment</h2>
+<h3 id="supported-platforms_2">Supported Platforms</h3>
+<ul>
+<li>Windows 10 or newer</li>
+<li>macOS 10.14 or newer (Apple Silicon only)</li>
+<li>Ubuntu 20.04 or newer</li>
+<li>CentOS 8.2 or alternatives ( Rocky Linux, AlmaLinux, ... )</li>
+<li>OpenSUSE Leap 15.4</li>
+<li>Linux Mint 21 "Vanessa"</li>
+</ul>
+<h3 id="baram-requires-following-installed-software_2">BARAM requires following installed software:</h3>
+<ul>
+<li>Python <em>3.9.x</em></li>
+<li><a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi">MS-MPI</a> 10.0 or newer ( Windows Only )</li>
+<li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
+<li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
+</ul>
+<h3 id="clone-the-source-code">Clone the source code</h3>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/nextfoam/baram.git
+cd baram
+</code></pre></div>
 <h3 id="setup-python-virtual-environment">Setup Python virtual environment</h3>
 <p>Run following command in the top directory of downloaded source code.
 Please don't forget that Python <strong>3.9.x</strong> is required.
@@ -1073,6 +1088,10 @@ The final directory structure may look like following.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>baramMesh.sh
 </code></pre></div></p>
+<h2 id="azure-market-place">Azure market place</h2>
+<p>You can use BARAM Cloud service with Azure makret place!!
+Visit below link and use BARAM cloud service!!
+<a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=baram&amp;page=1"><strong>Azure market place link</strong></a></p>
 <h2 id="paraview">Paraview</h2>
 <p><em>BaramFlow</em> has a menu that can launch <a href="https://www.paraview.org/"><em>ParaView</em></a> for post-process.
 Users should download and install Paraview for post-process. And users can download it in <a href="https://www.paraview.org/download/"><em>ParaView Download Site</em></a>

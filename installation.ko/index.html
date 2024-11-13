@@ -607,9 +607,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#linux" class="md-nav__link">
     <span class="md-ellipsis">
-      넥스트폼 솔버 빌드를 통한 설치
+      넥스트폼 솔버 빌드 및 설치 과정 (Linux)
     </span>
   </a>
   
@@ -619,6 +619,15 @@
   <a href="#python-baram" class="md-nav__link">
     <span class="md-ellipsis">
       Python 가상 환경으로 BARAM 설치하기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-market-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure market place
     </span>
   </a>
   
@@ -843,7 +852,7 @@
 <li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
 <li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
 </ul>
-<h2 id="_2">넥스트폼 솔버 빌드를 통한 설치</h2>
+<h2 id="linux">넥스트폼 솔버 빌드 및 설치 과정 (Linux)</h2>
 <h3 id="os_1">지원되는 OS</h3>
 <!--* Windows 10 or newer
 * macOS 10.14 or newer (Apple Silicon only)-->
@@ -947,7 +956,7 @@ python3 -m baramFlow.main
 </ul>
 <div class="highlight"><pre><span></span><code>sudo apt-get install paraview
 </code></pre></div>
-<h3 id="_3">바탕화면 바로가기 생성</h3>
+<h3 id="_2">바탕화면 바로가기 생성</h3>
 <ul>
 <li>모든 사용자에 대해 <code>/etc/skel</code>에 <code>Desktop</code>를 생성합니다.</li>
 </ul>
@@ -1006,7 +1015,7 @@ Categories=Science
 <li>OpenMPI 4.1 or newer ( Linux, macOS )</li>
 <li>GNU C Compiler or any other C Compiler ( Linux, macOS )</li>
 </ul>
-<h3 id="_4">소스코드 복제</h3>
+<h3 id="_3">소스코드 복제</h3>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/nextfoam/baram.git
 cd baram
 </code></pre></div>
@@ -1016,7 +1025,7 @@ Python **3.9**가 필요하니 잊지 마세요.
 <code>python3 -V</code> 명령으로 버전을 확인할 수 있습니다.</p>
 <div class="highlight"><pre><span></span><code>python3.9 -m venv venv
 </code></pre></div>
-<h3 id="_5">가상 환경 활성화</h3>
+<h3 id="_4">가상 환경 활성화</h3>
 <p>다운로드한 소스 코드의 최상위 디렉토리에서 다음 명령을 실행합니다.</p>
 <h4 id="windows">Windows</h4>
 <div class="highlight"><pre><span></span><code>.\venv\Scripts\activate.bat
@@ -1036,10 +1045,10 @@ Python **3.9**가 필요하니 잊지 마세요.
 <h4 id="windows_1">Windows</h4>
 <div class="highlight"><pre><span></span><code>pip install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.dev0-cp38-abi3-win_amd64.whl
 </code></pre></div>
-<h4 id="linux">Linux</h4>
+<h4 id="linux_1">Linux</h4>
 <div class="highlight"><pre><span></span><code>pip install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.dev0-cp38-abi3-linux_x86_64.whl
 </code></pre></div>
-<h3 id="_6">솔버 실행 파일 복사</h3>
+<h3 id="_5">솔버 실행 파일 복사</h3>
 <p>다운로드한 솔버 실행 파일을 다운로드한 소스 코드의 최상위 디렉토리로 복사하고 압축을 해제합니다. 압축 파일에는 <em><strong>solvers</strong>- 폴더가 포함되어 있습니다. _<strong>solvers</strong></em> 폴더를 최상위 디렉토리에 배치하세요. 최종 디렉토리 구조는 다음과 같습니다.
 <div class="highlight"><pre><span></span><code>($BARAM)
 |
@@ -1056,7 +1065,7 @@ Python **3.9**가 필요하니 잊지 마세요.
 </code></pre></div></p>
 <h4 id="windows_2">Windows</h4>
 <p><a href="https://d3c6e16xufx1gb.cloudfront.net/solvers_windows_24.4.0_20240923.zip">solvers_windows_24.4.0_20240923.zip</a></p>
-<h4 id="linux_1">Linux</h4>
+<h4 id="linux_2">Linux</h4>
 <p><a href="https://d3c6e16xufx1gb.cloudfront.net/solvers_linux_24.4.0_20240923.tar.xz">solvers_linux_24.4.0_20240923.tar.xz</a></p>
 <p>cURL 또는 wget 명령을 사용하여 다음과 같이 파일을 다운로드 할 수 있습니다.
 <div class="highlight"><pre><span></span><code>wget https://d3c6e16xufx1gb.cloudfront.net/solvers_linux_24.4.0_20240923.tar.xz
@@ -1069,7 +1078,7 @@ Python **3.9**가 필요하니 잊지 마세요.
 <p>압축파일이 해제되면서 "solvers"디렉토리가 생성됩니다.
 <div class="highlight"><pre><span></span><code>gcc -o solvers/openfoam/bin/baramd misc/baramd.c
 </code></pre></div></p>
-<h3 id="_7">리소스 파일 컴파일</h3>
+<h3 id="_6">리소스 파일 컴파일</h3>
 <div class="highlight"><pre><span></span><code>python convertUi.py
 </code></pre></div>
 <h3 id="baramflow">BaramFlow 실행</h3>
@@ -1083,6 +1092,10 @@ Python **3.9**가 필요하니 잊지 마세요.
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>baramMesh.sh
 </code></pre></div></p>
+<h2 id="azure-market-place">Azure market place</h2>
+<p>Azure market place에서 Cloud 서비스를 이용하실 수 있습니다!!
+아래 링크 접속을 통해 넥스트폼에서 제공하는 Cloud 서비스를 사용해보세요.
+<a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=baram&amp;page=1"><strong>Azure Market place 링크</strong></a></p>
 <h2 id="paraview_1">Paraview</h2>
 <p><em>BaramFlow</em> 후처리를 위해 <a href="https://www.paraview.org/"><em>ParaView</em></a>를 실행하는 메뉴가 있습니다.
 사용자들은 후처리를 위해 Paraview를 다운로드 및 설치해야 합니다. 다운로드는 <a href="https://www.paraview.org/download/"><em>ParaView Download Site</em></a>에서 할 수 있습니다.
