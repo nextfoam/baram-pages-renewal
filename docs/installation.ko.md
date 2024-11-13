@@ -27,7 +27,7 @@
 * OpenMPI 4.1 or newer ( Linux, macOS )
 * GNU C Compiler or any other C Compiler ( Linux, macOS )
 
-## 넥스트폼 솔버 빌드를 통한 설치
+## 넥스트폼 솔버 빌드 및 설치 과정 (Linux)
 
 ### 지원되는 OS
 <!--* Windows 10 or newer
@@ -325,6 +325,11 @@ baramFlow.sh
 ```commandline
 baramMesh.sh
 ```
+
+## Azure market place
+Azure market place에서 Cloud 서비스를 이용하실 수 있습니다!!
+아래 링크 접속을 통해 넥스트폼에서 제공하는 Cloud 서비스를 사용해보세요.
+[**Azure Market place 링크**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=baram&page=1)
 
 ## Paraview
 

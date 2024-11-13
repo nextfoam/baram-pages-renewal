@@ -6,7 +6,7 @@
 BARAM is general Computational Fluid Dynamics program package developed by NEXTFOAM.
 
 + Open source software using GNU GPL License
-+ Use NextFOAM, a fork of OpenFOAM developed by NEXTFOAM
++ Use [NextFOAM](https://github.com/nextfoam/nextfoam-cfd), a fork of OpenFOAM developed by NEXTFOAM
 + Consists of BaramFlow, an analysis program, and BaramMesh, a mesh generation program
 
 ## Download BARAM Users' Guide
@@ -18,6 +18,9 @@ BARAM is general Computational Fluid Dynamics program package developed by NEXTF
 [**download BaramMesh Users' Guide(English)**](https://drive.google.com/file/d/1KP1xLVkgZMZryOCcDKXVL2bBeTskDZUm/view?usp=sharing)
 
 [**download BaramMesh Users' Guide(Korean)**](https://drive.google.com/file/d/1gsY5JocHbxsZvJ5Q8GPYVTAwGvPPvuUb/view?usp=sharing)
+
+## BARAM Introduction Documnet
+[**BARAM Introduction Document**](https://drive.google.com/file/d/13a4n660HrMC53yf_Zskcl0x060vcHiEj/view?usp=sharing)
 
 <!---
 

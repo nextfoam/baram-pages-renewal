@@ -24,7 +24,7 @@ Download them from following links.
 * OpenMPI 4.1 or newer ( Linux, macOS )
 * GNU C Compiler or any other C Compiler ( Linux, macOS )
 
-## Installation with NextFOAM build
+## Installation with NextFOAM build (Linux)
 
 ### Supported Platforms
 <!--* Windows 10 or newer
@@ -164,6 +164,7 @@ Categories=Science
 
 ```
 sudo vi /etc/skel/Desktop/baramFlow.desktop
+```
 ```
 [Desktop Entry]
 Encoding=UTF-8
@@ -325,6 +326,11 @@ baramFlow.sh
 ```commandline
 baramMesh.sh
 ```
+
+## Azure market place
+You can use BARAM Cloud service with Azure makret place!!
+Visit below link and use BARAM cloud service!!
+[**Azure market place link**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=baram&page=1)
 
 ## Paraview
 
