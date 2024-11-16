@@ -54,7 +54,7 @@ plugins:
       default_language: en
       languages:
         en: "English"
-        ko: "Korean"
+        ko: "한국어"
       default_language: 'en'
       no_translation:
         en: "This page isn't translated to English."
@@ -238,7 +238,7 @@ extra:
       link: ""
       lang: en
 
-    - name: "Korean (홈)"
+    - name: "한국어 (홈)"
       link: ""
       lang: ko
 
