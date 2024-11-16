@@ -185,7 +185,7 @@
         
           <li class="md-select__item">
             <a href="./" hreflang="ko" class="md-select__link">
-              Korean
+              한국어
             </a>
           </li>
         
@@ -578,18 +578,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#baramflow" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      BaramFlow
+      해석 기능
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#barammesh" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      BaramMesh
+      격자 기능
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      로드맵
     </span>
   </a>
   
@@ -799,121 +808,83 @@
 <li class="i18n-link i18n-link-found i18n-link-en"><a href="../feature_overview/">English</a></li>
 </ul>
 <h1 id="_1">주요기능</h1>
-<h2 id="baramflow">BaramFlow</h2>
-<h3 id="_2">지원하는 격자 형식</h3>
-<ul>
-<li>OpenFOAM PolyMesh</li>
-<li>Fluent case (.cas)</li>
-<li>Fluent mesh (.msh)</li>
-<li>Gmsh (.msh)</li>
-<li>I-deas Univesl (.unv)</li>
-<li>StarCCM+ (.ccm) : only for linux</li>
-</ul>
-<h3 id="_3">격자 변형</h3>
-<ul>
-<li>확대/축소</li>
-<li>이동</li>
-<li>회전</li>
-</ul>
-<h3 id="_4">물리 모델</h3>
-<ul>
-<li>
+<h2 id="_2">해석 기능</h2>
 <p><strong>난류 모델</strong></p>
 <ul>
-<li>Laminar</li>
 <li>Spalart-Allmaras</li>
-<li>k-epsilon : Standard, RNG, Realizable</li>
-<li>k-omega : SST</li>
-<li>LES</li>
-<li>DES</li>
+<li>SST <span class="arithmatex">\(k\)</span>-<span class="arithmatex">\(\omega\)</span>, <span class="arithmatex">\(k\)</span>-<span class="arithmatex">\(\epsilon\)</span>(Standard, RNG, Realizable)</li>
+<li>LES, DES</li>
 </ul>
-</li>
-<li>
 <p><strong>열전달</strong></p>
 <ul>
 <li>자연대류, 강제대류</li>
 <li>고체의 열전도</li>
-<li>복합열전달    </li>
+<li>복합열전달  </li>
 </ul>
-</li>
-<li>
 <p><strong>압축성유동</strong></p>
 <ul>
 <li>압력기반 솔버 : 비압축성에서 아음속유동까지</li>
 <li>밀도기반 솔버 : 아음속에서 초음속유동까지</li>
 </ul>
-</li>
-<li>
 <p><strong>다상유동 모델</strong></p>
 <ul>
-<li>Volume of Fluid for multiple phases</li>
-<li>Caviation model : Schnerr-Sauer, Kunz, Merkle</li>
+<li>Volume of Fluid</li>
+<li>캐비테이션 모델 : Schnerr-Sauer, Kunz, Merkle</li>
 </ul>
-</li>
-<li>
 <p><strong>화학종 혼합</strong></p>
 <ul>
 <li>부력과 확산을 고려한 다양한 물질의 혼합</li>
 </ul>
-</li>
-<li>
 <p><strong>사용자 정의 스칼라</strong></p>
 <ul>
 <li>임의의 스칼라에 대한 수송방정식 계산 가능</li>
 <li>유동과 함깨 계산하거나 유동장은 고정된 상태에서 스칼라만 계산 가능</li>
 </ul>
-</li>
-<li>
 <p><strong>비뉴턴유체 모델</strong></p>
 <ul>
-<li>Bird-Carreau</li>
-<li>Cross power law</li>
-<li>Hershel-Bulkley</li>
-<li>Power law</li>
+<li>Bird-Carreau, Cross power law, Hershel-Bulkley, Power law</li>
 </ul>
-</li>
-</ul>
-<h3 id="_5">셀존 조건</h3>
+<p><strong>회전 기계</strong></p>
 <ul>
-<li>셀존 모델<ul>
 <li>다중기준좌표계 모델(Multiple Reference Frame, MRF)</li>
-<li>다공성 영역 모델(Porous Zone : Darcy-Forchheimer, Power law)</li>
 <li>미끄럼격자(Sliding Mesh)</li>
 <li>Actuator Disk</li>
+<li>Fan 경계조건</li>
 </ul>
-</li>
-<li>생성항(Source Terms)</li>
-<li>일정한 값으로 고정(Fixed Values)</li>
-</ul>
-<h3 id="_6">모니터링 / 데이터 추출</h3>
+<p><strong>다공성 영역 모델</strong></p>
 <ul>
-<li>잔차(Residual)</li>
-<li>유체력 계수</li>
-<li>점에서의 값</li>
-<li>면에서의 값</li>
-<li>체적에서의 값</li>
+<li>Darcy-Forchheimer, Power law</li>
+<li>Porous Jump 경계조건</li>
 </ul>
-<h3 id="_7">일괄 계산</h3>
+<p><strong>일괄 계산</strong></p>
 <ul>
 <li>사용자가 매개변수를 선언</li>
 <li>csv, xlxs 파일 형식을 이용하여 계산 조건을 입력</li>
 </ul>
-<h3 id="_8">병렬 연산</h3>
+<p><strong>모니터링 / 데이터 추출</strong></p>
 <ul>
-<li>MPI 병렬연산</li>
-<li>SMP와 클러스터 장비 지원</li>
+<li>잔차(Residual)</li>
+<li>힘, 유체력 계수</li>
+<li>점, 면, 체적에서의 값</li>
 </ul>
-<h2 id="barammesh">BaramMesh</h2>
-<h3 id="_9">형상</h3>
+<h2 id="_3">격자 기능</h2>
+<p><strong>지원하는 격자 형식</strong></p>
+<ul>
+<li>OpenFOAM PolyMesh</li>
+<li>Fluent (.msh, .cas)</li>
+<li>Gmsh (.msh)</li>
+<li>I-deas Univesl (.unv)</li>
+<li>StarCCM+ (.ccm) : only for linux</li>
+</ul>
+<p><strong>형상</strong></p>
 <ul>
 <li>STL 파일을 이용한 형상 정의</li>
-<li>면의 개수에 제한 없음</li>
 <li>닫힌 면을 자동으로 인식하여 볼륨 생성</li>
 <li>특징 각도(feature angle)을 이용해서 면을 자동 분할</li>
 <li>육면체, 구, 실린더 기본 형상 제작 기능</li>
 <li>완벽하게 서로 연결되지 않은 형상 사용 가능(non-watertight surfaces)</li>
 </ul>
-<h3 id="_10">격자</h3>
+<p><strong>격자 생성</strong></p>
 <ul>
 <li>내부유동/외부유동 격자 생성</li>
 <li>셀존 생성</li>
@@ -921,8 +892,25 @@
 <li>복합열전달 계산을 위한 <strong>다중영역(Multi-Region)</strong> 격자 생성 기능</li>
 <li>면(surface), 특징선(feature edge), 체적(volume), 좁은 간격(gap)에서의 격자 분할 기능</li>
 <li>경계층 격자 생성 기능</li>
-<li>**병렬연산**을 통한 빠른 격자 생성 </li>
+<li><strong>병렬연산</strong> 을 통한 빠른 격자 생성 </li>
 <li>2차원 / 축대칭 격자로 내보내기 기능</li>
+</ul>
+<p><strong>격자 변형</strong></p>
+<ul>
+<li>확대/축소, 이동, 회전</li>
+</ul>
+<h2 id="_4">로드맵</h2>
+<p><strong>다음 버전 예정</strong></p>
+<ul>
+<li>필드 생성, 자체 그래픽 후처리 기능, 적합직교분해를 이용한 차수축소모델 제작 기능</li>
+</ul>
+<p><strong>다음 버전 이후</strong></p>
+<ul>
+<li>복사열전달, Shell conduction, Discrete phase model, 열교환기 모델</li>
+</ul>
+<p><strong>펀드가 있으면...</strong></p>
+<ul>
+<li>화학반응, 오일러리안 다상유동 모델, Overset mesh, Finite Area Method, 최적화, 전자기장 해석, FSI...</li>
 </ul>
 
 

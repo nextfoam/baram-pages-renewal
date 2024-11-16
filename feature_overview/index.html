@@ -185,7 +185,7 @@
         
           <li class="md-select__item">
             <a href="../feature_overview.ko/" hreflang="ko" class="md-select__link">
-              Korean
+              한국어
             </a>
           </li>
         
@@ -578,18 +578,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#baramflow" class="md-nav__link">
+  <a href="#simulation-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
-      BaramFlow
+      Simulation Capabilities
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#barammesh" class="md-nav__link">
+  <a href="#mesh-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
-      BaramMesh
+      Mesh Capabilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#road-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Road Map
     </span>
   </a>
   
@@ -796,124 +805,86 @@
 
 
 <ul>
-<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../feature_overview.ko/">Korean</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ko"><a href="../feature_overview.ko/">한국어</a></li>
 </ul>
 <h1 id="features">Features</h1>
-<h2 id="baramflow">BaramFlow</h2>
-<h3 id="supported-mesh-types">Supported Mesh Types</h3>
+<h2 id="simulation-capabilities">Simulation Capabilities</h2>
+<p><strong>Turbulence</strong></p>
 <ul>
-<li>OpenFOAM PolyMesh</li>
-<li>Fluent case (.cas)</li>
-<li>Fluent mesh (.msh)</li>
-<li>Gmsh (.msh)</li>
-<li>I-deas Univesl (.unv)</li>
-<li>StarCCM+ (.ccm) : only for linux</li>
-</ul>
-<h3 id="mesh-manipulation">Mesh manipulation</h3>
-<ul>
-<li>Scale</li>
-<li>Translate</li>
-<li>Rotate</li>
-</ul>
-<h3 id="physical-models">Physical Models</h3>
-<ul>
-<li>
-<p><strong>Turbulent Models</strong></p>
-<ul>
-<li>Laminar</li>
 <li>Spalart-Allmaras</li>
-<li>k-epsilon : Standard, RNG, Realizable</li>
-<li>k-omega : SST</li>
-<li>LES</li>
-<li>DES</li>
+<li>SST <span class="arithmatex">\(k\)</span>-<span class="arithmatex">\(\omega\)</span>, <span class="arithmatex">\(k\)</span>-<span class="arithmatex">\(\epsilon\)</span>(standard, RNG, realizable)</li>
+<li>LES, DES</li>
 </ul>
-</li>
-<li>
 <p><strong>Heat Transfer</strong></p>
 <ul>
-<li>Natural / Force convection</li>
-<li>Solid conduction</li>
-<li>Conjugated heat transfer    </li>
+<li>Natural/Forced Convection</li>
+<li>Conduction</li>
+<li>Conjugated Heat Transfer</li>
 </ul>
-</li>
-<li>
-<p><strong>Compressible flow</strong></p>
+<p><strong>Compressible Flow</strong></p>
 <ul>
-<li>Pressure based solver : to subsonic flow</li>
+<li>Pressure based solver : incompressible to subsonic flow</li>
 <li>Density based solver : subsonic to supersonic flow</li>
 </ul>
-</li>
-<li>
-<p><strong>Multiphase Models</strong></p>
+<p><strong>Multiphase</strong></p>
 <ul>
 <li>Volume of Fluid for multiple phases</li>
-<li>Caviation model : Schnerr-Sauer, Kunz, Merkle</li>
+<li>Cavitation model : Schnerr-Sauer, Kunz, Merkle</li>
 </ul>
-</li>
-<li>
-<p><strong>Chemical Species Transport</strong></p>
+<p><strong>Species Transport</strong></p>
 <ul>
 <li>Include buoyancy and diffusion</li>
 </ul>
-</li>
-<li>
-<p><strong>User Defined Scalars</strong></p>
+<p><strong>User Defined Scalar</strong></p>
 <ul>
 <li>Arbitrary scalar transport equations can be included</li>
 <li>Scalars can be simulated with or without flow calculation</li>
 </ul>
-</li>
-<li>
 <p><strong>Non-Newtonian Models</strong></p>
 <ul>
-<li>Bird-Carreau</li>
-<li>Cross power law</li>
-<li>Hershel-Bulkley</li>
-<li>Power law</li>
+<li>Bird-Carreau, Cross power law, Hershel-Bulkley, Power law</li>
 </ul>
-</li>
-</ul>
-<h3 id="cell-zone-configuration">Cell Zone Configuration</h3>
+<p><strong>Rotating Machinery</strong></p>
 <ul>
-<li>Zone Types<ul>
-<li>Multiple Reference Frame (MRF)</li>
-<li>Porous Zone : Darcy-Forchheimer, Power law</li>
+<li>Multiple Reference Frame(MRF)</li>
 <li>Sliding Mesh</li>
 <li>Actuator Disk</li>
+<li>Fan boundary condition</li>
 </ul>
-</li>
-<li>Source Terms</li>
-<li>Fixed Values</li>
-</ul>
-<h3 id="monitoring-report-values">Monitoring / Report values</h3>
+<p><strong>Porous Media</strong></p>
 <ul>
-<li>Residual Values</li>
-<li>Force Coefficients</li>
-<li>Point Values</li>
-<li>Surface Values</li>
-<li>Volume Values</li>
+<li>Darcy-Forchheimer, Power-law model</li>
+<li>Porous jump boundary condition</li>
 </ul>
-<h3 id="batch-run">Batch run</h3>
+<p><strong>Batch Run</strong></p>
 <ul>
 <li>Define user parameters</li>
 <li>csv and xlxs format can be used to define conditions</li>
 </ul>
-<h3 id="parallel-processing">Parallel Processing</h3>
+<p><strong>Monitoring / Report values</strong></p>
 <ul>
-<li>MPI Parallel Processing</li>
-<li>Support SMP and Cluster</li>
+<li>Residual Values</li>
+<li>Force and coefficients</li>
+<li>Point / Surface / Volume Values</li>
 </ul>
-<h2 id="barammesh">BaramMesh</h2>
-<h3 id="geometry">Geometry</h3>
+<h2 id="mesh-capabilities">Mesh Capabilities</h2>
+<p><strong>Available Mesh Types</strong></p>
+<ul>
+<li>OpenFOAM PolyMesh</li>
+<li>Fluent (.msh/cas)</li>
+<li>Gmsh (.msh)</li>
+<li>I-deas Univesl (.unv)</li>
+<li>StarCCM+ (.ccm) : only for linux</li>
+</ul>
+<p><strong>Geometry</strong></p>
 <ul>
 <li>Import STL files</li>
-<li>No limit on the number of input surfaces</li>
 <li>Automatic detection of closed surface composing a volume</li>
 <li>Automatic surface split based on feature angle</li>
 <li>Support native simple geometry ( Hex, Sphere, Cylinder )</li>
 <li>can work with dirty surfaces, i.e. non-watertight surfaces</li>
 </ul>
-<h3 id="mesh-generation">Mesh generation</h3>
+<p><strong>Mesh generation</strong></p>
 <ul>
 <li>Generate meshes for external flow and internal flow</li>
 <li>Create Cell Zones</li>
@@ -923,6 +894,23 @@
 <li>Build boundary layers</li>
 <li>scales well when meshing in <strong>parallel</strong></li>
 <li>Export 3D mesh as 2D or axi-symmetric mesh</li>
+</ul>
+<p><strong>Mesh manipulation</strong></p>
+<ul>
+<li>Scale, Translate, Rotate</li>
+</ul>
+<h2 id="road-map">Road Map</h2>
+<p><strong>Planned to next version</strong></p>
+<ul>
+<li>Create fields, Built-in post-processor, Create ROM using POD</li>
+</ul>
+<p><strong>Planened to near future</strong></p>
+<ul>
+<li>Radiation, Shell conduction, Discrete phase model, Heat  exchanger model</li>
+</ul>
+<p><strong>If we secure a fund</strong></p>
+<ul>
+<li>Chemical reaction, Eulerian multi-phase, Overset mesh, Finite Area Method, Optimization, Electro-magnetics, FSI...</li>
 </ul>
 
 
