@@ -63,7 +63,7 @@ sudo make install
 echo 'export PATH=$PATH:/opt/openmpi-4.1.6/bin' | sudo tee -a /etc/bash.bashrc
 ```
 
-- 필요한 패키지와 함께 `/opt/baram`에 BARAM을 설치합니다. 기본 pip 명령 대신 **pip3**를 사용합니다.
+- 필요한 패키지와 함께 `/opt/baram`에 BARAM을 설치합니다. 기본 pip 명령 대신 **pip3** 를 사용합니다.
 
 ```
 sudo apt install -y  qtbase5-dev
@@ -97,7 +97,7 @@ sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/fftw-3.3.10/lib/libfftw3* $B
 sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/kahip-3.15/lib/libkahip_static.a $BARAM_DIR/solvers/openfoam/tlib/
 ```
 
-- Demonizer 및 리소스 컴파일
+- Daemonizer 및 리소스 컴파일
 ```
 cd /opt/baram
 sudo gcc -o solvers/openfoam/bin/baramd misc/baramd.c
@@ -215,7 +215,7 @@ cd baram
 ### Python 가상 환경 설정
 
 다운로드한 소스 코드의 최상위 디렉토리에서 다음 명령을 실행합니다.
-Python **3.9**가 필요하니 잊지 마세요.
+Python **3.9** 가 필요하니 잊지 마세요.
 `python3 -V` 명령으로 버전을 확인할 수 있습니다.
 
 ```commandline
@@ -260,7 +260,7 @@ pip install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.d
 ```
 
 ### 솔버 실행 파일 복사
-다운로드한 솔버 실행 파일을 다운로드한 소스 코드의 최상위 디렉토리로 복사하고 압축을 해제합니다. 압축 파일에는 _**solvers**- 폴더가 포함되어 있습니다. _**solvers**_ 폴더를 최상위 디렉토리에 배치하세요. 최종 디렉토리 구조는 다음과 같습니다.
+다운로드한 솔버 실행 파일을 다운로드한 소스 코드의 최상위 디렉토리로 복사하고 압축을 해제합니다. 압축 파일에는 _**solvers**_ 폴더가 포함되어 있습니다. _**solvers**_ 폴더를 최상위 디렉토리에 배치하세요. 최종 디렉토리 구조는 다음과 같습니다.
 ```
 ($BARAM)
 |

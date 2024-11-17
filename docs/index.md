@@ -3,7 +3,7 @@
 
 # What is BARAM?
 
-**CFD For Everone and Everywhere!!**
+**CFD For Everyone and Everywhere!!**
 
 BARAM is general Computational Fluid Dynamics program package developed by NEXTFOAM.
 

@@ -52,7 +52,7 @@
 **Batch Run**
 
 * Define user parameters
-* csv and xlxs format can be used to define conditions
+* csv and xlsx format can be used to define conditions
 
 **Monitoring / Report values**
 
@@ -67,7 +67,7 @@
 * OpenFOAM PolyMesh
 * Fluent (.msh/cas)
 * Gmsh (.msh)
-* I-deas Univesl (.unv)
+* I-deas Universal (.unv)
 * StarCCM+ (.ccm) : only for linux
 
 **Geometry**

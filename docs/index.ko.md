@@ -3,11 +3,11 @@
 
 # What is BARAM?
 
-**CFD For Everone and Everywhere!!**
+**CFD For Everyone and Everywhere!!**
 
 BARAM은 넥스트폼이 개발한 범용 전산유체역학 프로그램 패키지입니다.
 
-+ GNU GPL 라이서스를 사용하는 공개소스 프로그램입니다.
++ GNU GPL 라이선스를 사용하는 공개소스 프로그램입니다.
 + 넥스트폼이 개발한 OpenFOAM 포크인 [NextFOAM](https://github.com/nextfoam/nextfoam-cfd)을 사용합니다.
 + 해석 프로그램인 BaramFlow와 격자생성 프로그램인 BaramMesh로 구성되어 있습니다.
 
@@ -24,7 +24,7 @@ BARAM은 넥스트폼이 개발한 범용 전산유체역학 프로그램 패키
 저희 미션은 사용자들이 CFD를 어디서나 쉽게 사용할 수 있는 환경을 구축하는 것입니다.<br>
 미션을 달성하기 위해 저희는 아래 활동을 합니다.
 
-+ 넥스트폼은 BARAM을 개발하여 GNU GPL 라이센스 즉, 오픈 소스 프로그램으로 공개하고 있습니다.
++ 넥스트폼은 BARAM을 개발하여 GNU GPL 라이선스 즉, 오픈 소스 프로그램으로 공개하고 있습니다.
 + 넥스트폼은 [**Azure market place**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=baram&page=1) 서비스도 제공하고 있습니다. 이 서비스는 사용자들이 어디서나 BARAM과 CFD를 사용할 수 있도록 합니다.
 + 넥스트폼은 엔지니어 및 연구자들이 가지고 있는 각자의 니즈를 충족시키기 위해, 사용자 맞춤 (User customized) 프로그램을 제공하고 있습니다.
 

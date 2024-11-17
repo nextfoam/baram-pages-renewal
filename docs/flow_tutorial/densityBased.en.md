@@ -63,7 +63,7 @@ Set the boundary type and values as shown below.
 * farfield\_in, farfield\_out
     + Far-Field Riemann 
     + Flow Direction
-        + Specification Method : AOA and AOA
+        + Specification Method : AOA and AOS
         + Direction at AOA=0, AOS=0 : Drag direction (1 0 0), Lift direction (0 1 0)
         + Angle of Atteck : 2.31
         + Angle of Sideslip : 0 

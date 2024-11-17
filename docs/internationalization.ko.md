@@ -1,5 +1,5 @@
 # Internationalization
-BARAM은 현재 영어, 한국어와 핀라드어 일부를 지원하고 있습니다.
+BARAM은 현재 영어, 한국어와 핀란드어 일부를 지원하고 있습니다.
 
 언어는 *Settings/Language* 메뉴에서 설정할 수 있습니다.
 

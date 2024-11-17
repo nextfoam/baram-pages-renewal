@@ -52,7 +52,7 @@
 **일괄 계산**
 
 * 사용자가 매개변수를 선언
-* csv, xlxs 파일 형식을 이용하여 계산 조건을 입력
+* csv, xlsx 파일 형식을 이용하여 계산 조건을 입력
 
 **모니터링 / 데이터 추출**
 
@@ -67,7 +67,7 @@
 * OpenFOAM PolyMesh
 * Fluent (.msh, .cas)
 * Gmsh (.msh)
-* I-deas Univesl (.unv)
+* I-deas Universal (.unv)
 * StarCCM+ (.ccm) : only for linux
 
 **형상**

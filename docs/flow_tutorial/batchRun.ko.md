@@ -73,7 +73,7 @@
     + 온도 조건(Temperature Condition) : 단열(adiabatic)
 * farfield\_in, farfield\_out : 압축성 원방 리만(Far-Field Riemann) 
     + 유동 방향(Flow Direction)
-        + 설정 방법(Specification Method) : AOA and AOA
+        + 설정 방법(Specification Method) : AOA and AOS
         + AOA=0, AOS=0일 때의 방향 : 항력 방향(Drag Direction) (1 0 0), 양력 방향(Lift Direction) (0 1 0)
         + 받음각(AOA) : $AOA
         + 옆미끄럼각(AOS) : 0 

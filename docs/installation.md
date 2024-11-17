@@ -93,7 +93,7 @@ sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/fftw-3.3.10/lib/libfftw3* $B
 sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/kahip-3.15/lib/libkahip_static.a $BARAM_DIR/solvers/openfoam/tlib/
 ```
 
-- Compile Demonizer and resource
+- Compile Daemonizer and resource
 ```
 cd /opt/baram
 sudo gcc -o solvers/openfoam/bin/baramd misc/baramd.c
