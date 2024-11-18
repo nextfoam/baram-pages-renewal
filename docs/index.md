@@ -10,9 +10,8 @@ BARAM is general Computational Fluid Dynamics program package developed by NEXTF
 
 + Use [NextFOAM](https://github.com/nextfoam/nextfoam-cfd), a fork of OpenFOAM developed by NEXTFOAM
 
-You can download BARAM Users' guide. [**BARAM manual**](https://drive.google.com/file/d/1TRgjzQMoEwP1jkjObAp2aqrY394HPbh3/view?usp=sharing)<br>
-
-Also you can download BARAM introduction document. [**BARAM Introduction Document**](https://drive.google.com/file/d/13a4n660HrMC53yf_Zskcl0x060vcHiEj/view?usp=sharing)
+[Download BARAM Overview](https://drive.google.com/file/d/13a4n660HrMC53yf_Zskcl0x060vcHiEj/view?usp=sharing)</br>
+[Download BARAM Users' Guide](https://drive.google.com/file/d/1TRgjzQMoEwP1jkjObAp2aqrY394HPbh3/view?usp=sharing)
 
 ## License
 
@@ -22,16 +21,14 @@ BARAM is distributed under the [GNU GPL v3](https://www.gnu.org/licenses/quick-g
 
 You are entitled to SW maintenace, technical support, training and special services through your subscription agreement.
 
-There are three subscriptions: **workgroup**, **professional** and **enterprise**, which you can choose based on your situation.
+There are three subscriptions: Workgroup, Professional and Enterprise, which you can choose based on your situation.
 
 Contact us : marketing@nextfoam.co.kr
 
 ## News
 
 2024.11.15 | Renewal of BARAM web page</br>
-2024.09.22 | BARAM v24.4 release
-
----
+2024.09.22 | [BARAM v24.4 release](https://blog.nextfoam.co.kr/2024/10/29/baram-release-v24-4/)
 
 ## About NEXTFOAM Co., Ltd.
 
@@ -40,7 +37,7 @@ We conducts R&D services as a partner of companies, national research institutes
 
 Our vision is driving paradigm shifts by building new CFD environments through collaborative development of custom programs(DIY CFD) based on open source.
 
-[**NEXTFOAM Introduction Document**](https://drive.google.com/file/d/15MRC34cBABjzjGQkVb7dcPbU2mrpJufa/view?usp=sharing)
+[Download NEXTFOAM Overview](https://drive.google.com/file/d/15MRC34cBABjzjGQkVb7dcPbU2mrpJufa/view?usp=sharing)
 
 A-1106, Kapeul Great Valley, 32, Digital-ro 9-gil, Geumcheon-gu, Seoul, Korea</br>
 E-mail : marketing@nextfoam.co.kr</br>
