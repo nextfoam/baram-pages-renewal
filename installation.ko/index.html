@@ -889,7 +889,7 @@ sudo make install
 echo &#39;export PATH=$PATH:/opt/openmpi-4.1.6/bin&#39; | sudo tee -a /etc/bash.bashrc
 </code></pre></div>
 <ul>
-<li>필요한 패키지와 함께 <code>/opt/baram</code>에 BARAM을 설치합니다. 기본 pip 명령 대신 **pip3**를 사용합니다.</li>
+<li>필요한 패키지와 함께 <code>/opt/baram</code>에 BARAM을 설치합니다. 기본 pip 명령 대신 <strong>pip3</strong> 를 사용합니다.</li>
 </ul>
 <div class="highlight"><pre><span></span><code>sudo apt install -y  qtbase5-dev
 sudo apt-get install -y &#39;^libxcb.*-dev&#39; libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev texinfo
@@ -925,7 +925,7 @@ sudo cp -a $WM_THIRD_PARTY_DIR/platforms/linux64Gcc/kahip-3.15/lib/libkahip_stat
 </code></pre></div>
 <ul>
 <li>
-<p>Demonizer 및 리소스 컴파일
+<p>Daemonizer 및 리소스 컴파일
 <div class="highlight"><pre><span></span><code>cd /opt/baram
 sudo gcc -o solvers/openfoam/bin/baramd misc/baramd.c
 sudo python3 convertUi.py
@@ -1021,7 +1021,7 @@ cd baram
 </code></pre></div>
 <h3 id="python">Python 가상 환경 설정</h3>
 <p>다운로드한 소스 코드의 최상위 디렉토리에서 다음 명령을 실행합니다.
-Python **3.9**가 필요하니 잊지 마세요.
+Python <strong>3.9</strong> 가 필요하니 잊지 마세요.
 <code>python3 -V</code> 명령으로 버전을 확인할 수 있습니다.</p>
 <div class="highlight"><pre><span></span><code>python3.9 -m venv venv
 </code></pre></div>
@@ -1049,7 +1049,7 @@ Python **3.9**가 필요하니 잊지 마세요.
 <div class="highlight"><pre><span></span><code>pip install https://d3c6e16xufx1gb.cloudfront.net/wheels/PySide6_QtAds-4.2.1.2.dev0-cp38-abi3-linux_x86_64.whl
 </code></pre></div>
 <h3 id="_5">솔버 실행 파일 복사</h3>
-<p>다운로드한 솔버 실행 파일을 다운로드한 소스 코드의 최상위 디렉토리로 복사하고 압축을 해제합니다. 압축 파일에는 <em><strong>solvers</strong>- 폴더가 포함되어 있습니다. _<strong>solvers</strong></em> 폴더를 최상위 디렉토리에 배치하세요. 최종 디렉토리 구조는 다음과 같습니다.
+<p>다운로드한 솔버 실행 파일을 다운로드한 소스 코드의 최상위 디렉토리로 복사하고 압축을 해제합니다. 압축 파일에는 <em><strong>solvers</strong></em> 폴더가 포함되어 있습니다. <em><strong>solvers</strong></em> 폴더를 최상위 디렉토리에 배치하세요. 최종 디렉토리 구조는 다음과 같습니다.
 <div class="highlight"><pre><span></span><code>($BARAM)
 |
 +-- requirements.txt
