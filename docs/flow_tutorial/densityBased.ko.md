@@ -2,9 +2,9 @@
 
 ## RAE2822 천음속 에어포일
 
-[격자 파일 다운로드](https://drive.google.com/file/d/1XfaXhTFvdUD5P3-avf8ShqQpn-5D25iy/view?usp=sharing)
-
-[계산 파일 다운로드](https://drive.google.com/file/d/1VD8BLW-qfvr_Vkq9apW7v0GNKfQ6SAyB/view?usp=sharing)
+[격자 파일 다운로드](https://drive.google.com/file/d/1XfaXhTFvdUD5P3-avf8ShqQpn-5D25iy/view?usp=sharing)</br>
+[계산 파일 다운로드](https://drive.google.com/file/d/1VD8BLW-qfvr_Vkq9apW7v0GNKfQ6SAyB/view?usp=sharing)</br>
+[유튜브 동영상 링크](https://www.youtube.com/watch?v=5pHge9onBjE)
 
 ### 개요
 

@@ -2,9 +2,9 @@
 
 ## Mixing Pipe 
 
-[Download mesh](https://drive.google.com/file/d/12CyYZO_FSl7Baz-MmbtXnBst02EGg5Tg/view?usp=sharing)
-
-[Downlaod simulation](https://drive.google.com/file/d/19ge2_LwDOPlN2tYopBoOD5OGSadkzo65/view?usp=sharing)
+[Download mesh](https://drive.google.com/file/d/12CyYZO_FSl7Baz-MmbtXnBst02EGg5Tg/view?usp=sharing)</br>
+[Downlaod simulation](https://drive.google.com/file/d/19ge2_LwDOPlN2tYopBoOD5OGSadkzo65/view?usp=sharing)</br>
+[Link to youtube video](https://www.youtube.com/watch?v=BfwMhO9Ok-I)
 
 ### Introduction 
 
