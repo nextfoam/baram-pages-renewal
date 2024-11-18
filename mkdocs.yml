@@ -110,7 +110,7 @@ nav:
     - Non-Newtonian fluid: flow_tutorial/nonNewtonian.en.md
     - 비뉴턴유체 해석 예제: flow_tutorial/nonNewtonian.ko.md
     - Compressible subsonic flow: flow_tutorial/subsonic.en.md
-    - 비뉴턴유체 해석 예제: flow_tutorial/subsonic.ko.md
+    - 아음속 압축성 유동 예제: flow_tutorial/subsonic.ko.md
     - Density based compressible flow: flow_tutorial/densityBased.en.md
     - 밀도 기반 압축성 유동 해석 예제: flow_tutorial/densityBased.ko.md
     - Batch run: flow_tutorial/batchRun.en.md
