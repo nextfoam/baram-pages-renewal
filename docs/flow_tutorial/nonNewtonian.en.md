@@ -2,7 +2,7 @@
 
 ## Blood flow of FDA Nozzle 
 
-[Download mesh](https://drive.google.com/file/d/1fq6KLFt2mpidQchHwQ9j9mRgty5rlr3G/view?usp=sharing)
+[Download mesh](https://drive.google.com/file/d/1hhfDGKd5c8jicGDiC25KWo4A_EuXqgQc/view?usp=sharing)
 
 [Download simulation](https://drive.google.com/file/d/1GT4riUP0E9Niwrw6LWrh0ZV0l49YlZJG/view?usp=sharing)
 
