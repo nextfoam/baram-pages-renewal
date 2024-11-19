@@ -291,7 +291,7 @@ NASA ARN2(Acoustic Research Nozzle 2)의 실험 결과이며 형상과 조건은
 
 다음과 같이 설정한다.
 
-+ 압력-속도 연성기법(Pressure-Velocity coupling) : SIMPLEC
++ 압력-속도 연성기법(Pressure-Velocity coupling) : SIMPLE
 
 + 이산화 기법(Discretization)
     + 압력 : Momentum Weighted Reconstruct
