@@ -105,7 +105,7 @@ The Reference Value is used to calculate the aerodynamic coefficient. Since this
 
 In this example, we'll change the settings as shown below.
 
-+ Pressure-Velocity Coupling : SIMPLEC
++ Pressure-Velocity Coupling : SIMPLE
 
 + Discretization Schemes
     + Pressure : Momentum Weighted Reconstruct
