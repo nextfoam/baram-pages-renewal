@@ -102,7 +102,7 @@
 
 다음과 같이 설정한다.
 
-+ 압력-속도 연성기법(Pressure-Velocity coupling) : SIMPLE
++ 압력-속도 연성기법(Pressure-Velocity coupling) : SIMPLEC
 
 + 이산화 기법(Discretization)
     + 압력 : Momentum Weighted Reconstruct
