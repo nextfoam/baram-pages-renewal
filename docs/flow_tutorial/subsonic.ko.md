@@ -173,9 +173,9 @@
 <!------------------------------------------------------------------------------------------------------------->
 ## 축대칭 아음속 제트 
 
-[격자 파일 다운로드](https://drive.google.com/file/d/1fq6KLFt2mpidQchHwQ9j9mRgty5rlr3G/view?usp=sharing)
-
-[계산 파일 다운로드](https://drive.google.com/file/d/1I2zMwTUwXwLbYIoBFZ4UDt8m86tWS9Hr/view?usp=sharing)
+[격자 파일 다운로드](https://drive.google.com/file/d/1fq6KLFt2mpidQchHwQ9j9mRgty5rlr3G/view?usp=sharing)</br>
+[계산 파일 다운로드](https://drive.google.com/file/d/1I2zMwTUwXwLbYIoBFZ4UDt8m86tWS9Hr/view?usp=sharing)</br>
+[유튜브 동영상 링크](https://www.youtube.com/watch?v=LBi8QnyqTGY)
 
 ### 개요 
 
@@ -310,6 +310,7 @@ NASA ARN2(Acoustic Research Nozzle 2)의 실험 결과이며 형상과 조건은
 + 고급설정(Advanced)
     + 최소 온도(Minimum Static Temperature) : 100
     + 최대 온도(Maximum Static Temperature) : 1000
+    + 에너지 방정식에 점성가열 항(Viscous Dissipation term) 포함
 
 ### 모니터(Monitor)
 
@@ -330,7 +331,7 @@ NASA ARN2(Acoustic Research Nozzle 2)의 실험 결과이며 형상과 조건은
 + 온도 : 294.4444
 + 속도 크기 : 100 
 + 난류 강도 : 1
-+ 난류 점도 비율 : 200
++ 난류 점도 비율 : 10
 
 값을 입력하고 하단의 [초기화(Initialize)] 버튼을 클릭한다. 그 후, 메뉴의 [파일(File)]-[저장(Save)] 버튼을 클릭하여 저장한다.
 

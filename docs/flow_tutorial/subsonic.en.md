@@ -175,9 +175,9 @@ To draw the pressure distribution around the vehicle, select train\_surface\_0, 
 <!------------------------------------------------------------------------------------------------------------->
 ## Hot subsonic jet 
 
-[Download mesh](https://drive.google.com/file/d/1fq6KLFt2mpidQchHwQ9j9mRgty5rlr3G/view?usp=sharing)
-
-[Download simulation](https://drive.google.com/file/d/1I2zMwTUwXwLbYIoBFZ4UDt8m86tWS9Hr/view?usp=sharing)
+[Download mesh](https://drive.google.com/file/d/1fq6KLFt2mpidQchHwQ9j9mRgty5rlr3G/view?usp=sharing)</br>
+[Download simulation](https://drive.google.com/file/d/1I2zMwTUwXwLbYIoBFZ4UDt8m86tWS9Hr/view?usp=sharing)</br>
+[Link to youtube video](https://www.youtube.com/watch?v=LBi8QnyqTGY)
 
 ### Introduction 
 
@@ -315,6 +315,7 @@ In this example, we'll change the settings as shown below.
 + Advanced
     + Minimum Static Temperature : 100
     + Maximum Static Temperature : 1000
+    + Turn on Include Viscous Dissipation Terms
 
 ### Monitor
 
@@ -335,7 +336,7 @@ Enter the value and click the Initialize button at the bottom. Then click the [F
 + Temperature : 294.4444
 + Scale of velocity : 100
 + Turbulent Intensity : 1
-+ Turbulent Viscosity Ratio : 200
++ Turbulent Viscosity Ratio : 10
 
 
 ### Run 
