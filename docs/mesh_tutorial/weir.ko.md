@@ -7,7 +7,7 @@
 [BaramMesh 폴더 다운로드](https://drive.google.com/file/d/1oKVpiZEEfw-jEpjWlJTnWwcLP8zEztjg/view?usp=sharing)
 
 <p align='center'>
-    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mesh/weir/main.png"><br> wave height
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mesh/weir/main.png"><br> 
 </p>
 
 위어(Weir)는 수공학에서 수로에 설지하는 구조물로 물이 넘치게 만들어 특정 수위를 유지하거나 유량을 측정하는데 사용한다. CFD에서는 이론식으로 구할 수 있는 유량과 해석 결과를 비교하여 코드 검증용으로 사용하기도 한다.

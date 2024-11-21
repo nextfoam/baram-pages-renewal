@@ -7,7 +7,7 @@
 [Download BaramMesh folder](https://drive.google.com/file/d/1oKVpiZEEfw-jEpjWlJTnWwcLP8zEztjg/view?usp=sharing)
 
 <p align='center'>
-    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mesh/weir/main.png"><br> wave height
+    <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/mesh/weir/main.png"><br> 
 </p>
 
 In hydraulic engineering, a weir is a structure set in a waterway that allows water to overflow and is used to maintain a specific water level or measure flow. In CFD, they are often used for code validation by comparing analytical results with theoretical flow rates.
