@@ -477,7 +477,7 @@ DrivAer는 자동차 공학 분야에서 사용되는 차량 외부 디자인 �
 + 난류(Turbulence)
     + 속도 크기 : 30 (m/s)
     + 난류 강도 : 1 (%)
-    + 난류 강도 : 10
+    + 난류 점도 비율 : 10
 
 <p align='center'>
     <img src="https://github.com/nextfoam/baram-pages/raw/main/screenshots/drivAer/15.png"><br>
