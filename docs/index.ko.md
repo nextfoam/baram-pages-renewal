@@ -27,7 +27,7 @@ BARAM은 [GNU GPL v3](https://www.gnu.org/licenses/quick-guide-gplv3.html) 라�
 ## 뉴스
 
 2024.11.20 | BARAM 튜토리얼 동영상 4개가 유튜브에 게시 되었습니다.</br>
-- 유튜브 링크 : [관내 혼합](https://www.youtube.com/watch?v=BfwMhO9Ok-I), [천음속 에어포일](https://www.youtube.com/watch?v=5pHge9onBjE), [아음속 제트](https://www.youtube.com/watch?v=LBi8QnyqTGY), [비뉴턴유체 혈액유동](https://www.youtube.com/watch?v=c2FrIr3HvHQ)</br>
+- 유튜브 링크 : [관내 혼합](https://www.youtube.com/watch?v=BfwMhO9Ok-I), [천음속 에어포일](https://www.youtube.com/watch?v=5pHge9onBjE), [아음속 제트](https://www.youtube.com/watch?v=LBi8QnyqTGY), [비뉴턴유체 혈액유동](https://www.youtube.com/watch?v=c2FrIr3HvHQ), [자동차 외부유동](https://www.youtube.com/watch?v=TWxyQZCz8cE)</br>
 2024.11.15 | BARAM 웹 페이지를 개편했습니다.</br>
 2024.09.22 | [BARAM v24.4](https://blog.nextfoam.co.kr/2024/10/29/baram-release-v24-4/)를 공개했습니다.
 
