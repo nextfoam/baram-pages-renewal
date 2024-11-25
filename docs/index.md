@@ -27,7 +27,7 @@ Contact us : marketing@nextfoam.co.kr
 
 ## News
 
-2024.11.20 | Four BARAM tutorial videos have been uploaded on YouTube</br>
+2024.11.20 | BARAM tutorial videos have been uploaded on YouTube</br>
 - YouTube Link : [Mixing pipe](https://www.youtube.com/watch?v=BfwMhO9Ok-I), [Transonic airfoil](https://www.youtube.com/watch?v=5pHge9onBjE), [Subsonic nozzle](https://www.youtube.com/watch?v=LBi8QnyqTGY), [Non-Newtonian blood flow](https://www.youtube.com/watch?v=c2FrIr3HvHQ), [Car External flow](https://www.youtube.com/watch?v=TWxyQZCz8cE)</br>
 2024.11.15 | Renewal of BARAM web page</br>
 2024.09.22 | [BARAM v24.4 release](https://blog.nextfoam.co.kr/2024/10/29/baram-release-v24-4/)
