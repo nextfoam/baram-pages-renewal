@@ -10,6 +10,8 @@
 
 [![](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/intro.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/intro.png)
 
+[![](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)
+
 ‘FDA’s Nozzle Challenge’는 미국 식품의약청이 주관한 시뮬레이션 검증을 위한 벤치마크 테스트 프로그램이다. 이 프로그램에서 혈액 운반 의료기기의 특성을 반영하는 소형 노즐에 대한 실험 및 시뮬레이션 연구가 진행되었고, 관련 논문 중 Trias 등의 다음 논문을 참고했다.
 
 _Trias, Miquel, Antonio Arbona, Joan Massó, Borja Miñano, and Carles Bona. “FDA’s nozzle numerical simulation challenge: non-Newtonian fluid effects and blood damage.” PloS one 9, no. 3 (2014): e92638._
@@ -131,7 +133,5 @@ region0를 더블 클릭하면 설정창이 나타난다. 물질(Material)을 bl
 
 [![intro](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/paraview.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/paraview.png)
 
-[File] 메뉴의 [Save Data]를 실행하면, 축에서 속도를 데이터 파일로 얻을 수 있다. 아래 그림은 이 데이터를 실험결과와 점성을 상수로 준 경우의 결과와 비교하여 그린 것이다.
-
-[![intro](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)
+[File] 메뉴의 [Save Data]를 실행하면, 축에서 속도를 데이터 파일로 얻을 수 있다. 
 

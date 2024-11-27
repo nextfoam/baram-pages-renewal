@@ -8,7 +8,9 @@
 
 ### Introduction 
 
-[![include surface's own gap](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/intro.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/intro.png)
+[![](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/intro.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/intro.png)
+
+[![](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)
 
 FDA's Nozzle Challenge is a benchmark testing program for simulation validation organized by the U.S. Food and Drug Administration. In this program, experimental and simulation studies were conducted on small nozzles that reflect the characteristics of blood-carrying medical devices, and the following papers by Trias et al. were referenced.
 
@@ -126,9 +128,9 @@ In the [X Axis Parameters], disable [Use Index for XAxis] and select [Point_X fo
 
 In [Series Parameters], select U_X and click the Apply button to see the graph below.
 
-[![intro](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/paraview.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/paraview.png)
+[![](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/paraview.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/paraview.png)
 
-Run 'Save Data' from the File menu to get the velocity along the axis as a data file. The figure below plots this data against the experimental results and the results for a constant viscosity.
+Run 'Save Data' from the File menu to get the velocity along the axis as a data file. 
 
-[![intro](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)](https://github.com/nextfoam/baram-pages/raw/main/screenshots/blood/result.png)
+
 
